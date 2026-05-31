@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 资讯 · MyMind</title>
+<style>
+  :root {
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --border: #e0e0e0;
+    --text: #333333;
+    --text-dim: #888888;
+    --accent: #c41e3a;
+    --green: #2e7d32;
+    --orange: #e65100;
+    --red: #c41e3a;
+    --purple: #6a1b9a;
+    --heading: #1a1a1a;
+    --red-light: #ffebee;
+    --red-dark: #b71c1c;
+    --red-mid: #e53935;
+    --nav-bg: #fafafa;
+    --nav-hover: #f0f0f0;
+    --shadow: rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+  }
+  .hero {
+    text-align: center;
+    padding: 48px 24px 32px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  }
+  .hero h1 {
+    font-size: 2rem;
+    color: var(--heading);
+    margin-bottom: 8px;
+  }
+  .hero .sub {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+  }
+
+  /* === Navigation === */
+  .toc {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 0 24px;
+  }
+  .toc h2 {
+    font-size: 1rem;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .month-group {
+    margin-bottom: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .nav-back {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: #fff; }
+  .month-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+    font-weight: 600;
+    color: var(--heading);
+    font-size: 0.95rem;
+  }
+  .month-toggle:hover {
+    background: var(--nav-hover);
+  }
+  .month-toggle .arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s;
+    color: var(--text-dim);
+  }
+  .month-toggle .arrow.collapsed {
+    transform: rotate(-90deg);
+  }
+  .month-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 4px 20px 16px;
+    border-top: 1px solid var(--border);
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease;
+    max-height: 200px;
+    opacity: 1;
+    overflow: hidden;
+  }
+  .month-dates.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top-color: transparent;
+  }
+  .toc a {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+  .toc a:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* === Main content === */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  .day-section {
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card);
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .day-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    cursor: pointer;
+    user-select: none;
+    transition: filter 0.2s;
+  }
+  .day-header:hover {
+    filter: brightness(1.08);
+  }
+  .day-header h2 {
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .day-header .badge {
+    font-size: 0.75rem;
+    padding: 3px 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.2);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+  }
+  .day-header .arrow {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.7);
+    transition: transform 0.3s;
+    margin-left: 8px;
+  }
+  .day-header .arrow.collapsed {
+    transform: rotate(-90deg);
+  }
+  .day-content {
+    padding: 20px 24px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+    max-height: 5000px;
+    opacity: 1;
+  }
+  .day-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .news-item {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .news-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .news-item h3 {
+    font-size: 1.15rem;
+    color: var(--heading);
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .news-item h3 .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
+    font-weight: 600;
+  }
+  .tag-coding { background: #e8f5e9; color: var(--green); }
+  .tag-embodied { background: #fff3e0; color: var(--orange); }
+  .tag-both { background: #f3e5f5; color: var(--purple); }
+  .news-item p {
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .news-item blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 8px 16px;
+    margin: 10px 0;
+    background: var(--red-light);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.88rem;
+    color: var(--red-dark);
+  }
+  .news-item ul, .news-item ol {
+    margin: 8px 0 8px 20px;
+    font-size: 0.92rem;
+  }
+  .news-item li {
+    margin-bottom: 4px;
+  }
+  .section-divider {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--heading);
+    padding: 8px 0 4px;
+    border-bottom: 1px dashed var(--border);
+    margin: 16px 0 12px;
+  }
+  .section-divider:first-of-type {
+    margin-top: 0;
+  }
+  .summary-box {
+    margin-top: 20px;
+    padding: 16px;
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .summary-box h4 {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  .summary-box table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .summary-box th {
+    text-align: left;
+    padding: 6px 8px;
+    background: var(--nav-bg);
+    font-weight: 600;
+    border: 1px solid var(--border);
+  }
+  .summary-box td {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+  }
+  .truncated-notice {
+    text-align: center;
+    padding: 12px;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.88rem;
+  }
+  .summary-table th, .summary-table td {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  .summary-table th {
+    background: var(--red-light);
+    color: var(--heading);
+    font-weight: 600;
+  }
+  .footer {
+    text-align: center;
+    padding: 32px 24px;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 1.5rem; }
+    .day-content { padding: 16px; }
+    .day-header { padding: 14px 16px; }
+    .news-item h3 { font-size: 1.05rem; }
+  }
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--red-dark);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 16px rgba(183,28,28,0.3);
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .back-to-top:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(183,28,28,0.4);
+  }
+  @media (max-width: 640px) {
+    .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="index.html" class="nav-back">← 返回 MyMind</a>
+  <h1>📰 每日 AI 资讯</h1>
+  <p class="sub">AI Coding × 具身智能 · 持续更新</p>
+</div>
+
+<nav class="toc">
+  <h2>快速跳转</h2>
+  <div class="month-group">
+    <div class="month-toggle" onclick="toggleMonth(this)">
+      <span>📅 2026年5月</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="month-dates">
+      <a href="#day-0531">5月31日</a>
+      <a href="#day-0530">5月30日</a>
+      <a href="#day-0529">5月29日</a>
+      <a href="#day-0528">5月28日</a>
+      <a href="#day-0527">5月27日</a>
+      <a href="#day-0526">5月26日</a>
+      <a href="#day-0525">5月25日</a>
+      <a href="#day-0524">5月24日</a>
+      <a href="#day-0523">5月23日</a>
+      <a href="#day-0522">5月22日</a>
+      <a href="#day-0521">5月21日</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== 2026-05-31 ===== -->
+<section class="day-section" id="day-0531">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月31日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>英伟达开源 Polar 框架，Codex 性能暴涨 594%</h3>
+      <p>5月28日，英伟达研究团队开源 AI 训练框架 <strong>Polar</strong>，核心创新是在不修改 Codex/Claude Code 等智能体原生代码的前提下，让它们无缝接入 GRPO 强化学习训练。框架通过在执行端与模型 API 之间设置透明代理（Gateway），拦截请求并重构为训练轨迹数据。</p>
+      <ul>
+        <li>SWE-Bench Verified 基准上，基于 Qwen3.5-4B 的 pass@1 从 3.8% 飙升至 26.4%，涨幅 <strong>594.74%</strong></li>
+        <li>任何现有 Agent 框架都能"零改造"接入</li>
+      </ul>
+      <blockquote>英伟达把 AI Coding 的训练效率天花板直接抬高了一个数量级，竞争烈度进一步升级。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Opus 4.8 上线，Claude Code 新增「动态工作流」</h3>
+      <p>5月29日，Anthropic 发布旗舰模型 <strong>Claude Opus 4.8</strong>，同步推出 Claude Code 的「动态工作流」（Dynamic Workflows）功能。用户只需在提示词中加入 <code>workflow</code> 关键词，Claude 就会先写一段 JavaScript 调度脚本，将任务拆解为几十至上百个可并行子任务。</p>
+      <ul>
+        <li>每个子任务配"一干一审一返工"的流水线，最终汇总验证结果</li>
+        <li>中间结果存在脚本变量中，不占对话上下文，突破了上下文长度限制</li>
+        <li>SWE-Bench Pro 得分 <strong>69.2%</strong>，代码缺陷漏检率降至上代 1/4</li>
+      </ul>
+      <blockquote>AI 编程 Agent 从「单兵作战」到「多智能体编队调度」的质变。以前一个 AI 串行干几小时的任务，现在可以十分钟内并行完成。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>宇树科技科创板 IPO 明日上会，A 股「具身智能第一股」呼之欲出</h3>
+      <p>上交所上市审核委员会定于 <strong>6月1日</strong> 审议宇树科技科创板首发申请。宇树科技是全球领先的高性能通用机器人企业，2025 年人形机器人出货量超 <strong>5,500 台</strong>（全球第一），四足机器人累计销量超 33,000 台。C 轮融资后估值约 127 亿元，腾讯、阿里、蚂蚁、中国移动旗下基金均为股东。</p>
+      <blockquote>如果过会，将成为 A 股首家以人形机器人为主营的上市公司，标志着资本市场对具身智能产业的认可进入新阶段——从"烧钱讲故事"迈向"出货验证价值"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>具身智能进家门：智博会现场机器人导诊、售货、演奏</h3>
+      <p>正在天津举行的 2026 世界智能产业博览会（5月28-31日）上，具身智能首次独立成馆。现场亮点包括：导诊机器人搭载大语言模型，可根据症状描述推荐科室；人形机器人承担迎宾导览；机器人乐队现场演奏；售货机器人熟练递出饮品零食；中医 AI 理疗机器人复刻推拿手法。</p>
+      <blockquote>展示的不是概念 Demo，而是已经能跑通服务闭环的场景。具身智能正在从 B 端工业场景向 C 端家庭和公共服务渗透，落地节奏比市场预期更快。</blockquote>
+    </div>
+
+    <p style="color: var(--text-dim); font-size: 0.8rem; margin-top: 16px;">数据来源：新浪财经、IT之家、新华社、财联社等，截至 2026-05-31 14:36 GMT+8</p>
+  </div>
+</section>
+
+<!-- ===== 2026-05-30 ===== -->
+<section class="day-section" id="day-0530">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月30日（周六）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Mistral AI Now 峰会：从模型开发商转向全栈 AI 服务商</h3>
+      <p>法国 AI 独角兽 Mistral 在巴黎举办 AI Now 峰会，宣布战略升级：除模型外还提供算力、平台、咨询服务。依托巴黎 40MW 数据中心及后续瑞典扩建计划，主打欧洲数据主权和本地化部署。同时发布"Vibe for Work"工具及语音、工业机器人专用小模型 Voxtral、Robostral。</p>
+      <blockquote>欧洲 AI 领军企业从"卖模型"转向"卖解决方案"，反映行业趋势——仅靠模型本身已难建立壁垒，全栈服务能力成为新竞争维度。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>AI 初创公司 Shift 免费提供家政清洁服务，换取机器人训练数据</h3>
+      <p>AI 训练初创公司 Shift 推出免费家政清洁服务，仅要求清洁人员佩戴专用设备记录清洁动作，以此采集真实人类家务活动的训练数据，用于未来家用机器人的研发。</p>
+      <blockquote>具身智能最大的瓶颈之一是真实场景的高质量训练数据。Shift 用"以服务换数据"模式，巧妙绕过了传统数据采集的成本和伦理障碍，是数据获取模式的创新尝试。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Groq 拟融资 6.5 亿美元，从硬件转向 AI 推理服务</h3>
+      <p>AI 芯片初创公司 Groq 正寻求 <strong>6.5 亿美元</strong>融资，战略从 LPU 硬件研发转向 AI 推理服务，优化模型请求响应效率。背景是英伟达完成 200 亿美元"非收购式人才引入"交易，AI 基础设施赛道格局剧变。</p>
+      <blockquote>推理即服务（Inference-as-a-Service）成为新风口。对 AI Coding 而言，更快的推理速度意味着更好的实时编程体验，从 Claude Code 到 Cursor 都受益于此。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-both">跨领域</span>"AI 精神病"现象：科技公司盲目用 AI 替代员工趋势加剧</h3>
+      <p>Box 创始人 Aaron Levie 提出"AI 精神病"概念，指企业决策者在不了解岗位真实需求的情况下盲目用 AI 替代员工。典型案例：ClickUp 裁员 22% 转向 AI 代理，Wix 裁员 1000 人（占员工总数近 20%），2026 年科技行业裁员规模已追平 2025 年全年。</p>
+      <blockquote>AI 替代人类的叙事正在从"可能性"变为"执行力"，但盲目替代可能造成组织能力断崖式下降。这对每一位使用 AI Coding 工具的开发者也是警示——工具增效不等于岗位替代。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>英伟达、微软、Arm 联合预热 N1X Arm 笔记本处理器</h3>
+      <p>三家企业联合预热英伟达 <strong>N1X Arm 架构笔记本处理器</strong>，将在 Computex 展会正式发布，主打"PC 新时代"定位，依托 Arm 架构的移动算力优势，结合微软 Windows 生态。</p>
+      <blockquote>Arm 架构进入笔记本主流市场，AI PC 硬件底座重塑。对开发者而言意味着本地 AI 推理环境将大幅改善，Claude Code、Cursor 等工具的本地运行体验可能迎来质的飞跃。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-05-29 ===== -->
+<section class="day-section" id="day-0529">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月29日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 发布 Claude Opus 4.8：动态工作流协调子代理集群</h3>
+      <p>Anthropic 推出旗舰模型 <strong>Opus 4.8</strong>，新增"动态工作流"功能，可协调多组子代理协同完成复杂任务。快速模式速度提升 2.5 倍、成本降低 3 倍，Super-Agent 基准测试表现超过 GPT-5.5。同时发布 Claude Code 动态工作流和 claude.ai 用户可控"努力度"设置。</p>
+      <blockquote>AI 编程从"单 Agent 串行"到"多 Agent 编队"的正式升级。动态工作流让复杂工程任务的自动化拆解成为可能，是 AI Coding 工具能力跃迁的关键节点。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 完成 650 亿美元 H 轮融资，估值 9650 亿美元</h3>
+      <p>AI 独角兽 Anthropic 完成 <strong>650 亿美元</strong> H 轮融资，投后估值达 <strong>9650 亿美元</strong>，接近 1 万亿美元大关。该轮融资预计是其 IPO 前的最后一轮私人融资。</p>
+      <blockquote>近万亿估值意味着资本市场对 AI 基础设施层的极度看好。Anthropic 的 Claude Code + Claude Cowork 生态正在成为 AI Coding 领域最完整的商业闭环。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>世界智能产业博览会开幕，具身智能成全场焦点</h3>
+      <p>2026 世界智能产业博览会在天津正式开幕，超过 <strong>700 家</strong>参展商，具身智能展区首次独立成馆。展会上人形机器人、工业协作机器人、服务机器人集中亮相，英伟达、微软等国际巨头参展。</p>
+      <blockquote>全球规模最大的智能产业博览会首次将具身智能提升到独立主题馆级别，标志着这一赛道从技术验证期正式进入产业落地期。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>MCP 协议遇冷：开发者质疑"AI 生态 USB-C"的实用性</h3>
+      <p>Quandri Engineering 分析指出，模型上下文协议（MCP）存在上下文窗口占用过高、可靠性低、与现有 CLI/API 工具功能重叠三大问题。即使 Claude Code 推出"工具搜索与延迟加载"减少 85% 上下文消耗，架构冗余、调试困难等问题仍未解决，部分开发者认为该协议当前已无实用价值。</p>
+      <blockquote>MCP 是 Claude Code 生态的核心协议，开发者社区的负面反馈值得关注。协议标准化和工具碎片化之间的张力，是 AI Coding 基础设施面临的结构性难题。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>异步代理时代来临：Devin 代码提交率达 80%</h3>
+      <p>软件开发正在向"异步代理"模式转变。Cognition 旗下 Devin 代码提交率达 <strong>80%</strong>，实现从需求规格到 PR 的全流程自动化。同时代理工具让产品经理也可直接提交代码，传统工程角色正在被重构。</p>
+      <blockquote>AI 编程代理的成熟度已达到可以在生产环境中自主完成大部分工作的水平。"异步代理"意味着人类开发者可以从执行者转变为审阅者，工作模式根本性改变。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-05-28 ===== -->
+<section class="day-section" id="day-0528">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月28日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>英伟达发布 Polar 框架：Codex 跑分暴涨 594.74%</h3>
+      <p>英伟达研究团队发布开源框架 <strong>Polar</strong>，让 Codex、Claude Code、Qwen Code 等现有智能体框架接入 GRPO（广义相对策略优化）训练。测试数据显示，使用 Polar 后 Codex 跑分暴涨 <strong>594.74%</strong>。</p>
+      <blockquote>智能体强化学习技术进入新阶段的重要标志，预示着 AI Coding 工具的性能将获得质的飞跃。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Cognition AI (Devin) 完成 10 亿美元融资，估值达 260 亿美元</h3>
+      <p>AI 编程工具 Devin 母公司 <strong>Cognition AI</strong> 完成超 10 亿美元融资，估值达 <strong>260 亿美元</strong>。年化收入运行率已达 <strong>4.92 亿美元</strong>，8 个月内估值翻倍。超过 90% 的自身代码由 Devin 自主编写。</p>
+      <blockquote>AI Coding 赛道出现首个估值超 250 亿美元的独角兽。Devin 实现"自己写自己"的递归自举，标志着 AI 编程工具已具备自主进化能力。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 首发「自愈」功能，创始人分享自动修 Bug 配置</h3>
+      <p>Anthropic 发布 Claude Code 重大更新，修复六大开发者痛点，新增<strong>自愈功能</strong>。创始人 Boris Cherny 分享了一套自动修 Bug 配置（<code>CLAUDE.md</code> + 四种钩子 + 自动重试 + 跨会话记忆）。</p>
+      <blockquote>"自愈"功能是 AI Coding 工具从"辅助"迈向"自主"的关键一步。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>2026 世界智能产业博览会开幕：具身智能首次独立成馆</h3>
+      <p>5月28日至31日在天津举行，<strong>具身智能展区首次独立成馆</strong>，展览面积 13 万平方米，参展企业超 700 家，发布 <strong>200 余项</strong>创新成果。</p>
+      <blockquote>产业地位从附属展区升级为独立主题馆，行业已从技术验证期进入规模化落地期。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>星尘智能人形机器人 T1 发布：售价 8.99 万元，6月1日发货</h3>
+      <p>星尘智能发布人形机器人 <strong>T1</strong>，起售价仅 <strong>8.99 万元</strong>，6 月 1 日发货。预计今年产能上万台，目前手握数千台订单。</p>
+      <blockquote>人形机器人价格首次跌破 9 万元大关，逼近小企业/科研机构可承受范围，商业化拐点临近。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-05-27 ===== -->
+<section class="day-section" id="day-0527">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月27日（周三）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-both">跨领域</span>中国限制阿里、DeepSeek AI 研究人员出境</h3>
+      <p>彭博社报道，中国政府部门开始要求阿里巴巴、DeepSeek 的顶尖 AI 人员出境前需获得审批。限制仅针对高级 AI 研究人员、创业者、高管，不涉及普通员工。此前 DeepSeek 高管 2025 年 12 月就曾被限制出境，Manus 联合创始人 2026 年初也遭遇出境限制，监管部门还叫停了 Meta 收购 Manus 的 20 亿美元计划。</p>
+      <blockquote>AI 人才和技术的管控升级，反映出各国对 AI 核心竞争力的战略焦虑。对 AI Coding 生态而言，可能影响中国团队与国际社区的协作深度。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Gemini 3.5 Flash 正式上线全平台，开启"代理化 Gemini 时代"</h3>
+      <p>谷歌在 I/O 2026 发布的 <strong>Gemini 3.5 Flash</strong> 正式上线 Gemini API、AI Studio、Gemini App 全平台，成为全球超 10 亿用户的新默认模型。在所有代理任务基准测试中优于上一代 Gemini 3.1 Pro，输出速度是同级前沿模型 4 倍。</p>
+      <blockquote>谷歌 CEO 称此举标志着"代理化 Gemini 时代"开启。对 AI Coding 开发者而言，又一个高性能低成本模型选项进入市场，竞争将进一步压低 API 调用成本。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenRouter 完成 1.13 亿美元 B 轮融资，估值 13 亿美元</h3>
+      <p>AI 模型路由平台 <strong>OpenRouter</strong> 完成由 CapitalG（Alphabet 旗下）领投的 1.13 亿美元 B 轮融资，估值达 <strong>13 亿美元</strong>，一年内估值翻倍。过去 6 个月平台使用量增长 5 倍。</p>
+      <blockquote>OpenRouter 是 Claude Code、Cursor 等工具背后常用的模型路由层。其独角兽化标志着"多模型统一调度"成为 AI Coding 基础设施的独立赛道。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>高通拿下字节 AI 芯片订单，字节基础设施支出飙升至 294 亿美元</h3>
+      <p>据报道高通已拿下字节跳动 AI 芯片供应订单。同期字节基础设施预算大幅增长 25%，达到 <strong>2000 亿元人民币</strong>（约 294 亿美元），体现字节为支持 AI 能力扩张在算力上的大规模投入。</p>
+      <blockquote>字节跳动是全球最大的 AI 应用公司之一（豆包、Coze 等），其算力投入规模直接反映 AI 行业的资本消耗速度。AI Coding 工具的免费或低价背后，是巨头级的基础设施军备竞赛。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Human Archive 借力印度零工经济采集物理 AI 训练数据</h3>
+      <p>由 UC Berkeley 和斯坦福研究者创立的初创企业 Human Archive，通过雇佣印度零工佩戴专用摄像头帽和传感器设备，采集真实世界人机交互数据，满足全球 AI 和机器人实验室对高质量物理 AI 训练数据的需求。</p>
+      <blockquote>具身智能与 AI Coding 一样面临"数据瓶颈"，但物理世界的训练数据远比文本数据稀缺和昂贵。Human Archive 的模式是解决这一问题的创新路径，也引发了数据采集伦理的讨论。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-05-26 ===== -->
+<section class="day-section" id="day-0526">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月26日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-both">跨领域</span>国家能源局召开全国"人工智能+"能源现场推进会</h3>
+      <p>国家能源局在深圳召开全国"人工智能+"能源现场推进会，部署《关于促进人工智能与能源双向赋能的行动方案》和《全面提升供电质量服务新质生产力发展专项行动方案(2026—2028年)》，发布《中国"人工智能+"能源发展报告》。</p>
+      <blockquote>AI 从互联网/软件行业向传统基础设施渗透的标志性事件。能源行业的数据密集特性使其成为 AI 落地的理想场景，也为具身智能（巡检机器人、无人运维设备）提供了新的应用土壤。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 推出官方 Claude Code 插件目录</h3>
+      <p>Anthropic 在 GitHub 正式发布经过筛选的高质量 <strong>Claude Code 插件目录</strong>，由 Anthropic 团队直接管理，是开发者查找经过验证的 Claude Code 扩展的集中中心。同日还开源了知识工作插件库（knowledge-work-plugins），可将 Claude 从通用 AI 转化为适配特定岗位、团队的专业专家。</p>
+      <blockquote>Claude Code 的生态建设进入规范化阶段——官方目录 + 开源插件双管齐下，与 GitHub Copilot 的扩展生态形成直接竞争。插件化意味着 AI 编程工具从"一个模型打天下"进入"模型 + 技能栈"时代。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Wix 裁员 1000 人（占 19%），AI 成本冲击利润率</h3>
+      <p>建站平台 Wix 宣布裁员 <strong>1000 人</strong>（全球 5277 名员工的近 20%），原因是 AI 相关成本对公司利润率造成持续压力。Wix 超 60% 员工位于以色列。</p>
+      <blockquote>这是"AI 成本反噬"的首批典型案例——企业投入大量资金采用 AI 后，发现利润率不升反降。对使用 AI Coding 工具的创业公司而言，这是关于 AI 投入产出比的重要警示。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>微软 Copilot Cowork 严重漏洞：间接提示注入可窃取 M365 文件</h3>
+      <p>安全研究人员发现微软 Copilot Cowork 中存在严重安全漏洞，通过投毒技能实现的间接提示注入攻击，可从 Microsoft 365 环境中未授权窃取文件。系统向活跃用户发送消息时绕过人工审批要求，对 Claude Opus 4.7 等先进模型成功率很高。</p>
+      <blockquote>Agent AI 的安全风险从理论走向现实。当 AI 编程代理拥有广泛的文件系统和 API 权限时，提示注入攻击的破坏力呈指数级放大。这是 AI Coding 生态必须正视的安全隐患。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-both">跨领域</span>ClickUp 用数千 AI 代理替代数百名员工</h3>
+      <p>成立 9 年的生产力工具 ClickUp 进行大规模裁员，据报道用<strong>数千个 AI 代理</strong>替代了数百名人类员工，标志着科技行业从以人为核心的运营向 AI 驱动劳动力模式转变的关键时刻。</p>
+      <blockquote>AI 代理替代人类员工的案例正在加速积累。对开发者而言，这意味着未来可能与 AI 代理协作甚至被 AI 代理管理——理解 Agent 的工作原理变得越来越重要。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-05-25 ===== -->
+<section class="day-section" id="day-0525">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月25日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek V4-Pro API 永久降价 75%，登顶全球性价比榜首</h3>
+      <p>DeepSeek 今日正式确认，V4-Pro 模型 API 在 5 月 31 日优惠期结束后不再恢复原价，而是永久降至原定价的四分之一——缓存命中输入仅 ¥0.025/百万 tokens，未命中 ¥3，输出 ¥6。第三方评估显示其已登顶全球大模型性价比榜首。</p>
+      <blockquote>这是大模型价格战的标志性事件。对 AI Coding 生态而言，意味着开发者可以用极低成本调用顶级编程模型，将直接加速 AI 辅助编程的普及与 DeepSeek 生态工具的爆发（如近期上线的 Reasonix 终端编程助手）。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>腾讯研究院发布《丰饶之后：AI Coding 观察报告 2.0》</h3>
+      <p>报告提炼出 6 个结构性洞察：模型加速趋同但前沿差距不减、Agent 原生成为工具收敛方向、代码生成规模化后验证成新瓶颈、产品构建零门槛但品味稀缺、SaaS 被重新分配、开发者被双向重定义。关键数据：YC W2025 批次 25% 创业公司 95%+ 代码由 AI 生成，Claude Code ARR 达 25 亿美元，Cursor 估值 500 亿美元。</p>
+      <blockquote>国内顶级研究机构对 AI Coding 行业最系统的阶段性总结。核心结论——「稀缺性已从"如何编写"迁移至"如何验证与定义规格"」——直接影响每一位开发者的职业定位。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>9arm-skills + Reasonix：AI 编程 Agent 的"工程最佳实践"生态成形</h3>
+      <p>两件事同步推进：9arm-skills 开源技能库将 Debug、Review、Postmortem、Management Talk 等工程团队隐性知识编码为 AI Agent 可调用的结构化技能；Reasonix 则专门针对 DeepSeek API 打造终端原生编程助手，通过字节稳定缓存实现 94% 缓存命中率和 2.5 倍降本。</p>
+      <blockquote>AI Coding 生态正从"模型拼能力"进入"工程化落地"阶段——光有强模型不够，需要配套的工具链、最佳实践和成本优化方案才能真正嵌入工作流。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Figure AI 120 小时人形机器人直播：人类仅以 0.04 秒/件险胜</h3>
+      <p>估值 390 亿美元的具身智能巨头 Figure AI 发起持续超 120 小时的包裹分拣全网直播。3 台人形机器人 24 小时不间断轮班作业，24 小时内完成超 3 万个包裹。最终人类实习生以 12,924 件险胜（机器人 12,732 件），单件速度差距仅 0.04 秒。</p>
+      <blockquote>这是人形机器人商业化落地的里程碑式公开展示。证明了工业场景下 24/7 不间断高可靠性作业的可行性，且与人类的效率差距已缩小到几乎可忽略。尽管精度问题（偶发包裹掉落）尚待解决，但这已是从实验室走向真实工厂的关键一步。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>华为具身大脑原负责人创业，提出「认知科学驱动的五层世界模型」</h3>
+      <p>前华为具身智能核心人物创立「具脑磐石」，提出基于认知科学的机器人"认知世界模型"，架构分为五层——第五层「主动推理」被认为最接近人类智能本质。已获亿元级融资。同期，蚂蚁灵波与港科大合作的 LingBot-VA 模型被机器人顶会 RSS 2026 接收，在 RoboTwin 2.0 测试中达成 92.0% 成功率，实现机器人"边推演边行动"。</p>
+      <blockquote>具身智能行业正在经历从 VLA（视觉-语言-动作）范式向更深层理论框架的跃迁。华为核心人才出走创业 + 顶会论文突破，标志着这一赛道已进入"拼底层理论创新"而非简单"堆数据训练"的新阶段。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-05-24 ===== -->
+<section class="day-section" id="day-0524">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月24日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>AI 编程成功率从 20% 飙到 100%，关键在「Harness」工程基础设施</h3>
+      <p>Anthropic 与 OpenAI 近期几乎同时发布实验结论：<strong>AI 编程智能体频频失败，瓶颈不在模型本身，而在模型之外的配套工程设施——Harness</strong>。</p>
+      <ul>
+        <li>Anthropic 实测：Claude Opus 4.5「裸跑」9 美元全废，套上 Harness 花 200 美元效果直接起飞</li>
+        <li>无 Harness 时成功率 <strong>20%</strong>，添加后跃升至 <strong>100%</strong></li>
+        <li>DeepSeek 已开始招聘 Harness 工程师</li>
+      </ul>
+      <blockquote>AI 编程从"拼模型能力"转向"拼工程基建"。对日常使用 Claude Code / Cursor 等工具的开发者而言，如何为项目编写高质量的 Harness 文件，可能比选择哪个模型更关键。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 三张底牌曝光：Opus 4.8、Sonnet 4.8、安全专用模型 Mythos 1</h3>
+      <p>开发者通过泄露代码和 Vertex AI 测试环境发现：</p>
+      <ul>
+        <li><strong>Claude Opus 4.8</strong> 和 <strong>Sonnet 4.8</strong>（跳过 4.7 版本）已在测试中</li>
+        <li>安全专用模型 <strong>Mythos 1</strong> 首次现身 Claude 界面</li>
+        <li>51 万行代码证实即将商业化发布</li>
+      </ul>
+      <blockquote>跳版本号 + 安全专用模型双线并行，说明 Anthropic 同时推进"通用能力天花板"与"可控性底线"两条路线。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek 推进 700 亿融资，估值 450 亿美元，V4-Pro API 永久降价 75%</h3>
+      <ul>
+        <li>新一轮融资目标约 <strong>700 亿人民币</strong>，投前估值 <strong>450 亿美元</strong></li>
+        <li>V4-Pro API <strong>永久降价 75%</strong></li>
+        <li>战略方向：重构 AI 硬件生态，降低 AGI 训练成本</li>
+      </ul>
+      <blockquote>API 大幅降价将直接影响 AI coding 工具的调用成本结构，对个人开发者和中小企业是重大利好。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-both">跨领域</span>GPT-5.5 自主运行 150 小时完成蛋白质折叠改进——AI 全自动科研验证可行</h3>
+      <p>Meta 工程师让 <strong>GPT-5.5 在无人类干预下自主运行超过 150 小时</strong>，改造 AlphaFold2 并推出开源项目 SimplexFold。这是首个验证 <strong>AI 全自动科研闭环</strong> 的公开案例。</p>
+      <blockquote>核心意义在于 AI Agent 长时间自主运行并产出可验证成果的能力突破，与具身智能中机器人自主决策、长时间任务执行的逻辑一脉相承。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>具身智能进入量产落地期：国产人形机器人批量下线，成本降至 20 万元以内</h3>
+      <ul>
+        <li>优必选 Walker X、小米 CyberOne、智元启元等国产人形机器人<strong>批量下线</strong></li>
+        <li>整机成本已降至 <strong>20 万元以内</strong></li>
+        <li>杭州全国首部《促进具身智能机器人产业发展条例》5 月 1 日正式施行</li>
+        <li>Figure AI 产能 120 天增长 <strong>24 倍</strong>，预计 2026 年 8 月启动大规模交付</li>
+        <li>1X Technologies 目标 2027 年底年产 <strong>10 万台</strong> NEO，单价 $20,000</li>
+      </ul>
+      <blockquote>政策法规出台 + 成本骤降 + 产能爬坡三重共振，行业正式进入规模化落地阶段。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-05-23 ===== -->
+<section class="day-section" id="day-0523">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月23日（周六）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek 组建「Harness」团队，打造 DeepSeek Code 对标 Claude Code</h3>
+      <p>5月20日，DeepSeek 资深研究员陈德里在社交媒体上确认，公司内部组建全新 Harness 团队，专门开发代码智能体产品「DeepSeek Code」，直接对标 Anthropic 的 Claude Code。</p>
+      <blockquote>中国头部大模型厂商首次明确入局 AI 编程 Agent 赛道。DeepSeek 在中文开发者社区拥有庞大用户基础，其代码模型原本就是强项。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Chrome DevTools MCP 正式发布 — AI 编程智能体获得官方浏览器调试能力</h3>
+      <p>Google Chrome 团队正式发布 <strong>Chrome DevTools MCP Server</strong>，允许 AI 编程智能体通过标准 Model Context Protocol 接口直接控制 Chrome DevTools，包括断点调试、DOM 操作、网络请求监控等。</p>
+      <blockquote>MCP 生态扩展至浏览器调试，意味着 AI 编程智能体可以"看到"代码在浏览器中的实际运行效果，形成完整的开发-调试闭环。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub Copilot 连续第三年获 Gartner 企业级 AI 编码代理领导者</h3>
+      <p>Gartner 发布 2026 Magic Quadrant 报告，GitHub Copilot 连续第三年蝉联"企业级 AI 编码代理"领导者象限。</p>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>上海发布"格物"具身 AI 仿真平台，推进人形机器人国际标准</h3>
+      <p>5月22日，上海发布"格物"具身 AI 仿真平台，旨在为人形机器人提供大规模仿真训练环境，同时推进相关国际标准制定。</p>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>中科沌序完成数千万元种子轮融资，聚焦群体具身智能</h3>
+      <p>中科沌序完成数千万元种子轮融资，专注群体具身智能（多机器人协同）方向。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-05-22 ===== -->
+<section class="day-section" id="day-0522">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月22日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 与 SpaceX 签 450 亿美元算力协议，Q2 营收预计 109 亿</h3>
+      <p>Anthropic 与 SpaceX 签订为期三年的算力合同，月均支出 <strong>12.5 亿美元</strong>，年化 150 亿美元。同时向投资者披露 Q2 营收预计达 <strong>109 亿美元</strong>，增速超过谷歌、Facebook 上市前阶段。马斯克诉讼被驳回后，OpenAI 聘请高盛、摩根士丹利准备 9 月 IPO。</p>
+      <blockquote>AI Coding 基础设施层的资本消耗规模令人震撼——Anthropic 单年算力支出已超许多科技公司的总营收。IPO 窗口正在打开，AI Coding 龙头企业将进入公开市场。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>廉价模型冲击 IPO 叙事：DeepSeek 成本仅为 Claude 的 1/5</h3>
+      <p>Artificial Analysis 对 10 项相同评估的定价对比显示：Claude 成本 <strong>$4811</strong>、GPT <strong>$3357</strong>、DeepSeek 仅 <strong>$1071</strong>。企业正通过"顾问模型"模式绕过前沿默认模型，18 个月内中国模型在 OpenRouter 的使用占比从 1% 升至 60% 以上。但统计显示三家前沿厂商旗舰价格均在上涨。</p>
+      <blockquote>AI Coding 工具的成本结构正在发生根本性变化。开发者不再需要为"最强模型"买单——通过智能路由选择合适价位模型，既省钱又不牺牲太多质量。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>字节跳动开源 3B 统一图像视频模型 Lance</h3>
+      <p>字节跳动开源 <strong>Lance</strong>，单个 Transformer 支持图像/视频理解、生成、编辑 6 项任务，基于 128 块 A100 GPU 从零训练，可在 40GB GPU 上部署，无需为不同任务运行多个专用模型。</p>
+      <blockquote>多模态统一模型的趋势与 AI Coding 的多工具统一方向一致——开发者希望一个模型/工具搞定多种任务，Lance 在视觉领域的实践为 AI Coding 的多模态集成提供了参考。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>谷歌发布开源 Agent Executor：面向大规模智能体的运行时</h3>
+      <p>谷歌发布开源运行时 <strong>Agent Executor</strong>，支持持久执行、安全隔离、会话一致性、连接恢复、轨迹分支。基于 Kubernetes 的 Agent Substrate 层可实现数亿级智能体亚秒级工具调用，定位比 Anthropic Agent SDK、OpenAI Agents 框架低一层。</p>
+      <blockquote>谷歌选择在基础设施层开源，为 AI Coding 的 Agent 生态提供了标准化运行时。当智能体规模从千级扩展到亿级时，这类底层基础设施将成为关键瓶颈。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>OpenAI 模型推翻 1946 年埃尔德什几何猜想</h3>
+      <p>OpenAI 推理模型通过代数数论技术，对平面单位距离界问题给出经过验证的反证，<strong>9 位知名数学家</strong>（包括 Noga Alon、W.T. Gowers）审核并签字确认。同时上海发布"格物"具身 AI 仿真平台，推进人形机器人国际标准。</p>
+      <blockquote>AI 在纯数学领域的突破与具身智能的仿真平台建设同步推进，反映了 AI 能力向"理解物理/数学世界"方向的纵深发展。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-05-21 ===== -->
+<section class="day-section" id="day-0521">
+  <div class="day-header">
+    <h2>📰 每日 AI 动态精选 · 2026年5月21日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能</span><span class="arrow">▼</span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Google 发布 Antigravity 2.0 — 从 AI IDE 到「智能体优先工作平台」</h3>
+      <p>Google I/O 2026 上，Antigravity 2.0 正式亮相，核心定位从"面向开发者的智能体式 IDE"转变为<strong>通用智能体优先工作平台</strong>。</p>
+      <ul>
+        <li><strong>多智能体协同</strong>：同一平台部署多个子智能体，各自处理不同编程任务</li>
+        <li><strong>定时任务调度</strong>（<code>/schedule</code>）：智能体可脱离人工干预自主执行</li>
+        <li><strong>项目解耦</strong>：取消智能体与代码仓库的强绑定，改为按项目灵活配置</li>
+        <li><strong>云端持久化</strong>：Managed Agents 在隔离 Linux 环境运行，关闭后状态完整保留</li>
+        <li><strong>移动端到部署闭环</strong>：手机端整理想法 → 桌面端生成原型 → 一键导出至 Google Play</li>
+        <li><strong>Vibe Coding 进入搜索</strong>：Google 搜索面对复杂问题时，不再返回文字答案，而是实时生成可交互的前端网页</li>
+      </ul>
+      <blockquote>AI 编程工具从"辅助补全"到"智能体驱动开发"的范式跃迁。Vibe Coding 被谷歌用于搜索 UI 更是信号——自然语言驱动界面生成正在进入主流产品。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Pelican-Unified 1.0 — 首个真正统一的具身智能基础模型</h3>
+      <p>arXiv 论文（2605.15153）发布 Pelican-Unified 1.0，首个在<strong>严格统一原则</strong>下训练的具身基础模型。</p>
+      <ul>
+        <li>单个 VLM 作为统一理解模块，一次前向传播中自回归生成任务思维链、动作思维链和未来思维链</li>
+        <li>Unified Future Generator (UFG) 通过双模态输出头联合去噪未来视频和未来动作</li>
+        <li>一个检查点，无需管道胶水代码</li>
+        <li>在 WorldArena 排名 #1（66.03）、RoboTwin 达到 93.5</li>
+      </ul>
+      <blockquote>打破了"感知→规划→动作"分离式专家模型范式。统一化意味着部署复杂度大幅降低，对机器人开发者而言是巨大的工程简化。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>香港中文大学成立全港首个全端具身智能实验室</h3>
+      <p>5月18日，港中大宣布成立"香港具身智能实验室"，全港第一个覆盖<strong>控制算法、操作算法、关节模组、机器人硬件</strong>全端核心技术研发的实验室。</p>
+      <ul>
+        <li>100+人参与（含数十名博士生），与24家业界伙伴合作</li>
+        <li>五大方向：硬件设计、局部移动控制、物理交互智能、多智能体协作、基础模型与学习</li>
+        <li>短期已落地：下水道检测无人机、后楼梯巡逻机器狗</li>
+        <li>五年目标：5-10年内实现人形机器人达到人类的智能和移动能力</li>
+      </ul>
+      <blockquote>具身智能研发从纯学术走向"科研+场景+商业化"闭环。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>2026年具身智能投融资已超2025全年，估值逻辑根本转向</h3>
+      <p>截至5月11日，2026年国内具身智能领域投资总额<strong>已超577亿元</strong>，超越2025年全年，单笔10亿+融资超10起。</p>
+      <ul>
+        <li><strong>70%+资金流向B轮及以后</strong>，头部集聚效应明显</li>
+        <li>估值锚点从"技术故事"转向<strong>客户复购率、连续运行时长</strong></li>
+        <li>白皮书判断：<strong>交付力取代技术力成为估值第一标尺</strong></li>
+        <li>工业制造最接近规模化部署，家庭场景2030年前不具备规模化商业化条件</li>
+      </ul>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Meta 开源 Open Interpreter 2.0 — AI 编程智能体可直接操作本地环境</h3>
+      <p>Meta 发布 Open Interpreter 2.0，AI 编程智能体可直接操作用户的本地操作系统环境，从写代码扩展到执行文件操作、系统管理等任务。</p>
+      <blockquote>AI 编程工具从"代码生成"扩展到"环境操作"，与 Anthropic Computer Use 和 Google Mariner 形成三足鼎立。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <p>本合集由 WorkBuddy 整理 · 数据来源：AI 自动化推送 + 网络搜索补全（2026.5.21 - 2026.5.31）</p>
+  <p style="margin-top: 4px;">5/21 - 5/24、5/28、5/31 由自动化推送产出；5/22、5/26、5/27、5/29、5/30 由网络搜索补全</p>
+</div>
+
+<button class="back-to-top" title="返回顶部">↑</button>
+
+<script>
+function toggleMonth(el) {
+  const dates = el.nextElementSibling;
+  const arrow = el.querySelector('.arrow');
+  dates.classList.toggle('collapsed');
+  arrow.classList.toggle('collapsed');
+}
+
+// Add click handlers to all day headers
+document.querySelectorAll('.day-header').forEach(function(header) {
+  header.addEventListener('click', function() {
+    const section = this.closest('.day-section');
+    const content = section.querySelector('.day-content');
+    const arrow = this.querySelector('.arrow');
+    content.classList.toggle('collapsed');
+    arrow.classList.toggle('collapsed');
+  });
+});
+
+// Back to top button (DOM already parsed, button exists)
+const backBtn = document.querySelector('.back-to-top');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 400) {
+    backBtn.classList.add('visible');
+  } else {
+    backBtn.classList.remove('visible');
+  }
+});
+backBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
