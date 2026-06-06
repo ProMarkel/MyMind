@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code 教程 · 学习指南</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --surface: #fff;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --border: #e8e8ef;
+    --accent: #534AB7;
+    --accent-light: #EEEDFE;
+    --success: #0F6E56;
+    --success-light: #E1F5EE;
+    --warning: #854F0B;
+    --warning-light: #FAEEDA;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+  }
+
+  header {
+    text-align: center;
+    padding: 48px 0 32px;
+  }
+  header h1 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+  }
+  header p {
+    color: var(--text-secondary);
+    font-size: 15px;
+  }
+  .video-source {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .video-source a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+    transition: opacity var(--transition);
+  }
+  .video-source a:hover { opacity: 0.7; }
+
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 100px;
+  }
+  .stat-card .num {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .stat-card .label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .module-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding: 4px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    position: sticky;
+    top: 16px;
+    z-index: 10;
+  }
+  .module-tab {
+    flex: 1 1 auto;
+    min-width: 110px;
+    padding: 10px 14px;
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: all var(--transition);
+    text-align: center;
+    white-space: nowrap;
+  }
+  .module-tab:hover { color: var(--text); background: var(--bg); }
+  .module-tab.active {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .episode-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .episode-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+  .episode-card:hover { border-color: var(--accent); }
+
+  .episode-header {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    cursor: pointer;
+    user-select: none;
+    gap: 12px;
+    transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    flex-shrink: 0;
+    transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-info { flex: 1; min-width: 0; }
+  .episode-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-en {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-duration {
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--bg);
+    padding: 4px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-arrow {
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: transform var(--transition), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+  }
+  .episode-card.open .episode-arrow { transform: rotate(90deg); }
+
+  .episode-card.open .episode-header {
+    background: var(--accent-light);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .episode-card.open .episode-header .episode-num {
+    background: #fff;
+    color: var(--accent);
+  }
+  .episode-card.open .episode-header .episode-title {
+    color: var(--accent);
+  }
+
+  .episode-body {
+    display: none;
+    padding: 0 20px 20px;
+    border-top: 0.5px solid var(--border);
+  }
+  .episode-card.open .episode-body { display: block; }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin: 16px 0 8px;
+  }
+  .section-label:first-child { margin-top: 16px; }
+
+  .points-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .points-list li {
+    padding: 8px 12px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 28px;
+  }
+  .points-list li::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .key-concept {
+    background: var(--surface);
+    border: 0.5px solid var(--accent-light);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .key-concept .kc-tag {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+
+  .exercise-card {
+    background: var(--warning-light);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .exercise-card.q-card { background: var(--accent-light); }
+  .exercise-card .q-text {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .exercise-card .q-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .exercise-card .q-opt {
+    padding: 6px 14px;
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    cursor: pointer;
+    font-size: 13px;
+    transition: all var(--transition);
+  }
+  .exercise-card .q-opt:hover { border-color: var(--accent); }
+  .exercise-card .q-opt.correct { background: var(--success-light); border-color: var(--success); color: var(--success); }
+  .exercise-card .q-opt.wrong { background: #FCEBEB; border-color: #A32D2D; color: #A32D2D; }
+  .exercise-card .q-feedback {
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+  }
+  .exercise-card .q-feedback.show { display: block; }
+  .exercise-card .q-feedback.correct { color: var(--success); }
+  .exercise-card .q-feedback.wrong { color: #A32D2D; }
+
+  .task-item {
+    font-size: 13px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    border-left: 3px solid var(--accent);
+  }
+  .task-item .task-tag {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-bottom: 16px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: #000;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 640px) {
+    .module-tab { font-size: 12px; padding: 8px 10px; }
+    .episode-header { padding: 14px 16px; }
+    .episode-body { padding: 0 16px 16px; }
+  }
+
+  /* Embed mode: hide header, expand container for iframe */
+  .embed header { display: none !important; }
+  .embed .container { max-width: 100% !important; padding-top: 0 !important; }
+  .embed .stats-row { display: none !important; }
+  .embed .module-tabs { margin-top: 0 !important; }
+  html.embed, body.embed { scrollbar-gutter: stable; }
+</style>
+</head>
+<body>
+<script>
+if (window.location.search.includes('embed=1')) {
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('embed');
+    document.documentElement.classList.add('embed');
+  });
+}
+</script>
+<div class="container">
+
+<header>
+  <h1>Claude Code 教程 · 学习指南</h1>
+  <p>吴恩达团队出品 — 10讲系统教程 · 知识点 + 课后练习</p>
+  <div class="video-source">📺 <a href="https://www.bilibili.com/video/BV1RSFUzVEAG/" target="_blank">bilibili.com/video/BV1RSFUzVEAG/</a></div>
+</header>
+
+<div class="stats-row">
+  <div class="stat-card"><div class="num">10</div><div class="label">集课程</div></div>
+  <div class="stat-card"><div class="num">4</div><div class="label">学习模块</div></div>
+  <div class="stat-card"><div class="num">50+</div><div class="label">核心知识点</div></div>
+  <div class="stat-card"><div class="num">30+</div><div class="label">练习题</div></div>
+</div>
+
+<div class="module-tabs" id="moduleTabs"></div>
+<div class="episode-list" id="episodeList"></div>
+
+</div>
+
+<script>
+const modules = [
+  { id: 'intro', name: '入门基础', icon: '🚀', episodes: [0,1,2] },
+  { id: 'core', name: '核心实战', icon: '🛠️', episodes: [3,4,5] },
+  { id: 'advanced', name: '进阶集成', icon: '⚡', episodes: [6,7,8] },
+  { id: 'summary', name: '总结展望', icon: '🎯', episodes: [9] }
+];
+
+const episodes = [
+  {
+    num: '00', title: 'Introduction · 课程介绍', en: 'Introduction to the Claude Code Course', dur: '04:26',
+    points: [
+      '本课程由吴恩达（Andrew Ng）团队制作，系统教授 Claude Code 的完整使用流程',
+      'Claude Code 是 Anthropic 推出的 AI 编程助手，可直接在终端中通过自然语言指挥 AI 完成编码任务',
+      '课程采用"学练结合"模式：每讲都有配套的课件和代码资源，可以直接上手实操',
+      '覆盖从环境配置、代码理解、功能开发到 GitHub 集成、Figma 转代码的完整工作流',
+      '适合有一定编程基础、希望借助 AI 提升开发效率的工程师'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'Claude Code 是由哪家公司开发的？', options: ['OpenAI', 'Anthropic', 'Google', 'Meta'], answer: 1, explain: 'Claude Code 是 Anthropic 公司推出的 AI 编程助手，基于 Claude 大语言模型。' },
+      { type: 'task', tag: '准备练习', text: '在开始学习前，列出你当前开发工作中最耗时/最重复的 3 个环节。学习过程中思考 Claude Code 如何帮你优化这些环节。' }
+    ]
+  },
+  {
+    num: '01', title: '什么是 Claude Code？', en: 'What is Claude Code?', dur: '08:15',
+    points: [
+      'Claude Code 是一款终端原生的 AI 编程工具，直接集成到开发者的命令行工作流中',
+      '核心能力：理解整个代码库 → 按需修改文件 → 执行 shell 命令 → 自动提交代码',
+      '与 IDE 插件的区别：Claude Code 能主动探索项目结构、运行测试、修复错误，而非被动等待指令',
+      '支持多种编程语言和框架，能理解项目上下文并生成符合项目风格的代码',
+      '底层基于 Claude 模型，具备长上下文理解能力，可处理大型代码库',
+      '安全机制：所有操作前会展示变更预览，用户确认后才执行破坏性操作'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'Claude Code 与普通 IDE AI 插件最主要的区别是什么？', options: ['运行速度更快', '能主动探索代码库、运行命令并修复错误，而非仅作代码补全', '支持更多编程语言', '完全免费'], answer: 1, explain: 'Claude Code 的核心差异在于它是一个"代理式（Agentic）"工具：能主动理解项目、执行操作、验证结果，而不是等待用户逐行给出指令。' },
+      { type: 'task', tag: '思考练习', text: '对比你用过或了解过的 AI 编程工具（如 GitHub Copilot、Cursor、通义灵码等），用表格列出各自的核心使用场景和局限。' }
+    ]
+  },
+  {
+    num: '02', title: '环境配置与代码库理解', en: 'Setup and Codebase Understanding', dur: '14:00',
+    points: [
+      '安装 Claude Code 后，通过 claude 命令在终端中启动交互式编程会话',
+      '首次进入项目时，Claude Code 会自动扫描目录结构和关键文件来理解项目',
+      '可以通过自然语言向 Claude 提问关于代码库的问题："这个项目的入口在哪？""认证逻辑是怎么实现的？"',
+      'Claude Code 能理解项目的依赖关系、路由结构、数据库 Schema 等架构要素',
+      '使用 /init 或类似机制可以让 Claude 更系统地建立对项目的认知',
+      '善用上下文：可以@引用特定文件，让 Claude 针对具体代码给出分析和建议'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'Claude Code 进入新项目时的首要步骤是什么？', options: ['立即开始写代码', '扫描项目目录结构、读取关键文件以建立代码库认知', '安装所有依赖', '删除旧代码'], answer: 1, explain: 'Claude Code 会先扫描项目的文件结构、配置文件和关键源码，建立起对项目架构、技术栈和代码风格的全局理解。' },
+      { type: 'task', tag: '动手实践', text: '如果你已安装 Claude Code，在终端中对当前项目目录执行 claude 命令，然后向它提问 5 个关于项目结构的问题（如："列出所有 API 路由"、"解释数据库表之间的关系"）。如果不便安装，可以在你有权限的项目中尝试。' }
+    ]
+  },
+  {
+    num: '03', title: '添加功能', en: 'Adding Features', dur: '17:37',
+    points: [
+      '通过自然语言描述需求，Claude Code 即可自动生成代码、创建文件和编写测试',
+      '典型工作流：描述需求 → Claude 分析现有代码 → 提出实现方案 → 确认后自动编码',
+      'Claude 会遵循项目现有的代码风格和架构约定，而不是生成"外来"风格的代码',
+      '可以在实现过程中实时提出调整："把这个函数改成异步的""加上错误处理"',
+      'Claude Code 支持增量开发：先实现核心逻辑，再逐层添加边缘情况和优化',
+      '关键技巧：需求描述越具体（包含输入输出示例、边界条件），生成结果越精准'
+    ],
+    exercises: [
+      { type: 'quiz', q: '使用 Claude Code 添加功能时，如何获得最精准的生成结果？', options: ['使用尽量简短的描述', '提供具体的需求描述，包括输入输出示例和边界条件', '先写一半代码再让 Claude 补全', '不使用中文描述'], answer: 1, explain: 'Claude 对上下文理解能力强，需求描述越具体（输入输出格式、边界条件、期望行为），生成代码越贴近预期。' },
+      { type: 'task', tag: '编码实践', text: '在你熟悉的项目中，选择一个还未实现的小功能（如"添加用户收藏文章的 API"），模仿课程中的工作流，写出你给 Claude Code 的完整需求描述 Prompt（不需要真正运行）。包含：功能描述、输入参数、期望输出、错误处理要求。' }
+    ]
+  },
+  {
+    num: '04', title: '测试、错误调试与代码重构', en: 'Testing, Debugging & Refactoring', dur: '12:30',
+    points: [
+      'Claude Code 可以自动生成单元测试：描述测试场景 → Claude 分析代码 → 生成测试用例',
+      '遇到 Bug 时，将错误信息（stack trace、日志）告诉 Claude，它可以自行定位问题并修复',
+      'Claude 会运行测试验证修复是否有效，形成"改代码 → 跑测试 → 再修复"的自动化闭环',
+      '重构时可以通过自然语言描述目标："把这个类拆成两个""用 async/await 替换 Promise 链"',
+      'Claude 理解重构的安全性：不会改变外部接口行为，只优化内部实现',
+      '支持大规模重构：批量重命名、提取公共逻辑、统一错误处理模式'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'Claude Code 调试 Bug 的典型流程是什么？', options: ['直接猜测修复', '用户提供错误信息 → Claude 分析定位 → 修改代码 → 运行测试验证', '忽略错误', '重新生成整个项目'], answer: 1, explain: 'Claude Code 的调试是闭环的：它接收错误信息（如 stack trace），定位问题代码，修改后自动运行测试验证修复是否成功。' },
+      { type: 'task', tag: '动手实践', text: '找一个你项目中有重复代码的文件，写一段提示词让 Claude Code 帮你重构（提取公共函数、消除重复逻辑）。将原始代码和期望的重构结果都记录下来，对比实际效果。' }
+    ]
+  },
+  {
+    num: '05', title: '同时添加多个功能', en: 'Adding Multiple Features Simultaneously', dur: '11:52',
+    points: [
+      'Claude Code 可以并行处理多个有依赖关系的功能需求',
+      '复杂需求的分解技巧：将一个大的功能请求拆成若干子任务，让 Claude 逐个或并行实现',
+      '管理更改范围：用自然语言明确指定"只修改 service 层，不动 controller"来控制影响范围',
+      'Claude 会分析多个功能之间的冲突：如果两个修改涉及同一文件，它会确保兼容性',
+      '分阶段交付：先实现基础版 → 验证通过 → 再叠加高级特性',
+      '当需求明确且有清晰边界时，可以一次性给出完整需求让 Claude 全盘实现'
+    ],
+    exercises: [
+      { type: 'quiz', q: '让 Claude Code 同时处理多个功能时，最重要的策略是什么？', options: ['一次性抛出所有需求', '将功能分解为有清晰边界的子任务，指定各任务的影响范围', '让 Claude 自行决定优先级', '只做最简单的功能'], answer: 1, explain: '分解任务并明确边界是关键。这避免了模块间不必要的耦合，也让每次变更的测试范围更可控。' },
+      { type: 'task', tag: '实战练习', text: '设计一个"电商系统"的 3 个关联功能（如：添加商品评价、显示平均评分、按评分筛选商品）。写出每个功能的 Prompt，并注明它们的依赖关系和理想实现顺序。' }
+    ]
+  },
+  {
+    num: '06', title: 'GitHub 集成与 Hooks 探索', en: 'GitHub Integration & Exploring Hooks', dur: '10:58',
+    points: [
+      'Claude Code 与 Git/GitHub 深度集成，可以在编码过程中自动完成版本控制操作',
+      '自动生成 commit message：Claude 分析代码变更内容，生成符合 conventional commits 规范的提交信息',
+      '支持创建 Pull Request：生成 PR 标题和描述，清晰说明变更内容',
+      'Hooks 机制：可以在关键节点（提交前、推送前）自动触发自定义操作',
+      '常见的 Hook 场景：代码风格检查（linter）、单元测试、构建验证',
+      '通过 Hooks 可以将 Claude Code 集成到团队现有的 CI/CD 流水线中'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'Claude Code 的 Hooks 机制主要在什么时机触发？', options: ['每次输入自然语言时', '关键节点，如代码提交前、推送前', '每天定时触发', '只在程序崩溃时'], answer: 1, explain: 'Hooks 在开发流程的关键节点触发：提交代码前（pre-commit）、推送到远程前（pre-push）等，可以自动执行代码检查或测试验证。' },
+      { type: 'task', tag: '动手实践', text: '为你的项目配置一个 pre-commit hook（用 husky 或 git hooks）：在每次 commit 前自动运行代码格式化和 lint 检查。如果不便实操，写出 hook 脚本的伪代码，说明每一步的目的。' }
+    ]
+  },
+  {
+    num: '07', title: '重构 Jupyter 笔记本并创建仪表盘', en: 'Refactoring Jupyter Notebooks & Creating Dashboards', dur: '12:45',
+    points: [
+      'Claude Code 可以分析和重构 Jupyter Notebook（.ipynb 文件）中的代码',
+      '将 Notebook 中的探索性代码重构为结构化的 Python 模块，提高可维护性',
+      '从 Notebook 的数据分析结果中提取关键指标，自动生成数据可视化仪表盘',
+      '仪表盘开发流程：确定展示指标 → 选择图表类型 → 生成 HTML/CSS/JS 前端代码',
+      'Claude 会建议数据可视化的最佳实践：如何选择合适的图表类型、如何布局',
+      '支持交互式仪表盘：筛选器、时间范围选择、数据下钻等功能'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'Claude Code 处理 Jupyter Notebook 的主要价值是什么？', options: ['直接运行 Notebook', '将探索性代码重构为结构化模块，提取分析结果生成可视化仪表盘', '删除 Notebook', '将 Notebook 转为图片'], answer: 1, explain: 'Jupyter Notebook 的代码通常是探索式的，Claude Code 可以将其重构为可维护的模块化代码，并将分析结果转化为仪表盘。' },
+      { type: 'task', tag: '动手实践', text: '如果你有数据分析经验，拿一个旧的 Jupyter Notebook（或假想一个销售数据分析场景），列出你想在仪表盘中展示的 5 个核心指标，并为每个指标选择最合适的图表类型（柱状图、折线图、饼图、热力图等），说明为什么。' }
+    ]
+  },
+  {
+    num: '08', title: '基于 Figma 原型创建 Web 应用', en: 'Creating Web Apps from Figma Prototypes', dur: '09:53',
+    points: [
+      'Claude Code 可以从 Figma 设计稿直接生成前端代码，大幅缩短"设计 → 开发"周期',
+      '将 Figma 链接或截图提供给 Claude，它能够识别布局结构、颜色、字体、组件层次',
+      'Claude 会将设计稿分解为可复用的 UI 组件（Header、Card、Button 等）',
+      '生成的代码会考虑到响应式设计，适配不同屏幕尺寸',
+      '可以指定输出框架：React、Vue、Next.js 或纯 HTML/CSS',
+      '设计稿中的交互状态（hover、active、loading）也会被准确还原'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'Claude Code 从 Figma 生成代码时，如何处理组件复用？', options: ['每个页面都重新写', '将设计稿分解为独立的可复用组件（Button、Card 等），按层次生成代码', '不做组件拆分', '只生成 HTML'], answer: 1, explain: 'Claude Code 会识别设计稿中的重复模式，将 UI 元素拆分为独立的可复用组件，提高代码的可维护性。' },
+      { type: 'task', tag: '实战练习', text: '在 Figma 社区找一个免费的 Web 页面设计稿（或画一个简单的着陆页线框：Header + Hero + 3 Feature Cards + Footer）。用自然语言描述给 Claude Code，让它生成前端代码。对比生成结果和原始设计的差异。' }
+    ]
+  },
+  {
+    num: '09', title: 'Conclusion · 课程总结', en: 'Conclusion & Looking Ahead', dur: '00:37',
+    points: [
+      '回顾 10 讲的核心学习路径：理解 → 配置 → 开发 → 测试 → 集成 → 交付',
+      'Claude Code 代表的趋势：AI 从"代码补全工具"进化为"自主编程 Agent"',
+      '掌握 AI 编程工具的关键不是记住命令，而是培养"自然语言驱动开发"的思维方式',
+      '持续学习：Claude Code 和同类工具仍在快速迭代，保持对新功能的关注',
+      '建议下一步：在真实项目中尝试 Claude Code，从简单任务开始逐步建立信任'
+    ],
+    exercises: [
+      { type: 'quiz', q: '学习完本课程后，最推荐的下一步是什么？', options: ['不再使用 AI 工具', '在真实项目中从小任务开始实践 Claude Code，逐步建立使用经验', '立即在核心业务中使用', '等待更完善的版本'], answer: 1, explain: '最好的学习方式是在真实项目中实践。从非关键的简单任务开始（如写测试、生成文档），逐步扩展到复杂功能的开发。' },
+      { type: 'task', tag: '综合实践', text: '为你的学习之旅做一次回顾：① 写出 3 个你想在接下来的项目中用 Claude Code 尝试的具体任务；② 制定一个"AI 辅助开发"的个人工作流（何时用 AI、何时自己写）；③ 设定一个月后的回顾节点，评估效率提升。' }
+    ]
+  }
+];
+
+let currentModule = 0;
+
+function renderTabs() {
+  const tabs = document.getElementById('moduleTabs');
+  tabs.innerHTML = modules.map((m, i) =>
+    `<button class="module-tab${i === currentModule ? ' active' : ''}" onclick="switchModule(${i})">${m.icon} ${m.name}</button>`
+  ).join('');
+}
+
+function switchModule(i) {
+  currentModule = i;
+  renderTabs();
+  renderEpisodes();
+}
+
+function renderEpisodes() {
+  const list = document.getElementById('episodeList');
+  const mod = modules[currentModule];
+  list.innerHTML = mod.episodes.map(idx => {
+    const ep = episodes[idx];
+    const pointItems = ep.points.map(p => `<li>${p}</li>`).join('');
+    const exerciseItems = ep.exercises.map((ex, ei) => {
+      if (ex.type === 'quiz') {
+        return `<div class="exercise-card q-card">
+          <div class="q-text">❓ ${ex.q}</div>
+          <div class="q-options">${ex.options.map((opt, oi) =>
+            `<span class="q-opt" onclick="checkAnswer(this, 'ep${idx}_q${ei}', ${oi}, ${ex.answer})">${String.fromCharCode(65+oi)}. ${opt}</span>`
+          ).join('')}</div>
+          <div class="q-feedback" id="ep${idx}_q${ei}_fb">${ex.explain}</div>
+        </div>`;
+      } else {
+        return `<div class="task-item">
+          <div class="task-tag">📋 ${ex.tag}</div>
+          <div>${ex.text}</div>
+        </div>`;
+      }
+    }).join('');
+
+    return `<div class="episode-card" id="ep${idx}">
+      <div class="episode-header" onclick="toggleEpisode(${idx})">
+        <div class="episode-num">#${ep.num}</div>
+        <div class="episode-info">
+          <div class="episode-title">${ep.title}</div>
+          <div class="episode-en">${ep.en}</div>
+        </div>
+        <div class="episode-duration">${ep.dur}</div>
+        <div class="episode-arrow">▶</div>
+      </div>
+      <div class="episode-body">
+        <div class="video-wrapper">
+          <iframe src="https://player.bilibili.com/player.html?bvid=BV1RSFUzVEAG&page=${idx + 1}" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+        </div>
+        <div class="section-label">核心知识点</div>
+        <ul class="points-list">${pointItems}</ul>
+        <div class="section-label">课后练习</div>
+        ${exerciseItems}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleEpisode(idx) {
+  const card = document.getElementById('ep' + idx);
+  card.classList.toggle('open');
+}
+
+function checkAnswer(el, feedbackId, chosen, correct) {
+  const fb = document.getElementById(feedbackId + '_fb');
+  const allOpts = el.parentElement.querySelectorAll('.q-opt');
+  allOpts.forEach(o => { o.classList.remove('correct', 'wrong'); o.style.pointerEvents = 'none'; });
+
+  if (chosen === correct) {
+    el.classList.add('correct');
+    fb.className = 'q-feedback correct show';
+  } else {
+    el.classList.add('wrong');
+    allOpts[correct].classList.add('correct');
+    fb.className = 'q-feedback wrong show';
+  }
+}
+
+renderTabs();
+renderEpisodes();
+</script>
+</body>
+</html>

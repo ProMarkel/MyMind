@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>计算机科学速成班 · 学习指南</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --surface: #fff;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --border: #e8e8ef;
+    --accent: #534AB7;
+    --accent-light: #EEEDFE;
+    --success: #0F6E56;
+    --success-light: #E1F5EE;
+    --warning: #854F0B;
+    --warning-light: #FAEEDA;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+  }
+
+  header {
+    text-align: center;
+    padding: 48px 0 32px;
+  }
+  header h1 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+  }
+  header p {
+    color: var(--text-secondary);
+    font-size: 15px;
+  }
+  .video-source {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .video-source a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+    transition: opacity var(--transition);
+  }
+  .video-source a:hover { opacity: 0.7; }
+
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 100px;
+  }
+  .stat-card .num {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .stat-card .label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .module-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding: 4px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    position: sticky;
+    top: 16px;
+    z-index: 10;
+  }
+  .module-tab {
+    flex: 1 1 auto;
+    min-width: 120px;
+    padding: 10px 14px;
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: all var(--transition);
+    text-align: center;
+    white-space: nowrap;
+  }
+  .module-tab:hover { color: var(--text); background: var(--bg); }
+  .module-tab.active {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .episode-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .episode-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+  .episode-card:hover { border-color: var(--accent); }
+
+  .episode-header {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    cursor: pointer;
+    user-select: none;
+    gap: 12px;
+    transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    flex-shrink: 0;
+    transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-info { flex: 1; min-width: 0; }
+  .episode-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-en {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-duration {
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--bg);
+    padding: 4px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .episode-arrow {
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: transform var(--transition), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+  }
+  .episode-card.open .episode-arrow { transform: rotate(90deg); }
+
+  .episode-card.open .episode-header {
+    background: var(--accent-light);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .episode-card.open .episode-header .episode-num {
+    background: #fff;
+    color: var(--accent);
+  }
+  .episode-card.open .episode-header .episode-title {
+    color: var(--accent);
+  }
+
+  .episode-body {
+    display: none;
+    padding: 0 20px 20px;
+    border-top: 0.5px solid var(--border);
+  }
+  .episode-card.open .episode-body { display: block; }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin: 16px 0 8px;
+  }
+  .section-label:first-child { margin-top: 16px; }
+
+  .points-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .points-list li {
+    padding: 8px 12px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 28px;
+  }
+  .points-list li::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .exercise-card {
+    background: var(--warning-light);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .exercise-card.q-card { background: var(--accent-light); }
+  .exercise-card .q-text {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .exercise-card .q-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .exercise-card .q-opt {
+    padding: 6px 14px;
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    cursor: pointer;
+    font-size: 13px;
+    transition: all var(--transition);
+  }
+  .exercise-card .q-opt:hover { border-color: var(--accent); }
+  .exercise-card .q-opt.correct { background: var(--success-light); border-color: var(--success); color: var(--success); }
+  .exercise-card .q-opt.wrong { background: #FCEBEB; border-color: #A32D2D; color: #A32D2D; }
+  .exercise-card .q-feedback {
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+  }
+  .exercise-card .q-feedback.show { display: block; }
+  .exercise-card .q-feedback.correct { color: var(--success); }
+  .exercise-card .q-feedback.wrong { color: #A32D2D; }
+
+  .task-item {
+    font-size: 13px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    border-left: 3px solid var(--accent);
+  }
+  .task-item .task-tag {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-bottom: 16px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: #000;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 640px) {
+    .module-tab { font-size: 12px; padding: 8px 10px; }
+    .episode-header { padding: 14px 16px; }
+    .episode-body { padding: 0 16px 16px; }
+  }
+
+  /* Embed mode: hide header, expand container for iframe display */
+  .embed header { display: none !important; }
+  .embed .container { max-width: 100% !important; padding-top: 0 !important; }
+  .embed .stats-row { display: none !important; }
+  .embed .module-tabs { margin-top: 0 !important; }
+  html.embed, body.embed { scrollbar-gutter: stable; }
+</style>
+</head>
+<body>
+<script>
+if (window.location.search.includes('embed=1')) {
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('embed');
+    document.documentElement.classList.add('embed');
+  });
+}
+</script>
+<div class="container">
+
+<header>
+  <h1>计算机科学速成班 · 学习指南</h1>
+  <p>Crash Course Computer Science — 全41集知识点 + 课后练习</p>
+  <div class="video-source">📺 <a href="https://www.bilibili.com/video/BV1JZ4y1i7az/" target="_blank">bilibili.com/video/BV1JZ4y1i7az/</a></div>
+</header>
+
+<div class="stats-row">
+  <div class="stat-card"><div class="num">41</div><div class="label">集课程</div></div>
+  <div class="stat-card"><div class="num">6</div><div class="label">学习模块</div></div>
+  <div class="stat-card"><div class="num">120+</div><div class="label">核心知识点</div></div>
+  <div class="stat-card"><div class="num">80+</div><div class="label">练习题</div></div>
+</div>
+
+<div class="module-tabs" id="moduleTabs"></div>
+<div class="episode-list" id="episodeList"></div>
+
+</div>
+
+<script>
+const modules = [
+  { id: 'basics', name: '计算机基础', icon: '💾', episodes: [0,1,2,3,4,5,6,7,8,9] },
+  { id: 'programming', name: '编程与软件', icon: '💻', episodes: [10,11,12,13,14,15] },
+  { id: 'hardware', name: '硬件与操作系统', icon: '⚙️', episodes: [16,17,18,19,20] },
+  { id: 'hci', name: '人机交互与图形', icon: '🖥️', episodes: [21,22,23,24,25,26] },
+  { id: 'network', name: '网络与安全', icon: '🌐', episodes: [27,28,29,30,31,32] },
+  { id: 'ai', name: 'AI 与未来', icon: '🤖', episodes: [33,34,35,36,37,38,39,40] }
+];
+
+const episodes = [
+  {
+    num: '00', title: '计算机速成班介绍', en: 'Introduction to Crash Course Computer Science', dur: '2:45',
+    points: [
+      '计算机科学不等同于编程，它研究的是"计算"的本质和原理',
+      '本课程从底层硬件到上层 AI，逐层揭开计算机的每个抽象层',
+      '理解计算机不仅能写出更好的代码，更能理解数字世界如何运作'
+    ],
+    exercises: [
+      { type: 'quiz', q: '计算机科学主要研究什么？', options: ['编程语言语法', '计算的本质和原理', '软件开发框架', '操作系统安装'], answer: 1, explain: '计算机科学的核心是研究"计算"的本质，编程只是其中的一个实践环节。' },
+      { type: 'task', tag: '思考练习', text: '列举你日常生活中 5 个用到计算机的场景，思考它们分别涉及了计算机科学的哪些子领域。' }
+    ]
+  },
+  {
+    num: '01', title: '早期的计算', en: 'Early Computing', dur: '11:34',
+    points: [
+      '算盘是最早的计算工具之一，可追溯到公元前 3000 年',
+      '帕斯卡在 1642 年发明了机械加法器（Pascaline）',
+      '巴贝奇的分析机是通用可编程计算机的雏形，包含 ALU、控制、存储结构',
+      '艾达·洛夫莱斯编写了世界上第一个算法，被誉为第一位程序员',
+      '霍列瑞斯制表机用于 1890 年美国人口普查，后来演变为 IBM'
+    ],
+    exercises: [
+      { type: 'quiz', q: '谁设计了分析机（Analytical Engine），被认为是现代计算机的雏形？', options: ['布莱兹·帕斯卡', '查尔斯·巴贝奇', '艾伦·图灵', '约翰·冯·诺依曼'], answer: 1, explain: '查尔斯·巴贝奇设计了分析机，它包含了算术逻辑单元、控制流和内存，与现代计算机结构非常相似。' },
+      { type: 'quiz', q: '谁被称为"第一位程序员"？', options: ['格蕾丝·霍普', '艾达·洛夫莱斯', '玛格丽特·汉密尔顿', '赫迪·拉玛'], answer: 1, explain: '艾达·洛夫莱斯为巴贝奇的分析机编写了伯努利数的计算步骤，这被认为是世界上第一个算法。' },
+      { type: 'task', tag: '动手实践', text: '搜索并了解算盘（abacus）的加法运算方式，尝试用纸和笔模拟算盘计算 37 + 58。' }
+    ]
+  },
+  {
+    num: '02', title: '电子计算', en: 'Electronic Computing', dur: '11:09',
+    points: [
+      '继电器（relay）和真空管（vacuum tube）是早期的电子开关元件',
+      'ENIAC 是世界上第一台通用电子计算机，1945 年完成',
+      '真空管容易烧坏，使用大量真空管的计算机需要频繁维护',
+      '晶体管在 1947 年被发明，彻底改变了计算：更小、更快、更可靠',
+      '冯·诺依曼架构将程序和数据存储在同一内存中，是现代计算机的基础'
+    ],
+    exercises: [
+      { type: 'quiz', q: '1947 年发明的什么元件取代了真空管，使计算机更小更可靠？', options: ['继电器', '集成电路', '晶体管', '二极管'], answer: 2, explain: '晶体管（Transistor）于 1947 年在贝尔实验室被发明，它比真空管更小、更快、更省电且更可靠。' },
+      { type: 'task', tag: '思考练习', text: '冯·诺依曼架构的核心思想是"程序和数据存于同一内存"。请用自己的话解释为什么这个设计如此重要，并对比它之前的计算机设计方式。' }
+    ]
+  },
+  {
+    num: '03', title: '布尔逻辑和逻辑门', en: 'Boolean Logic & Logic Gates', dur: '11:14',
+    points: [
+      '布尔逻辑只有两个值：TRUE（1）和 FALSE（0）',
+      '三个基本逻辑运算：NOT（非）、AND（与）、OR（或）',
+      'NAND 门和 NOR 门被称为"通用门"，可以组合出任何逻辑电路',
+      '异或（XOR）门在加法器中有重要应用',
+      '逻辑门是真值表的物理实现，所有计算最终都由逻辑门完成'
+    ],
+    exercises: [
+      { type: 'quiz', q: '以下哪个逻辑门被称为"通用门"（Universal Gate），可以组合出所有其他逻辑运算？', options: ['AND', 'OR', 'NOT', 'NAND'], answer: 3, explain: 'NAND 门和 NOR 门都是通用门，仅用 NAND 门就可以构造出 NOT、AND、OR 等所有基本逻辑运算。' },
+      { type: 'task', tag: '动手实践', text: '画出以下真值表对应的逻辑电路：输入 A 和 B，输出为 (A AND B) OR (NOT A AND NOT B)。（提示：这实际上就是 XNOR 门）' }
+    ]
+  },
+  {
+    num: '04', title: '用二进制表示数字和字母', en: 'Representing Numbers & Letters with Binary', dur: '10:42',
+    points: [
+      '二进制只有 0 和 1，非常适合电子开关的两种状态',
+      '每个二进制位（bit）代表 2 的幂次，8 位 = 1 字节',
+      'ASCII 用 7 位表示英文字符，共 128 个；Unicode 扩展到支持所有语言',
+      '浮点数使用 IEEE 754 标准表示，包含符号位、指数位和尾数位',
+      '整数溢出是一个重要的安全问题，发生在计算结果超出可表示的位数范围时'
+    ],
+    exercises: [
+      { type: 'quiz', q: '一个 8 位无符号整数可以表示的最大值是？', options: ['128', '255', '256', '512'], answer: 1, explain: '8 位二进制最大值为 2^8 - 1 = 255，范围是 0~255。' },
+      { type: 'task', tag: '编码实践', text: '将你的英文名每个字母转成 ASCII 二进制码。例如 "A" = 01000001。总共占用了多少字节？' }
+    ]
+  },
+  {
+    num: '05', title: '计算机如何计算 - ALU', en: 'How Computers Calculate - the ALU', dur: '11:22',
+    points: [
+      'ALU（算术逻辑单元）是 CPU 的计算核心，执行算术和逻辑运算',
+      '半加器（Half Adder）处理两个 1 位的加法，产生和（SUM）与进位（CARRY）',
+      '全加器（Full Adder）还能处理来自上一位的进位输入',
+      '将多个全加器级联可以构建多位加法器',
+      '通过补码，ALU 可以用加法器实现减法运算',
+      'ALU 中的标志位（Flags）：零标志、溢出标志、负标志等'
+    ],
+    exercises: [
+      { type: 'quiz', q: '在 ALU 中，如何用加法器实现减法？', options: ['使用额外的减法电路', '通过补码（Two\'s Complement）将减法转换为加法', '使用移位操作', '直接减去对应位'], answer: 1, explain: '通过取反加一（补码），减法 A - B 被转换为 A + (-B)，加法器可以直接处理。' },
+      { type: 'task', tag: '动手实践', text: '用 NAND 门在纸上设计一个半加器（Half Adder）。输入 A、B，输出 SUM 和 CARRY。画出完整的逻辑电路图。' }
+    ]
+  },
+  {
+    num: '06', title: '寄存器和内存', en: 'Registers and RAM', dur: '9:54',
+    points: [
+      '锁存器（Latch）是存储 1 位数据的基本电路，使用反馈保持状态',
+      '门控锁存器（Gated Latch）通过使能信号控制何时可以写入',
+      '寄存器由多个锁存器组成，通常为 8/16/32/64 位宽',
+      'RAM（随机存取存储器）由大量的存储单元组成矩阵结构',
+      '每个存储单元有唯一的地址，通过行列选择线访问',
+      'SRAM 使用锁存器（快但贵），DRAM 使用电容（慢但便宜，需要刷新）'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'SRAM 和 DRAM 的主要区别是什么？', options: ['SRAM 更快更便宜', 'DRAM 使用电容需要刷新，SRAM 使用锁存器更快但更贵', '两者完全相同', 'DRAM 用于 CPU 内部缓存'], answer: 1, explain: 'DRAM 每个单元只需要一个晶体管+电容，更便宜但需要周期性刷新，比 SRAM 慢。SRAM 用于 CPU 缓存。' },
+      { type: 'task', tag: '思考练习', text: '如果一台计算机有 16 位地址总线，最多可以寻址多少字节的内存？请写出计算过程。' }
+    ]
+  },
+  {
+    num: '07', title: '中央处理器 (CPU)', en: 'The Central Processing Unit', dur: '12:26',
+    points: [
+      'CPU 的核心三大件：控制单元（CU）、算术逻辑单元（ALU）、寄存器',
+      '指令周期 = 取指（Fetch）→ 解码（Decode）→ 执行（Execute）',
+      '程序计数器（PC）指向下一条要执行的指令地址',
+      '指令寄存器（IR）存储当前正在执行的指令',
+      '时钟频率决定了 CPU 每秒能执行的周期数，用 Hz 衡量',
+      '微架构（如 x86、ARM）是 CPU 内部的硬件设计，与指令集架构（ISA）不同'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'CPU 指令周期的正确顺序是？', options: ['执行 → 解码 → 取指', '取指 → 解码 → 执行', '解码 → 取指 → 执行', '取指 → 执行 → 解码'], answer: 1, explain: 'CPU 的基本循环是 Fetch（取指令）→ Decode（解码）→ Execute（执行），周而复始。' },
+      { type: 'task', tag: '动手实践', text: '下载一个 CPU 模拟器（如 Little Man Computer），尝试编写一个将两个数相加的小程序，观察指令周期如何运行。' }
+    ]
+  },
+  {
+    num: '08', title: '指令和程序', en: 'Instructions & Programs', dur: '12:23',
+    points: [
+      '一条机器指令由操作码（Opcode）和操作数（Operand）组成',
+      '常见指令：LOAD（加载）、STORE（存储）、ADD（加）、JUMP（跳转）',
+      '条件跳转（JUMP IF）让程序可以做出分支决策',
+      '汇编语言是机器指令的人类可读形式，每条汇编对应一条机器指令',
+      '高级语言（如 C、Python）需要通过编译器或解释器转换为机器指令',
+      '图灵完备性：一种语言如果能模拟图灵机，就是图灵完备的'
+    ],
+    exercises: [
+      { type: 'quiz', q: '汇编语言和机器语言的关系是？', options: ['汇编语言不需要翻译', '汇编语言是机器语言的人类可读形式，通常一一对应', '汇编语言比机器语言更底层', '它们是完全不同的体系'], answer: 1, explain: '汇编语言中每条助记符（如 MOV、ADD）对应一条二进制机器指令，通过汇编器（Assembler）转换。' },
+      { type: 'task', tag: '编码实践', text: '用你熟悉的任意语言，写一个判断奇偶数的函数。思考编译后这个函数大致对应哪些机器指令。' }
+    ]
+  },
+  {
+    num: '09', title: '先进的 CPU 设计', en: 'Advanced CPU Designs', dur: '12:26',
+    points: [
+      '现代 CPU 使用流水线（Pipeline）技术，同时处理多条指令的不同阶段',
+      '超标量（Superscalar）处理器可以在同一时钟周期内执行多条指令',
+      '分支预测（Branch Prediction）猜测条件跳转的结果，减少流水线停顿',
+      '多核处理器在同一芯片上集成多个处理核心',
+      '缓存（Cache）层次结构：L1（最快最小）→ L2 → L3 → RAM',
+      'CPU 通过乱序执行（Out-of-Order Execution）优化指令调度'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'CPU 流水线的主要优势是什么？', options: ['降低功耗', '提高吞吐量，同时处理多条指令的不同阶段', '减少指令数量', '增加缓存容量'], answer: 1, explain: '流水线让 CPU 可以在一个时钟周期内同时进行取指、解码、执行等不同指令的不同阶段，提高整体吞吐量。' },
+      { type: 'task', tag: '思考练习', text: '搜索并了解你当前使用的 CPU 型号。它的核心数、线程数、缓存大小和主频是多少？这些参数分别影响什么性能？' }
+    ]
+  },
+  {
+    num: '10', title: '早期编程', en: 'Early Programming', dur: '12:02',
+    points: [
+      '早期计算机编程通过物理插线（plugboard）和穿孔卡片（punched card）完成',
+      '冯·诺依曼架构使"存储程序"成为可能，程序可以作为数据存入内存',
+      '面板编程（Panel Programming）通过拨动开关逐位输入机器码',
+      'ENIAC 的编程需要重新接线，耗时数周',
+      'EDSAC 是第一台实现冯·诺依曼架构的实用计算机',
+      '编程从物理操作向软件抽象演进的趋势自此开始'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'ENIAC 编程的主要方式是什么？', options: ['编写代码到磁盘', '重新插拔电缆和设置开关', '使用键盘输入', '语音指令'], answer: 1, explain: 'ENIAC 没有存储程序的能力，每次换程序都需要物理重新接线，通常需要数周时间。' },
+      { type: 'task', tag: '思考练习', text: '对比早期的穿孔卡片编程和今天的 IDE 编程。列出至少 5 个维度的进步（如调试方式、错误提示、代码复用等）。' }
+    ]
+  },
+  {
+    num: '11', title: '第一种编程语言', en: 'The First Programming Languages', dur: '11:41',
+    points: [
+      '汇编器（Assembler）是最早的自动化编程工具，将助记符转为机器码',
+      '格蕾丝·霍普（Grace Hopper）发明了第一个编译器 A-0 System',
+      'FORTRAN（1957）是第一个广泛使用的高级编程语言，用于科学计算',
+      'COBOL 面向商业数据处理，由格蕾丝·霍普参与设计',
+      'LISP 是最早的函数式编程语言，由约翰·麦卡锡于 1958 年发明',
+      '高级语言的出现让程序员不再需要关心具体的硬件细节'
+    ],
+    exercises: [
+      { type: 'quiz', q: '第一个广泛使用的高级编程语言是？', options: ['COBOL', 'FORTRAN', 'C', 'LISP'], answer: 1, explain: 'FORTRAN（FORmula TRANslation）于 1957 年由 IBM 发布，是第一个被广泛采用的高级编程语言，主要用于科学和工程计算。' },
+      { type: 'task', tag: '探索实践', text: '搜索格蕾丝·霍普（Grace Hopper）的故事。她发明了编译器，还普及了"bug"这个词。写一个简短的人物介绍。' }
+    ]
+  },
+  {
+    num: '12', title: '编程基础：语句和函数', en: 'Programming Basics: Statements & Functions', dur: '11:59',
+    points: [
+      '语句（Statement）是程序的基本执行单元，如赋值、条件判断、循环',
+      '变量是命名的存储位置，类型决定了能存储的数据种类',
+      'if-else 实现条件分支，while/for 实现循环',
+      '函数（Function）封装可复用的代码块，接收参数并返回结果',
+      '库（Library）是预写好的函数集合，避免重复造轮子',
+      '模块化编程提高代码的可维护性和可测试性'
+    ],
+    exercises: [
+      { type: 'quiz', q: '以下哪个不是编程中的基本控制结构？', options: ['顺序执行', '条件分支（if-else）', '循环（while/for）', '机器学习模型'], answer: 3, explain: '三种基本控制结构是：顺序执行、条件分支（选择）、循环（迭代）。机器学习模型是更高层的应用。' },
+      { type: 'task', tag: '编码实践', text: '写一个函数 fizzbuzz(n)：从 1 到 n，是 3 的倍数输出 "Fizz"，是 5 的倍数输出 "Buzz"，同时是 3 和 5 的倍数输出 "FizzBuzz"，否则输出数字。' }
+    ]
+  },
+  {
+    num: '13', title: '算法介绍', en: 'Intro to Algorithms', dur: '12:08',
+    points: [
+      '算法是解决特定问题的明确步骤序列',
+      '算法好坏用时间复杂度（Big-O 表示法）和空间复杂度衡量',
+      'O(1) 常数 < O(log n) 对数 < O(n) 线性 < O(n log n) < O(n²) 平方',
+      '排序算法示例：选择排序、归并排序（分治策略）',
+      '图搜索算法：Dijkstra 算法求最短路径',
+      '算法必须在有限步骤内终止，且结果正确'
+    ],
+    exercises: [
+      { type: 'quiz', q: '二分查找的时间复杂度是？', options: ['O(1)', 'O(n)', 'O(log n)', 'O(n²)'], answer: 2, explain: '二分查找每次将搜索范围减半，最多需要 log₂(n) 次比较，因此是 O(log n)。' },
+      { type: 'task', tag: '编码实践', text: '手动模拟归并排序（Merge Sort）对数组 [38, 27, 43, 3, 9, 82, 10] 的排序过程。画出每次分割和合并的步骤。' }
+    ]
+  },
+  {
+    num: '14', title: '数据结构', en: 'Data Structures', dur: '12:11',
+    points: [
+      '数组（Array）：连续存储，O(1) 随机访问，O(n) 插入删除',
+      '链表（Linked List）：通过指针连接，O(1) 插入删除，O(n) 随机访问',
+      '栈（Stack）：后进先出（LIFO），push/pop，用于函数调用、撤销操作',
+      '队列（Queue）：先进先出（FIFO），enqueue/dequeue，用于任务调度',
+      '树（Tree）：层次结构数据，二叉搜索树 O(log n) 查找',
+      '图（Graph）：节点+边，用于表示网络、社交关系、地图路径',
+      '哈希表（Hash Table）：通过哈希函数映射键到值，平均 O(1) 查找'
+    ],
+    exercises: [
+      { type: 'quiz', q: '函数调用栈（Call Stack）使用哪种数据结构？', options: ['队列', '链表', '栈', '树'], answer: 2, explain: '函数调用遵循 LIFO（后进先出）：最后调用的函数最先返回，这正是栈的行为。' },
+      { type: 'task', tag: '动手实践', text: '实现一个队列（Queue）数据结构，支持 enqueue、dequeue 和 peek 操作。用数组和链表分别实现，比较差异。' }
+    ]
+  },
+  {
+    num: '15', title: '阿兰·图灵', en: 'Alan Turing', dur: '12:23',
+    points: [
+      '图灵机是一个理论计算模型，包含无限长的纸带和读写头',
+      '图灵机可以模拟任何算法，定义了可计算性的边界',
+      '图灵在二战期间破解了德国 Enigma 密码机，极大地帮助了盟军',
+      '图灵测试：如果机器在对话中无法被区分，可以认为它具有智能',
+      '图灵在计算机科学、人工智能和密码学等领域做出了奠基性贡献',
+      '他因同性恋身份遭迫害，2013 年获得英国王室追授赦免'
+    ],
+    exercises: [
+      { type: 'quiz', q: '图灵测试的核心目的是什么？', options: ['测试计算机速度', '判断机器是否能表现出与人类无法区分的智能', '测试算法复杂度', '测试网络延迟'], answer: 1, explain: '图灵测试由阿兰·图灵在 1950 年提出，核心思想是：如果人类评判者无法区分对话对象是机器还是人，那么这台机器就展现了智能。' },
+      { type: 'task', tag: '探索实践', text: '搜索并观看电影《模仿游戏》（The Imitation Game），写一篇短评，讨论图灵的技术贡献和他遭遇的不公。' }
+    ]
+  },
+  {
+    num: '16', title: '软件工程', en: 'Software Engineering', dur: '12:33',
+    points: [
+      '软件工程用工程方法管理软件开发：需求分析、设计、实现、测试、维护',
+      '面向对象编程（OOP）用"类"和"对象"组织代码：封装、继承、多态',
+      '版本控制（如 Git）跟踪代码变更历史，支持团队协作',
+      'Bug 的分类：语法错误、逻辑错误、运行时错误',
+      '软件开发生命周期：需求 → 设计 → 编码 → 测试 → 部署 → 维护',
+      '敏捷开发（Agile）强调迭代、协作和快速反馈'
+    ],
+    exercises: [
+      { type: 'quiz', q: '面向对象编程（OOP）的三个核心特性是？', options: ['封装、继承、多态', '顺序、选择、循环', '输入、处理、输出', '设计、编码、测试'], answer: 0, explain: 'OOP 的三大特性：封装（隐藏内部实现）、继承（子类复用父类代码）、多态（同一接口不同行为）。' },
+      { type: 'task', tag: '动手实践', text: '为"图书馆管理系统"画出简单的类图。需要哪些类？它们的属性和方法是什么？类之间有什么关系？' }
+    ]
+  },
+  {
+    num: '17', title: '集成电路与摩尔定律', en: 'Integrated Circuits & Moore\'s Law', dur: '12:18',
+    points: [
+      '集成电路（IC）将多个晶体管蚀刻在单个硅片上，大幅缩小体积和成本',
+      '光刻（Photolithography）是制造 IC 的关键工艺，用光在硅片上蚀刻电路',
+      '摩尔定律：集成电路上的晶体管数量大约每两年翻一番',
+      '从 SSI（小规模集成）到 VLSI（超大规模集成），集成度不断提升',
+      '芯片制造工艺节点从微米（µm）推进到纳米（nm），现进入 3nm 时代',
+      '摩尔定律的放缓让计算机行业更多转向并行计算和专用芯片（如 GPU、TPU）'
+    ],
+    exercises: [
+      { type: 'quiz', q: '摩尔定律描述的是什么趋势？', options: ['互联网速度每两年翻倍', '集成电路上的晶体管数量大约每两年翻一番', '软件复杂度每两年翻倍', '电池容量每两年翻倍'], answer: 1, explain: '戈登·摩尔在 1965 年观察到芯片上的晶体管数量大约每两年翻一番，这个趋势持续了数十年。' },
+      { type: 'task', tag: '思考练习', text: '摩尔定律近年逐渐放缓。研究并列举当前半导体行业应对摩尔定律放缓的 3-5 种策略（如 3D 封装、Chiplet、专用芯片架构等）。' }
+    ]
+  },
+  {
+    num: '18', title: '操作系统', en: 'Operating Systems', dur: '12:51',
+    points: [
+      '操作系统是硬件和应用程序之间的中间层，管理硬件资源',
+      '内核（Kernel）是操作系统的核心，负责进程调度、内存管理、I/O 管理',
+      '多任务处理：分时（Time-sharing）让多个程序轮流使用 CPU',
+      '虚拟内存让每个程序"以为"自己拥有全部内存，实际由 OS 映射管理',
+      '文件系统组织磁盘上的数据：FAT、NTFS、ext4 等',
+      '设备驱动程序（Driver）让操作系统与各种硬件通信'
+    ],
+    exercises: [
+      { type: 'quiz', q: '虚拟内存的主要作用是？', options: ['增加硬盘容量', '让每个程序有独立的地址空间，可运行超过物理内存大小的程序', '提高 CPU 速度', '替代 RAM'], answer: 1, explain: '虚拟内存将磁盘空间映射为地址空间的一部分，允许多个程序有独立的地址空间，并能运行超过物理内存大小的程序。' },
+      { type: 'task', tag: '动手实践', text: '在你的电脑上打开任务管理器/活动监视器，观察当前运行了哪些进程、各占多少内存和 CPU。找出占用最多的 3 个进程并了解它们的作用。' }
+    ]
+  },
+  {
+    num: '19', title: '内存和存储', en: 'Memory & Storage', dur: '12:07',
+    points: [
+      '存储层次结构：寄存器 → 缓存 → RAM → SSD/HDD，速度递减，容量递增',
+      'HDD（机械硬盘）通过磁头读写旋转磁盘上的数据，有寻道延迟',
+      'SSD（固态硬盘）使用 NAND 闪存，无机械部件，随机读写极快',
+      '光盘（CD/DVD/Blu-ray）用激光读取凹坑（pits）和平面（lands）',
+      '磁带存储仍用于归档备份，因为成本极低且存储密度高',
+      '内存访问的局部性原理：时间局部性 + 空间局部性'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'SSD 比 HDD 快的主要原因是什么？', options: ['SSD 转速更快', 'SSD 无机械部件，数据随机访问几乎无延迟', 'SSD 存储密度更高', 'SSD 使用光盘技术'], answer: 1, explain: 'SSD 没有磁头寻找磁道的过程，任何位置的随机访问延迟几乎相同，远小于 HDD 的寻道时间。' },
+      { type: 'task', tag: '探索实践', text: '用软件工具（如 CrystalDiskMark 或 dd 命令）测试你电脑的硬盘读写速度。对比连续读取和随机读取的速度差异。' }
+    ]
+  },
+  {
+    num: '20', title: '文件和文件系统', en: 'Files & File Systems', dur: '12:02',
+    points: [
+      '文件是存储在存储设备上的命名的数据集合',
+      '文件系统组织和管理文件，记录每个文件的位置、大小和元数据',
+      '目录（文件夹）是文件的容器，形成树形层次结构',
+      '文件元数据：文件名、大小、创建/修改时间、权限、所有者',
+      '文件分配方式：连续分配、链接分配、索引分配（inode）',
+      '文件路径：绝对路径（从根目录开始）和相对路径（从当前目录开始）'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'Unix/Linux 系统中，文件的 inode 存储什么？', options: ['文件内容', '文件元数据和数据块位置', '文件名', '目录结构'], answer: 1, explain: 'inode 存储文件的元数据（权限、大小、时间戳）和指向数据块的指针，但不存储文件名（文件名存于目录中）。' },
+      { type: 'task', tag: '动手实践', text: '在终端中执行 ls -la 或 dir，逐列理解输出的含义：权限位、链接数、所有者、组、大小、时间、文件名。' }
+    ]
+  },
+  {
+    num: '21', title: '压缩', en: 'Compression', dur: '12:22',
+    points: [
+      '压缩分两类：无损压缩（可完全还原）和有损压缩（丢失部分信息）',
+      '游程编码（Run-Length Encoding）：对连续重复值编码，如 "AAAAA"→"5A"',
+      '霍夫曼编码（Huffman Coding）：高频字符用短码，低频字符用长码',
+      'LZ 系列算法通过引用之前出现的字符串来压缩',
+      'JPEG 有损压缩利用了人眼对亮度变化比颜色变化更敏感的特性',
+      'MP3 压缩利用了人耳的心理声学模型，丢弃听不到的频率'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'JPEG 图片压缩属于哪种类型？', options: ['纯无损压缩', '有损压缩 — 利用人眼特性丢弃不敏感信息', '纯文本压缩算法', '加密算法'], answer: 1, explain: 'JPEG 使用有损压缩，通过离散余弦变换（DCT）和量化，丢弃人眼难以察觉的高频信息来减小文件大小。' },
+      { type: 'task', tag: '动手实践', text: '用霍夫曼编码对字符串 "GOOD DOG" 进行手动编码。先统计各字符频率，构建霍夫曼树，生成编码表，最后写出压缩后的二进制串。' }
+    ]
+  },
+  {
+    num: '22', title: '键盘和命令行接口', en: 'Keyboards & Command Line Interfaces', dur: '11:57',
+    points: [
+      'QWERTY 键盘布局在 19 世纪为机械打字机设计，沿用至今',
+      '键盘的工作原理：按键 → 扫描矩阵判断位置 → 发送扫描码 → OS 处理',
+      '命令行界面（CLI）是文本驱动的交互方式，输入命令获得输出',
+      '早期终端（Teletype）是电传打字机，输入和输出都在纸上',
+      '视频终端（Video Terminal）替代了纸张，但保留了命令行界面范式',
+      '现代 Shell（bash、zsh）继承了早期 CLI 的交互哲学'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'QWERTY 键盘布局最初设计的目的是？', options: ['最大化打字速度', '减少打字机机械杆卡住', '方便程序员编程', '字母顺序排列'], answer: 1, explain: 'QWERTY 布局将常用字母对分开，以减少早期机械打字机连杆碰撞卡住的问题，而非为提高速度。' },
+      { type: 'task', tag: '动手实践', text: '学习 10 个常用的终端命令：cd、ls/dir、mkdir、touch、cp、mv、rm、grep、cat、chmod。在终端中逐一练习。' }
+    ]
+  },
+  {
+    num: '23', title: '屏幕和 2D 图形', en: 'Screens & 2D Graphics', dur: '12:09',
+    points: [
+      'CRT 显示器通过电子束扫描屏幕上的荧光点来显示图像',
+      'LCD 通过液晶分子偏转控制背光通过，每个像素由 RGB 三个子像素组成',
+      '像素是屏幕的最小显示单位，分辨率表示水平和垂直像素数',
+      '帧缓冲（Framebuffer）是内存中存储屏幕像素颜色的区域',
+      '矢量图形用数学公式描述图形（线、圆、贝塞尔曲线），无损缩放',
+      '光栅图形由像素阵列组成，缩放会失真',
+      '字符生成：点阵字体（Bitmap）vs 矢量字体（如 TrueType）'
+    ],
+    exercises: [
+      { type: 'quiz', q: '矢量图形相比光栅图形的主要优势是什么？', options: ['文件总是更小', '缩放不损失质量（分辨率无关）', '色彩更丰富', '渲染更快'], answer: 1, explain: '矢量图形用数学描述图形，放大缩小时只需重新计算，不会像光栅图形那样出现像素化/锯齿。' },
+      { type: 'task', tag: '动手实践', text: '用 HTML Canvas 或 SVG 画一个简单的房子（三角形屋顶 + 矩形墙壁 + 正方形窗户），体验矢量图形绘制。' }
+    ]
+  },
+  {
+    num: '24', title: '冷战和消费主义', en: 'The Cold War and Consumerism', dur: '12:28',
+    points: [
+      '美苏太空竞赛推动了计算机小型化和集成电路的发展',
+      '阿波罗登月任务使用了导航计算机（AGC），是最早的嵌入式系统之一',
+      '冷战期间，ARPA（后来的 DARPA）资助了大量计算机研究',
+      '1970 年代，微处理器出现，个人计算机走向大众',
+      'Altair 8800（1975）是第一台成功的个人计算机套件',
+      '冷战结束后，军用技术向民用领域转移加速了消费级计算机的爆发'
+    ],
+    exercises: [
+      { type: 'quiz', q: '阿波罗登月导航计算机（AGC）的历史意义是什么？', options: ['第一台超级计算机', '最早的集成电路计算机之一，推动了嵌入式系统发展', '第一台个人电脑', '第一台互联网服务器'], answer: 1, explain: 'AGC 是最早使用集成电路的计算机之一，证明了计算机可以被小型化并用于关键任务场景，为后来的嵌入式系统铺平了道路。' },
+      { type: 'task', tag: '探索实践', text: '搜索 Altair 8800 的故事。比尔·盖茨和保罗·艾伦为它编写了什么软件？这对 Microsoft 的创立有何影响？' }
+    ]
+  },
+  {
+    num: '25', title: '个人电脑革命', en: 'The Personal Computer Revolution', dur: '11:10',
+    points: [
+      'Apple II（1977）是第一款成功的量产个人电脑，配有彩色图形',
+      'IBM PC（1981）采用开放架构，使用第三方组件，建立了 PC 标准',
+      'Windows 和 Macintosh 引入了图形用户界面（GUI），让普通人也能用电脑',
+      '康柏（Compaq）通过逆向工程制造第一台 IBM 兼容机',
+      'PC 开放生态催生了软件产业：Lotus 1-2-3、WordPerfect 等',
+      '从"每个办公室一台"到"每个家庭一台"再到"每个人口袋一台"'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'IBM PC（1981）对 PC 行业最重要的影响是什么？', options: ['性能最强', '建立了开放架构标准，催生了整个 PC 兼容机生态', '最早使用图形界面', '内置了互联网功能'], answer: 1, explain: 'IBM PC 使用现成的第三方组件和开放架构，使得其他厂商可以制造兼容机，形成了庞大的 PC 生态系统。' },
+      { type: 'task', tag: '思考练习', text: '对比 Apple 的封闭生态和 IBM PC 的开放生态。这两种模式各自的优劣势是什么？今天哪些公司延续了这两种策略？' }
+    ]
+  },
+  {
+    num: '26', title: '图形用户界面 (GUI)', en: 'Graphical User Interfaces', dur: '12:54',
+    points: [
+      '施乐 PARC 研究中心发明了最早的 GUI、鼠标和桌面隐喻',
+      '史蒂夫·乔布斯参观施乐 PARC 后将 GUI 概念带回 Apple，开发了 Macintosh',
+      'GUI 的核心元素：窗口（Windows）、图标（Icons）、菜单（Menus）、指针（Pointer）— WIMP',
+      '事件驱动编程：程序响应用户操作（点击、拖拽、键盘输入）而不是线性执行',
+      'WYSIWYG（所见即所得）让用户直观地看到最终输出效果',
+      'GUI 降低了计算机的使用门槛，让非专业人士也能操作计算机'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'GUI 中的 WIMP 范式指的是？', options: ['Window, Icon, Menu, Pointer', 'Web, Image, Music, Print', 'Write, Input, Move, Paste', 'Wireless, Internet, Mobile, PC'], answer: 0, explain: 'WIMP 代表 Window（窗口）、Icon（图标）、Menu（菜单）、Pointer（指针），构成了现代 GUI 的基本交互模式。' },
+      { type: 'task', tag: '动手实践', text: '用 HTML 和 CSS 设计一个计算器 GUI 界面。实现按钮布局和显示区域，思考点击按钮时如何触发计算逻辑。' }
+    ]
+  },
+  {
+    num: '27', title: '三维图形', en: '3D Graphics', dur: '12:41',
+    points: [
+      '3D 图形管线：建模 → 顶点处理 → 光栅化 → 片段处理 → 帧缓冲',
+      '顶点定义 3D 几何体的拐角点，由三角形面连接形成表面',
+      '线框渲染只显示边缘，实体渲染计算表面颜色和光照',
+      '纹理映射（Texture Mapping）将 2D 图像贴在 3D 模型表面增加细节',
+      '光照模型：环境光 + 漫反射 + 镜面反射（Phong 模型）',
+      'GPU（图形处理单元）专门优化了大量并行的顶点和像素计算',
+      '光栅化 vs 光线追踪：后者模拟真实光路，更真实但更耗计算'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'GPU 为什么特别擅长 3D 图形计算？', options: ['GPU 核心比 CPU 快', 'GPU 有大量并行核心，适合同时处理数万个顶点和像素', 'GPU 使用特殊编程语言', 'GPU 不需要内存'], answer: 1, explain: '3D 渲染需要对数千个顶点和数百万像素做相似的数学运算，GPU 的数千个并行核心天然适合这种大规模数据并行任务。' },
+      { type: 'task', tag: '动手实践', text: '使用 Three.js 创建一个简单的 3D 场景：一个旋转的彩色立方体，带基本光照。观察顶点、面和光照如何共同构成 3D 效果。' }
+    ]
+  },
+  {
+    num: '28', title: '计算机网络', en: 'Computer Networks', dur: '12:13',
+    points: [
+      '计算机网络让多台计算机共享资源和通信',
+      '局域网（LAN）覆盖小范围（办公室/家庭），广域网（WAN）连接远距离',
+      '以太网（Ethernet）是最常见的局域网技术，使用 CSMA/CD 避免冲突',
+      'MAC 地址是每个网卡的唯一物理标识',
+      '网络传输中的分组交换比电路交换更高效灵活',
+      'OSI 七层模型和 TCP/IP 四层模型定义了网络通信的层次结构'
+    ],
+    exercises: [
+      { type: 'quiz', q: '分组交换（Packet Switching）相比电路交换（Circuit Switching）的主要优势是？', options: ['速度更快', '更高效地利用网络带宽，允许多个通信共享线路', '延迟更低', '安全性更高'], answer: 1, explain: '分组交换将数据切分成小包，按可用路径独立发送，多条通信可以交错共享同一线路，在利用率上远高于独占线路的电路交换。' },
+      { type: 'task', tag: '动手实践', text: '在你的终端中使用 ifconfig（或 ipconfig）找出你的 MAC 地址和 IP 地址。理解它们的区别和在网络中的不同层次角色。' }
+    ]
+  },
+  {
+    num: '29', title: '因特网', en: 'The Internet', dur: '12:14',
+    points: [
+      '互联网的雏形 ARPANET 于 1969 年由美国国防部资助建立',
+      'IP 地址用于在网络中唯一标识设备，IPv4 有约 43 亿个地址',
+      '路由器（Router）根据 IP 地址在子网之间转发数据包',
+      'TCP（传输控制协议）确保数据包可靠、有序到达，UDP 则面向速度',
+      'DNS（域名系统）将人类可读的域名解析为 IP 地址',
+      '互联网骨干由海底光缆、卫星和地面光纤组成'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'TCP 和 UDP 的主要区别是什么？', options: ['TCP 更快，UDP 更可靠', 'TCP 可靠保证送达和顺序，UDP 只发送不保证送达，但更快', '两者功能完全相同', 'UDP 被 TCP 取代'], answer: 1, explain: 'TCP 通过确认和重传机制保证数据可靠有序到达，适合网页、邮件等。UDP 无连接、无确认，延迟更低，适合视频流、游戏等。' },
+      { type: 'task', tag: '动手实践', text: '使用 ping 和 traceroute（或 tracert）命令，追踪你的计算机到 google.com 经过了哪些路由节点，观察网络延迟。' }
+    ]
+  },
+  {
+    num: '30', title: '万维网', en: 'The World Wide Web', dur: '11:38',
+    points: [
+      '万维网（WWW）由 Tim Berners-Lee 在 1990 年发明，运行在互联网之上',
+      '三个核心技术：URL（统一资源定位器）、HTTP（超文本传输协议）、HTML（超文本标记语言）',
+      '浏览器向服务器发送 HTTP 请求，服务器返回 HTML 页面进行渲染',
+      '超链接（Hyperlink）让页面之间互相连接，形成"网"的拓扑结构',
+      '搜索引擎通过爬虫（Crawler）索引网页内容，为用户提供搜索服务',
+      'Web 1.0（只读）→ Web 2.0（读写互动）→ Web3（去中心化）'
+    ],
+    exercises: [
+      { type: 'quiz', q: '万维网（WWW）由谁在什么时候发明？', options: ['比尔·盖茨，1985', 'Tim Berners-Lee，1990', '史蒂夫·乔布斯，1984', '文特·瑟夫，1973'], answer: 1, explain: 'Tim Berners-Lee 于 1990 年在 CERN 发明了万维网，提出了 URL、HTTP、HTML 三大核心技术。' },
+      { type: 'task', tag: '动手实践', text: '打开浏览器开发者工具（F12）的 Network 标签，刷新一个网页，观察浏览器发出了多少个 HTTP 请求，每个请求的类型（HTML/CSS/JS/图片）和耗时。' }
+    ]
+  },
+  {
+    num: '31', title: '网络安全', en: 'Cybersecurity', dur: '12:32',
+    points: [
+      '安全三要素（CIA 三元组）：机密性（Confidentiality）、完整性（Integrity）、可用性（Availability）',
+      '身份认证（Authentication）验证"你是谁"：密码、生物识别、双因素认证',
+      '访问控制（Authorization）确定"你能做什么"：权限系统、ACL',
+      '加密保护数据在传输和存储中的机密性',
+      '防火墙（Firewall）监控和控制进出网络流量',
+      '社会工程攻击利用人的心理弱点，而非技术漏洞'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'CIA 三元组中的 I（Integrity）指的是什么？', options: ['数据加密', '数据不被未授权修改，保持完整准确', '系统正常运行', '用户身份验证'], answer: 1, explain: '完整性（Integrity）确保数据在存储或传输过程中不被未授权篡改，保证数据准确可靠。' },
+      { type: 'task', tag: '动手实践', text: '检查你常用网站的密码安全性。你是否在多处使用相同密码？建议使用密码管理器，并为重要账户开启双因素认证（2FA）。' }
+    ]
+  },
+  {
+    num: '32', title: '黑客与网络攻击', en: 'Hackers & Cyber Attacks', dur: '12:14',
+    points: [
+      '黑客类型：白帽（安全研究人员）、黑帽（恶意攻击者）、灰帽（介于之间）',
+      '常见攻击方式：DDoS（分布式拒绝服务）、钓鱼（Phishing）、SQL 注入、XSS',
+      '恶意软件：病毒（自我复制）、蠕虫（网络传播）、木马（伪装软件）、勒索软件',
+      '零日漏洞（Zero-day）是尚未被厂商知道的漏洞，攻击价值极高',
+      '中间人攻击（MITM）在通信双方之间窃听或篡改数据',
+      '防御措施：定期更新、最小权限原则、输入验证、安全意识教育'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'DDoS 攻击的主要目的是什么？', options: ['窃取数据', '用大量请求使服务器过载，导致正常用户无法访问', '破解密码', '植入病毒'], answer: 1, explain: 'DDoS（分布式拒绝服务）攻击通过控制大量设备同时向目标发送请求，耗尽服务器资源，使其无法为正常用户提供服务。' },
+      { type: 'task', tag: '动手实践', text: '搜索一次著名网络安全事件的详细过程（如 2017 年 WannaCry 勒索软件攻击）。分析攻击传播方式、影响范围以及如何防范。' }
+    ]
+  },
+  {
+    num: '33', title: '密码学', en: 'Cryptography', dur: '12:30',
+    points: [
+      '密码学两大分支：对称加密（同密钥加解密）和非对称加密（公钥+私钥）',
+      '凯撒密码是最经典的替换式加密：将字母偏移固定位置',
+      '对称加密算法：AES（高级加密标准）是目前最广泛使用的',
+      '非对称加密：RSA 基于大数分解难题，用于密钥交换和数字签名',
+      '哈希函数（SHA-256）产生固定长度摘要，不可逆，用于密码存储和完整性校验',
+      'TLS/SSL 结合对称和非对称加密保护 HTTPS 通信'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'HTTPS 使用了什么技术来保护网络通信安全？', options: ['仅对称加密', 'TLS/SSL — 结合非对称加密交换密钥，对称加密传输数据', '仅使用防火墙', '仅使用哈希函数'], answer: 1, explain: 'HTTPS（HTTP + TLS）使用非对称加密（如 RSA）安全地交换会话密钥，然后用对称加密（如 AES）高效加密实际数据传输。' },
+      { type: 'task', tag: '动手实践', text: '用凯撒密码加密你的名字（偏移 3 位）。然后用 Python 写一个程序，自动尝试 26 种可能的偏移来暴力破解凯撒密码。' }
+    ]
+  },
+  {
+    num: '34', title: '机器学习与人工智能', en: 'Machine Learning & AI', dur: '11:48',
+    points: [
+      'AI（人工智能）是让机器展现智能行为，ML（机器学习）是实现 AI 的重要方法',
+      '监督学习：用已标注的数据训练模型（分类、回归）',
+      '无监督学习：从未标注数据中发现模式（聚类、降维）',
+      '强化学习：通过试错和奖励机制学习（AlphaGo 的核心技术）',
+      '神经网络模拟生物神经元：输入层 → 隐藏层 → 输出层，通过反向传播训练',
+      '深度学习使用多层神经网络自动学习特征表示',
+      'AI 应用：图像识别、语音识别、推荐系统、自动驾驶、自然语言处理'
+    ],
+    exercises: [
+      { type: 'quiz', q: '监督学习和无监督学习的主要区别是什么？', options: ['监督学习更快', '监督学习使用标注数据（有正确答案），无监督学习使用未标注数据', '无监督学习已被淘汰', '两者完全相同'], answer: 1, explain: '监督学习需要标注数据（如每张图标注"猫"或"狗"），算法学习输入-输出的映射。无监督学习在没有标签的数据中自行发现结构。' },
+      { type: 'task', tag: '动手实践', text: '使用 Google Teachable Machine（无需编程），训练一个图像分类模型识别不同物品。记录训练数据量对准确率的影响。' }
+    ]
+  },
+  {
+    num: '35', title: '计算机视觉', en: 'Computer Vision', dur: '10:47',
+    points: [
+      '计算机视觉让计算机从图像和视频中"理解"视觉信息',
+      '卷积神经网络（CNN）通过卷积核提取图像特征（边缘、纹理、形状）',
+      'CNN 层次：卷积层（特征提取）→ 池化层（降采样）→ 全连接层（分类）',
+      '目标检测不仅需要识别物体类别，还要定位其位置（边界框）',
+      '人脸识别的关键步骤：人脸检测 → 特征提取 → 特征匹配',
+      '计算机视觉应用：自动驾驶、医学影像分析、安防监控、AR 增强现实'
+    ],
+    exercises: [
+      { type: 'quiz', q: '卷积神经网络（CNN）中的"卷积"操作主要用来做什么？', options: ['压缩图像文件', '提取图像的局部特征（边缘、纹理、形状等）', '增加图像分辨率', '加密图像'], answer: 1, explain: '卷积核（滤波器）在图像上滑动计算，提取不同层级的特征：浅层提取边缘和纹理，深层提取复杂形状和语义信息。' },
+      { type: 'task', tag: '动手实践', text: '用 Python 的 OpenCV 库读取一张图片，应用边缘检测（Canny）和模糊滤镜（GaussianBlur），观察卷积核处理图像的效果。' }
+    ]
+  },
+  {
+    num: '36', title: '自然语言处理 (NLP)', en: 'Natural Language Processing', dur: '12:06',
+    points: [
+      'NLP 使计算机能理解、生成和翻译人类语言',
+      '分词（Tokenization）将文本切分为最小的处理单元',
+      '词性标注（POS Tagging）识别每个词的语法角色',
+      '情感分析（Sentiment Analysis）判断文本的情感倾向',
+      '机器翻译从基于规则 → 统计方法 → 神经网络（如 Google 翻译）',
+      '大语言模型（LLM）如 GPT 系列基于 Transformer 架构，自注意力机制理解上下文'
+    ],
+    exercises: [
+      { type: 'quiz', q: 'Transformer 架构的核心机制是什么？', options: ['循环神经网络', '自注意力机制（Self-Attention）', '卷积操作', '规则引擎'], answer: 1, explain: 'Transformer 使用自注意力机制（Self-Attention），让模型在处理每个词时可以关注句子中所有其他词，捕捉长距离依赖关系。' },
+      { type: 'task', tag: '动手实践', text: '试用一个 NLP API（如 Hugging Face 的 sentiment-analysis），测试它对不同语句的情感判断：\"I love this!\" \"This is terrible.\" \"It\'s okay, I guess.\"' }
+    ]
+  },
+  {
+    num: '37', title: '机器人', en: 'Robots', dur: '12:32',
+    points: [
+      '机器人是能感知环境、做出决策并执行物理动作的机器',
+      '机器人的三个核心系统：感知（传感器）→ 规划（算法）→ 行动（执行器）',
+      '自主机器人（如扫地机器人、自动驾驶汽车）无需人工持续控制',
+      '工业机器人在制造业中执行焊接、组装、喷涂等重复性高精度任务',
+      '机器人学三大挑战：运动控制、环境感知、自主决策',
+      '阿西莫夫机器人三定律是科幻设定，现实中的机器人伦理远未解决'
+    ],
+    exercises: [
+      { type: 'quiz', q: '机器人系统的三个核心组成部分是什么？', options: ['CPU、内存、硬盘', '感知（传感器）、规划（算法）、行动（执行器）', '屏幕、键盘、鼠标', '摄像头、麦克风、扬声器'], answer: 1, explain: '感知系统（传感器）收集环境信息，规划系统（算法）决策该做什么，执行器（电机、机械臂等）执行物理动作。' },
+      { type: 'task', tag: '思考练习', text: '设计一个简单的送餐机器人。它需要哪些传感器？如何规划路径？如何避障？如何处理"送达确认"？画出它的系统架构图。' }
+    ]
+  },
+  {
+    num: '38', title: '心理学的计算', en: 'Psychology of Computing', dur: '11:59',
+    points: [
+      '人机交互（HCI）研究人类如何与计算机交互，结合心理学和设计',
+      '认知负荷理论：用户工作记忆有限，界面应该减少不必要的认知负担',
+      '菲茨定律（Fitts\'s Law）：目标越大越近，点击速度越快',
+      '希克定律（Hick\'s Law）：选择越多，决策时间越长',
+      '颜色感知影响可读性和可用性，色盲友好设计很重要',
+      '好的 UI 使用户的心智模型与系统模型一致'
+    ],
+    exercises: [
+      { type: 'quiz', q: '菲茨定律（Fitts\'s Law）描述了哪两个因素对操作时间的影响？', options: ['颜色和字体', '目标大小和目标距离', '响应时间和网络延迟', '内存和 CPU 速度'], answer: 1, explain: '菲茨定律指出，到达目标的时间取决于目标的距离（D）和大小（W）：时间 = a + b × log₂(D/W + 1)。目标越大且越近，操作越快。' },
+      { type: 'task', tag: '动手实践', text: '从你常用的 App 中选一个功能，分析其界面设计是如何遵循（或违背）菲茨定律和希克定律的。提出你的改进建议。' }
+    ]
+  },
+  {
+    num: '39', title: '教育工程学', en: 'Educational Technology', dur: '10:48',
+    points: [
+      '教育技术如何利用计算机改善学习效果',
+      '个性化学习：根据每个学生的水平和节奏调整教学内容和速度',
+      'MOOC（大规模开放在线课程）如 Coursera、edX 让优质教育资源触手可及',
+      '间隔重复（Spaced Repetition）算法优化复习时机，提高记忆效率',
+      '教育数据挖掘分析学习行为，识别困难点和辍学风险',
+      '技术是教育的工具，不能替代教师的引导和激励作用'
+    ],
+    exercises: [
+      { type: 'quiz', q: '间隔重复（Spaced Repetition）的核心原理是什么？', options: ['每天重复相同内容', '在遗忘曲线的关键时刻复习，以最优间隔巩固记忆', '一次性学习所有内容', '随机安排复习时间'], answer: 1, explain: '间隔重复基于艾宾浩斯遗忘曲线，在即将遗忘时进行复习，用最少的时间达到最佳的记忆巩固效果。Anki 是典型的间隔重复工具。' },
+      { type: 'task', tag: '动手实践', text: '选一个你正在学习的技术主题，用 Anki 或类似的间隔重复工具创建一套记忆卡片。坚持使用一周，记录学习效果。' }
+    ]
+  },
+  {
+    num: '40', title: '奇点、天网和计算的未来', en: 'The Singularity, Skynet & the Future of Computing', dur: '14:00',
+    points: [
+      '技术奇点（Singularity）假说：AI 超越人类智能后可能引发不可预测的技术爆炸',
+      '天网（Skynet）是科幻作品中 AI 失控的反面警示例，提醒安全对齐的重要性',
+      '量子计算利用量子比特（qubit）的叠加态和纠缠，能解决特定问题超越经典计算机',
+      '神经形态计算（Neuromorphic Computing）模拟人脑结构，实现低功耗高效计算',
+      'AI 安全与对齐（Alignment）研究如何确保 AI 系统的目标与人类价值观一致',
+      '计算的未来充满不确定性，既有机遇也有风险，需要我们负责任地塑造'
+    ],
+    exercises: [
+      { type: 'quiz', q: '量子计算中的 qubit 与经典 bit 的关键区别是什么？', options: ['qubit 体积更小', 'qubit 可以同时处于 0 和 1 的叠加态', 'qubit 速度更快', 'qubit 更省电'], answer: 1, explain: '量子比特利用叠加原理，可以同时处于 0 和 1 的状态，配合量子纠缠，使得量子计算机在某些问题上（如大数分解）有指数级加速。' },
+      { type: 'task', tag: '思考练习', text: '写一篇 500 字的短文，阐述你对"AI 是否应该拥有权利"的看法。结合课程中提到的图灵测试、AI 安全与对齐等概念进行论述。' }
+    ]
+  }
+];
+
+let currentModule = 0;
+
+function renderTabs() {
+  const tabs = document.getElementById('moduleTabs');
+  tabs.innerHTML = modules.map((m, i) =>
+    `<button class="module-tab${i === currentModule ? ' active' : ''}" onclick="switchModule(${i})">${m.icon} ${m.name}</button>`
+  ).join('');
+}
+
+function switchModule(i) {
+  currentModule = i;
+  renderTabs();
+  renderEpisodes();
+}
+
+function renderEpisodes() {
+  const list = document.getElementById('episodeList');
+  const mod = modules[currentModule];
+  list.innerHTML = mod.episodes.map(idx => {
+    const ep = episodes[idx];
+    const pointItems = ep.points.map(p => `<li>${p}</li>`).join('');
+    const exerciseItems = ep.exercises.map((ex, ei) => {
+      if (ex.type === 'quiz') {
+        return `<div class="exercise-card q-card">
+          <div class="q-text">❓ ${ex.q}</div>
+          <div class="q-options">${ex.options.map((opt, oi) =>
+            `<span class="q-opt" onclick="checkAnswer(this, 'ep${idx}_q${ei}', ${oi}, ${ex.answer})">${String.fromCharCode(65+oi)}. ${opt}</span>`
+          ).join('')}</div>
+          <div class="q-feedback" id="ep${idx}_q${ei}_fb">${ex.explain}</div>
+        </div>`;
+      } else {
+        return `<div class="task-item">
+          <div class="task-tag">📋 ${ex.tag}</div>
+          <div>${ex.text}</div>
+        </div>`;
+      }
+    }).join('');
+
+    return `<div class="episode-card" id="ep${idx}">
+      <div class="episode-header" onclick="toggleEpisode(${idx})">
+        <div class="episode-num">#${ep.num}</div>
+        <div class="episode-info">
+          <div class="episode-title">${ep.title}</div>
+          <div class="episode-en">${ep.en}</div>
+        </div>
+        <div class="episode-duration">${ep.dur}</div>
+        <div class="episode-arrow">▶</div>
+      </div>
+      <div class="episode-body">
+        <div class="video-wrapper">
+          <iframe src="https://player.bilibili.com/player.html?bvid=BV1JZ4y1i7az&page=${idx + 1}" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+        </div>
+        <div class="section-label">核心知识点</div>
+        <ul class="points-list">${pointItems}</ul>
+        <div class="section-label">课后练习</div>
+        ${exerciseItems}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleEpisode(idx) {
+  const card = document.getElementById('ep' + idx);
+  card.classList.toggle('open');
+}
+
+function checkAnswer(el, feedbackId, chosen, correct) {
+  const fb = document.getElementById(feedbackId + '_fb');
+  const allOpts = el.parentElement.querySelectorAll('.q-opt');
+  allOpts.forEach(o => { o.classList.remove('correct', 'wrong'); o.style.pointerEvents = 'none'; });
+
+  if (chosen === correct) {
+    el.classList.add('correct');
+    fb.className = 'q-feedback correct show';
+  } else {
+    el.classList.add('wrong');
+    allOpts[correct].classList.add('correct');
+    fb.className = 'q-feedback wrong show';
+  }
+}
+
+renderTabs();
+renderEpisodes();
+</script>
+</body>
+</html>

@@ -27,31 +27,40 @@
     .header {
       background: linear-gradient(135deg, var(--red-dark), var(--red));
       color: #fff;
-      padding: 48px 24px 40px;
+      padding: 20px 24px 16px;
       text-align: center;
     }
     .header h1 {
-      font-size: 2.2rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
     .header p {
-      margin-top: 8px;
-      font-size: 1rem;
+      margin-top: 4px;
+      font-size: 0.85rem;
       opacity: 0.85;
+    }
+
+    /* Top bar (sticky) */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     /* Nav */
     .nav {
       background: #fff;
       border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
       padding: 0 24px;
       display: flex;
       gap: 32px;
-      max-width: 960px;
-      margin: 0 auto;
     }
-    .nav a {
+    .nav a, .nav-placeholder {
       padding: 14px 0;
       text-decoration: none;
       color: var(--text-secondary);
@@ -62,6 +71,10 @@
     .nav a:hover, .nav a.active {
       color: var(--red);
       border-bottom-color: var(--red);
+    }
+    .nav-placeholder {
+      opacity: 0.55;
+      cursor: default;
     }
 
     /* Main */
@@ -164,6 +177,9 @@
 </head>
 <body>
 
+<!-- Top bar (sticky) -->
+<div class="top-bar">
+
 <!-- Header -->
 <div class="header">
   <h1>🧠 MyMind</h1>
@@ -172,10 +188,14 @@
 
 <!-- Nav -->
 <div class="nav">
-  <a href="index.html" class="active">首页</a>
-  <a href="news-digest.html">每日资讯</a>
-  <a href="notes.html">学习笔记</a>
-  <a href="projects.html">项目记录</a>
+  <div class="nav-inner">
+    <a href="index.html" class="active">首页</a>
+    <a href="news-digest.html">每日资讯</a>
+    <a href="notes.html">学习笔记</a>
+    <span class="nav-placeholder">项目记录</span>
+  </div>
+</div>
+
 </div>
 
 <!-- Main -->
@@ -195,16 +215,16 @@
         <div class="title">学习笔记</div>
         <div class="desc">技术学习与思考记录</div>
       </a>
-      <a href="projects.html" class="quick-link">
+      <div class="quick-link" style="opacity:0.55; cursor:default;">
         <div class="icon">🚀</div>
         <div class="title">项目记录</div>
         <div class="desc">Anthea 等项目进展</div>
-      </a>
-      <a href="prompts.html" class="quick-link">
+      </div>
+      <div class="quick-link" style="opacity:0.55; cursor:default;">
         <div class="icon">🤖</div>
         <div class="title">Prompt 库</div>
         <div class="desc">常用 Prompt 模板收集</div>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -213,13 +233,28 @@
     <h2>🕐 最近更新</h2>
     <ul class="update-list">
       <li>
-        <span class="update-date">2026-05-31</span>
-        <span class="update-title"><a href="news-digest.html">每日 AI 资讯汇总更新（5月合集）</a></span>
+        <span class="update-date">2026-06-07</span>
+        <span class="update-title"><a href="notes.html">学习笔记页面优化（模块页签固定位置）</a></span>
+        <span class="tag tag-red">优化</span>
+      </li>
+      <li>
+        <span class="update-date">2026-06-07</span>
+        <span class="update-title"><a href="news-digest.html">每日 AI 资讯更新</a></span>
         <span class="tag tag-red">新增</span>
       </li>
       <li>
-        <span class="update-date">2026-05-31</span>
-        <span class="update-title"><a href="index.html">MyMind 知识库首页创建</a></span>
+        <span class="update-date">2026-06-06</span>
+        <span class="update-title"><a href="notes.html">学习笔记页面上线（知识库布局）</a></span>
+        <span class="tag tag-red">新增</span>
+      </li>
+      <li>
+        <span class="update-date">2026-06-05</span>
+        <span class="update-title"><a href="claude-code-study-guide.html">Claude Code 教程学习指南</a></span>
+        <span class="tag tag-red">新增</span>
+      </li>
+      <li>
+        <span class="update-date">2026-06-01</span>
+        <span class="update-title"><a href="cs-crash-course-study-guide.html">计算机科学速成班学习指南</a></span>
         <span class="tag tag-red">新增</span>
       </li>
     </ul>
@@ -239,7 +274,7 @@
 
 <!-- Footer -->
 <div class="footer">
-  MyMind · Powered by GitHub Pages · Last updated: 2026-05-31
+  MyMind · Powered by GitHub Pages · Last updated: 2026-06-07
 </div>
 
 </body>
