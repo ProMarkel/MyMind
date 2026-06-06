@@ -317,20 +317,18 @@
   }
 
   .video-wrapper {
-    position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
+    height: 600px;
     margin-bottom: 16px;
     border-radius: var(--radius-sm);
     overflow: hidden;
     background: #000;
   }
   .video-wrapper iframe {
-    position: absolute;
-    top: 0; left: 0;
     width: 100%;
-    height: 100%;
+    height: 600px;
     border: none;
+    display: block;
   }
 
   .empty-state {
@@ -556,6 +554,8 @@ function switchModule(i) {
   renderEpisodes();
 }
 
+const cids = [35957837700,35957899614,35957900192,35957900573,35957900754,35957900955,35957901465,35957901575,35957902715,35957903038];
+
 function renderEpisodes() {
   const list = document.getElementById('episodeList');
   const mod = modules[currentModule];
@@ -591,7 +591,7 @@ function renderEpisodes() {
       </div>
       <div class="episode-body">
         <div class="video-wrapper">
-          <iframe src="https://player.bilibili.com/player.html?bvid=BV1RSFUzVEAG&page=${idx + 1}" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+          <iframe src="https://www.bilibili.com/video/BV1RSFUzVEAG" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="section-label">核心知识点</div>
         <ul class="points-list">${pointItems}</ul>
