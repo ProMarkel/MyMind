@@ -317,11 +317,13 @@
   }
 
   .video-wrapper {
-    width: 100%;
-    max-width: 960px;
-    height: 540px;
-    margin: 0 auto 16px;
-    border-radius: var(--radius-sm);
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-top: 0;
+    margin-bottom: 16px;
     overflow: hidden;
     position: relative;
     background: #000;
@@ -330,8 +332,8 @@
     position: absolute;
     top: -64px;
     left: 0;
-    width: 960px;
-    height: 604px;
+    width: calc(100% + 80px);
+    height: calc(100% + 80px);
     border: none;
     display: block;
   }
@@ -596,7 +598,7 @@ function renderEpisodes() {
       </div>
       <div class="episode-body">
         <div class="video-wrapper">
-          <iframe id="bilibiliPlayer" src="https://www.bilibili.com/video/BV1RSFUzVEAG" allowfullscreen loading="lazy" scrolling="no"></iframe>
+          <iframe id="bilibiliPlayer" src="https://www.bilibili.com/video/BV1RSFUzVEAG?p=${idx + 1}" allowfullscreen loading="lazy" scrolling="no"></iframe>
         </div>
         <div class="section-label">核心知识点</div>
         <ul class="points-list">${pointItems}</ul>
@@ -629,16 +631,6 @@ function checkAnswer(el, feedbackId, chosen, correct) {
 
 renderTabs();
 renderEpisodes();
-
-// Auto web-fullscreen: try postMessage to Bilibili iframe after load
-setTimeout(() => {
-  const iframe = document.getElementById('bilibiliPlayer');
-  if (iframe && iframe.contentWindow) {
-    ['{"command":"requestWebFullscreen"}','{"action":"enterWebFullscreen"}','{"event":"command","func":"requestFullscreen"}'].forEach(msg => {
-      try { iframe.contentWindow.postMessage(msg, '*'); } catch(e) {}
-    });
-  }
-}, 3000);
 </script>
 </body>
 </html>
