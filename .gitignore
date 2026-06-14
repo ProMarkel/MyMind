@@ -1,0 +1,6 @@
+# AI tool learning/error logs (WorkBuddy, Cursor, etc.)
+.learnings/
+
+# OS
+.DS_Store
+Thumbs.db
