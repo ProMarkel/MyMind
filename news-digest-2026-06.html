@@ -217,6 +217,56 @@
 
 <main>
 
+<!-- ===== 2026-06-21 ===== -->
+<section class="day-section" id="day-0621">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年6月21日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI Codex 发布 Record & Replay：演示一遍操作即可生成可复用 Skill</h3>
+      <p>OpenAI 在"Codex Thursday"发布 <strong>Record & Replay</strong> 功能——用户在 macOS 上把重复工作演示一遍，Codex 观察操作与窗口内容后自动生成 <strong>SKILL.md</strong>，一份人类可读、可编辑的技能文件。与传统 RPA 录宏记录像素坐标不同，Codex 记录的是<strong>意图而非坐标</strong>，语言模型在回放时根据当前屏幕状态动态执行，UI 变化不会让技能失效。</p>
+      <ul>
+        <li>首发仅支持 macOS，排除欧洲经济区、英国和瑞士（EU AI Act Article 50 即将于 8 月 2 日生效）</li>
+        <li>Stanford 2026 AI Index：AI Agent 在 OSWorld 基准上平均成功率 66%（去年同期仅 12%）</li>
+        <li>一人录制 Skill 可共享至整个团队/部门，隐性流程经验首次变为可复制自动化资产</li>
+      </ul>
+      <blockquote>自动化的入口从"会写 prompt"挪到了"会做一遍活"。方向比跑分重要——它把隐性流程经验变成了可复制、可传播的自动化资产。但多步骤工作流仍有可靠性瓶颈（10 步 85% 成功率 → 端到端仅 20%），别急着把关键流程交给它。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>银河通用发布全球首个人形机器人通用小脑模型 AstraBrain-WBC 0.5</h3>
+      <p>银河通用机器人发布 <strong>AstraBrain-WBC 0.5</strong>——全球首个达到 GPT-1 量级的人形机器人全身实时运控基础模型。采用 GPT 风格因果 Transformer 架构，将全身控制重新定义为<strong>连续序列预测问题</strong>，首次在人形机器人运控领域验证了类似 GPT 的 Scaling Law。</p>
+      <ul>
+        <li>参数规模 <strong>8040 万</strong>，训练数据约 <strong>20 亿帧（2 万小时）</strong>人类动作，动作空间覆盖较 AMASS 提升 4-5 倍</li>
+        <li>数据从 200 万帧扩展至 20 亿帧，零样本追踪成功率从 83.26% 提升至 <strong>92.58%</strong></li>
+        <li>实现篮球、拳击、舞蹈、翻身起立等高动态动作的零样本执行，论文与代码全面开源</li>
+      </ul>
+      <blockquote>运控领域的 Scaling Law 终于被验证——数据量和模型规模同步增长时，运动能力持续提升并展现零样本泛化。与 LLM 走过的路径高度一致，意味着人形机器人的"通用运动"不再靠定制架构，而是靠数据规模。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Builder.io 开源 Agent-Native 框架：富 UI 与自主 Agent 共存的新一代应用架构</h3>
+      <p>Builder.io 推出开源框架 <strong>Agent-Native</strong>，解决现代软件开发中"丰富用户界面"与"自主 Agent 能力"之间的矛盾，让两者作为核心组件共存而非互斥。开发者不再需要在 UI 体验与 Agent 自主性之间二选一，而是可以<strong>并行设计</strong>界面与 Agent 行动能力。</p>
+      <ul>
+        <li>开源托管于 GitHub，标准化下一代 AI 应用架构</li>
+        <li>核心理念：UI 与 Agent 能力并行设计，而非串联妥协</li>
+        <li>定位回答"当 Agent 有了自主行动能力，用户界面该长什么样"这一被忽视的问题</li>
+      </ul>
+      <blockquote>AI 应用正在走出纯聊天界面，进入"界面即 Agent 界面"的时代。Agent-Native 不是又一个 Agent 框架，而是在回答一个被忽视的基础问题：当 Agent 能自主行动时，用户界面该怎么重新设计？</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-other">其他</span>阿里 ATH 发布实时交互世界模型 HappyOyster 1.0：AI 视频进入"可玩"阶段</h3>
+      <p>阿里 ATH 团队发布 <strong>HappyOyster 1.0</strong>（快乐生蚝），主打<strong>"可实时构建和交互的开放式世界模型"</strong>。设 Adventure 与 Directing 两大模式：前者支持用户在 AI 实时生成画面里操控角色完成加速、跳跃、攻击等动作，同一场景不同操作推演差异化姿态；后者支持用图片锁定角色外观并实时引导剧情。1.0 新增<strong>自动匹配场景交互设定</strong>——画面出现马车即解锁骑马、有汽车即触发鸣笛与车灯。</p>
+      <ul>
+        <li>Adventure 模式：同一场景不同操作推演差异化姿态，AI 实时生成画面</li>
+        <li>Directing 模式：图片锁定外观 + 实时剧情引导，创意控制力更强</li>
+        <li>智能交互匹配：画面元素自动解锁对应交互行为</li>
+      </ul>
+      <blockquote>AI 视频从"看"升级到"玩"。HappyOyster 把生成结果变成可交互的开放世界，AI 生成不再是一次性输出，而是可持续交互环境。这是通往具身智能仿真训练的潜在基础设施。</blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2026-06-20 ===== -->
 <section class="day-section" id="day-0620">
   <div class="day-header" onclick="toggleDay(this)">
