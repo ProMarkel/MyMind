@@ -252,6 +252,8 @@
           <span class="arrow">▶</span>
         </div>
         <div class="month-dates">
+          <a class="date-item" href="news-digest-2026-06.html#day-0630" onclick="return loadDate('2026-06', this)">6月30日（周二）</a>
+          <a class="date-item" href="news-digest-2026-06.html#day-0629" onclick="return loadDate('2026-06', this)">6月29日（周一）</a>
           <a class="date-item" href="news-digest-2026-06.html#day-0621" onclick="return loadDate('2026-06', this)">6月21日（周日）</a>
           <a class="date-item" href="news-digest-2026-06.html#day-0620" onclick="return loadDate('2026-06', this)">6月20日（周六）</a>
           <a class="date-item" href="news-digest-2026-06.html#day-0619" onclick="return loadDate('2026-06', this)">6月19日（周五）</a>
@@ -276,19 +278,34 @@
         </div>
       </div>
 
+      <!-- 2026年7月 -->
+      <div class="month-group">
+        <div class="month-label" onclick="toggleMonth(this)">
+          <span>📅 2026年7月</span>
+          <span class="arrow">▶</span>
+        </div>
+        <div class="month-dates open">
+          <a class="date-item" href="news-digest-2026-07.html#day-0705" onclick="return loadDate('2026-07', this)">7月5日（周日）</a>
+          <a class="date-item" href="news-digest-2026-07.html#day-0704" onclick="return loadDate('2026-07', this)">7月4日（周六）</a>
+          <a class="date-item" href="news-digest-2026-07.html#day-0703" onclick="return loadDate('2026-07', this)">7月3日（周五）</a>
+          <a class="date-item" href="news-digest-2026-07.html#day-0702" onclick="return loadDate('2026-07', this)">7月2日（周四）</a>
+          <a class="date-item" href="news-digest-2026-07.html#day-0701" onclick="return loadDate('2026-07', this)">7月1日（周三）</a>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <!-- Content: iframe (loads selected month) -->
   <div class="content">
-    <iframe id="newsFrame" src="news-digest-2026-06.html?embed=1#day-0621" title="每日资讯内容"></iframe>
+    <iframe id="newsFrame" src="news-digest-2026-07.html?embed=1#day-0705" title="每日资讯内容"></iframe>
   </div>
 
 </div>
 
 <script>
 // Track current month loaded in iframe
-var currentMonth = '2026-06';
+var currentMonth = '2026-07';
 
 // Toggle month expand/collapse
 function toggleMonth(el) {
