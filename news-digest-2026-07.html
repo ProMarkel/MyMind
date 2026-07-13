@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-07-13 ===== -->
+<section class="day-section" id="day-0713">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年7月13日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Hugging Face 重写推理内核库 Kernels，LLM 推理成本最高降 40%</h3>
+      <p>Hugging Face 对推理内核库做重大重构，引入<strong>融合注意力机制</strong>（长上下文显存减半）、<strong>FP16/BF16/INT8 自适应精度切换</strong>，以及按硬件配置自动调优的内核选择。早期基准显示长上下文生成提速约 2 倍、训练峰值显存降 30%；日均 100 万请求的部署每月可省约 <strong>$2,500</strong> GPU 成本，已随 Transformers v4.45.0 提供。</p>
+      <ul>
+        <li>推理成本最高降 40%，长上下文生成提速约 2 倍</li>
+        <li>训练峰值显存降 30%，融合注意力令长上下文显存减半</li>
+        <li>日均 100 万请求部署月省约 $2,500，已随 Transformers v4.45.0 上线</li>
+      </ul>
+      <blockquote>推理侧优化正成为大模型降本的主战场，开源社区把"内核级降本"直接交到了开发者手里。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>论文揭示 Agent 学习遵循 log-sigmoid 缩放律，迭代速度每 3 个月翻倍</h3>
+      <p>一项基于约 <strong>3.8 万小时</strong>智能体交互数据的研究（arXiv 2607.05155）给出两个核心发现：智能体性能随环境学习遵循 log-sigmoid 缩放律（R²=<strong>0.998</strong>），可预测性极强；且跨模型代际，智能体学习速度约每 3 个月翻倍。榜单上 Claude Opus 4.8 以 <strong>51.3</strong> 领先，高于 GPT-5.5 的 48.4。</p>
+      <ul>
+        <li>基于约 3.8 万小时智能体交互，性能-学习曲线 R²=0.998 高度可预测</li>
+        <li>跨代际智能体学习速度约每 3 个月翻倍</li>
+        <li>榜单 Claude Opus 4.8 以 51.3 居首，领先 GPT-5.5（48.4）</li>
+      </ul>
+      <blockquote>当"智能体如何变强"可被定量预测，自动化研究（auto-research）的拐点就离得更近了。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>全球首例远程操控人形机器人完成临床手术，宇树 G1 登《自然》</h3>
+      <p>据新一期《自然》报道，加州大学圣迭戈分校团队完成全球首例远程操控人形机器人实时临床手术试验：一套"人机团队"（人形机器人 + 人类助手）实施胆囊切除，另一套为两台人形机器人协同完成。手术本体为中国<strong>宇树科技量产的 G1 人形机器人</strong>，论文一作兼通讯为 00 后中国博士生梁泽楷。</p>
+      <ul>
+        <li>全球首例远程操控人形机器人实时临床手术（胆囊切除）</li>
+        <li>手术本体为宇树科技量产 G1 人形机器人</li>
+        <li>论文一作兼通讯为 00 后中国博士生梁泽楷，发表于《自然》</li>
+      </ul>
+      <blockquote>从进 III 期药物到上手术台，宇树 G1 两周内连登《自然》，具身智能的"能力边界"被持续推高。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>三菱汽车将在日本工厂启动人形机器人量产，2027 年投产</h3>
+      <p>三菱汽车宣布与其投资的初创 <strong>Highlanders</strong> 共同开发的人形机器人，将于 <strong>2027 年左右</strong>投入生产，率先导入自有工厂使用，未来考虑对外销售。公司将在京都发动机工厂闲置空间新建产线，月产能计划 <strong>1000 台</strong>。</p>
+      <ul>
+        <li>2027 年左右投产，率先导入三菱自有工厂</li>
+        <li>月产能计划 1000 台，未来考虑对外销售</li>
+        <li>与投资的初创 Highlanders 共同开发</li>
+      </ul>
+      <blockquote>车企把人形机器人塞进自家工厂产线，具身智能从"演示"走向"产能"又多了一个工业样本。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>优必选 U1 情感陪伴人形机器人发布，定价 1.7 万–14.6 万美元</h3>
+      <p>优必选（UBTech）推出 <strong>U1</strong>——首款面向"情感陪伴"而非工业场景的量产人形机器人，瞄准独居养老与孤独经济，支持端侧情绪处理（非云端）以保护隐私。售价约 <strong>$17,650–$146,000</strong>，公司称已获 1.3 万+ 预订，计划 9 月 15 日起交付；专家普遍认为其仍处"恐怖谷"，距人类水准尚远。</p>
+      <ul>
+        <li>首款面向情感陪伴（非工业）的量产人形机器人，定价 $17,650–$146,000</li>
+        <li>公司称已获 1.3 万+ 预订，计划 9 月 15 日起交付</li>
+        <li>支持端侧情绪处理；专家称仍处"恐怖谷"，距人类水准尚远</li>
+      </ul>
+      <blockquote>当同行卷工业产线，优必选押注"陪伴"赛道——具身智能市场正沿工业/消费两条线分叉。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-07-12 ===== -->
 <section class="day-section" id="day-0712">
   <div class="day-header" onclick="toggleDay(this)">
