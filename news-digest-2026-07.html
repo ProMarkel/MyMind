@@ -217,6 +217,73 @@
 
 <main>
 
+<!-- ===== 2026-07-16 ===== -->
+<section class="day-section" id="day-0716">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年7月16日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Thinking Machines 发布 975B 开放权重模型 Inkling，编程基准逼近 Claude Opus 4.6</h3>
+      <p>OpenAI 前 CTO Mira Murati 创立的 Thinking Machines Lab 发布首款通用基础模型 <strong>Inkling</strong>，完整开放权重（Apache-2.0），可本地部署、微调与审计。模型采用 MoE 架构，总参数 <strong>9750 亿</strong>、单次激活约 410 亿，最高支持 100 万 Token 上下文，主打推理、编程、工具调用与多模态理解。</p>
+      <ul>
+        <li>Design Arena 智能体网页开发得分 <strong>1257</strong>，与 Claude Opus 4.6 持平、逼近 GPT-5.6 Sol 的 1260</li>
+        <li>Terminal Bench 2.1 达到 Nemotron 3 Ultra 相近水平，仅用其约 <strong>1/3</strong> 生成 Token</li>
+        <li>预训练数据约 <strong>45 万亿</strong> Token，覆盖文本 / 图像 / 音频 / 视频</li>
+      </ul>
+      <blockquote>准万亿级开源多模态模型入场，把"可审计、可定制"重新推回竞争中心——对正处接棒窗口的国产编程 Agent 生态，是难得的开放底座。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>阿里 Qwen Code 推出 v0.5.0：终端可并行四实例，从工具迈向生态</h3>
+      <p>通义千问今日发布 <strong>Qwen Code v0.5.0</strong>，这是其从"命令行工具"向"开发生态"迈进的关键一步。终端窗口中可同时运行四个 Qwen Code 实例，分别处理智能问答、实时翻译、原型设计与创意绘图等任务，无需等待单一对话结束再开启下一个。</p>
+      <ul>
+        <li>单终端可并行 <strong>4 个</strong> Qwen Code 实例，多任务互不阻塞</li>
+        <li>定位升级：CLI 工具 → 可无缝衔接各类本地工作流的开发入口</li>
+        <li>轻量终端设计，直接访问本地文件，灵活性高</li>
+      </ul>
+      <blockquote>在 Claude Code 退场、国产 Agent 接棒窗口期，Qwen Code 以"多实例并行"切中多任务开发痛点，是阿里 Coding 生态卡位的重要一步。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Deja-vu 开源编码 Agent 记忆层，支持 SSH 跨设备同步</h3>
+      <p>GitHub 上新开源项目 <strong>Deja-vu</strong>（Go 编写，189 stars）为 Claude Code、Codex、opencode 等编码 Agent 提供统一记忆层：搜索 session 日志、自动注入上下文、敏感信息脱敏，并支持跨设备 SSH 同步。零依赖单二进制文件，直接复用各 Agent 既有 session 日志，无需额外配置。</p>
+      <ul>
+        <li>使用 <strong>Go</strong> 编写，零依赖单二进制，开箱即用</li>
+        <li>已获 <strong>189</strong> stars，直接复用各编码 Agent 既有 session 日志</li>
+        <li>核心能力：记忆搜索 + 上下文自动注入 + 敏感脱敏 + SSH 同步</li>
+      </ul>
+      <blockquote>直击"Agent 记忆碎片化"痛点，轻量单文件方案降低了多工具切换者的迁移成本——记忆层正成为 AI Coding 工具链的新刚需。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-other">AI 安全</span>OpenAI 披露自动化红队模型 GPT-Red，规模化狙击 prompt injection</h3>
+      <p>OpenAI 披露内部使用的自动化红队模型 <strong>GPT-Red</strong>，能在模型正式部署前大规模扫描并修复 <strong>prompt injection</strong> 漏洞。该模型可模拟各类攻击者的注入策略，在模型上线前发现潜在弱点，将 LLM 安全审计从人工抽查升级为系统化覆盖。</p>
+      <ul>
+        <li>可模拟多类攻击者 injection 策略，上线前发现潜在弱点</li>
+        <li>覆盖从"人工抽查"到"系统化"的红队测试范式跃迁</li>
+        <li>面向整个 LLM 安全生态，具示范意义</li>
+      </ul>
+      <blockquote>在 Agent 自主调用工具、读取外部网页的当下，自动化红队把"安全左移"做成标配——这是 AI Coding 走向生产级的必要基建。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>WAIC 2026 明日开幕，具身智能首与"智算"并列核心赛道</h3>
+      <p>7 月 17—20 日世界人工智能大会将在上海"三地四馆"举行，展览面积首破 <strong>10 万㎡</strong>、1100+ 企业、3000+ 展品、300+ 全球首发；具身智能首次与"智算"平起平坐，各自汇聚 200+ 企业。上纬启元 <strong>T1</strong>——全球首款可变形个人机器人（轮足人形 ↔ 四足自主切换）——将于大会首发亮相。</p>
+      <ul>
+        <li>具身智能参展企业 <strong>200+</strong>，与智算并列两大核心赛道</li>
+        <li>超 <strong>300</strong> 款产品全球首发，创历届之最</li>
+        <li>启元 T1 采用 Transformer 跨形态一体架构，室内轮足 / 户外四足自主切换</li>
+      </ul>
+      <blockquote>从"后空翻"到"上岗打工"，WAIC 今年的结构性变化说明具身智能已越过炫技期、进入产业化阅兵阶段——完整的国产供应链是其最大底气。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- ===== 2026-07-15 ===== -->
 <section class="day-section" id="day-0715">
   <div class="day-header" onclick="toggleDay(this)">
