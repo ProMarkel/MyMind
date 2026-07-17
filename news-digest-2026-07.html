@@ -217,6 +217,73 @@
 
 <main>
 
+<!-- ===== 2026-07-17 ===== -->
+<section class="day-section" id="day-0717">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年7月17日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>月之暗面发布 Kimi K3：2.8 万亿参数全球最大开源模型，Open Interpreter 接入成开源编程 Agent</h3>
+      <p>月之暗面于 7 月 16 日正式发布新一代开源基础模型 <strong>Kimi K3</strong>（MoE 架构，总参数 <strong>2.8 万亿</strong>），同步上线 API 与开发者文档，新华社称其为目前全球参数最大的开源模型。模型支持 <strong>1M 上下文</strong>、原生视觉理解，主攻长周期软件工程（Agentic Coding）、复杂推理与知识工作。开源编程 Agent <strong>Open Interpreter</strong> 于 v0.3.7 原生支持 Kimi K3，可在本地/私有云零配置运行，绕开 OpenAI/Anthropic/Google 的 API 调用。</p>
+      <ul>
+        <li>2.8 万亿参数 MoE，1M 上下文，原生视觉理解，开放权重（Open Weight）</li>
+        <li>Open Interpreter 已获 <strong>65,965</strong> stars，v0.3.7 零配置接入 Kimi K3，数据不出第三方服务器</li>
+        <li>业内视为对标 Claude Opus 4.8 的关键开源产品，竞争从"最强模型"转向"最大开发者生态"</li>
+      </ul>
+      <blockquote>当中国头部实验室把最先进模型以开放权重放出，开发者第一次能在自己硬件上跑 GPT-4 级的编程 Agent——"AI 即服务"的订阅墙被撬开一道缝。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>黄仁勋：Harness 是下一代软件公司的操作系统，程序员该从"写代码"转向"造 Agent"</h3>
+      <p>黄仁勋在最新 26 分钟访谈中全程未提 GPU 与算力，只谈一件事——Agent 时代企业该把工程资源放在 <strong>Harness</strong>（Prompt、工具说明、记忆、上下文、重试、评测、权限控制）上。他以 LangChain 用 Nemotron3Ultra 跑 DeepAgents 评测为例：不重训权重，仅调系统 Prompt/工具描述/中间件，成绩从原始状态追到 <strong>0.86</strong>（闭源最高 0.87），单次评测成本却从 <strong>43.48 美元降到 4.48 美元</strong>（便宜近 10 倍）。</p>
+      <ul>
+        <li>同一模型放进不同 Harness，DeepAgents 评测 0.86 vs 0.87（差距仅 0.01）</li>
+        <li>单次评测成本 43.48 → 4.48 美元，降幅约 <strong>90%</strong></li>
+        <li>底线：Agent 不应直接拿长期密钥，运行时按任务/策略临时注入权限</li>
+      </ul>
+      <blockquote>模型继续变强，但企业真正要长期经营的是模型外那套与自身数据、工具、责任边界绑定的工程环境——Harness 就是那个容器，谁先建起来，谁就能让 Agent 真正"入职"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>谷歌开源 Agents CLI，Harness 工程范式单日集中爆发：从"会写 Agent"到"会养 Agent"</h3>
+      <p>谷歌开源 <strong>Agents CLI</strong>（5.1k stars），为 Claude Code、Codex 等编程智能体装上 CLI+Skills 工具包，内置 7 项 Skills 覆盖工作流、ADK 代码、脚手架、评测、部署、发布、可观测性，让 Agent 自主跑完从开发到上线的整条工程链路。同日，QCon 上海站定调"Harness AI（驾驭 AI）"、阿里云 <strong>AgentScope Java 2.0 GA</strong> 将整套 Harness 方案内置框架、Claude Code 团队定义 <strong>Loop Engineering</strong> 四种循环（回合制/目标/时间/主动），补上"自我验证"短板。</p>
+      <ul>
+        <li>Agents CLI 5.1k stars，7 项内置 Skills 打通开发-评测-部署-发布-可观测全链路</li>
+        <li>AgentScope 2.0 GA：ReActAgent 内核 + Workspace/持久记忆/Session/Sandbox/Skill/Subagent</li>
+        <li>Loop Engineering：执行→确定性工具验证→反馈修正→反复至通过门禁，需设预算上限防 Token 失控</li>
+      </ul>
+      <blockquote>当"会写 Agent"不再是壁垒，竞争焦点滑向"会养 Agent"——Harness、可观测、Loop Engineering 一天内扎堆出现，说明 AI Coding 正从玩具期进入工程纪律期。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>WAIC 2026 今日（7/17）开幕：具身智能升格为最大主题赛道，200+ 企业集中阅兵</h3>
+      <p>第九届世界人工智能大会于 7 月 17 日在上海世博/张江/西岸三地四馆启幕，展览面积首破 <strong>10 万㎡</strong>、1100+ 企业、3000+ 展品、300+ 全球首发、140+ 论坛、9 位图灵奖得主。具身智能首次与智算并列、且成为参展企业最多的单一赛道（<strong>200+ 家</strong>），标志 AI 从"聊天"走向"干活"。亮点：华为 Atlas 950 SuperCluster（64 张昇腾950DT/柜、可扩展 8192 张）、智元第 <strong>15000 台</strong>人形机器人下线 + GE-Sim 2.0 世界仿真模型、宇树 IPO 获批（估值约 420 亿）、约 <strong>60 台</strong>人形机器人在场承担导览、208 款具身终端/超 300 台真机亮相。</p>
+      <ul>
+        <li>展览面积首破 10 万㎡，1100+ 企业、300+ 全球首发、9 位图灵奖得主</li>
+        <li>具身智能 200+ 企业参展，为最大主题赛道；约 60 台人形机器人现场承担公共服务</li>
+        <li>智元第 15000 台人形下线；宇树 IPO 估值约 420 亿元（A 股具身第一股）</li>
+      </ul>
+      <blockquote>从去年展台里的"展品"到今年真正承担导览、进厂拧螺丝，全尺寸人形机器人首次在如此大规模展会上规模化部署——具身智能越过炫技期，进入产业化阅兵。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>全球首款可变形个人机器人 Quester1（启元 T1）WAIC 首发，灵巧手竞赛升温</h3>
+      <p>上纬新材（Swancor）在 WAIC 首发 <strong>Quester1（启元 T1）</strong>——基于单一底盘、可在轮足人形与四足形态间自动切换的"变形金刚式"个人机器人，采用行业首创 Transformer 跨形态一体架构，适配居家陪伴、户外陪护、智能拍摄等场景。同期宇树 <strong>GD01</strong> 可量产载人双足机甲（2.7 米/500 公斤）现身；灵巧手成为焦点：临界点 Omnihand 3 Ultra-M 拥有 20 主动自由度、630 克、指尖 0.005N 法向力分辨率、手掌 300+ 三维触觉点（密度 5 万点/cm²），绳肌妙算、星际科技、均胜电子等集中展示新一代灵巧手。</p>
+      <ul>
+        <li>Quester1/启元 T1：单底盘轮足 ↔ 四足自动切换，Transformer 跨形态一体架构</li>
+        <li>宇树 GD01：2.7 米/500 公斤，全球首款可量产载人机甲</li>
+        <li>Omnihand 3 Ultra-M：20 主动自由度、指尖法向力分辨率 0.005N、触觉密度 5 万点/cm²</li>
+      </ul>
+      <blockquote>当机器人能在一个底盘上换形态、灵巧手的触觉密度追平人类皮肤，具身智能的竞争已从"能不能动"切换到"动得有多像人"——多形态 + 高灵巧，正成为国产差异化路线。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- ===== 2026-07-16 ===== -->
 <section class="day-section" id="day-0716">
   <div class="day-header" onclick="toggleDay(this)">
