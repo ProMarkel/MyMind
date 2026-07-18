@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-07-18 ===== -->
+<section class="day-section" id="day-0718">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年7月18日（周六）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code v2.1.214 深夜落地：一次"安全为主"的权限大修，新增 EndConversation 与长任务心跳</h3>
+      <p>继 7/17 的 v2.1.212 后，<strong>v2.1.214</strong> 于 7 月 18 日凌晨 01:20 发布（跳过 v2.1.213），是一次以安全为核心的版本：权限分析器整体改为 <strong>fail-closed</strong>（失败即拒绝），收紧 <code>dir/**</code> 放行规则、封堵 Windows PowerShell 5.1 绕过、超 1 万字符命令一律弹窗确认、移除 help/man 等不安全的自动放行。功能侧新增 <strong>EndConversation</strong> 工具（面对滥用/越狱可主动终止会话）、长时工具调用的<strong>进度心跳</strong>，以及 OTel 消息级关联字段。</p>
+      <ul>
+        <li>权限分析器 fail-closed：默认拒绝而非默认放行，堵住多条自动批准的泄漏路径</li>
+        <li>EndConversation 让对外暴露（SDK/无头模式）的 Agent 面对敌意输入能收敛到终止态，而非无限烧 token</li>
+        <li>心跳信号 + OTel 的 <code>message.uuid/tool_source</code> 关联，补齐无人值守长会话的可观测性缺口</li>
+      </ul>
+      <blockquote>当编程 Agent 越来越多地无人值守地跑在生产管线里，harness 层的竞争重点正从"更强"转向"更可控"——这次更新几乎全是刹车与仪表盘。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>一个月三连发引爆价格战：GPT-5.6、Claude Sonnet 5、开源 Kimi K3 把编码模型价格打到"骨折"</h3>
+      <p>约一个月内，Anthropic <strong>Claude Sonnet 5</strong>（6/30，随后设为免费/Pro 默认）、OpenAI <strong>GPT-5.6</strong>（Sol/Terra/Luna 三档）、月之暗面开源 <strong>Kimi K3</strong>（7/16，2.8 万亿参数）相继登场，叠加 Meta Muse Spark，四款主力模型在同一窗口贴身肉搏。行业焦点不再是能力，而是价格：顶级模型从每百万 token 约 <strong>5 美元入 / 25–30 美元出</strong>，被压到约四分之一，开源权重更把"中段市场"的定价上限死死摁住。</p>
+      <ul>
+        <li>GPT-5.6 Sol 售价 $5 入 / $30 出，Terra $2.5/$15，Luna 低至 $1/$6；OpenAI 称编码任务 token 消耗降 54%</li>
+        <li>AI 编程市场约 40 亿美元，Copilot、Claude Code、Cursor 各自年收入过 10 亿，价格战直接压缩其利润假设</li>
+        <li>实践建议：别锁长约、按季度而非年度复盘选型，常规任务路由到"够用且最便宜"的模型</li>
+      </ul>
+      <blockquote>两年"不看账单地花钱"之后，买方终于开始数钱——这轮价格战里，为数不多真正赢的是付账单的人。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>WAIC 2026 首日：机器人集体"上岗"，主线从炫技表演全面转向规模化"真干活"</h3>
+      <p>7 月 17 日开幕的 2026 世界人工智能大会成为具身智能的产业分水岭。首日现场，<strong>宇树</strong>首发全球首款载人变形机甲 <strong>GD-01</strong>（约 3 米高、载人整机约 500 公斤、人形/四足自由切换、售价 390 万元起，面向救援等场景）；<strong>智元</strong>集中发布远征 A3 Ultra 等五款新品，A3 Ultra（700 TOPS 具身处理器）作为全球首款量产可商用全尺寸人形机器人获评"镇馆之宝"，并有 60 台机器人在主/分会场提供公共服务；蚂蚁灵波智慧药房同获"镇馆之宝"。</p>
+      <ul>
+        <li>展览总面积首破 <strong>10 万㎡</strong>，1100+ 企业参展，3000+ 展品，300+ 全球首发</li>
+        <li>擎朗 XMAN-R1 化身"特聘咖啡师"、洗衣房双机自主协同，主打"通用+专用"服务闭环</li>
+        <li>行业共识：从"能走两步的 Demo"转向"能干活的量产品"，工程化交付力成新壁垒</li>
+      </ul>
+      <blockquote>今年 WAIC 最大的变化不是机器人更炫，而是它们开始真的干活——具身智能正式跨过"炫技期"，进入"部署态元年"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>WAIC 新品扎堆：普渡"一脑多形"、加速进化 Booster T2、睿尔曼"真干活"轮式人形齐发</h3>
+      <p>WAIC 首日具身新品密集落地。<strong>普渡机器人</strong>发布具身大模型 <strong>PuduFM</strong> 与操作系统 <strong>PuduAgent</strong>，提出"一脑多形"战略——让不同形态机器人共享同一套底层模型（全球商用服务机器人市占第一、累计部署超 13 万台，4 月完成近 10 亿元融资、估值破百亿）；<strong>加速进化</strong>发布双足人形旗舰开发平台 <strong>Booster T2</strong>（搭载 NVIDIA Thor、2070 TFLOPS 算力，包揽本届 RoboCup 双足人形全组别金牌）；<strong>睿尔曼</strong>全球首发 RealBot-S2/L2 两款轮式人形，主打长时间持续作业。</p>
+      <ul>
+        <li>普渡"一脑多形"：统一底座让机器人从"单机智能"迈向"平台化智能"</li>
+        <li>加速进化 Booster T2：Thor 芯片 2070 TFLOPS，RoboCup 双足人形全金</li>
+        <li>睿尔曼关节模组年产能突破 <strong>50 万台</strong>，已服务超 8000 家全球企业</li>
+      </ul>
+      <blockquote>"一脑多形"式的统一底座正在成为共识——比拼单个机器人已经过时，谁能用一套大脑撑起多种形态并跑通商业闭环，谁才有护城河。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>资本继续加码：上半年具身融资破 935 亿，珞石港交所上市，日投融资约 364 亿</h3>
+      <p>WAIC 热度外溢至一级市场。据行业日报，机器人行业单日投融资涉及 <strong>33 家企业</strong>、金额约 <strong>364.30 亿元</strong>，<strong>珞石机器人</strong>正式在港交所上市，征和、千寻智能等展示灵巧手与长程任务突破。宏观看，上半年具身智能融资已破 <strong>935 亿元</strong>，但也伴随"数据缺口高达 99%"的隐忧——行业同时进入"部署态元年"与洗牌前夜。深圳一思智能两位 90 后创始人自研全球首款移动感知一体化网球机器人，凭样机在海外众筹揽下 800 万元订单。</p>
+      <ul>
+        <li>上半年具身智能融资破 <strong>935 亿元</strong>；单日行业投融资约 364 亿、涉 33 家企业</li>
+        <li>珞石机器人港交所上市，一级市场向已具交付能力的头部集中</li>
+        <li>隐忧：真实作业数据缺口约 99%，资本热度与工程化落地存在落差</li>
+      </ul>
+      <blockquote>钱在往具身智能里涌，但"数据缺口 99%"是悬在头顶的问题——热钱能催生产能，催不出真实场景里的作业数据，洗牌大概率由后者决定。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-07-17 ===== -->
 <section class="day-section" id="day-0717">
   <div class="day-header" onclick="toggleDay(this)">
