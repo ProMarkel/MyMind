@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-07-20 ===== -->
+<section class="day-section" id="day-0720">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年7月20日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Fable 5 永久纳入订阅：7月20日正式生效，顶配模型"分级+限流"成常态</h3>
+      <p>Anthropic 于 7/18 官宣、7/20 正式落地的新订阅政策：<strong>Fable 5 永久纳入 Max（$100–200/月）与 Team Premium 订阅</strong>，但用量上限为常规额度的 50%；Pro / Team Standard 用户改为按量积分访问，并一次性获赠 <strong>$100 credit</strong> 过渡。此前该模型经历 7/1→7/7→7/12→7/19 四次延期，此次定案终结了持续一个多月的"促销反复"状态。</p>
+      <ul>
+        <li>定价：输入 $10/百万 token、输出 $50/百万 token，为 Anthropic 最贵通用模型费率</li>
+        <li>仅 Max 与 Team Premium 含内置额度；Pro 用户以 $100 credit 缓冲向计量计费迁移</li>
+        <li>官方称需求"高且难预测"，新增算力到位后才逐步放宽权限</li>
+      </ul>
+      <blockquote>顶配模型"永久但受限"成为新常态——价格战把旗舰拖出"人人可用"的幻想，开源低价模型（如 Kimi K3）正是背后的推力。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>WAIC 2026 收官：具身智能走出"演示区"，IDC 称 PhysicalAI 时代开启</h3>
+      <p>7/20 大会收官，四天十万平方米展区、<strong>1100+ 企业、300+ 全球首发</strong>；具身智能正式升格为与智算并列的两大核心赛道，汇聚 200+ 企业、208 款终端、300+ 真机。IDC 同期发布判断：具身智能正由技术验证迈向<strong>商业化落地</strong>，展示指标从"自由度/单动作成功率"迁移到"连续作业时长/异常恢复率/场景适配成本"。</p>
+      <ul>
+        <li>IDC 预测：未来五年中国具身智能支出由 14 亿美元增至 770 亿美元，CAGR 达 94%</li>
+        <li>人形机器人 2025 全球出货近 1.8 万台（同比 +800%），IDC 预计 2030 年破 51 万台</li>
+        <li>超 80% 企业已开始关注评估，部分进入试点验证阶段</li>
+      </ul>
+      <blockquote>WAIC 三年三级跳（25款→焦点→独立展馆），具身智能正式从"技术叙事"切换为"产业叙事"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>新攻击类 ADI 曝光：编码 Agent 的"数据注入"绕开 UI 防护</h3>
+      <p>arXiv 论文（提交 7/6）形式化了 <strong>Agent Data Injection (ADI)</strong>：攻击者伪造机器解析的元数据/工具响应（资源标识、JSON 字段、响应模板），让 Agent 把攻击者内容当作"可信数据"处理——而非传统人类可读的指令注入。该攻击在 Claude Code、OpenAI Codex、Gemini CLI 上均被复现。</p>
+      <ul>
+        <li>针对人类可读指令注入的多数防御对 ADI 失效，因其滥用"机器-工具"契约而非自然语言通道</li>
+        <li>7/12 消融实验：将编码 Agent 工具面限制为单一 execute_code MCP，成本下降且通过率统计持平</li>
+        <li>同期 Anthropic 为 Claude Code 增加 --forward-subagent-text 审计标志与零宽字符净化</li>
+      </ul>
+      <blockquote>防御重心从"指令注入"转向"数据来源可信 + 工具契约隔离"，最小工具面是既便宜又安全的现实选项。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>微软自研 MAI 替换 Office 中的 OpenAI/Anthropic 模型，自主化下沉到高频场景</h3>
+      <p>微软开始在 Excel、Outlook 中以自研 <strong>MAI 系列</strong>替换 OpenAI 与 Anthropic 第三方模型；新 MAI-Thinking 1 在编码基准上内部测试追平 Claude Opus 4.8。两款旗舰 Office 应用每周数万次 AI 请求已完全由自家模型处理。</p>
+      <ul>
+        <li>动因：成本压力 + 数据驻留要求；Mustafa Suleyman 主导降低对第三方高价 API 依赖</li>
+        <li>当前 MAI 整体占比仍小，但 Excel/Outlook 是向 Copilot、Azure AI、Microsoft 365 全面切换的"滩头阵地"</li>
+        <li>OpenAI 折扣合作窗口收窄，倒逼巨头重估模型供给架构</li>
+      </ul>
+      <blockquote>巨头"去第三方化"从推理层下沉到办公高频场景，模型自主化从口号变成可计量的成本动作。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>智元彭志辉：人形机器人全年出货破 10 万台可期，京东物流仓储部署态落地</h3>
+      <p>智元 CTO 彭志辉（稚晖君）WAIC 期间表态：人形机器人<strong>全年出货量超 10 万台可能性较高</strong>。精灵 G2 Max 与京东物流合作的仓储部署态场景现场落地——可 24 小时不间断完成搬运、码垛，无需人工轮岗夜班，系人形机器人首次在真实仓储作业场景部署。</p>
+      <ul>
+        <li>智元五款新品发布：远征 A3 Ultra、精灵 G2 Max、灵犀 X2 EDU、临界点 OmniHand 3 Ultra-M、酷拓骑行机器人</li>
+        <li>GO-2 具身基座大模型提出动作思维链与异步双系统；世界模型 GE-2 实现"世界学习"闭环</li>
+        <li>行业评判标准转向：可否长期稳定作业、跨任务泛化能力，而非运动炫技</li>
+      </ul>
+      <blockquote>2026"部署态元年"落到实处——从炫技到真实生产力，跨本体泛化与商业闭环成新竞争面。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-07-19 ===== -->
 <section class="day-section" id="day-0719">
   <div class="day-header" onclick="toggleDay(this)">
