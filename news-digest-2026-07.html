@@ -217,6 +217,69 @@
 
 <main>
 
+<!-- ===== 2026-07-24 ===== -->
+<section class="day-section" id="day-0724">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年7月24日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Coding Agent 翻车根因锁定"上下文工程"，Deja-vu 记忆层补齐跨 Agent 失忆短板</h3>
+      <p>近 24 小时多项社区研究将 Coding Agent 在真实仓库失效的根因指向<strong>上下文供给错误而非模型不行</strong>：Chroma 实测 18 个前沿模型随上下文变长全面退化，ETH Zurich 发现自动生成的超长 CLAUDE.md 反而让任务成功率降约 3%、成本涨 20%+，Sourcegraph CodeScaleBench 表明"给对工具"比"给长上下文"更关键。同日开源项目 <strong>Deja-vu</strong> 通过索引 Claude Code、Codex、Cursor 等本地会话实现跨 Agent 检索与 handoff，缓解多 Agent 长期"失忆"。</p>
+      <ul>
+        <li>Chroma 测 18 个前沿模型：上下文越长性能全面退化</li>
+        <li>ETH Zurich：超长 CLAUDE.md 使成功率降约 3%、成本涨 20%+</li>
+        <li>Deja-vu 提出 AGENTS.md / DECISIONS.md / KNOWN_ISSUES.md / RUNBOOK.md 三层记忆架构</li>
+      </ul>
+      <blockquote>竞争维度正从"上下文越多越好"转向"上下文越准越好"——工程纪律再次跑赢参数堆料。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Agent 大更新：一次性集成约 500 个技能，Anthropic 押注"技能市场"</h3>
+      <p>新智元报道，Claude Agent 近期大更新<strong>一次性集成约 500 个技能（skills）</strong>，引发热议。技能机制让 Agent 能按需调用专门化的工具与流程，大幅扩展单 Agent 在不同时域任务上的执行力。Anthropic 正以"技能市场"思路构建 Agent 能力生态，与 OpenAI 的 GPT-Live、Codex 形成产品侧正面竞争。</p>
+      <ul>
+        <li>单次更新集成约 500 个 skills，按需调用专门化工具/流程</li>
+        <li>"技能市场"路线对标 OpenAI GPT-Live / Codex 生态</li>
+      </ul>
+      <blockquote>模型能力趋同后，Agent 的护城河正从"更聪明"转向"技能生态更全"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>腾讯混元携手印第安纳大学，让代码助手学会"行为定位"精准找代码</h3>
+      <p>腾讯混元前沿团队联合印第安纳大学、马里兰大学帕克分校、乔治亚大学及新加坡国立大学发布研究（arXiv:2607.13285），正式提出并攻关 <strong>"行为定位（behavior localization）"</strong>——给定"系统应做什么改变"的自然语言指令，如何精准找到所有实现该行为的代码位置。这被定位为 AI 辅助编程流程中<strong>最先需要解决的一步</strong>：找不对位置，后续修改计划从一开始就是错的。</p>
+      <ul>
+        <li>预印本论文编号 arXiv:2607.13285</li>
+        <li>直击大型仓库中"功能名与变量名不符、跨 7-8 文件散落"的定位难题</li>
+      </ul>
+      <blockquote>Harness 演化的第一道坎不是"怎么改"，而是"改哪里"——定位能力成编码 Agent 的隐形地基。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>中国团队 1B 参数模型超越 π0 登顶具身智能榜单，赛道转入"架构竞赛"</h3>
+      <p>量子位报道，一支中国团队用<strong>仅 10 亿参数</strong>的模型超越 π0，登顶具身智能榜单。小模型在真实机器人操控任务上反超更大体量前辈，意味着<strong>数据、架构与仿真效率比单纯堆参数更关键</strong>，也标志具身智能正从"参数竞赛"转向"架构竞赛"。</p>
+      <ul>
+        <li>1B 参数超越 π0，登顶具身智能榜单</li>
+        <li>本地化/小模型部署利好机器人从 Demo 走向规模化的成本结构</li>
+      </ul>
+      <blockquote>具身智能的胜负手，越来越像"谁的架构更省、数据更真"，而非"谁的参数更大"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>"量产元年"多点交付：河南造众擎 T800 批量下线，越疆完成全球产业现场大规模交付</h3>
+      <p>7 月 24 日，首批<strong>"河南造"众擎 T800 人形机器人在郑州高新区批量下线</strong>，中原地区实现人形机器人整机高端制造零的突破；同日越疆科技宣布<strong>人形机器人已在全球多个产业现场完成大规模交付</strong>，承担上下料、高精度分拣、精细装配等真实工业任务。人形机器人正从样机展示走向真实场景部署与规模化量产。</p>
+      <ul>
+        <li>众擎 T800 身高 1.73 米，郑州云智基地约 8000㎡ 产线投产，仅用 2 个月建成</li>
+        <li>上半年国内具身智能及机器人融资总额约 460 亿元、涉及 226 家企业</li>
+        <li>工信部预计 2026 年人形机器人产量有望突破 10 万台</li>
+      </ul>
+      <blockquote>"量产元年"不再是口号——产线下线 + 全球现场交付双双落地，行业评判标准切到"能否稳定生产、快速交付"。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-07-23 ===== -->
 <section class="day-section" id="day-0723">
   <div class="day-header" onclick="toggleDay(this)">
