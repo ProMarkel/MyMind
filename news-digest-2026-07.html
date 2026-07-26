@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-07-27 ===== -->
+<section class="day-section" id="day-0727">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年7月27日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Kimi K3 完整权重今日正式开源，前沿模型自托管时代开启</h3>
+      <p>月之暗面 <strong>Kimi K3 的 2.8 万亿参数完整权重于今日（7/27）在 Hugging Face 正式发布</strong>，采用 Modified MIT 许可，成为迄今规模最大的开放权重模型。K3 以 $3/$15（每百万输入/输出 token）与 Claude Sonnet 5 同价，但基准表现直逼 Fable 5（$10/$50）；权重开放后，企业可完全自托管，按月 5 亿输出 token 的客服 Agent 场景测算，成本可从 Fable 5 的 2.5 万美元/月压至趋近纯算力成本。</p>
+      <ul>
+        <li>Intelligence Index 57.1，189 个模型中排第 4；AA-Briefcase 智能体基准第 2（1527），超 GPT-5.6 Sol Max</li>
+        <li>自托管门槛：官方建议 64+ 加速卡，原生 MXFP4 精度出货；Mooncake 架构编码场景缓存命中率 90%+</li>
+        <li>Fireworks AI 等推理托管商预计零日接入，数据驻留/离线部署场景首次获得前沿级选项</li>
+      </ul>
+      <blockquote>开源从"哲学立场"变成"预算决策"——当开放权重打进前沿第一梯队，闭源 API 的议价权被实质性削弱。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI 为 Codex 上线实时语音与屏幕理解，写代码进入"动口不动手"阶段</h3>
+      <p>OpenAI 在 ChatGPT 桌面端为 Codex 上线基于 <strong>GPT-Live 的实时语音功能</strong>：戴上耳机即可用声音指挥多个 Agent、离开电脑随时查询任务进度、口头修改需求。同步新增 <strong>Appshots</strong> 功能，Codex 可直接读取当前活动窗口的画面与文字，无需截图即可理解报错界面并动手修复。</p>
+      <ul>
+        <li>语音可同时调度多个并行 Agent，适合长任务监工场景</li>
+        <li>Appshots 免截图读屏：报错/UI 问题直接"看见即修"</li>
+        <li>Karpathy 点评：语音能低成本倒出完整上下文，vibe coding 正从"自然语言写代码"走向"把想法与画面直接交给 Agent"</li>
+      </ul>
+      <blockquote>交互带宽成为编码 Agent 的新竞争维度——键盘之外，语音和屏幕正在变成上下文入口。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>MCP 无状态新规范明日锁定：告别握手与会话，Agent 基建全面"可负载均衡"</h3>
+      <p>Model Context Protocol 的 <strong>2026-07-28 修订版将于明日发布为最终规范</strong>，这是 MCP 史上最大改版：移除 initialize 握手与 Mcp-Session-Id 会话头，协议版本与能力声明改由每次请求的 _meta 携带，任何请求可落在任意服务器实例上。同时引入 Extensions 扩展框架、Tasks 官方扩展与 MCP Apps（沙箱 iframe 渲染交互式 HTML），并按 RFC 9207 强化授权校验。</p>
+      <ul>
+        <li>无状态核心：MCP 服务器可直接挂在普通轮询负载均衡器后，无需粘性会话</li>
+        <li>三大新增：Extensions（反向域名 ID 独立版本化）、Tasks（无状态句柄生命周期）、MCP Apps</li>
+        <li>迁移窗口收口：SDK 将跟进新规范，未迁移的服务器需尽快脱离旧握手逻辑</li>
+      </ul>
+      <blockquote>协议停止漂移，才是生态起飞的起点——MCP 用"无状态化"把 Agent 工具层推向了云原生标准件。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>车企物理 AI 集体落地：小鹏人形机器人量产倒计时，理想年内发布</h3>
+      <p>据报道，<strong>小鹏人形机器人已在广州工厂开启小批量生产</strong>，量产产线进入最后联调阶段，明年正式"进厂打工"；理想汽车也确认年内发布人形机器人。车企正把智驾积累的感知与决策能力平移至具身智能，将其作为智能电动车、飞行汽车之外的第三增长曲线。</p>
+      <ul>
+        <li>小鹏：广州工厂小批量生产中，量产产线联调收尾，明年进厂作业</li>
+        <li>理想：人形机器人年内发布</li>
+        <li>车企路线共性：复用智驾纯视觉/端到端技术栈，自带工厂落地场景</li>
+      </ul>
+      <blockquote>车企做机器人的最大优势不是技术，而是"自产自用"的工厂场景——训练数据与商业闭环一次到位。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>马斯克：Optimus 是"史上最难量产"，炮轰行业剧本式演示</h3>
+      <p>特斯拉 Q2 财报会上，马斯克坦承 <strong>Optimus 第三代量产已从原定 7-8 月推迟至年底</strong>，称其为"史上最难量产的产品"；弗里蒙特工厂用 46 天拆除 Model S/X 产线原地改造为 Optimus 专属车间。他同时炮轰行业内爆红的人形机器人演示"大多靠提前编程或远程遥控"，强调 Optimus 目标是仅凭语音或画面指令端到端自主完成任务。</p>
+      <ul>
+        <li>量产推迟：原定 2026 年 7-8 月 → 年底；2027 年底前面向公众销售，目标成本 2 万美元内</li>
+        <li>产线改造：Model S/X 停产转产，46 天完成车间切换</li>
+        <li>技术路线：完全复用 FSD 纯视觉方案，无激光雷达，端到端自主决策</li>
+      </ul>
+      <blockquote>"剧本式演示"的指控与 WAIC"部署态元年"共识互为印证——行业正在用真实作业数据给炫技祛魅。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-07-26 ===== -->
 <section class="day-section" id="day-0726">
   <div class="day-header" onclick="toggleDay(this)">
