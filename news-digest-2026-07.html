@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-07-28 ===== -->
+<section class="day-section" id="day-0728">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年7月28日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 联手 AMD：一名工程师 + Claude 周末跑通 MI355X，直击 CUDA 护城河</h3>
+      <p>Anthropic 披露，仅用<strong>一名工程师加 Claude，一个周末就将模型跑通在 AMD MI355X 机架上</strong>。双方同时宣布深化合作：将用 Claude 持续优化 AMD 的 ROCm 软件栈，并规划部署<strong>最高 2GW 的 Instinct GPU</strong> 算力。这是编码 Agent 首次被公开用于攻坚"跨硬件生态移植"这一 CUDA 最深的护城河。</p>
+      <ul>
+        <li>移植工作量：传统需要团队数月，本次为 1 名工程师 + Claude 一个周末</li>
+        <li>合作规模：最高 2GW AMD Instinct GPU 部署计划</li>
+        <li>目标直指 ROCm 生态短板——NVIDIA CUDA 护城河的核心支点</li>
+      </ul>
+      <blockquote>当 AI 能自己完成硬件生态移植，"软件锁定"这道护城河的折旧速度会远超预期。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Conductor 全面转向云 Agent，AI 编程"本地时代"宣告终结</h3>
+      <p>Conductor 宣布<strong>放弃本地优先路线、全面转向云 Agent 战略</strong>，计划推出移动端 App、Slack 集成与 API，实现编程 Agent 的"去电脑化"与 7×24 小时在线运行。2026 年 AI 编程赛道正加速向云端迁移，Cursor、Codex 等主流产品均已推出云 Agent，行业共识从"单点工具辅助"转向"多代理并行编排"的数字劳动力模式。</p>
+      <ul>
+        <li>Conductor 规划：移动端 APP + Slack 集成 + API，Agent 全天候在线</li>
+        <li>挑战：Vercel Sandbox 算力成本压力，需验证 Agent 运行时长增长 10 倍后的单位经济模型</li>
+        <li>同日社区动态：comux（AI Agent 版 tmux）等"会话控制面"工具密集涌现</li>
+      </ul>
+      <blockquote>编程 Agent 从"开发工具"变成"云上劳动力"——竞争焦点从能力转向运行时长的单位经济学。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude 双安全事件：Cowork 沙箱逃逸波及 50 万 Mac 用户，共享对话遭谷歌收录</h3>
+      <p>Claude Cowork 被曝 <strong>"ShareRoot" 沙箱逃逸漏洞</strong>：攻击者可借 Linux 内核漏洞 CVE-2026-46331 从虚拟机提权至 root，读写 Mac 任意文件并窃取凭据，约 <strong>50 万本地 Mac 用户受影响</strong>；Anthropic 已将后续版本默认改为云端执行。同日，多名 Reddit 用户发现 <strong>Claude 共享对话与 Artifacts 被谷歌搜索收录</strong>，泄露内容含患者病历、企业内部文件等敏感信息，谷歌现已屏蔽相关结果。</p>
+      <ul>
+        <li>ShareRoot 漏洞：VM → root 提权，影响约 50 万 Mac 本地用户</li>
+        <li>共享链接泄露：病历、企业文件、未成年人信息被搜索引擎收录</li>
+        <li>Anthropic 应对：默认云端执行绕过本地逃逸路径，本地用户仍需手动加固</li>
+      </ul>
+      <blockquote>Agent 拿到的系统权限越大，安全事故的爆炸半径就越大——沙箱与共享机制正成为 AI 工具的头号攻击面。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>德塔智能半年完成六轮融资：近 5 亿元天使++轮，押注人形机器人基础模型</h3>
+      <p>UCLA 博士团队创立的<strong>德塔智能（Delta Intelligence）完成近 5 亿元天使++轮融资</strong>，这是公司 2026 年 1 月成立以来<strong>半年内的第六轮融资</strong>。公司专注原生通用人形机器人基础模型 HFMs（Humanoid Foundation Models），采用"大脑+小脑+力位混合"三层原生协同架构，主打全身协同操作（Loco-Manipulation），投资方涵盖智元、乐聚、星海图等主机厂与高瓴创投等财务机构。</p>
+      <ul>
+        <li>融资节奏：成立半年六轮，本轮近 5 亿元，产业方 + 财务机构混合押注</li>
+        <li>团队背景：三位创始人均为 UCLA 博士，履历横跨 Google Robotics、NVIDIA Research、DeepMind、Meta</li>
+        <li>技术主张：空间认知须为三维实时表征，批判主流具身模型仍建立在二维视觉之上</li>
+      </ul>
+      <blockquote>资本正在为"具身基础模型"单独定价——机器人的"大脑层"开始脱离本体，成为独立赛道。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>国内首个具身智能特种机器人亮相央视：垂直墙面飞檐走壁，左手打磨右手焊接</h3>
+      <p>7 月 28 日，中央广播电视总台"智竞未来——首届智能机器人应用技能大展"发布活动在京举行，<strong>国内首个具身智能特种机器人</strong>亮相：集人形双臂、磁吸爬壁、大模型智能于一体，可垂直墙面攀爬作业，左手打磨、右手焊接，专攻化工储罐、船舶、能源设施等大型钢结构外壁的高危场景。同期，<strong>海信牵头的《人形机器人试验方法 第7部分：人机交互》国家标准获批立项</strong>，为国内首项聚焦人机交互能力的人形机器人国标。</p>
+      <ul>
+        <li>作业形态：磁吸爬壁 + 双臂异构协同（打磨/焊接），操作员 VR 眼镜远程遥操作</li>
+        <li>目标场景：化工储罐、船舶、能源设施等高危钢结构外壁作业</li>
+        <li>标准配套：首项人形机器人人机交互国标立项，覆盖多模态/情感/安全交互测试基准</li>
+      </ul>
+      <blockquote>特种作业是具身智能最硬核的落地口——"人不该去的地方"先交给机器人，商业逻辑最无争议。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-07-27 ===== -->
 <section class="day-section" id="day-0727">
   <div class="day-header" onclick="toggleDay(this)">
