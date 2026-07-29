@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-07-29 ===== -->
+<section class="day-section" id="day-0729">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年7月29日（周三）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 工程实录：50 万行 Zig→Rust 迁移 11 天完成，传统估算需 12 个月</h3>
+      <p>Anthropic 公开内部工程师工作流实录：Bun 作者 Jarred Sumner 借助 <strong>Claude Code + Fable</strong>，仅投入约 <strong>16.5 万美元 AI 算力额度</strong>，在 <strong>11 天内完成近 50 万行 Zig 代码到 Rust 的重构式跨语言迁移</strong>——传统估算小团队至少需要 12 个月。实录还揭示：工程师的日常已发生"原型与验证倒挂"，写代码变快后，主要精力转向审查 AI 生成代码的安全性与逻辑一致性，代码审查和测试也越来越多直接交给 AI 完成。</p>
+      <ul>
+        <li>迁移规模：约 50 万行 Zig → Rust，11 天 vs 传统估算 12 个月，算力成本 16.5 万美元</li>
+        <li>耗时最久项目：Claude Managed Agents 前后 6 个月，中途整体架构推倒重来</li>
+        <li>组织形态：坚持"两个披萨团队"，一个项目最多 2 名工程师</li>
+      </ul>
+      <blockquote>"因工期太长而不切实际"的工程任务正在批量解禁——AI Coding 的价值锚点从"写得快"转向"敢做以前不敢做的事"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>快手 Kwaipilot 开源 KAT-Coder-V2.5-Dev：35B 智能体编码 MoE 开放权重</h3>
+      <p>快手 Kwaipilot 团队<strong>开源 KAT-Coder-V2.5-Dev 完整权重</strong>——一个 <strong>35B 总参数 / 3B 激活</strong>的 MoE 编码模型，专为"在真实代码仓库中行动"的智能体场景调优，而非仅做代码补全。同日开源生态密集上新：234k Star 的 Agent Harness「ECC 2.1.0」新增 Plan Canvas 浏览器计划评审画布与 Kimi Code 接入；Grafana 六款 Agentic 运维工具同日 GA。</p>
+      <ul>
+        <li>KAT-Coder-V2.5-Dev：35B/3B 激活 MoE，面向真实仓库的 agentic coding 调优</li>
+        <li>ECC 2.1.0：Plan Canvas 把终端 Agent 计划变成可点击的浏览器评审界面，支持自托管 GPU</li>
+        <li>第三方基准警示：Humanlayer 的 SlopCodeBench 测得 Opus 5 仅 24%，93% 代码被标记为"slop"</li>
+      </ul>
+      <blockquote>开源编码模型从"大而全"分化出"小而专"路线——为 Agent 行动而生的 3B 激活模型，可能比万亿通才更适合进仓库干活。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-other">行业动态</span>NVIDIA 牵头 50 家公司成立"开放安全 AI 联盟"，OpenAI 与谷歌缺席</h3>
+      <p>NVIDIA 今日联合<strong>微软、IBM、思科、Palo Alto Networks、Hugging Face 及 Linux 基金会等约 50 家公司</strong>成立"开放安全 AI 联盟"（Open Secure AI Pact），通过加密签名、供应链安全协议和共享漏洞披露平台，建立可审计、可验证的 AI 模型安全生态，并向网络防御者开源可检视、可自托管的 AI 安全模型与 Agent 框架。<strong>OpenAI 和谷歌暂未加入</strong>。同日 NVIDIA Agent Toolkit 将 PhysicsNeMo 与 CUDA-X 库封装为 Agent 技能，瞄准芯片设计与物理仿真自动化。</p>
+      <ul>
+        <li>联盟规模：约 50 家公司，覆盖芯片、云、安全、开源基金会全链条</li>
+        <li>核心机制：模型加密签名 + 供应链安全协议 + 共享漏洞披露平台</li>
+        <li>缺席者：OpenAI、谷歌两大闭源巨头暂未加入</li>
+      </ul>
+      <blockquote>继编码 Agent 安全事故频发之后，"可审计的开放安全"正式成为产业联盟级议题——而闭源双巨头的缺席本身就是表态。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>车企集体"造人"：比亚迪人形机器人 8 月首秀，小鹏 IRON 广州试产</h3>
+      <p>比亚迪 7 月 28 日确认<strong>自研人形机器人将于 8 月通过"迪空间"正式亮相</strong>，预期为可实际操作的实体样机；小鹏 IRON 已于 7 月 24 日在广州工厂<strong>小批量试生产</strong>，年底月产能目标 1000 台，2027 年 Q1 进直营门店、Q2 出海。工信部数据显示，2026 年上半年国内人形机器人产量已<strong>超 4 万台</strong>（2025 全年约 2 万台），全年预计突破 10 万台。广东顺德昨日揭牌<strong>全国首个具身智能发展局</strong>。</p>
+      <ul>
+        <li>产量曲线：2025 全年约 2 万台 → 2026 上半年超 4 万台 → 全年预计破 10 万台</li>
+        <li>小鹏 IRON 路线图：2026 量产（年底月产能 1000 台）→ 2027 Q1 门店导购 → 2028 家庭场景</li>
+        <li>体制创新：顺德区具身智能发展局为全国首个统筹具身全产业链的政府职能局</li>
+      </ul>
+      <blockquote>比亚迪、小鹏、理想悉数进场——车企的供应链与产线能力正把人形机器人从"发布会物种"变成"制造业物种"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>日经技术团队拆解宇树 G1 后承认：日本短期追平中国"并不现实"</h3>
+      <p>日本日经 xTECH 发布宇树 G1 人形机器人<strong>全机拆解视频</strong>，技术人员从螺丝工艺、电池功率密度到脚踝双电机连杆结构逐项评估，结论是中国人形机器人已越过"只会展示"阶段，日本想短期缩小差距<strong>"恐怕并不现实"</strong>。G1 基础版售价 8.5 万元起、整机仅 35 公斤，关节采用"电机-减速器-编码器-驱动器"四合一集成模组，走线全部从关节轴中心穿过。此前宇树 G1 与优必选 Walker E 已进入日本羽田机场地勤试点。</p>
+      <ul>
+        <li>拆解评价：脚踝双电机金属连杆"再现人类脚踝运动"，核心部件技术水平"相当高"</li>
+        <li>G1 参数：8.5 万元起、1.32 米 / 35kg、23-43 个关节电机、膝关节扭矩 120N·m</li>
+        <li>产业地位：宇树 2025 年纯人形机器人出货量全球领先，营收 16.99 亿元</li>
+      </ul>
+      <blockquote>从 WABOT-1 到 ASIMO 的五十年先发优势，被集成度和供应链在几年内反超——拆解视频比任何榜单都有说服力。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-07-28 ===== -->
 <section class="day-section" id="day-0728">
   <div class="day-header" onclick="toggleDay(this)">
