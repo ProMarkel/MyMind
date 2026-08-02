@@ -216,6 +216,66 @@
 </div>
 
 <main>
+<!-- ===== 2026-08-02 ===== -->
+<section class="day-section" id="day-0802">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月2日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Loop 火了六周就被宣告"过时"：Graph Engineering 成 AI Coding 新热词</h3>
+      <p>虎嗅/智讯智库今日发文系统拆解 Graph Engineering 争论。起因是 Open Claw 作者 Peter Steinberger 7 月 18 日在 X 上的一句反问"我们还在谈 Loop，还是已经转向 Graph 了？"，同日机器学习工程师 Hamel Husain 发出《Loop Engineering Is Dead. Enter Graph Engineering》。<strong>Loop Engineering 从被正式命名到被宣告"死亡"只隔了 41 天</strong>。文章的判断是：Graph 并非取代 Loop，而是 AI Coding 从"单个 Agent 反复执行"走向"多节点协同"的下一层工程问题。</p>
+      <ul>
+        <li>Steinberger 那条 12 个单词的推文截至 7/28 获约 <strong>307 万</strong>次浏览，Husain 的调侃文（正文只有一张"Stop it"动图）也拿到约 68 万浏览</li>
+        <li>社区收敛出"双图"架构：<strong>组织图</strong>（长期存在的 Agent，定义谁负责哪个领域、保留上下文）+ <strong>工作图</strong>（动态生成，可拆分/合并/重排序甚至消失）</li>
+        <li>适用边界被明确：任务需能独立拆分、存在分支或回退、中间状态值得保存、结果能验收，且协作收益高于协调成本</li>
+      </ul>
+      <blockquote>Luis Catacora 那句回复最戳：Loop 有很大容错空间，Graph 会逼你承认工作流里还有多少部分根本没被建模。Loop 是延期决策，Graph 是提前决策——概念是新瓶，但被迫画出这张图本身就是收益。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>吴恩达开源 OpenWorker："AI 同事"定位，交成品而非建议</h3>
+      <p>Andrew Ng 与 Rohit Prasad 今日发布开源项目 OpenWorker，定位不是问答机器人，而是<strong>能把事情做完、交付成品的 Agent</strong>。让它"准备下周一的客户续约会议"，它会自己拉 CRM 数据、整理要点、生成简报文件，再回来问"要发给对方 CTO 吗"——人只在关键节点审批。</p>
+      <ul>
+        <li>内置 <strong>25+ 工具集成</strong>（GitHub / Slack / Jira / Notion / Linear / HubSpot / Gmail / Google Calendar / Outlook），任何支持 MCP 的工具都能接入</li>
+        <li>模型不绑定任何一家：OpenAI / Anthropic / Gemini / DeepSeek / Kimi / GLM / Qwen / MiniMax / Mistral / Grok 全支持，也可用 Ollama 跑纯本地</li>
+        <li>本地优先——Agent 运行循环、对话记录、连接器 token、模型 key 全存本地；写文件/发消息/执行 Shell 等"有后果"的动作强制人工确认，无人值守时进收件箱等待</li>
+      </ul>
+      <blockquote>最有意思的是花絮：团队用 Claude Code 和 Codex 给 OpenWorker 做安全审查，两者都因触发安全限制拒绝执行，最后换 GLM 5.2 和 Kimi K3 才跑完。吴恩达借此再次为开源模型站台——当闭源模型拒绝帮你找自己系统的漏洞时，你得有替代选择。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI 掀 API 价格战：GPT-5.6 Luna 降价约 80%；Claude Code 仍难撼动</h3>
+      <p>OpenAI 宣布下调 GPT-5.6 系列 API 价格，<strong>Luna 降幅约 80%，输入降至每百万 token 0.2 美元、输出 1.2 美元</strong>，Terra 同步降价，官方归因于生产优化与投机解码带来的推理效率提升。同日格隆汇报道另一面：Anthropic 切换按量计费后客户成本大幅上涨，Codex 持续迭代、中国开源模型能力长足进步，但众多企业在寻求控本方案后<strong>依旧选择继续使用 Claude Code</strong>。</p>
+      <ul>
+        <li>2025 年末至 2026 年初，大量企业转向 Claude Code，不少场景挤占了 GitHub Copilot 与 Cursor 的份额</li>
+        <li>降价直接利好高频 Agent 场景——自动化办公、编程助手、客服系统的商业模型可行性显著提升</li>
+        <li>xAI 同步加码 Grok Build，覆盖视频分析、文件管理、系统诊断与复杂工作流，走"AI 操作系统"路线</li>
+      </ul>
+      <blockquote>高智能能力正在快速商品化，但"便宜"没有立刻转化为"迁移"。工具切换成本、工作流沉淀和 harness 适配，正在成为比单价更硬的护城河。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>CRAIC 全国决赛：全尺寸人形机器人首次全程无遥操，1:1 复现真实工业场景</h3>
+      <p>第二十八届中国机器人及人工智能大赛人形机器人专项赛全国决赛 8 月 1 日在北京首钢园（石景山）开幕。<strong>本届最大升级是全尺寸赛区全面取消遥控操作设备</strong>，参赛机器人须完全依靠自主运动与决策完成全部赛程，赛场 1:1 还原高危巡检、产线上下料、汽车零部件分拣等真实生产环境。</p>
+      <ul>
+        <li>全国近 200 所高校 7000 余名学生参与，<strong>213 支队伍</strong>晋级决赛，350 多台人形机器人同台竞技，场地占地 2800 平方米</li>
+        <li>机器人需在 <strong>50 分钟内</strong>依靠自身传感器完成斜坡攀爬、上下楼梯、穿越崎岖地形，并基于视觉—语言—动作模型工具链在真实物理干扰下完成精密分拣</li>
+        <li>哈工大教授孙立宁判断：明年实际应用场景真实度将进一步加强，<strong>预计 5 年左右在若干场景达到广泛应用</strong>；赛后 OpenLET 开源数据集社区将落地石景山建"课程—实训—认证"闭环</li>
+      </ul>
+      <blockquote>取消遥操是个分水岭动作——它把评价标准从"演示效果"直接切到"自主完成率"。学生赛事先一步执行了产业界喊了半年的"去表演化"。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>产业进入"实战阶段"：万台级落地目标 + 出海遇 FCC 变数</h3>
+      <p>中国工业报今日发文指出，具身智能产业正从技术研发与样机验证加快转向实景应用。工信部与国务院国资委 6 月已印发人形机器人与具身智能<strong>实景实训专项行动</strong>通知，提出到 2026 年底重点产品在代表性场景率先完成应用验证和常态部署，开启"作业模式"，<strong>凝练百个以上高价值应用场景、带动形成万台级规模落地能力</strong>。</p>
+      <ul>
+        <li>2025 年国内人形机器人整机企业超 <strong>140 家</strong>、发布产品超 330 款；2026 年 1—5 月具身产业企业销售收入同比 <strong>+22.4%</strong>，工业企业购进具身机器人金额同比<strong>增 2.3 倍</strong></li>
+        <li>出海生变：FCC 7 月 28 日将"外国生产的先进机器人设备"加入覆盖清单，未获认证新产品无法在美销售；宇树称在售型号暂不受影响但新型号或受限，而 2025 年中国人形机器人出货占全球 <strong>84.7%</strong>，企业正加速转向欧洲、中东、东南亚</li>
+        <li>技术侧补短板：央视报道浙江清华柔电院柔性触觉"电子皮肤"让机器人感知轻重、可抓柔软易碎物；无本体采集技术让人穿戴传感设备即可实时产出触觉与视觉训练数据</li>
+      </ul>
+      <blockquote>文章罕见地把问题摆得比成绩多：场景碎片化、核心部件一致性、全生命周期成本、厂商只做短期项目合作。它明确建议政策评价改看真实订单、复购率和单位任务成本，而不是融资额和样机数量——这话说得相当直接。</blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2026-08-01 ===== -->
 <section class="day-section" id="day-0801">
   <div class="day-header" onclick="toggleDay(this)">
