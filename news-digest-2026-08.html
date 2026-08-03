@@ -216,6 +216,70 @@
 </div>
 
 <main>
+<!-- ===== 2026-08-03 ===== -->
+<section class="day-section" id="day-0803">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月3日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>微软自研 Project Polaris 接管 Copilot 默认模型，剪断 OpenAI 脐带</h3>
+      <p>本月起，GitHub Copilot 的 Individual / Business / Enterprise 全线订阅<strong>自动切换到微软自研的 Project Polaris</strong>——一个按编程语言/框架划分专家子模块的 MoE 代码模型，独占运行在 Azure 自研 <strong>Maia 加速器</strong>上，默认路径不再有任何 OpenAI API 调用。同期 Copilot Workspace 正式 GA：Autopilot 跨仓库推理并自主改多文件、跑测试、迭代，Fleet 模式可同时扫多个 issue；面向 Enterprise 的 Autonomous Agent Mode 允许 Agent 无需逐步确认直接写测提交整条功能分支，只保留最终 review-and-merge 人工门禁。</p>
+      <ul>
+        <li>企业可申请 3 个月回退窗口（至 11 月）验证内部代码库；<strong>价格不变、无新 SKU</strong>，模型替换在现有合同下静默完成</li>
+        <li>Pro/Pro+ 默认能力升级：多文件上下文最高 10 万行 + 自主测试生成；自报 HumanEval/MBPP 超 GPT-4 Turbo，但未披露 SWE-bench</li>
+        <li>Autopilot / Fleet 均跑在本地或 GitHub Actions 沙箱内；独立审阅者指出基于仓库上下文的 prompt injection 防御仍是空缺</li>
+      </ul>
+      <blockquote>这不是产品公告，是一笔穿着产品外衣的毛利决策——每一次经 OpenAI API 的补全都是微软给自家产品交的过路费。模型和硅片同时握在手里之后，Copilot 从"OpenAI 的分发渠道"变成了微软自己的 Agent 平台。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>xAI 切换到"月更基础模型"节奏：Grok 4.6 约 8/7 发布，2.1T 的 4.7 数周后跟上</h3>
+      <p>马斯克 7 月 28 日表态，xAI 计划在 <strong>8 月 7 日前后发布 1.5 万亿参数的 Grok 4.6</strong>（SFT 与 RL 大幅强化），随后数周内推出 <strong>2.1 万亿参数的 Grok 4.7</strong>，较当前 1.5T 的 V9 底座提升 33%+。从 4.5 到 4.7 约六周走完，目标是年底前<strong>每月产出一个新基础模型</strong>。支撑这套节奏的是终端原生编码 Agent Grok Build——自 5 月公测以来按用户反馈日更。</p>
+      <ul>
+        <li>grok-build-0.1 定价 $1 / $2 每百万输入/输出 token，吞吐 100+ tokens/s</li>
+        <li>Grok 4.5 用 Cursor 平台补充数据训练，跑在孟菲斯 Colossus 集群（已扩至约 20 万张 H100）</li>
+        <li>同期 BenchLM 编码榜 8/2 更新：Mythos 5 综合 80.1 居首、Fable 5 79.8、GPT-5.6 Sol 78.4，三强差距不足 2 分；YC 于 7/31 以 MIT 协议开源内部多智能体 harness QM，可跑在 Pi / OpenCode / Codex / Claude Code 之上</li>
+      </ul>
+      <blockquote>"初始训练完成"离能用还隔着对齐和红队，8 月是目标不是承诺。但节奏本身就是信号：当基础模型变成月更，"前沿发布"这个词的含义就变了，token 定价也会被一路压下去。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Kimi K3 论文给出 3T 级开源模型路径，蚂蚁 Ling-3.0-Flash 今日免费窗口关闭转开源</h3>
+      <p>月之暗面 8 月 2 日放出 K3 技术论文（arXiv:2607.24653），针对开源生态预训练长期卡在 1T 以下、百万 token 上下文注意力开销二次增长两大瓶颈，提出 <strong>Kimi Delta Attention（KDA）</strong>以线性复杂度状态更新替代冗余 KV 缓存，再用 Attention Residuals 做跨层检索，论证 <strong>3 万亿参数级 MoE 开源模型的可行性</strong>。同日，蚂蚁面向 Agent 执行节点的 Ling-3.0-Flash（1240 亿总参 / 51 亿激活）免费 API 窗口于今日到期，随后开放权重。</p>
+      <ul>
+        <li>K3 激活参数 104B，效率提升 2.5x，百万 token 原生多模态对齐；HLE 等顶级科学推理基准上仍略逊 GPT-5.6 Sol</li>
+        <li>Ling-3.0-Flash 采用 KDA:MLA = 5:1 的混合线性注意力，训练涵盖 1 万+ 交互式环境，主打"规划-执行分离"里的执行节点</li>
+        <li>官方称其在推理、指令遵循、长上下文上对标 2–3 倍参数量的模型；已上 OpenRouter 与 Vercel AI Gateway</li>
+      </ul>
+      <blockquote>两家不约而同押注同一件事：Agent 系统里执行节点的调用频次远高于规划节点，成本和稳定性才是系统经济性的主导项。开源的竞争重心正在从"参数多大"移到"每 token 干多少活"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>T-Rex 把触觉做成一等信号，接触密集任务成功率从 35% 抬到 65%</h3>
+      <p>UC Berkeley、斯坦福与 NVIDIA 联合发布 T-Rex（arXiv:2606.17055，李飞飞、Jim Fan、朱玉可领衔），录制了一部<strong>触觉百科全书</strong>：100 小时、200+ 日常物体、22 种接触原语（敲击/旋拧/插入等），由两只高精度灵巧手采集。架构上用时空触觉 VQ-VAE 把信号压成数百个离散触觉 token，再交给三路异步专家（latent / action / tactile）的 Mixture-of-Transformers。</p>
+      <ul>
+        <li>12 项接触密集任务平均成功率 <strong>65%</strong>，基线 EgoScale 仅 35%；翻书任务达 96%，杯子拆包、鸡蛋抓取同样表现突出</li>
+        <li>训练路径为"大规模第一人称视频先验 + 100 小时触觉原语中训"，绕开了纯触觉数据难以规模化的老问题</li>
+        <li>行业侧印证：高分辨率触觉传感器价格同比下降约 30%，正成为新款人形原型机的标配</li>
+      </ul>
+      <blockquote>"会跑会跳不等于会干活"——机器人走到桌边却拿不起杯子，是这一年被反复确认的瓶颈。视觉解决"看见"，触觉解决"拿稳"，前者已经卷完，后者刚刚开始。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>资本与交付同日双爆：一天两家亿美元级融资，FF EAI 单月出货创新高</h3>
+      <p>今日具身赛道消息密集：<strong>求之科技（DISCOVER Robotics）距首轮不足一月再完成 1 亿美元天使+轮，正式跻身独角兽</strong>，IDG、星连、武岳峰、达晨等参投，技术底座为"模型—数据—仿真"全栈（分层基础模型 ORION + 虚实混合数据闭环 LOOP + 高保真仿真器 DISCOVERSE）。同日，专攻机器人<strong>操作</strong>能力的破壳机器人（PokeBot）完成亿美元级 Pre-A，顺为与经纬联合领投，小米战投等老股东加注；创始人许华哲为清华交叉信息院助理教授、国内首个聚焦机器人操作的 TEA Lab 创建者。</p>
+      <ul>
+        <li>交付端：法拉第未来贾跃亭披露 FF EAI 机器人 7 月<strong>销售出货 152 台创单月新高</strong>，截至 7 月底累计 394 台，全年目标 2000 台</li>
+        <li>能力端：Figure 03 于 7 月实现<strong>完全自主爬梯</strong>（无遥控、无预设动作序列，靠自研 Helix VLA 实时识别横撑并协调重心），Figure AI 估值达 390 亿美元、走 RaaS 模式</li>
+        <li>产业端：哈尔滨航威已建 3 条自动化产线、关节电机年产能 4 万套，今年核心产品拿下 4000 台订单；行业侧执行器供应紧张被称为"新的芯片荒"</li>
+      </ul>
+      <blockquote>估值分化开始显形：物流等有清晰收入路径的公司拿到 10–15 倍营收倍数，而"科研项目型"人形正在被要求给出 ROI 证明。破壳把宝押在"操作"上，恰恰是这轮估值挤水分里最硬的那块骨头。</blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2026-08-02 ===== -->
 <section class="day-section" id="day-0802">
   <div class="day-header" onclick="toggleDay(this)">
