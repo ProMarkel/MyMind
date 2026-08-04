@@ -216,6 +216,70 @@
 </div>
 
 <main>
+<!-- ===== 2026-08-04 ===== -->
+<section class="day-section" id="day-0804">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月4日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code v2.1.221 结束十天静默：Focus 视图 + 凭据遮罩 + 后台会话自动保存</h3>
+      <p>沉寂十天后 Anthropic 一次性放出约 <strong>45 项变更</strong>（上一版 v2.1.220 停在 7/25）。VS Code 扩展新增 <strong>Focus 视图</strong>（Ctrl+Alt+F），把工具调用折叠成每轮可展开摘要、只留当前运行工具的实时指示器——折叠而非丢弃，调试时可随时展开。安全侧新增沙箱凭据文件 <strong>mask 模式</strong>（Linux/WSL）：沙箱内命令只读到哨兵副本，真实值由代理在出口处替换，Agent 全程看不到明文（macOS 回退为 deny）。</p>
+      <ul>
+        <li>直接回应 7 月 Tailscale 事件——当时 Agent 从生产密钥库读走 136 个 key，此前对策只是缩短凭据有效期，mask 是第三道防线</li>
+        <li>claude-api 技能新增 prompt-audit 子命令，扫描为旧模型写的冗余提示词；Opus 5 已于 7/24 成默认，<strong>Opus 4.1 明日（8/5）退役</strong></li>
+        <li>后台会话改为自动 commit + push 保存工作、按需开草稿 PR、退出前必报产物落点；/fork 分叉会话独占 worktree，不再污染原 checkout</li>
+      </ul>
+      <blockquote>更新重心全在"长会话可用性"和"凭据不落到 Agent 眼里"，说明主流编码 Agent 已默认跑长任务，注意力管理与最小权限成了产品硬指标而非加分项。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek 一条内测招募帖，意外做成开源 Agent 生态大摸底：712 仓库 120 万星</h3>
+      <p>8/1 DeepSeek Agent Harness 负责人崔添翼发帖招募内测，要求申请者提交自己维护的开源 Agent 项目作代表作。评论区迅速变成"开源 Agent 路演"：截至 8/3 上午共 <strong>769 位报名者、去重 712 个仓库、合计超 120 万 Stars、跨 18 个赛道</strong>。DeepSeek 已在内部用 Harness 完成 V4-Flash 正式版基准测试，社区据此猜测其将推出对标 Claude Code / Codex 的编程 Agent。</p>
+      <ul>
+        <li>智能体框架 + 编程智能体合计 <strong>242 个项目占三分之一</strong>：deer-flow 79k 星（长周期 SuperAgent）、CodeWhale 40k 星、orca 36k 星（多 Agent 编排）</li>
+        <li>记忆与上下文相关 56 个项目累计 194k 星（剔除 vllm 88k 后仍约 106k），路线分裂为 Git / 数据库 / 知识图谱，尚无统一答案</li>
+        <li>评测与安全治理各仅 24 个项目，是生态里最薄的一环，却决定 Agent 能否进生产环境</li>
+      </ul>
+      <blockquote>这份名单意外成了 Agent 工程化的现状快照：能力探索扎堆在框架层，而"长任务稳定性、记忆、可评测可管控"三块地基仍是明显洼地。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>LlamaFactory 作者开源 PenguinHarness：0.2 元自动造 Agent，准确率 50%→90%</h3>
+      <p>郑耀威（LlamaFactory 作者）开源 <strong>PenguinHarness</strong>，自称全球首个支持多 Agent 自进化的 Harness，核心能力是"让 Agent 自动构建另一个 Agent"，并自动完成构建、评测、持续改进的闭环，无需人工微调。基于原创 Agent 内核，兼容 GPT-5.6、DeepSeek V4 等 1000 多种模型。</p>
+      <ul>
+        <li>从零构建一个新 Agent 成本约 <strong>0.2 元</strong>，耗时约为 Codex 的一半、成本约为 Codex 的 1/200</li>
+        <li>自进化后 Agent 准确率从约 <strong>50% 提升至 90%</strong>；支持多模态、轨迹观测、成本对比与多用户并发</li>
+        <li>与 2026 年 AI4AI / 递归自我改进（RSI）主线呼应：田渊栋创立的 Recursive 已证明 Agent 可训模型、优化 GPU 算子</li>
+      </ul>
+      <blockquote>Harness 从"手写配置"走向"自己迭代自己"，成本压到一杯水的价格——RSI 从论文话题变成了开发者今天就能 clone 的工具。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>帕西尼再融 10 亿累计 35 亿，刷新全球触觉感知融资纪录</h3>
+      <p>具身感知企业帕西尼宣布完成 <strong>10 亿元战略轮融资</strong>，由一家"全球消费电子与半导体万亿级巨头"联合中银国际投资、鲲鹏基金（国家级大数据方向基金）、合信方册领投，鼎晖百孚、成都交子人工智能基金等跟投，<strong>累计融资达 35 亿元</strong>。该巨头在具身赛道至今仅直投两家企业，帕西尼触觉方案已进入其全球产业链核心环节。</p>
+      <ul>
+        <li>自研 <strong>6D 霍尔阵列式触觉传感</strong>可识别 15 种触觉维度、力精度 0.01N；把海外 10 万元级传感器打到 <strong>199 元</strong>消费级价位</li>
+        <li>近一年自研触觉芯片消耗量<strong>逼近 100 万颗</strong>；全模态数据已被多家具身基础模型公司与超大互联网巨头接入</li>
+        <li>产品线打通 PX 触觉传感器 → DexH 灵巧手 → TORA 人形机器人全链路；核心专利覆盖北美/日韩/欧洲并建本地交付体系</li>
+      </ul>
+      <blockquote>当视觉语言数据红利见顶，物理交互数据成了具身 Scaling Law 的下一桶燃料——帕西尼卖的其实不是传感器，是数据入口的卡位权。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>蚂蚁灵波启动 15 亿首轮融资，"通用机器人大脑"独立赛道成形</h3>
+      <p>蚂蚁集团全资子公司<strong>蚂蚁灵波</strong>确认正与投资人接触，拟募资 15 亿元，目标年底完成二轮，将持续聚焦通用机器人大脑与具身原生技术路线。蚂蚁称在灵波累计投入已超一线创业公司的融资额，本轮融资意在加速具身大脑发展与场景落地。</p>
+      <ul>
+        <li>已发布 LingBot-VLA / VA / Vision / World 等 <strong>10 余款模型</strong>，覆盖视觉感知—空间理解—任务决策—动作生成全链；GitHub Star 近 3 万，为第二名的 2.7 倍</li>
+        <li>面向"一脑多机"的 LingBot-VLA 2.0 在预训练阶段即适配宇树、智元、银河通用、乐聚等 <strong>17 个品牌 20 多种构型</strong></li>
+        <li>同日产业侧多点推进：云深处 DR02 人形与"一人一猫一狗"矩阵、逐际动力 COSA 人形大脑 + WBT 全身运动基础模型、加速进化 Booster T2 开放全球仿真平台；传智教育开设具身机器人开发新学科（实操占 70%）收 7 连板</li>
+      </ul>
+      <blockquote>大厂子公司也要独立融资，说明"机器人大脑"已被资本当成一条能单独定价的赛道，而非硬件公司的附属能力。</blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2026-08-03 ===== -->
 <section class="day-section" id="day-0803">
   <div class="day-header" onclick="toggleDay(this)">
