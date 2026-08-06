@@ -216,6 +216,66 @@
 </div>
 
 <main>
+<!-- ===== 2026-08-06 ===== -->
+<section class="day-section" id="day-0806">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月6日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Meta 发布首款编程智能体 Muse Code，用价格而非峰值性能开战</h3>
+      <p>Meta 超级智能实验室（MSL）首席 AI 官 Alexandr Wang 于 8 月 5—6 日确认 <strong>Muse Code 测试版上线</strong>，这是 Meta 首款独立 AI 编程智能体，基于同步开发训练的编码专用模型 <strong>Muse Spark 1.2</strong>。一行命令安装（macOS/Linux），可跨多文件规划改动、写码并自我验证；<strong>常驻后台 Agent</strong> 跨会话保持代码库上下文，大任务拆进相互隔离的 worktree 子 Agent。Wang 明确定位为 Claude Code / Codex 的<strong>低价替代</strong>，部分 Meta 员工已内部使用。</p>
+      <ul>
+        <li>按量付费 $1.25/百万输入 token、$4.25/百万输出 token（沿用 7 月 Muse Spark 1.1 API 价格体系）</li>
+        <li>"贡献者版"便宜 10 倍以上（输出约 $0.20/百万 token），代价是提示词与代码用于模型改进，速率限制降至 60 req/min（标准档 3000）</li>
+        <li>与 1.1 的关键差异：Muse Spark 1.2 与 Muse Code 同步开发训练，Wang 称这是编程性能提升的主因</li>
+      </ul>
+      <blockquote>Meta 没打"最强模型"这张牌，而是直接把编程 Agent 做成消耗品定价。用数据换算力折扣的"贡献者档"更值得注意——它把开发者的代码流变成模型迭代的燃料，这是 Meta 的老本行。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub Trending 双爆：agent-skills 单日 8.2 万星，Agent 生态从"能用"转向"用好"</h3>
+      <p>谷歌 Chrome 工程负责人 Addy Osmani 开源的 <strong>agent-skills</strong> 单日冲上约 <strong>81,966 star</strong>，收录面向编码 Agent 的生产级工程范式（复杂重构拆解、测试套件生成、代码质量守则），每条 skill 都是可直接嵌入现有工作流的模块化单元。同日 <strong>DeepSeek-Reasonix</strong>（围绕 prefix-cache 稳定性设计的常驻终端 Agent）首日 31,576 star；<strong>腾讯云 Agent Memory hub</strong> 与 <strong>Cloudflare computer</strong> 项目分别攻持久记忆与可靠执行环境两大部署难题。</p>
+      <ul>
+        <li>agent-skills：约 8.2 万 star / 24 小时，AI 工具类仓库历史最快增速</li>
+        <li>DeepSeek-Reasonix：31,576 star，主打 prefix-cache 命中稳定带来的成本优化</li>
+        <li>clauday 8/6 另载：Vercel Next.js 工程师烧约 600 亿 token 提炼出 8 条 AGENTS.md 核心规则（置于项目根目录可被 Cursor / Claude Code / Codex / Windsurf 自动读取），但作者警告"放弃向后兼容"一条曾险些让 Agent 删掉生产库表</li>
+      </ul>
+      <blockquote>模型层拉不开差距时，钱就流向"怎么用"。一天 8 万星说明行业已过"要不要用 AI 写代码"的阶段，进入方法论沉淀期——未来 12–24 个月的优势不在用哪个模型，而在集成得有多好。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 遭社区逆向质疑，"包一层或换掉大厂 harness"成反向趋势</h3>
+      <p>据 clauday 8 月 6 日社区观察，当日 Claude Code 圈讨论度最高的不是工作流或跑分，而是一则<strong>逆向工程发现</strong>：有用户称在闭源二进制中找到通过不可见提示字符标记特定地区环境的隐藏代码，叠加此前一波账号封禁反馈，<strong>信任成为当日主题</strong>（Anthropic 尚未就此公开说明）。与此同时，围绕"<strong>包裹甚至完全替换大厂 harness</strong>"的帖子明显增多——部分出于信任顾虑，部分因为非技术专业人士需要更贴近既有工具形态的界面。</p>
+      <ul>
+        <li>实用侧案例密集：结构工程师用 Claude Code 校验 Tekla 模型钢筋锚固、油气工程师搭完整计算系统、月投 10 万美元的 Meta 广告管线由 Claude Code API 驱动</li>
+        <li>日本用户用单条提示 + Seedance 2.5 生成竖屏短剧，字幕音效片尾全由 Claude Code 代码烧制，单集约 3000 日元 vs 外包约 16 万日元（约 1/50）</li>
+        <li>国内用户开源自用的全部 8 个 Skills，含 Codex 与 Claude Code 共享的可自我演化 Markdown 记忆系统</li>
+      </ul>
+      <blockquote>能力越强，信任的边际价值越高。当 Agent 拿到你的仓库、凭据和账单权限，"闭源二进制里有什么"就不再是洁癖问题。harness 可替换性正从工程偏好变成风险对冲。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>宇树科技今日定价：估值 420 亿，A 股迎来首个人形机器人整机龙头</h3>
+      <p>宇树科技（688836.SH）8 月 5 日完成科创板 IPO 初步询价，<strong>8 月 6 日确定发行价格与有效报价投资者名单</strong>，8 月 7 日刊登发行公告、<strong>8 月 10 日网上网下申购</strong>。拟发行 4044.64 万股（占发行后总股本 10%），募资 42.02 亿元，市场普遍预判发行估值 <strong>420 亿元</strong>，对应发行价约 104 元/股；从受理到过会仅 73 天，创 2026 年最快审核纪录。募资超八成投向研发，其中<strong>智能机器人大模型研发项目投资额居首</strong>。</p>
+      <ul>
+        <li>股东结构：王兴兴通过同股不同权合计控制 68.78% 表决权；美团持股 9.65%，中国移动（中移和创）0.5986%，与腾讯持平</li>
+        <li>业绩：2026 上半年预计营收 10.52–11.28 亿元，同比 +35.62%~45.41%；2025 全年营收 16.99 亿元、出货 5511 台，人形占比 51.8%</li>
+        <li>机构分歧明显：中信证券给出 ≥500 亿估值指引，乐观机构看至千亿；中国银河杨超称 A 股机器人行情将从减速器/伺服等单一零部件，扩展到大模型算法—整机—核心部件—场景运营全链</li>
+      </ul>
+      <blockquote>此前 A 股炒机器人只能买零部件，估值锚是"想象力÷市盈率"。整机龙头上市后，赛道定价第一次有了可对照的营收与出货数据——这对讲故事的公司不是利好。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>人形从"巡检"走到"实操"：云深处 DR02 进变电站，京东开源模型补具身数据缺口</h3>
+      <p><strong>云深处 DR02</strong> 人形机器人进入变电站执行<strong>开关操作与接地线挂接</strong>，是人形从巡检向带电实操跨越的产业信号；公司依托四足巡检积累已拿下电力场景约 <strong>85% 市占率、52% 毛利率</strong>并实现扭亏为盈。另一侧，京东 8 月 5 日开源实时流式视频编辑模型 <strong>JoyAI-Video-Edit</strong>，可边看边改人物与场景，其深层用途是<strong>把人手操作视频转成机械臂/机械手训练素材</strong>，直指具身智能最大瓶颈——真实操作数据。</p>
+      <ul>
+        <li>市场侧：8 月 5 日 A 股 AI 算力指数涨 2.82%，机器人板块绿的谐波领涨约 +6%，机构判断进入"左侧击球区"</li>
+        <li>OpenRouter 7 月全球大模型调用量前六全部为中国开源模型（小米 MiMo-V2.5、DeepSeek-V4-Flash、腾讯 Hy3、MiniMax M3、智谱 GLM-5.2、DeepSeek-V4-Pro）</li>
+        <li>产业情报平台 RobotScope 已收录 194 家具身智能公司、18 个国家/地区，累计融资超 1324 亿元</li>
+      </ul>
+      <blockquote>DR02 的价值不在于"会走路"，而在于敢在带电环境里动手。在成熟工业场景把一件事做透，比在展会上做十种表演更接近商业化——这也是为什么京东那个视频编辑模型比它看起来重要得多。</blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2026-08-05 ===== -->
 <section class="day-section" id="day-0805">
   <div class="day-header" onclick="toggleDay(this)">
