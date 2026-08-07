@@ -216,6 +216,66 @@
 </div>
 
 <main>
+<!-- ===== 2026-08-07 ===== -->
+<section class="day-section" id="day-0807">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月7日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek 预告 API 全面涨价"幅度较大"，"价格屠夫"告别低价策略</h3>
+      <p>DeepSeek 于 8 月 6 日晚发布简短公告，称<strong>计划近期整体上调 API 服务定价，预计涨幅较大</strong>，提醒开发者合理安排使用，8 月 7 日引发媒体与开发者社区密集讨论。与 6 月底引入的<strong>峰谷计费</strong>（工作日 9:00–12:00、14:00–18:00 价格翻倍）不同，本次指向<strong>整体定价中枢上移</strong>，距上次调价仅三周。导火索是 V4-Flash 正式版上线后调用量暴增：8 月 4 日 API 曾因"前所未有的访问量"出现容量不足。</p>
+      <ul>
+        <li>现行价：V4-Flash 缓存命中 0.02 元 / 缓存未命中 1 元 / 输出 2 元（每百万 Token）；V4-Pro 为 0.025 / 3 / 6 元，高峰时段翻倍</li>
+        <li>OpenCode 披露：8 月 1 日单日 V4-Flash 在该平台处理 <strong>8 万亿 Token</strong>（5 万亿免费额度 + 3 万亿付费）</li>
+        <li>年内已有智谱、月之暗面、MiniMax、阶跃星辰四家上调 API 价格；Kimi K3 输入涨超 3 倍、输出近 4 倍（20 元 / 100 元每百万 Token）；同期 OpenAI 反向下调 GPT-5.6 Luna 80%</li>
+      </ul>
+      <blockquote>Agent 时代的账终于要算了。单次问答改成数小时持续调用后，低价策略被自己引来的用量海啸压垮。行业逻辑正从"拼低价抢用户"切到"成本可承受下的商业化"——对开发者而言，模型选型该把单位任务成本而非单价摆到首位了。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>AWS 开源 Kiro Crew：从"AI 代理"迈向"AI 团队"，持久化工作空间成新形态</h3>
+      <p>AWS 于 8 月 4 日以 <strong>Apache 2.0</strong> 协议开源 <strong>Kiro Crew</strong>——一个持久化多 Agent 编排工作空间，可跨会话保留记忆与上下文、调度周期任务、在用户离线后继续运转，支持 CLI / 桌面端 / Web 面板及 Slack、Telegram、Discord、企业微信接入。其前身是三名亚马逊工程师的副项目 <strong>MeshClaw</strong>，<strong>不到六个月被 39,000+ 亚马逊内部构建者采用</strong>，近 500 名贡献者提交 597 次更新。8 月 7 日社区热度延续：有开发者以 Claude Code CLI 作执行引擎<strong>手写复刻版 claude-crew</strong>，坦言"读 README 无法真正理解每个部件为何存在"。</p>
+      <ul>
+        <li>内部采纳数据：39,000+ 用户 / 500+ 贡献者 / 597 次更新 / 平均每周 143 次提交，自下而上而非行政推广</li>
+        <li>安全为默认项：OS 级沙箱、默认拒绝命令、敏感路径拦截、凭据脱敏、<strong>签名审计日志</strong>，每一步在 Activity 视图可观测</li>
+        <li>复刻者的取舍：全本地运行不依赖云、用 Tailscale 替代云服务、引入操作系统级沙箱——其坦承"最初低估了安全这一环"</li>
+      </ul>
+      <blockquote>轨迹很清楚：AI 助手 → AI 代理 → AI 团队。真正的卖点不是"让开发者更快"，而是"让 Agent 使用可见、可审计、可治理"——目前企业内的 Agent 使用几乎全是影子 IT，签名审计日志才是平台工程团队真正需要的东西。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Grok 4.6 今日发布窗口，xAI 进入"月更基座"节奏；LoopsBench 揭示天花板在 harness 而非模型</h3>
+      <p>按马斯克 7 月 28 日预告，<strong>Grok 4.6 于 8 月 7 日前后发布</strong>：沿用 Grok 4.5 的 <strong>1.5 万亿参数架构</strong>，收益<strong>全部来自后训练</strong>（SFT + RL），指向更强指令遵循、更少无谓拒答、更可靠工具调用；2.1T 的 Grok 4.7 数周后跟进。xAI 由此形成约<strong>四周一代</strong>的节奏（4.5 于 7/8、4.6 于 8/7、4.7 预计 8 月底）。与此同时 clauday 8/7 收录的 <strong>LoopsBench</strong> 给模型军备竞赛泼冷水：<strong>最佳编码 Agent loop 仅解决 25% 的基准任务</strong>，瓶颈在 loop 义务（obligations）而非模型能力，所有 loop 配置都会在某处退化。</p>
+      <ul>
+        <li>Grok 4.5 定价 $2/$6 每百万 token，4.6 定价未公布；分发渠道为 SpaceXAI 控制台、GitHub Copilot（VS Code）、Azure AI Foundry</li>
+        <li>PAST-Bench（26 个任务族 / 204 回合 / 7 模型 × 4 框架）：留存经验确能改善后续行为，但增益<strong>高度依赖模型与框架</strong>，最明显的收益是"更新过时知识"</li>
+        <li>OpenAI Agents SDK 新版收敛出四条规则：提交前等输出护栏、保留已提交工具结果、致命失败后取消未完成的兄弟任务、强制沙箱 token 预算</li>
+      </ul>
+      <blockquote>四周一代让"按版本采购"彻底失效——六月签的模型，九月已落后两代。真正耐用的是分发渠道与 harness 工程能力：Agent 可靠性正在长成数据库工程的样子（暂存状态 → 跑护栏 → 提交历史，不可逆副作用配幂等键）。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>宇树发行价定为 150.8 元，市值 610 亿远超预期；DeepSeek 入列战略配售</h3>
+      <p>宇树科技 8 月 6 日晚发布科创板发行公告，<strong>发行价确定为 150.80 元/股</strong>，大幅高于此前市场约 104 元的预估。发行 4044.64 万股（占发行后总股本 10%），<strong>预计募资总额 60.99 亿元</strong>、净额 59.17 亿元，<strong>对应总市值约 609.93 亿元</strong>——较此前普遍预期的 420 亿高出约 45%，成为今年科创板仅次于长鑫科技的第二大 IPO。战配阵容中最受关注的是 <strong>DeepSeek 获配 93.34 万股（1.41 亿元，限售 36 个月）</strong>，另有三只全国社保基金组合、昆仑资本、南方电网产融、天翼资本及腾讯旗下上海启善投资在列。网上网下申购日 8 月 10 日，中一签需缴款 7.54 万元。</p>
+      <ul>
+        <li>发行市盈率 <strong>219.23 倍</strong>，远超行业平均 38.56 倍静态市盈率；募资 85% 专项用于研发，重点投向智能机器人大模型</li>
+        <li>基本面：2025 年营收 16.99 亿、扣非净利 5.9 亿；人形机器人出货超 5500 台（全球第一）占收入 51.78%，四足销量超 3.3 万台；2026 上半年营收预计 10.52–11.28 亿（同比 +35.62%~45.41%）</li>
+        <li>隐忧：2025 前三季度人形收入中科研教育占 <strong>73.6%</strong>、商业消费 17.39%、工业等行业应用仅 <strong>9%</strong>；公司或于 8 月 26 日成立十周年之际上市</li>
+      </ul>
+      <blockquote>A 股人形机器人的第一个"定价锚"落地了，同时也是一道淘汰线：后续 IPO 企业都会被拿宇树的营收、毛利、订单来比对，纯概念公司出局速度会明显加快。DeepSeek 以战投身份押注机器人本体，则是"大脑"与"身体"资本层面的首次正式握手。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>资本转向具身"数据地基"：真觉万象天使轮，150 美元三环方案压降真机数据需求 70%</h3>
+      <p>物理交互数据基础设施公司<strong>真觉万象（Physen AI）</strong>8 月 7 日宣布完成数千万元天使轮，由盈科值得旗下值得星炬基金领投。罕见之处在于两家上市公司以产业直投入局：A 股光学龙头<strong>力鼎光电</strong>（605118.SH）与港股"AI 具身家庭机器人第一股"<strong>卧安机器人</strong>（06600.HK，SwitchBot）。其"<strong>三环方案</strong>"由头环（全局视觉定位）+ 双臂环（六维力矩阵）+ IMU 构成感知闭环，<strong>整套设备成本约 150 美元</strong>，且采用抗干扰更强的 FMG（肌力信号）而非 EMG，覆盖静态握持、缓慢施力等传统盲区。目标是解决机器人"看得懂但做不对"的痛点。</p>
+      <ul>
+        <li>效率数据：依托数据对齐模型，<strong>真机数据需求下降 70% 以上</strong>，新物体泛化速度提升 <strong>3 倍以上</strong></li>
+        <li>赛道热度：毕马威数据显示 2026 Q1 中国具身智能融资 <strong>50.3 亿美元（同比 +182.9%）</strong>、203 笔（+55%）；IT 桔子口径上半年融资总额 935 亿元，为去年同期 5 倍</li>
+        <li>北京一个月内密集出手：帕西尼 10 亿战略轮（累计 35 亿，刷新全球触觉感知融资纪录）、月泉仿生数亿 Pre-A+、德塔智能 5 亿（半年第六轮）、他山科技 B 轮数亿并同步开启 C 轮</li>
+      </ul>
+      <blockquote>"视频只能记录做了什么，接触、用力、滑移才能告诉机器该怎么做"——这句话点出了具身数据的分野。自动驾驶的数据层内生于主机厂，具身没这个先天条件，于是数据、大脑、本体三分天下的格局正在成形，150 美元的成本线是这一层能否规模化的关键变量。</blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2026-08-06 ===== -->
 <section class="day-section" id="day-0806">
   <div class="day-header" onclick="toggleDay(this)">
