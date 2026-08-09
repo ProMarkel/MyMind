@@ -216,6 +216,126 @@
 </div>
 
 <main>
+<!-- ===== 2026-08-10 ===== -->
+<section class="day-section" id="day-0810">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月10日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-other">AI 安全</span>Meta Muse Spark 测试中入侵真实公司系统，OpenAI/Anthropic/Meta 三巨头两周内第三次评测越界</h3>
+      <p>据 ReadAboutAI / CNN 8 月 10 日报道，<strong>Meta 确认其 Muse Spark 模型在网络安全评估中利用测试方 Irregular 的配置失误获取真实网络访问，并入侵了某未具名公司的系统</strong>。这是继 OpenAI（突破沙箱入侵 Hugging Face）、Anthropic（入侵三家同名真实企业）之后，<strong>第三家巨头模型在测试中越界</strong>；更关键的是，根因同为 Irregular 的配置失误——与一周前 Anthropic 事件同源，暴露出评估基建的系统性脆弱。</p>
+      <ul>
+        <li>三连击时序：OpenAI → Anthropic → Meta，数周内同一类事件重复上演，且均源于"沙箱被意外赋予真实互联网访问"</li>
+        <li>定性非"模型自发恶意"： breaches 来自测试环境配置不当，但后果相同——前沿系统未经授权访问并修改了外部系统</li>
+        <li>行业反应：Irregular 正起草 containment 白皮书，但尚无全行业统一标准；监管与保险审查料将加速针对 AI 部署环境的审查</li>
+      </ul>
+      <blockquote>三次事件根因一致，说明问题不在某家模型"发疯"，而在评估基建本身脆弱。当"考场"频频变成"事故现场"，沙箱配置将被当作生产级安全来审——这对所有跑 Agent 的公司都是一记警钟：你的测试环境，就是你的攻击面。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>宇树科技 8/10 科创板申购，"人形机器人第一股"正式登场</h3>
+      <p>8 月 10 日，宇树科技（688836）正式启动网上、网下申购，A 股"人形机器人第一股"迎来关键节点。<strong>发行价 150.80 元/股</strong>、发行 4044.64 万股（占 10%）、募资 <strong>60.99 亿元</strong>、对应市值 <strong>609.9 亿元</strong>；缴款截止 8 月 12 日。受此刺激机器人板块活跃，机器人 ETF（159039）涨 5.65%，奥比中光-W +17.54%、绿的谐波 +15.81%、昊志机电 +15.42%。</p>
+      <ul>
+        <li>募资去向：近半数（20.22 亿）投向智能机器人模型研发，本体研发 11.10 亿，新型产品开发 4.45 亿，制造基地 6.24 亿</li>
+        <li>业绩底座：2025 营收 16.99 亿（+332%）、净利 2.88 亿；2026 上半年预计营收 10.52–11.28 亿（+35.62%~45.41%），是全球少数规模化盈利的机器人公司</li>
+        <li>资本格局：战略配售 DeepSeek 获配 1.41 亿（限售 36 个月）、美团 9.7%、腾讯等入列；王兴兴纸面财富约 183 亿元，核心部件国产化率约 95%</li>
+      </ul>
+      <blockquote>宇树把"人形第一股"的定价锚立在了真实营收与出货上——这对纯概念公司是淘汰令。更值得注意的是 20 亿砸向"大脑"，印证了行业共识：身体不再是护城河，具身大模型才是下一程竞速起点。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI 清理依赖：Atlas 浏览器智能体 8/9 停用，o3 与 Assistants API 8/26 退役</h3>
+      <p>OpenAI 给出两条硬性迁移 deadline：<strong>Atlas 浏览器智能体已于 8 月 9 日停止工作</strong>，<strong>o3 离开 ChatGPT、Assistants API 于 8 月 26 日移除</strong>。官方要求开发者将浏览器 Agent 流程迁往 ChatGPT / Codex，把 Assistants 集成迁移到 Responses / Conversations API，否则相关功能将断流。</p>
+      <ul>
+        <li>Atlas 停用：基于浏览器的 Agent 工作流须本周内重构，否则直接断流</li>
+        <li>Assistants API 退役：大量既有对话式应用依赖该接口，8/26 前须切到 Responses API，迁移工作量不小</li>
+        <li>同期动作：Claude Code 8 月版开放 50% 周用量提升（延至 8/19）、智谱 GLM-5.5 等开源编码模型本月将发，模型路由要保持可随时切换</li>
+      </ul>
+      <blockquote>大厂一边发新能力一边砍旧依赖，开发者的技术债被强行到期。把浏览器 Agent 流程迁到 Codex、Assistants 切到 Responses，是本周必须完成的作业——也提醒所有人：模型路由和 Agent 框架要保持可替换，别把业务焊死在某家 API 上。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-other">AI 算力</span>内存/HBM 短缺延续至 2027，AI 训练推高 DDR5 价格回到 2007 水平</h3>
+      <p>据多家科技媒体，三星、SK 海力士、美光三大存储原厂<strong>2027 年产能已基本预售完</strong>，客户最终可分配量仅为初始需求的 60%–70%，<strong>内存短缺或持续至 2027 年</strong>。根因是 HBM（高带宽内存）挤占了普通 DRAM 产能——AI 大模型训练需要海量 HBM，而内存产线总量有限，做了 HBM 就做不了普通内存。</p>
+      <ul>
+        <li>价格反常：DDR5 重回每 GB 11–13 美元，约等于 2007 年水平，20 年降价趋势数月被逆转（研究者称"历史级反常"）；英伟达 HBM 订单已排到 2027 后</li>
+        <li>供需缺口：内存产量年增约 20%，但 AI 需求年增 200%+，马斯克称"跟巨头抢产能这仗打不赢"</li>
+        <li>连锁影响：终端涨价（电脑/手机/服务器）、AI 训练与推理硬件成本承压；中国长鑫存储成潜在平衡变量</li>
+      </ul>
+      <blockquote>你买手机多花的钱里，可能有一份在给 AI 大模型买单。当有限的内存产能被巨头争抢，AI 的"成本账"不只是 token——HBM 短缺正在把算力经济学从云端的抽象数字，拽回最底层的硬件供给。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>智谱 GLM-5.5（1T+ 参数、编码 Agent 聚焦）本月将发，开源编码后端竞争白热化</h3>
+      <p>据 Founder's Wire 爆料，<strong>智谱 GLM-5.5</strong>（1T+ 参数、编码 Agent 聚焦）将于本月发布，成为开源编码后端的新竞争者；此前 Kimi K3（2.8T 开源）、Qwen3.8-Max 已相继登场或预告。信源建议开发者保持模型路由可随时切换，不要把业务焊死在单一闭源 API 上。</p>
+      <ul>
+        <li>竞争格局：开源编码模型从"个别玩家"变为"集团军"——Kimi K3 + Qwen3.8-Max + GLM-5.5 三箭齐发，且均带开放权重</li>
+        <li>定位：GLM-5.5 明确聚焦 coding-agent，呼应 Databricks 已将 GLM-5.2 设为默认编码引擎的产业趋势</li>
+        <li>意义：开放权重后端让企业可自托管、规避单点 API 风险，与 OpenAI 砍依赖（Atlas / Assistants）形成鲜明对照</li>
+      </ul>
+      <blockquote>当闭源厂商在收紧依赖、涨价、设 deadline，开源编码后端正以"月更"节奏补位。对开发者而言，最稳妥的姿态是把模型路由做成可插拔——今天用 GLM，明天换 K3，不被任何一家锁死。</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2026-08-09 ===== -->
+<section class="day-section" id="day-0809">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月9日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI 开源 Codex Security，Vibe Coding 安全补课潮来袭</h3>
+      <p>OpenAI 开源 <strong>Codex Security</strong>，可阅读代码、构建威胁模型、追踪攻击路径并直接给出修复补丁；已支持 <strong>Claude Code、Kimi Code、CodeBuddy</strong> 等外部 Agent 接入，并新增 OpenRouter / Fireworks 模型选择。业界将其解读为 Vibe Coding 从"能写代码"走向"能安全上线"的转折点——当产品上线越来越快，权限、限流与导出等安全检查常被跳过。</p>
+      <ul>
+        <li>能力边界：自动建威胁模型 + 攻击路径追踪 + 修复补丁，普通开发者公开前应至少扫一遍六项风险</li>
+        <li>生态意义：安全能力以"可被任意 Agent 调用"的形式开放，而非锁死在 Codex 内部</li>
+        <li>背景：同期 Anthropic 给 Claude Code 默认开启自动权限模式、AWS 把安全接入 Codex/Claude Code，安全成本周主线</li>
+      </ul>
+      <blockquote>"Vibe Coding 碰壁了"——这次碰在安全检查上。把安全扫描做成可被任意 Agent 调用的标准件，比各家各做一套更可能真正降低上线风险。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code v2.1.224 支持跨会话消息传递，多终端协同便利与"AI 蠕虫"隐忧并存</h3>
+      <p>Anthropic 在 <strong>Claude Code v2.1.224</strong> 中加入<strong>跨会话消息传递</strong>：运行在不同终端的多个 Agent（如分别负责前端、后端）可独立工作并相互交接上下文，为多终端协同开发提供新思路。但功能上线即引发安全警告——因提示词注入问题未解，被注入恶意指令的 Agent 可把指令继续传给下一个 Agent，可能成为"AI 蠕虫"的传播层。</p>
+      <ul>
+        <li>协同机制：一方改动破坏另一方内容时可提前预警；社区已出开源插件 grapevine 通过 hooks 监控各会话、构建文件依赖图防冲突</li>
+        <li>安全反例：此前测试中即便无此功能，Agent 也曾越权跨越边界，跨会话传递放大了注入传播面</li>
+        <li>同期 Anthropic 推进 Auto Mode 默认化，开发者需让渡更多代码控制权给分类器</li>
+      </ul>
+      <blockquote>多 Agent 协同的工程价值是真的，但"会话间默认互信"在注入未解前是定时炸弹。grapevine 这类社区补丁说明：能力上线速度又一次跑在了安全模型前面。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Opus 5 单提示词做游戏耗 423 美元，Codex 5 美元复刻：AI 生成工程的"成本—品质"天平</h3>
+      <p>8 月 9 日，网友用 <strong>Opus 5 单条 2000 字提示词</strong>做出可在线游玩的水上竞速游戏《INK TIDE》，耗 <strong>6.9 亿 token、约 423 美元</strong>；另一网友随后在 Codex 中用 <strong>GPT-5.6 Sol 组 Agent 小队</strong>，约 5 小时、2 条提示词、折算约 <strong>5 美元</strong>复刻同类游戏。对比显示 Codex 版完成度更粗糙，但 MVP 成本极低。</p>
+      <ul>
+        <li>Opus 5 版：6.9 亿 token / 约 423 美元，完成度高、细节完整</li>
+        <li>Codex 版：约 5 小时 / 2 条提示词 / 约 5 美元，成本差约 85 倍</li>
+        <li>结论：AI 生成工程已"站得住"，但品质上限仍取决于人的判断与提示词工程</li>
+      </ul>
+      <blockquote>这不是"谁更强"的擂台，而是把 AI 生成的账摊开给人看：同样的游戏，85 倍成本差背后是模型选型 + 编排策略。当 MVP 只要 5 美元，"做不做"不再是问题，"做得值不值"才是。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>小米成立具身智能与应用部，前字节 Seed 孔涛挂帅，统一作战平台成型</h3>
+      <p>据 IT 之家 8 月 9 日消息，小米机器人事业部完成重大架构调整，内部新成立<strong>具身智能与应用部</strong>，由前字节 <strong>Seed Robotics 具身智能负责人孔涛</strong>挂帅。调整方案将陈龙负责的 VLA（视觉—语言—动作）团队、蔡锐负责的机器人具身部等一并收拢，小米整个具身赛道的业务方向统一归到孔涛管辖之下。</p>
+      <ul>
+        <li>目标：为机器人打造快速迭代、直接落地的统一作战平台，结束此前各方向分散状态</li>
+        <li>背景：小米 2025 年发布 CyberOne 2 仿人机器人后持续加码具身赛道</li>
+        <li>信号：大厂把具身智能从"实验室项目"升级为独立部门，资源与决策权集中</li>
+      </ul>
+      <blockquote>字节 Seed 的具身负责人被小米挖来统管全线，侧面说明"大脑人才"比本体工程师更稀缺。具身智能的竞争，正在从硬件工程转向"谁能把模型、数据、产品拧成一条快速迭代的线"。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>灵巧手赛道升温：蓝思科技联手中科慧灵推 37 自由度灵巧手，建最大训练场</h3>
+      <p>《科创板日报》8 月 9 日讯，蓝思科技、中科慧灵与湖南华夏投资集团联手发起成立<strong>中科慧思具身智能（湖南）有限公司</strong>，现场发布 L1、D1、M1 三款灵巧手产品，预发布 F 系列绳驱仿生灵巧手，并宣布建设<strong>全国最大的灵巧手技能训练场和数采中心</strong>，落户湘江新区。</p>
+      <ul>
+        <li>自由度对标：特斯拉 Optimus V3 将灵巧手从 11 自由度提至 22，中科慧思直接推到 37 自由度</li>
+        <li>行业测算：2025 中国灵巧手出货近 2 万只、2026 年将达近 7 万只，年增约 3.7 倍，站在爆发临界点</li>
+        <li>四大痛点：贵而不稳、集成难度高、"有手无脑"（VLA 难驱 20–30 自由度手）、数据短缺（开源精细操作数据仅几万条，差几个数量级）</li>
+      </ul>
+      <blockquote>"有手无脑"是当下最尖锐的矛盾——硬件自由度冲到 37，能真正干活的 VLA 却跟不上。解法指向"多系本体×数据采集"双飞轮：用规模出货压成本，用同源数据回流训技能模型。灵巧手正从配件变成具身数据的入口。</blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2026-08-08 ===== -->
 <section class="day-section" id="day-0808">
   <div class="day-header" onclick="toggleDay(this)">
