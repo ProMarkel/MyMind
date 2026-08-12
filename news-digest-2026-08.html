@@ -216,6 +216,66 @@
 </div>
 
 <main>
+<!-- ===== 2026-08-12 ===== -->
+<section class="day-section" id="day-0812">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月12日（周三）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>SpaceXAI 发布 GrokBot，"数字员工团队"开启智能体团战</h3>
+      <p>马斯克旗下 <strong>SpaceXAI（原 xAI）</strong> 联合 600 亿美元收购的 Cursor，于 8 月 11 日发布 AI 软件 <strong>GrokBot</strong>，定位"全天候在线的智能助手团队"。每个 Bot 运行在独立云端虚拟机上，拥有自己的浏览器、文件系统和登录态，可登录各类应用自动推进工作，仅在需人工审批时"敲门"；多 Bot 可互相发消息、共享上下文并自分配任务（"chiefofstaffBot" 架构）。内部已用于销售、财务、工程、营销团队。</p>
+      <ul>
+        <li>订阅门槛：SuperGrok Heavy 300 美元/月、Cursor Ultra 200 美元/月、Cursor Teams Premium 120 美元/席/月均含 GrokBot；企业需加入等候名单</li>
+        <li>学习机制：观摩用户操作自动保存为可复用 Routine；多 Bot 并行协作，人只在关键决策点拍板</li>
+        <li>背景：6 月以 600 亿美元全股票交易收购 Cursor 母公司 Anysphere（预计 Q3 交割）；摩根士丹利 8/10 给予 SpaceXAI 300 美元基准目标价，牛市看至 600 美元</li>
+      </ul>
+      <blockquote>马斯克的"补课"从单点编程 Agent（GrokBuild 5 月）跳到"智能体团战"，本质是把 AI 从对话窗口变成 7×24 在岗、会协作的数字劳动力。但 Bot 索要的凭据权限深度远超传统助手——能否在混乱企业环境里安全跑出真实完成率，才是它能不能硬刚 OpenAI/Anthropic 的试金石。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Meta 连夜开源 30B Agent 模型 Muse Glimmer，扎克伯格点名对标 DeepSeek/Qwen/Kimi</h3>
+      <p>Meta Superintelligence Labs（Alexandr Wang 带队）于 8 月 10 日突然开源 <strong>Muse Glimmer</strong>——Muse 系列首个开放权重模型，<strong>30B 参数稠密多模态</strong>（27.9B 文本解码器 + 1.9B ViT，128k 上下文），<strong>Apache 2.0 许可</strong>，定位"常驻本地的 always-on Agent"。发布当天 llama.cpp、Transformers、Ollama、LM Studio、SGLang 等 day-0 支持，AMD/ARM/Intel/NVIDIA 均参与设备端优化。</p>
+      <ul>
+        <li>许可/分发：Apache 2.0，权重已上 Hugging Face，GGUF 与 Unsloth 变体同步放出，基本不设商用门槛</li>
+        <li>架构：30B 稠密多模态，分组查询注意力 + 混合滑动窗口（每 3 层 2048 局部 + 1 层全局），上下文撑到 128k 以上</li>
+        <li>落地优化：量化让 30B 塞进 24GB 显存；此前 Muse 线一直闭源只走 API，此次"有备而来"</li>
+      </ul>
+      <blockquote>Meta 把 Muse 从闭源 API 直接推成 Apache-2.0 的本地 Agent 底座，等于把"低成本、可自托管"的牌也打出来——与 GrokBot 的云端团战形成对照：一边抢云端编排，一边抢本地主权。Agent 模型的竞争，正从"谁最强"转向"谁最能跑在你自己的机器上"。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>上半年智元超越宇树登顶人形机器人出货榜首，中国人形占全球 97%+</h3>
+      <p>8 月 12 日，央视财经援引彭博社行业报告：<strong>2026 年上半年全球人形机器人出货量约 1.91 万台，是去年同期 5100 台的 3 倍多</strong>；中国制造商占全球 <strong>97% 以上份额</strong>。竞争格局上，上海智元机器人以 <strong>8400 台（占全球 44%）</strong> 超越杭州宇树科技（5900 台，31%）夺得第一，两者均远超特斯拉、Figure AI、Agility Robotics 等美国头部。</p>
+      <ul>
+        <li>全球上半年出货约 1.91 万台（同比 +304%）；中国占 97%+ 份额</li>
+        <li>智元 8400 台 / 44%，宇树 5900 台 / 31%；宇树 2025 全年人形出货 5500+ 台（纯人形，不含轮式双臂）</li>
+        <li>背景：工信部数据显示国内上半年人形整机产品已达 400 余款，超全球半数；乐聚、云深处、星海图等已完成股改筹备上市，港交所排队 IPO 机器人企业超 40 家</li>
+      </ul>
+      <blockquote>智元反超宇树是国内的一个观察节点，但更值得注意的是"97%"——中国几乎吃下了全球人形出货。不过报告也点出老命题：成本控制与商业模式可持续性仍是待解项，宇树上市后的市值表现才是真正检验期。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-other">AI 安全</span>Anthropic 为 Claude 嵌入隐形水印，复制粘贴后仍可追踪；同期签 91 亿算力大单</h3>
+      <p>Anthropic 宣布将为 <strong>Claude 生成的文本嵌入隐形水印、图片附加溯源元数据</strong>，文本水印直接织入内容本身，即使复制粘贴或部分编辑后仍可追踪。此举旨在响应欧盟 AI 法案，将全球适用并覆盖全产品线。这与 8 月初 Pwn2Own Berlin 暴露的"AI 编码 Agent 输出可被篡改/投毒"形成呼应——为 Agent 输出建立可溯源底线。同期 Anthropic 斥资 <strong>91 亿美元</strong> 与比特币矿企 Riot Platforms 签署 20 年算力长约（191MW，最高 161 亿美元），近月三笔巨额算力协议合计已超 600 亿美元。</p>
+      <ul>
+        <li>覆盖范围：文本隐形水印 + 图片 C2PA 溯源元数据，全球适用、覆盖全产品线；响应欧盟 AI 法案</li>
+        <li>与 Pwn2Own Berlin 2026 中 Codex/Cursor/Claude Code 等被攻破、输出投毒风险互为印证，把"可溯源"做成出厂底线</li>
+        <li>算力侧：与 Riot 191MW/20 年长约（最高 161 亿美元）；三笔合计超 600 亿美元，Riot 股价盘后涨 25%</li>
+      </ul>
+      <blockquote>当编程 Agent 能直接改生产代码，"内容从哪来、有没有被改过"就成了安全底座。隐形水印 + C2PA 让生成内容自带出生证——这一步比任何跑分都更贴近"AI 输出能否被信任"的现实命题。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>第四届中国具身智能机器人产业大会今日上海开幕，资本共识"破晓时刻"</h3>
+      <p>8 月 12—14 日，<strong>第四届中国具身智能机器人产业大会暨展览会在上海新国际博览中心举行</strong>，特斯拉、宇树、智元、优必选等主流品牌集中亮相人形、四足、协作机器人最新产品。万联证券点评称产业正处于"从技术突破迈向规模化商业化的<strong>破晓时刻</strong>"；高盛最新报告将人形机器人列为 AI 下一阶段重要增长极，预计 2027 年全球出货 7.6 万台、2032 年达 50.2 万台。</p>
+      <ul>
+        <li>时间/地点：8/12–14，上海新国际博览中心；多家主流品牌集中亮相人形、四足、协作机器人</li>
+        <li>机构观点：万联证券"破晓时刻"；高盛预计 2027 年 7.6 万台 / 2032 年 50.2 万台，亚洲机器人板块估值仍折价但盈利预期更高</li>
+        <li>驱动：需求端人口老龄化 + 劳动力成本攀升长期支撑；政策与资本合力助推，AI 大模型持续为机器人注入"灵魂"</li>
+      </ul>
+      <blockquote>展会年年有，但今年"破晓时刻"的提法有分量——供给端量产节奏（特斯拉/宇树/智元）+ 需求端结构性短缺 + 资本轮动三股力量第一次同时指向产业化。真正的考题不再是能不能动，而是敢不敢接真实订单、算不算得过账。</blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2026-08-11 ===== -->
 <section class="day-section" id="day-0811">
   <div class="day-header" onclick="toggleDay(this)">
