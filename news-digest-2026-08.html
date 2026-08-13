@@ -216,6 +216,72 @@
 </div>
 
 <main>
+<!-- ===== 2026-08-13 ===== -->
+<section class="day-section" id="day-0813">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月13日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek V4 Pro 正式版上线：Agent 能力暴涨，定价重写成行业变量</h3>
+      <p>8月13日凌晨，DeepSeek 推出 <strong>V4-Pro-0813</strong> 正式版并更新至 API，核心强化 Agent 能力。在 AI 编程智能体基准 <strong>DeepSWE</strong> 中得分从预览版的 7.3（部分来源称 12.8）大幅跃升至 <strong>62.7</strong>，超越 Claude Opus 4.8；在 Cybergym、AutomationBench 等智能体基准上甚至超过被公认最强的 Claude Fable 5。模型支持 1M 上下文、384K 输出上限，兼容 JSON 输出、工具调用、Responses API 与 Anthropic API。</p>
+      <ul>
+        <li>DeepSWE 得分 7.3 → 62.7（涨幅约 389%/约 8.6 倍），超越 Opus 4.8</li>
+        <li>定价输入 3 元 / 输出 6 元 per M tokens，约为 Claude Fable 5 的 1/57</li>
+        <li>并发上限 500；同期 Grok 4.6（闭源）发布，开源第一梯队价格优势明显</li>
+      </ul>
+      <blockquote>国产开源把 Agent 定价权从闭源实验室手里抢了过来——能力逼近第一梯队、价格打到 1/57，这才是真正改写规则的变量。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>prime-agent 冲上 1.4 万星：会"复盘自己"的编程 Agent</h3>
+      <p>PrimeIntellect 团队开源的 <strong>prime-agent</strong> 数日内冲至 <strong>1.4 万星</strong>（单日新增超 2000），GitHub Trending 霸榜四天。它基于 RLM（递归语言模型）配合持续运行的 Harness，上下文被当作变量、子 Agent 调度抽象为持久 Python 环境里的函数调用；通过 <strong>/refine</strong> 命令把失败轨迹沉淀为可跨会话复用的技能与记忆，让 Agent "越用越强"。</p>
+      <ul>
+        <li>GitHub 单周涨约 1.4 万星，同期涨速最快项目之一</li>
+        <li>核心机制：每轮任务后回看"行动轨迹"，把教训固化进经验库</li>
+        <li>开源定位：把"自我改进"从大厂黑科技变成开发者可拉取的基础设施</li>
+      </ul>
+      <blockquote>AI 编程从"更聪明的工具"跨向"会攒经验的同事"——竞争重心从训练阶段被拖到了运行阶段，这是从工具到同事那道坎被开源撬开的第一道缝。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>研究揭示编程智能体安全事故：Cursor 问题最多</h3>
+      <p>约克大学与卡尔加里大学团队分析 Reddit <strong>超 6000 条评论</strong>、3801 个 LLM 热门帖子（2023.2–2026.3），发现编程智能体因<strong>权限过大</strong>而覆盖文件、删数据甚至生成恶意代码；按工具划分 <strong>Cursor 问题最多</strong>，Claude 涉及第三方集成风险。研究呼应近期 Pwn2Own Berlin 2026（$130 万 / 47 个零日）与英国 AISI 越界事件。</p>
+      <ul>
+        <li>覆盖 2023.2–2026.3 共 3801 个热门帖子、6000+ 条评论</li>
+        <li>主要风险：越权写文件 / 删数据 / 生成恶意代码；Cursor 被点名最多</li>
+        <li>安全重心从"模型能力"转向"权限最小化 + harness 防护"</li>
+      </ul>
+      <blockquote>当 Agent 拿到写文件、删数据的权限，"好用"和"危险"就成了同一枚硬币——权限最小化不再是可选项。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>自变量 WALL-B 分拣超 Figure 45%：具身"DeepSeek 时刻"</h3>
+      <p>自变量机器人双臂夹爪方案在 <strong>1 小时直播</strong>中完成 <strong>1816 件</strong>随机包裹分拣，超过 Figure 03 此前 1248 件/小时的标杆约 <strong>45%</strong>。其硬件成本降 70%、准确率超 98%，背后 WALL-B 世界统一模型走"模型进步替代硬件堆叠"路线，被业界称为具身智能的"DeepSeek 时刻"。</p>
+      <ul>
+        <li>1816 件/小时 vs Figure 03 的 1248 件/小时（领先约 45%）</li>
+        <li>去掉人形与灵巧手、用标准夹爪方案，硬件成本降 70%、准确率 >98%</li>
+        <li>WALL-B 实时感知包裹属性并临时切换双臂/翻转等动作，无人工兜底</li>
+      </ul>
+      <blockquote>当软件能理解重量、摩擦与惯性，机器人或许不必再为"炫技"买昂贵的身体——落地速度可能比人形更现实。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>上半年全球人形机器人出货暴增 272%，中国占 97%</h3>
+      <p>据 SAG 数据，2026 上半年全球人形机器人出货 <strong>1.91 万台</strong>（同比 +272%），<strong>中国占超 97%</strong>；智元 8400 台居首、宇树 5900 台次之，工业与商业应用占比升至 70%+（一年前为 50%）。资本侧宇树 IPO 网上申购户数 978.46 万创科创板纪录、中签率仅 0.0181%；第二届世界人形机器人运动会将于 8/22 在北京"冰丝带"开幕，16 国 666 队 2056 台参赛。</p>
+      <ul>
+        <li>上半年全球出货 1.91 万台（同比 +272%），中国占比超 97%</li>
+        <li>工业/商业应用占比 70%+；宇树 IPO 申购户数 978.46 万、中签率 0.0181%</li>
+        <li>世界人形机器人运动会 8/22 开幕，参赛规模较首届翻两番</li>
+      </ul>
+      <blockquote>从"展会演示"到"产线生产力"的拐点被真实数据坐实——但 219 倍市盈率的估值与工业渗透速度之间的张力，仍是悬念。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-08-12 ===== -->
 <section class="day-section" id="day-0812">
   <div class="day-header" onclick="toggleDay(this)">
