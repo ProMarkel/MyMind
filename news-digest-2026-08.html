@@ -217,6 +217,68 @@
 
 <main>
 
+<!-- ===== 2026-08-18 ===== -->
+<section class="day-section" id="day-0818">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月18日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>grill-me 拷问式工具：在代码固化前逼出隐形决策</h3>
+      <p>一款名为 <strong>grill-me</strong> 的手动调用技能于 8/18 发布，用「一次只问一个问题」的方式，围绕计划或设计不断追问，直到重要决策树被理清。它刻意制造阻力，迫使提案在变更昂贵之前经受住考验——而不是让 AI 编码代理顺着第一个看似合理的输出悄悄定下方向。</p>
+      <ul>
+        <li>答案若能从代码库核实，则让 Agent 自查，而非要求人凭记忆重建仓库事实</li>
+        <li>定位「尚未确定方向」的压力测试，不替代规格说明、任务拆解、测试或代码评审</li>
+      </ul>
+      <blockquote>永远说「好的」的 Agent 不如会反驳自己的 Agent——动手前主动制造阻力，比事后返工便宜得多。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Agent Skills 安全普查：5 家审计机构连「不安全」都定义不齐</h3>
+      <p>Skillselion 发布 8 月 Agent Skills 安全普查，汇总各家审计结果后暴露出行业短板：<strong>skills / 插件 / MCP 服务器</strong>都在扩大编码 Agent 的网络暴露面，却以远松于普通依赖的审查被安装。核心防御共识是默认不出网、按任务开 allowlist。</p>
+      <ul>
+        <li>5 家审计机构的 fail 计数从 697 条到 0 条天差地别，暴露「不安全」尚无统一定义</li>
+        <li>构建任务默认 egress 应为 none，仅放行 package registry 与 repo host，其余一律阻断</li>
+      </ul>
+      <blockquote>prompt injection 只有在开放出网路径时才变成数据外泄——Agent 安全的重心已从模型本身移向「装载物」。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>世界人形机器人运动会 8/22 北京开幕，家政机器人赛前冲刺</h3>
+      <p>第二届世界人形机器人运动会将于 <strong>8/22 在北京</strong>拉开帷幕，国家速滑馆内的人形机器人产业生态训练与测评基地正开展赛前冲刺，多款机器人进行叠衣服、物品分拣、文件传真等生活化与职业化任务训练，为走进家庭当「保姆」积累数据与经验。</p>
+      <ul>
+        <li>本届规模 16 国 / 666 队 / 2056 台，较上届队伍 +138%、机器人翻两番</li>
+        <li>家庭场景要求 30 分钟内完成物品收纳 + 衣物整理，考察手眼脑协同与长时连续工作</li>
+      </ul>
+      <blockquote>从「能不能动」到「能不能做家务」，具身智能的评判标准正被真实生活任务重新定义。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>智元 WITA-Omni 登顶全模态榜单，浦东驶向「实用时代」</h3>
+      <p>智元自研的具身原生全模态大模型 <strong>WITA-Omni Preview</strong> 以 85.21 分登顶 DailyOmni 榜单，并将物理动作与表情提升为与语音并列的一级输出，用单一端到端模型统一驱动感知、决策与表达。同期浦东密集落地真实场景，国地中心携手百联共建全国首个可持续迭代的商业零售人形机器人应用高地。</p>
+      <ul>
+        <li>DailyOmni 综合 85.21 分，八项细分指标中六项第一</li>
+        <li>基于千万小时级多模态数据训练，保留声画语言动作表情的时序关系</li>
+      </ul>
+      <blockquote>国产具身从「会说话」跨到「懂交互」，竞争焦点正从演示性落到可用性。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>8 月编程 Agent 格局重排：GPT-5.6 Sol 与 Opus 5 咬到半个百分点内</h3>
+      <p>NeuralCoreTech 最新横评显示，旗舰模型两周一换已让「按版本采购」失效，真正拉开差距的是 harness 与定价。在第三方模型级实测口径下，<strong>GPT-5.6 Sol</strong> 与 <strong>Claude Opus 5</strong> 在 Terminal-Bench 2.1 上几乎持平，而底层模型榜首仍由 Claude Fable 5 把持。</p>
+      <ul>
+        <li>Terminal-Bench 2.1：GPT-5.6 Sol 89.5%（xhigh）领先，Claude Opus 5 89.1%（max）紧随</li>
+        <li>Claude Fable 5 仍以 SWE-bench Verified 95.0%、SWE-bench Pro 80.3% 居底层模型榜首</li>
+        <li>Gemini CLI 仍是最慷慨真免费选项：个人账号 1000 次/日、60 次/分钟</li>
+      </ul>
+      <blockquote>模型能力趋于同档，Agent 竞争的胜负手彻底沉到 harness 工程与单位成本。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-08-17 ===== -->
 <section class="day-section" id="day-0817">
   <div class="day-header" onclick="toggleDay(this)">
