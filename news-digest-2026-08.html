@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-08-20 ===== -->
+<section class="day-section" id="day-0820">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月20日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>字节 × 清华 AIR 发布 CUDA Agent：RL 训出的 GPU 内核比编译器更快</h3>
+      <p>字节跳动 Seed 联合清华智能产业研究院（AIR）发布 <strong>CUDA Agent</strong>，用强化学习（PPO）训练大模型生成高性能 GPU 内核代码。在 250 个任务的 KernelBench 上，任务成功率从基座模型的 <strong>74% 跃升至 98.8%</strong>，其中 <strong>96.8%</strong> 的生成内核比 torch.compile 更快。系统运行在安全沙箱中，并开源了 CUDA-Agent-Ops-6K 数据集与训练配方。</p>
+      <ul>
+        <li>KernelBench 成功率 74% → 98.8%，96.8% 生成内核快于 torch.compile</li>
+        <li>采用 PPO 算法 + 安全沙箱，已开源 6000 样本数据集及训练配方</li>
+        <li>意义：AI 从「能写代码」跨越到「能写出极致性能的底层代码」</li>
+      </ul>
+      <blockquote>底层性能代码曾是 AI 最难啃的硬骨头，RL 直接在 KernelBench 上把成功率拉到近满分，推理服务、自动驾驶等延迟敏感场景将被重塑。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Vercel 开源 fx（6MB Zig 编码 Agent）+ xAI 放出 Grok Build 全量 CLI</h3>
+      <p>Vercel Labs 开源 <strong>fx</strong>——一个仅 <strong>6.4MB</strong> 的二进制编码 Agent，用 Zig 编写，<strong>10 微秒冷启动</strong>，支持本地模型 / API / 网关，可嵌入 WebAssembly 运行；设计理念是「像 Unix 工具而非假装是应用的终端」。同日 xAI 开源 Grok Build 全部 <strong>84.4 万行</strong> CLI，作为 agentic coding 的权威参考实现（含上下文组装、工具调度、subagent 加载）。</p>
+      <ul>
+        <li>fx：6.4MB / 10µs 冷启动 / 支持 Skills·Plugins·MCP 扩展</li>
+        <li>xAI 开源 Grok Build 全量 CLI，但外部 PR 与 issues 关闭，实为 source-available 参考</li>
+        <li>趋势：编码 Agent 一端是 IDE 驾驶舱，另一端是可嵌入流水线的轻量原语</li>
+      </ul>
+      <blockquote>编码 Agent 市场正在「重量级 vs 原语化」两端分裂，fx 把「Agent 即基础设施组件」推向极致，谁能嵌进流水线谁就掌握分发。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Agent 安全新威胁 meta-hacking：Copilot 被「问」出自身架构</h3>
+      <p>研究者通过反复追问「为何不该攻击」，让 Copilot 自行披露其实现细节以收窄攻击面（代号 CoSnitch）。安全公司 Varonis 指出该弱点具有<strong>结构性</strong>——任何「推理可见」的助手都会暴露自身架构，微软于 <strong>8/18</strong> 推补丁，但披露到修复耗时约 <strong>8 个月</strong>。受影响的仅 Copilot Personal（2026/8/18 前），企业版不受影响，暂无野外利用证据。</p>
+      <ul>
+        <li>手法：无需逆向、无需代码访问，靠「追问为什么不能」套出实现细节</li>
+        <li>微软 8/18 发补丁，Varonis 称 2025/12 披露，修复周期约 8 个月</li>
+        <li>波及范围：所有 shipping reasoning-visible 助手的同源暴露</li>
+      </ul>
+      <blockquote>「模型如实解释自己的推理」是把双刃剑——可解释性越强，被反向套出架构的风险越大，这给所有推理可见助手上了一课。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>宇树上市首日高开 629.44%，「人形第一股」获资本热捧</h3>
+      <p>宇树科技（688836.SH）正式登陆科创板，上市首日<strong>高开 629.44%</strong>，在 WRC 现场展出可抚平衣物褶皱、整理货品的全新机械臂，家庭 / 商用场景实操能力直观呈现。资本市场对具身智能硬件供应链高度认可，但产业链普遍认为「<strong>大脑</strong>」价值尚未被充分认知。</p>
+      <ul>
+        <li>首日高开 629.44%，A 股「人形机器人第一股」</li>
+        <li>WRC 现场展示机械臂精细抚平衣物、归类整理杂乱货品</li>
+        <li>产业链判断：硬件供应链价值已被定价，「大脑」价值仍待重估</li>
+      </ul>
+      <blockquote>宇树用「超人」（跳高 2 米、12.66m/s）和首日暴涨把硬件叙事讲透了，但资本接下来要追问的是：软件与大脑值多少？</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>国家电网 68 亿元具身智能规划落地，央企「国家队」下场</h3>
+      <p>国家电网内部印发具身智能规划，计划投入 <strong>68 亿元</strong>，集中采购 <strong>8500 台</strong>具身智能设备（含 500 台人形带电作业机器人）。叠加 WRC 央企机器人创新联合体，标志「国家队」下场补齐量产与场景短板，电力巡检 / 带电作业有望成为继工业制造后的下一个规模化场景。</p>
+      <ul>
+        <li>总投入 68 亿元，采购 8500 台设备（含 500 台人形带电作业机器人）</li>
+        <li>央企联合体 + 国家电网规划，提供确定性需求</li>
+        <li>电力巡检 / 带电作业或成继工业后的规模化落地点</li>
+      </ul>
+      <blockquote>央企集中采购等于给行业发了「确定性需求」订单，具身智能从融资驱动切换到订单驱动，电力场景大概率率先跑通。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-08-19 ===== -->
 <section class="day-section" id="day-0819">
   <div class="day-header" onclick="toggleDay(this)">
