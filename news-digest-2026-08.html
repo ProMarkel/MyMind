@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-08-21 ===== -->
+<section class="day-section" id="day-0821">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月21日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Meta 推 Pocket 编程社交平台，MuseCode 超低价编程助手进场</h3>
+      <p>Meta 在美国正式推出类 TikTok 的 vibe-code 社交应用 <strong>Pocket</strong>，用户用自然语言即可生成、分享、游玩和改编 AI 小程序（Meta 称「gizmos」），并配套发布 AI 编程助手 <strong>MuseCode</strong>（由 Muse Spark 1.2 驱动）。其「贡献者层级」价格低至每百万输入 $1.25、输出 $4.25，约为竞品 1/20，但前提是开发者授权 Meta 使用其代码库、提示词与输出用于训练。</p>
+      <ul>
+        <li>Pocket 零配置、支持点击/滑动/拖拽/摄像头/语音，门槛极低</li>
+        <li>MuseCode Contributor 档价格比 Claude Code/Codex 便宜约 20 倍</li>
+        <li>代价：专有代码与输出被纳入 Meta 训练数据，引发数据归属争议</li>
+      </ul>
+      <blockquote>「免费/低价换数据」正在成为编程工具的新定价范式，模型能力与数据飞轮绑定，护城河从算法转向数据所有权。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Slack Code 上线：编程从编辑器走入团队协作频道</h3>
+      <p>Slack 正式推出 <strong>Slack Code</strong>，在聊天平台内为团队提供专属编码频道：被 @ 提及的 AI Agent 可自动创建项目频道，团队在频道内查看对话、代码差异、实时预览并审批。首批支持 <strong>Claude Code、Devin、GitHub Copilot、Vercel Agent 和 ChatGPT</strong>。功能对所有用户免费，Agent 订阅需另行购买。</p>
+      <ul>
+        <li>把编程从「个人编辑器行为」推向「多人 + 多 Agent 协作」的团队流程</li>
+        <li>Marc Benioff 称其意义在于同一工作空间内人与 Agent 协同</li>
+        <li>权限边界、代码审查、上下文隔离与责任归属仍是落地关键</li>
+      </ul>
+      <blockquote>编码 Agent 的竞争正从「谁模型更强」转向「谁先占据团队协作入口」。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek Harness RC.8：Harness 成统一调度层</h3>
+      <p>DeepSeek Harness 发布 <strong>RC.8</strong>（距 RC.7 仅两天），多模态能力补齐：模型适配器可开启原生图片请求、核心命令支持图文混合输入；工具调用同步增强，web_search 支持并发查询、Windows 端 PTY 持久化 PowerShell 会话。值得关注的是，<strong>Claude Code 与 Codex 被纳入其 Agent 编排体系</strong>，可作为 Profile Bundle 按需安装并作为子代理调用。</p>
+      <ul>
+        <li>Harness 正从「工具集合」演变为「统一调度层」</li>
+        <li>多模态子代理协同：编码 Agent 可调用 Claude Code/Codex 作子代理</li>
+        <li>迭代节奏压缩到两天一版，工具生态快速完善</li>
+      </ul>
+      <blockquote>当主流编码 Agent 都能被「编排」而非「替代」，Harness 层的价值开始超过单一模型。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>腾讯 GeniWorld 可交互世界模型：用未来视频合成训练数据</h3>
+      <p>清华联合腾讯 RoboticsX、香港科技大学、深圳技术大学推出可交互世界模型 <strong>GeniWorld</strong>。该模型通过 URDF 渲染把数值动作转换为与相机视角对齐的视觉动作表示，并预测未来视频，从而合成多样化机器人训练数据，缓解「真实物理数据稀缺」瓶颈。</p>
+      <ul>
+        <li>动作→视觉表示→未来视频预测，闭环生成训练样本</li>
+        <li>同期 ω-0、Daimon-TWM、DYNA-2 等世界/动作模型密集亮相</li>
+        <li>行业共识：VLA 与世界模型从「二选一」走向「路线混搭」</li>
+      </ul>
+      <blockquote>数据瓶颈是具身智能规模化最大拦路虎，能用仿真/世界模型「造数据」的玩家正在拿到下一阶段门票。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>数据缺口破局：51World 采集平台 + ReTouch 触觉模型</h3>
+      <p>针对具身训练数据稀缺，<strong>51World</strong> 发布机器人数据采集设备与平台，用数字孪生/仿真技术帮助机器人更好地感知与交互；arXiv 新模型 <strong>ReTouch</strong> 将触觉信号融入 VLA，用在线细化的触觉预测实现实时反馈的灵巧操作。与此同时，2026 世界机器人大会（8/19–23 北京）把焦点从「表演」转向「真实部署」，真正落地与高质量数据获取成为行业共识。</p>
+      <ul>
+        <li>51World 用数字孪生扩大数据采集规模</li>
+        <li>ReTouch 把触觉观察表示为结构化 patch 特征，实时修正动作</li>
+        <li>WRC 2026 强调实景验证而非炫技，评判标准切到「能否干活」</li>
+      </ul>
+      <blockquote>具身智能的竞争已从「能不能做动作」推进到「能不能稳定产出真实价值数据」。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-08-20 ===== -->
 <section class="day-section" id="day-0820">
   <div class="day-header" onclick="toggleDay(this)">
