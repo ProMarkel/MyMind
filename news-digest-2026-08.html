@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-08-23 ===== -->
+<section class="day-section" id="day-0823">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月23日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Superpowers 登顶 GitHub Trending：单日 27.6 万星，Agentic Skills 成跨模型开放标准</h3>
+      <p>开源社区 obra/superpowers 以 <strong>单日 276,179 星</strong>登顶 GitHub Trending，被普遍视为本季度最重要的开发者工具：它不只是 Claude Code/Codex 的又一层封装，而是把 AI 编程从「提示词工程」推向「结构化、可复用方法论」的 <strong>agentic skills 框架</strong>。框架用 .agents 目录约定 + Markdown/YAML frontmatter 定义技能（含提示模板、校验脚本、反馈回路），可跨 Claude Code、Codex、Cursor 等工具运行。</p>
+      <ul>
+        <li>单日 27.6 万星，成 GitHub 历史最快之一；技能以 Markdown+YAML 定义、跨工具可移植</li>
+        <li>把「技能」做成开放标准，模型运行时层被商品化，竞争回到模型质量与成本</li>
+        <li>呼应 8/8 的 26.9 万星起点，社区共识从「拼模型」转向「拼方法论与可审计流程」</li>
+      </ul>
+      <blockquote>Superpowers 被视为 AI 软件工程的「标准库」雏形——12 个月内，明确、可审计的 Agent 流程很可能取代「尽力而为」的提示词成为行业默认。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>编程 Agent 集体「服务化」：Copilot 进 Slack/Teams、Claude Code v2.1.241、Codex 后台仪表盘</h3>
+      <p>8 月 21–23 日，编码 Agent 密集从「个人编辑器」走向「团队基础设施 + 后台运维」：<strong>GitHub Copilot</strong> 登陆 Slack 与 Microsoft Teams，@GitHub 起 Agent 会话、开 PR 回链对话（需 Business/Enterprise 计划）；<strong>Claude Code</strong> 连推 v2.1.239–v2.1.241，/cost 计入 1.1x 推理溢价、/claude-api 自动把 Python 项目从 0.x 迁到 1.x SDK、Windows 补齐跨会话消息；<strong>Codex CLI</strong> rust-v0.149 新增交互式后台 Agent 仪表盘、codex queue 与插件隔离加固（策略失败直接断网）。</p>
+      <ul>
+        <li>Copilot 进团队聊天：把编码从 IDE 搬到协作频道，需管理员审批 Agent PR 才合并</li>
+        <li>Claude Code 成本估算与 SDK 迁移器上线，缓解合规工作区低估支出与旧 SDK 债</li>
+        <li>Codex CLI 后台 Agent 可搜索/启停/续聊，Agent 运维可观测性成新战场</li>
+      </ul>
+      <blockquote>编码 Agent 的竞争正从「模型谁更强」切到「谁先占据团队协作入口 + 谁把后台运维做成基础设施」。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Nvidia「Reins」框架：给 Claude Opus 5 配「缰绳」，ARC-AGI-3 从 30% 升至 100%</h3>
+      <p>Nvidia 一项研究给出量化证据：Agent 性能上限的关键在 <strong>编排、工具接入与上下文管理</strong>（论文称其为「缰绳」Reins），而非模型本身。为 <strong>Claude Opus 5</strong> 配定制 Reins 与监督器后，ARC-AGI-3 成绩由 30% 跃升至 100%；对工程团队而言，调框架可能比换模型更划算。这与近期 Codex Harness、DeepSeek Harness 开源的叙事高度一致。</p>
+      <ul>
+        <li>Opus 5 配 Reins 后 ARC-AGI-3 由 30%→100%，直接验证「Harness 才是真英雄」</li>
+        <li>编排层（监督器/工具/上下文）成为决定 Agent 上限的变量，而非单纯换更大模型</li>
+        <li>与 Codex/DeepSeek 开源 Harness 呼应，行业共识从「模型军备」转向「运行时治理」</li>
+      </ul>
+      <blockquote>当「缰绳」能把同一模型从 30% 拉到满分，模型权重就不再是唯一杠杆——工程团队该重新评估「调框架 vs 换模型」的 ROI。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Generalist GEN-1.5 具身基础模型：看一遍演示就会，单次 59%→微调 83%</h3>
+      <p>Generalist 发布具身基础模型 <strong>GEN-1.5</strong>，机器人观看 <strong>一次人类演示</strong>即可完成新任务、无需重新训练；单次演示下 10 项新任务平均成功率 59%，数分钟微调后升至 83%，训练数据增至 50 万小时以上。这一「看一遍就会」的能力被部分观点称为物理世界的 GPT-3 时刻，预示机器人部署成本有望下降。</p>
+      <ul>
+        <li>单次演示学会新任务，平均 59%；数分钟微调升至 83%，数据效率是核心变量</li>
+        <li>训练数据增至 50 万小时以上，从「逐任务编程」推向「示教即部署」</li>
+        <li>获黄仁勋、李飞飞相关投资背书，「演示即训练」或成具身落地新范式</li>
+      </ul>
+      <blockquote>「看一遍就会」把机器人从「逐任务编程」推向「示教即部署」——具身智能的拐点，可能不在更大模型，而在更高的数据效率。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>具身供应链与数据双突破：Schaeffler 2027 量产减速器 + EgoSuite-Open100K 开源</h3>
+      <p>具身智能的胜负手从「本体炫技」移到「零部件 + 真实数据」两条工业基线：德国精密制造商 <strong>Schaeffler</strong> 宣布 2027 年起量产人形机器人专用减速器（采用成型工艺的应变波齿轮），补上关键零部件瓶颈；Lightwheel AI 与 Hugging Face 开源 <strong>EgoSuite-Open100K</strong>——10 万小时第一视角手部视频、1.5 万+ 真实任务、含姿态与腕部相机，可商用，为灵巧操作训练提供公共燃料。</p>
+      <ul>
+        <li>Schaeffler 2027 量产人形专用减速器，供应链从「样品」走向「规模制造」</li>
+        <li>EgoSuite-Open100K 10 万小时标注手部数据上 Hugging Face，填补真实操作数据缺口</li>
+        <li>与上半年国内整机出货已达万台量级相互印证，本体放量倒逼供应链与数据基建</li>
+      </ul>
+      <blockquote>当减速器开始被传统精密巨头量产、真实手部数据被开源，具身智能才真正从「展示品」变成「工业品类」。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-08-22 ===== -->
 <section class="day-section" id="day-0822">
   <div class="day-header" onclick="toggleDay(this)">
