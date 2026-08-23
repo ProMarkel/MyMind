@@ -148,7 +148,7 @@
     border-top: 1px solid var(--border);
   }
   .month-dates.open {
-    max-height: 600px;
+    max-height: none; /* 真实高度由 JS 按内容计算，避免裁切 */
     opacity: 1;
   }
   .date-item {
@@ -366,12 +366,31 @@
 // Track current month loaded in iframe
 var currentMonth = '2026-08';
 
-// Toggle month expand/collapse
+// Toggle month expand/collapse — 按真实内容高度动画，不再有固定上限
 function toggleMonth(el) {
   var dates = el.nextElementSibling;
   var arrow = el.querySelector('.arrow');
-  dates.classList.toggle('open');
-  arrow.classList.toggle('collapsed');
+  if (dates.classList.contains('open')) {
+    // 折叠：先锁定当前高度，再动画收起到 0
+    dates.style.maxHeight = dates.scrollHeight + 'px';
+    dates.offsetHeight; // 强制回流，确保过渡起点生效
+    dates.classList.remove('open');
+    dates.style.maxHeight = '0px';
+    arrow.classList.remove('collapsed');
+  } else {
+    // 展开：从 0 动画到完整高度
+    dates.style.maxHeight = '0px';
+    dates.offsetHeight; // 强制回流
+    dates.classList.add('open');
+    dates.style.maxHeight = dates.scrollHeight + 'px';
+    arrow.classList.add('collapsed');
+    dates.addEventListener('transitionend', function te(e) {
+      if (e.propertyName === 'max-height' && dates.classList.contains('open')) {
+        dates.style.maxHeight = 'none'; // 释放高度限制，随窗口/内容自适应
+      }
+      dates.removeEventListener('transitionend', te);
+    });
+  }
 }
 
 // Load month page into iframe when a date is clicked
@@ -394,14 +413,13 @@ function loadDate(monthId, clickedEl) {
   return false; // prevent default navigation
 }
 
-// Default: expand June 2026 and load it
+// 初始化：任何已标记为 open 的月份（如当前月）完整显示全部日期，箭头向下
 (function() {
-  var allMonths = document.querySelectorAll('.month-group');
-  var lastMonth = allMonths[allMonths.length - 1]; // 2026-06
-  if (lastMonth) {
-    lastMonth.querySelector('.month-dates').classList.add('open');
-    lastMonth.querySelector('.arrow').classList.add('collapsed');
-  }
+  document.querySelectorAll('.month-dates.open').forEach(function(d) {
+    d.style.maxHeight = 'none';
+    var arrow = d.previousElementSibling.querySelector('.arrow');
+    if (arrow) arrow.classList.add('collapsed');
+  });
 })();
 </script>
 
