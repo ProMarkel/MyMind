@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-08-24 ===== -->
+<section class="day-section" id="day-0824">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月24日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 登顶 Agent Harness 新榜，Cloudflare 为 Agent 造浏览器与钱包</h3>
+      <p>8 月新一期 Agent Harness 排行榜将 <strong>Claude Code 列为长自主编码会话首选</strong>，领先 Codex CLI、Cursor、Gemini CLI、GitHub Copilot，评判维度为 hooks、subagents 与动态工作流深度。同日 Cloudflare 发布 <strong>Kitesurf</strong>——完全用 Rust/WASM 从零写、无 Chromium 的浏览器，在截图/HTML 抽取等 Agent 任务上比 Chromium <strong>省 3–7 倍 CPU 与内存</strong>；并配套可编程钱包与 x402 支付协议，让 Agent 能自主浏览并花钱、无需人类在回路。</p>
+      <ul>
+        <li>排行榜按"任务形态"分层而非单一胜负：仓库级重构与编辑器内重命名需要不同运行时</li>
+        <li>Kitesurf 通过 23.5 万项 Web Platform 测试，兼容 Playwright/Puppeteer，免费 Beta</li>
+        <li>Cloudflare 同步推 Wallets + x402 稳定币结算，20+ 公司已进入该支付流（Mastercard AP4M 为竞品）</li>
+      </ul>
+      <blockquote>Agent 身份从"代码补全"跃迁到"自带浏览器和钱包的数字员工"，每会话的成本治理成为当务之急而非可选项。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Matt Pocock「Skills」冲上 23.4 万星，AI 编程护城河转向"可版本化的工程判断"</h3>
+      <p>TypeScript 教育家 Matt Pocock 开源个人 <code>.agents</code> 目录（<code>mattpocock/skills</code>），把工程设计判断固化为结构化、可复用、可版本化的行为规约（"Prompt as Code"），登顶本月最快增长开发者资源。同周 Anthropic 上线官方社区插件市场 <strong>claude-plugins-community</strong>（900+ Star，每日安全扫描同步），开发者两行命令即可安装；社区还出现 harness-subagent 跨 Harness 编排工具，让主 Harness 把子任务分派给 Codex/Grok 等做交叉校验，呼应"另一个 Harness 不是神谕"理念。</p>
+      <ul>
+        <li>Skills 仓库已 233,815 Star，被类比为 npm/PyPI 式的"行为包管理器"雏形</li>
+        <li>Anthropic 插件市场走"官方只读镜像 + 内部安全审核管线"双轨，直接 PR 会被自动关闭</li>
+        <li>harness-subagent 通过 Claude Code headless / Codex exec / Grok Build CLI 实现跨框架调用</li>
+      </ul>
+      <blockquote>当基础模型趋于商品化，价值分化正快速移向编排层——一套好 Skill 能让弱模型打出强模型的质量。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Harness 工程成 AI 编程真正分水岭：scaffold 波动比换模型大 22 倍</h3>
+      <p>8/24 多项 Harness 工程动态集中爆发：LongHorizon-Harness 给 Claude Code/DeepSeek Harness 套上"循环工程"外壳（计划-执行-验证-存档 + 管理者/执行者/审计者三角色），在 WeaveBench、OSWorld 2.0 把成功率拉高数倍；有观点指出模型正商品化，<strong>SWE-bench Pro 上 scaffold（脚手架）改动带来的波动比换模型大 22 倍</strong>；OpenAI Codex 负责人则回应 Agent 为何更烧 Token——cache hit 下降、长会话 Compaction 后图像低效、Computer use p95 偏高是主因，成本战已进入系统工程阶段。</p>
+      <ul>
+        <li>自研 harness 须落 7 个决策：单/多 Agent、推理、上下文、验证、权限、工具范围、harness 厚度</li>
+        <li>趋势共识：模型越强 harness 越薄，但不消失</li>
+        <li>Codex 成本优化对象从"选哪个模型"扩展到整条执行链（Context/Cache/Compaction/工具返回）</li>
+      </ul>
+      <blockquote>比赛早已不在"谁的模型更强"，而在"谁能把任务真正跑完"——harness 才是那个沉默的英雄。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>小鹏机器人业务首轮融资超 9 亿美元，估值 63 亿刷新行业纪录</h3>
+      <p>8/24 小鹏汽车宣布旗下人形机器人业务完成首轮超 <strong>9 亿美元</strong>融资，投后估值超 <strong>63 亿美元（约 430 亿元）</strong>，刷新中国具身智能行业单轮私募股权融资纪录。本轮由 IDG 资本领投、高榕创投参投，腾讯与阿里巴巴作为战略投资者入局，小鹏集团继续控股。资金用于软硬件研发、物理 AI 模型训练、数据采集与量产基地建设。当家产品 IRON 定位高阶通用人形机器人，全身 <strong>76 自由度</strong>、单手 21 自由度、搭载 3 颗图灵芯片、有效算力 2250 TOPS，物理 AI 大模型端侧部署、无需遥操即可自主完成长任务。</p>
+      <ul>
+        <li>9 亿美元单轮融资额、投后 63 亿美元估值，均破行业私募纪录</li>
+        <li>战略投资方含腾讯 + 阿里，与智能汽车/自动驾驶业务形成协同</li>
+        <li>IRON 已支持长任务自主规划与工作流执行，目标"真正量产走出现实"</li>
+      </ul>
+      <blockquote>车企派以"全栈自研 + 车规级量产能力"切入，资本正把具身智能的估值锚从 demo 拉向可交付产能。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>WRC 2026 闭幕：机器人从"跳起来"迈向工厂"干起来"，上半年出货超 4 万台占全球 97%</h3>
+      <p>8/23 落幕的 2026 世界机器人大会交出成绩单：373 家企业、3000 余款产品、311 件首发，发布 44 项新技术（具身世界模型、绳驱灵巧手、柔性触觉数采、大小脑融合芯片等）。中国电子学会指出上半年 <strong>人形机器人出货量超 4 万台、全球占比达 97%</strong>，产业从"跳起来跑起来"切入工厂"干起来"、家庭"用起来"。同日新华社报道上半年机器人产业营收 <strong>1655 亿元、同比 +24.5%</strong>；WRC 现场从炫技转向真实作业——星动纪元 M7 已在顺丰/邮政十余个物流中心常态化运营（效率达人类分拣员 85%），智平方开源类脑架构 NeuroVLA，多家企业演示"一脑多形"跨场景协同。宇树王兴兴直言最大瓶颈仍是泛化能力，"能完成 80% 任务才是产业爆发点"。</p>
+      <ul>
+        <li>上半年人形机器人出货超 4 万台、全球占比 97%；产业营收 1655 亿 +24.5%</li>
+        <li>大会发布《2026 人形机器人产业发展报告》、成立中国电子学会世界模型专家委员会</li>
+        <li>全国已建 70+ 具身智能训练场，46 个在规划/建设中；央企开放十大高价值真实场景</li>
+      </ul>
+      <blockquote>产业叙事从"参数与才艺"切换到"数据-决策-执行的闭环能否跑通"，具身智能正式进入商业化基本面考校期。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-08-23 ===== -->
 <section class="day-section" id="day-0823">
   <div class="day-header" onclick="toggleDay(this)">
