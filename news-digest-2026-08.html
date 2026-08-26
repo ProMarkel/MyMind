@@ -217,6 +217,73 @@
 
 <main>
 
+<!-- ===== 2026-08-26 ===== -->
+<section class="day-section" id="day-0826">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月26日（周三）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI 正式下线 Assistants API，开发者须自建编排层迁移到 Responses</h3>
+      <p>OpenAI 于 8/26 正式将 <strong>Assistants API 从 API 中移除</strong>，微软 Azure OpenAI Assistants API 同日退役。迁移指南称可"不丢功能"迁移到 Responses API 与 Conversations API，但明确"不会提供 Threads→Conversations 的自动化迁移工具"，且把原本由平台驱动的 tool-call 轮询循环交还给开发者应用代码自行实现——等于要团队重写 Agent 编排层。后续还有 9/24 Videos API/sora-2、9/28 四个 GPT 快照、11/30 v1/prompts 三波下线，openai-python 3.0.0（8/12）也已切换 HTTPX2 默认客户端。</p>
+      <ul>
+        <li>8/26 Assistants API 正式移除；微软 Azure 同日退役，但替换目标不一致（OpenAI 指向 Responses/Conversations，微软指向 Foundry Agents）</li>
+        <li>迁移指南明确"不提供 Threads→Conversations 自动化迁移工具"，tool-call 循环改为应用代码自行编排</li>
+        <li>后续 9/24、9/28、11/30 还有三波下线；openai-python 3.0.0 已切换 HTTPX2</li>
+      </ul>
+      <blockquote>平台把"跑循环"的责任交还开发者，Agent 编排从"黑盒托管"转向"自写基建"，对存量集成是一笔一次性重写成本。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>英伟达编程智能体 AVO 满分通关 ARC-AGI-3 全部 183 关</h3>
+      <p>英伟达编程智能体 <strong>AVO 在 ARC-AGI-3 基准上取得满分</strong>，一次性通关全部 183 关。其做法并非单纯堆模型，而是在 Claude Opus 5 外包裹一层外部 shell，借助持久记忆与监督者弥补短板，由一支中国研究团队主导。结果把编程智能体的能力上限推到新高度，也再次凸显"外部工具链 / Harness 编排"对 Agent 表现的关键作用——印证近期"Harness 才是真英雄"的业界判断。</p>
+      <ul>
+        <li>ARC-AGI-3 全部 183 关一次性满分通关</li>
+        <li>架构：Claude Opus 5 + 外部 shell（持久记忆 + 监督者），由中国研究团队主导</li>
+        <li>把编程智能体能力上限推到新高度，凸显编排层价值</li>
+      </ul>
+      <blockquote>又一次证明：决定 Agent 上限的往往不是底座模型，而是围绕它的工具链编排与记忆机制。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>字节两篇 coding-agent 论文：Harness-IF 与 Lost in Compaction 揭示可靠性短板</h3>
+      <p>8/26 两篇围绕 coding agent 可靠性的论文引发关注。其一是 <strong>Harness-IF</strong>，在 12 个前沿模型、60 个多轮编码任务上测试"指令跟随"：当规则与模型默认行为相悖（写在 system prompt、tool 描述、skill、项目文件、用户指令等多处）时，所有模型得分都明显变差——揭示 Agent 的"指令跟随"高度依赖表面默认。其二是 <strong>Lost in Compaction</strong>：长会话被压缩成摘要时，当前压缩器平均只保留 17% 的"会话级约束规则"（如"发邮件前先问我"），导致 Agent 记得任务却丢了规则；用一个 9B 抽取器把规则存进独立 registry，保留率回升到 90%+。</p>
+      <ul>
+        <li>Harness-IF：12 个前沿模型 × 60 个多轮编码任务，对抗默认规则的指令全部得分下降</li>
+        <li>Lost in Compaction：3 种长上下文设置下，压缩器平均仅保留 17% 会话级约束规则</li>
+        <li>修复方案：独立规则 registry + 9B 抽取器，保留率 &gt;90%</li>
+      </ul>
+      <blockquote>当 Agent 长时运行、调用工具、替你发邮件，"会话规则"必须当持久状态存，而非丢进会被压缩的聊天历史。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>银河通用"一脑多能"对垒越疆"一脑多体"，具身大脑打响突围战</h3>
+      <p>2026 WRC 上，银河通用与越疆分别亮出"一脑多能"与"一脑多体"技术，指向同一方向：<strong>一个智能核心调度一支机器人团队</strong>。银河通用用自研具身大模型"银河星脑（AstraBrain）"让不同形态机器人共享同一套通用智能，现场 Galbot G1 完成家庭归置、零售配送、工业 30kg 级拆码垛；越疆以"空弈 DobotWAM 具身大模型"为核心，人形+四足+协作机器人协同完成柔性产线。业内人士称"一个模型管一堆机器比每台单独训练划算"，但大脑水平仍处 GPT-2 阶段，稳定可靠切换还需时间。</p>
+      <ul>
+        <li>银河通用 Galbot S1 已在宁德时代产线 7×24 常态化运行；零售仓落地全国数十城、170+ 点位</li>
+        <li>越疆 2025 协作机器人出货全球第一、累计破 10 万台，已推人形/多足/双臂等多形态</li>
+        <li>行业判断：具身基模当前约处 GPT-2 阶段，预计 2028 年达 GPT-3.5~4 区间</li>
+      </ul>
+      <blockquote>"一脑多体"把智能从单台机器解放到一支团队，是具身智能跨越实验室、融入产线的真正起点——但大脑仍是短板。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>诺亦腾开源 HiPHI 高精度人体运动数据集，617.5 小时亚毫米级动作捕捉</h3>
+      <p>2026 WRC 期间，诺亦腾机器人发布并开源 <strong>HiPHI 高精度光学动作捕捉数据集</strong>，总时长 617.5 小时，含 371.8 小时全身人体运动 + 245.7 小时人-物交互（含左右镜像），已在 Hugging Face 上线。数据来自 132 名动捕演员，以 90Hz、亚毫米级光学精度采集，按 FrameNet 动作语义框架以动作单元结构化整理。基于 HiPHI 训练的模型已在宇树 G1 真机部署中实现跑步、坐下、爬行、搬运、拖拉行李箱等动作。高质量真机运动数据是具身智能稀缺资源，此开源补上 VLA / 全身控制训练的新数据底座。</p>
+      <ul>
+        <li>617.5 小时总时长（371.8h 全身 + 245.7h 人-物交互），132 名演员、90Hz、亚毫米级</li>
+        <li>已在 Hugging Face 开源；按 FrameNet 动作语义以动作单元结构化</li>
+        <li>基于 HiPHI 训练的模型已在宇树 G1 真机实现跑/坐/爬/搬运等动作</li>
+      </ul>
+      <blockquote>仿真数据跨域差距明显，亚毫米级真采数据的开源，正把"机器人如何学会动"的数据底座从实验室 Demo 推向规模训练。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- ===== 2026-08-25 ===== -->
 <section class="day-section" id="day-0825">
   <div class="day-header" onclick="toggleDay(this)">
