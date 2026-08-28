@@ -1,0 +1,22 @@
+</main>
+
+<div class="footer">
+  <p>本页为 2026年8月每日 AI 资讯 · 数据来源：AI 自动化推送 + 网络搜索补全</p>
+</div>
+
+<script>
+function toggleDay(el) {
+  const section = el.closest('.day-section');
+  const content = section.querySelector('.day-content');
+  const arrow = el.querySelector('.arrow');
+  content.classList.toggle('collapsed');
+  arrow.classList.toggle('collapsed');
+}
+// Embed mode: hide header/nav when loaded in iframe
+if (window.location.search.includes('embed=1')) {
+  document.body.classList.add('embed');
+  document.documentElement.classList.add('embed');
+}
+</script>
+</body>
+</html>

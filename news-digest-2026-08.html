@@ -217,6 +217,72 @@
 
 <main>
 
+<!-- ===== 2026-08-28 ===== -->
+<section class="day-section" id="day-0828">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年8月28日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 连发三版 Claude Code：默认模型变量、跨会话空闲通知、Concise 输出</h3>
+      <p>Anthropic 在 8/19-20 连续推送 Claude Code v2.1.236~238，新增 <strong>ANTHROPIC_DEFAULT_MODEL 环境变量</strong>（新会话默认模型可由团队统一），notify_when_idle 实现跨会话空闲通知（一个会话可让另一个在空闲时主动 ping），内置 Concise 精简输出风格，插件 header 助手带安装/更新确认，并加强远程控制与沙箱修复、自托管 Runner 关闭与代理控制。</p>
+      <ul>
+        <li>v2.1.236(8/19) 引入 ANTHROPIC_DEFAULT_MODEL，手动 /model override 仍持久生效</li>
+        <li>notify_when_idle 让会话间消息互通，长任务不再静默卡死</li>
+        <li>同步修复远程控制、沙箱与自托管 Runner 生命周期，安全边界随版本升级变化</li>
+      </ul>
+      <blockquote>Claude Code 把"模型选择、插件信任、远程恢复"做成可治理的团队控件，版本升级已直接影响兼容性与安全边界，企业落地需建立 canary 机制。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Cursor 把 Cloud Agent 做成"事件驱动服务"：订阅 PR/Slack、/goal 目标、子 Agent 独立 VM</h3>
+      <p>Cursor 8/19 发布 Cloud Agents 重大更新：agent 可<strong>订阅 Pull Request、Slack 线程与定时任务</strong>，源变动时自动唤醒（如自动修 CI、回应 bot 评论）；新增 /goal 让目标保持激活直到完成；子 agent 迁移到独立虚拟机，拥有隔离的项目副本与干净上下文。</p>
+      <ul>
+        <li>Cloud Agents 可订阅自己创建的 PR，自动修 CI / 处理 bot 评论</li>
+        <li>/goal 配合 /loop 做周期性巡检，follow-up 可中途转向而不打断当前工具调用</li>
+        <li>子 agent 各自独立 VM，隔离上下文与运行环境</li>
+      </ul>
+      <blockquote>编码 agent 从"一次 prompt 跑完"演进为"常驻事件驱动服务"，工程负责人必须补上所有权与停止条件，否则会出现无人看护的长跑任务。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub Copilot 进 Slack/Teams 公共预览，并推出可移植插件标准 Agent Plugins 1.0</h3>
+      <p>GitHub 8/21 在公共预览中让 <strong>@GitHub 从 Slack 或 Teams 直接启动 Copilot 云 agent 会话</strong>，团队可在同一对话里加上下文、转向工作、查看专用代码频道，并从 PR/终端/Copilot App/IDE 继续；同时发布跨客户端可移植插件格式 Agent Plugins 1.0（含市场安装、共享技能、MCP 打包与企业管控）。</p>
+      <ul>
+        <li>@GitHub 在 Slack/Teams 启动云 agent，请求/会话/审查同处一个团队对话</li>
+        <li>Agent Plugins 1.0 为开放标准，跨兼容 Copilot 客户端通用</li>
+        <li>提醒：6 个旧模型将于 2026-08-31 从 Copilot 退役，硬编码模型名需排查</li>
+      </ul>
+      <blockquote>编码协作从"个人终端"搬进"团队频道"，权限、仓库、额度、沙箱预算与合并审批都变成共享工作流控件，治理前置成为刚需。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>2026 世界机器人大会收官：从"能跑会跳"走向"能干活、能交付、能成交"</h3>
+      <p>8/19-23 北京亦庄 2026 世界机器人大会（WRC）以"人机共生、产需共融"为主题，聚光灯从花式炫技转向真实场景落地。<strong>宇树科技 8/19 成为首家登陆 A 股的人形机器人企业</strong>；UBTECH 展示 10 台人形机器人协同智慧物流，Galaxea 扫码取货机器人已在京等多地运行；行业进入规模化商业部署关键期，比亚迪、上汽等近 10 家车企已在产线测试具身系统。</p>
+      <ul>
+        <li>WRC 汇聚 26 国 300+ 展商、3000+ 展品（含 300+ 首发），宇树成首家 A 股上市人形机器人公司</li>
+        <li>2026 上半年中国机器人产业营收 1655 亿元，同比 +24.5%；2025 全年超 3000 亿元</li>
+        <li>全国已建 70+ 具身智能训练场，46 个在建/规划；王兴兴："ChatGPT 时刻"快 2-3 年、慢 5-10 年</li>
+      </ul>
+      <blockquote>具身智能叙事正式从"技术突破"切换到"回本账"——能否稳定进厂干活、替代夜班，成为定价新标尺。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>第二届世界人形机器人运动会开幕，Galbot ET1 人形机器人上场打网球</h3>
+      <p>8/22 北京国家速滑馆，第二届世界人形机器人运动会开幕式上，银河通用（Galaxy General Robotics）开发的 <strong>人形机器人 Galbot ET1 与运动员对打网球</strong>，展示在动态物理环境中的自主移动与实时交互。系统以"大脑"做高层决策、"小脑"协调全身运动（行走、平衡、挥拍），结合人体动作数据与虚拟仿真训练，单打自主判断球路、双打与队友协同调整策略。</p>
+      <ul>
+        <li>ET1 在速滑馆与人对打，需实时追踪快球、预测轨迹、保持平衡并全身协调完成击球</li>
+        <li>训练采用人体动作数据 + 虚拟仿真，多 agent 在虚拟环境互练提升连续对拉/走位/选点</li>
+        <li>大会被视为具身智能"下一个前沿"测试场：从固定棋盘走向不可预测的物理世界</li>
+      </ul>
+      <blockquote>网球把具身智能的硬指标逼到台前——把"感知与决策"实时转化为"可靠物理动作"，正是下一代智能机器的关键关卡。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-08-27 ===== -->
 <section class="day-section" id="day-0827">
   <div class="day-header" onclick="toggleDay(this)">
