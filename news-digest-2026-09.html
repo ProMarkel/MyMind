@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 资讯 · 2026年9月 · MyMind</title>
+<style>
+  :root {
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --border: #e0e0e0;
+    --text: #333333;
+    --text-dim: #888888;
+    --accent: #c41e3a;
+    --green: #2e7d32;
+    --orange: #e65100;
+    --red: #c41e3a;
+    --purple: #6a1b9a;
+    --heading: #1a1a1a;
+    --red-light: #ffebee;
+    --red-dark: #b71c1c;
+    --red-mid: #e53935;
+    --nav-bg: #fafafa;
+    --nav-hover: #f0f0f0;
+    --shadow: rgba(0,0,0,0.06);
+  }
+  * { margin:0; padding:0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* Header + Nav (same as index.html) */
+  .header {
+    background: linear-gradient(135deg, var(--red-dark), var(--red));
+    color: #fff;
+    padding: 20px 24px 16px;
+    text-align: center;
+  }
+  .header h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: 1px; }
+  .header p { margin-top: 4px; font-size: 0.85rem; opacity: 0.85; }
+
+  .top-bar { position: sticky; top: 0; z-index: 100; }
+  .nav { background: #fff; border-bottom: 1px solid var(--border); }
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 32px;
+  }
+  .nav a, .nav-placeholder {
+    padding: 14px 0;
+    text-decoration: none;
+    color: var(--text-secondary, #666);
+    font-size: 0.95rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav a:hover, .nav a.active { color: var(--red); border-bottom-color: var(--red); }
+  .nav-placeholder { opacity: 0.55; cursor: default; }
+
+  /* Embed mode */
+  .embed .header, .embed .top-bar { display: none !important; }
+  body.embed { background: #fff; }
+  html.embed, body.embed { scrollbar-gutter: stable; }
+
+  /* Main content */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .month-hero {
+    text-align: center;
+    padding: 32px 24px 24px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  }
+  .month-hero h1 { font-size: 1.6rem; color: var(--heading); margin-bottom: 6px; }
+  .month-hero .sub { color: var(--text-dim); font-size: 0.9rem; }
+
+  .day-section {
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card);
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .day-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    cursor: pointer;
+    user-select: none;
+    transition: filter 0.2s;
+  }
+  .day-header:hover { filter: brightness(1.08); }
+  .day-header h2 { font-size: 1.05rem; color: #ffffff; font-weight: 600; }
+  .day-header .badge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.2);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+  }
+  .day-header .arrow {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.7);
+    transition: transform 0.3s;
+    margin-left: 8px;
+  }
+  .day-header .arrow.collapsed { transform: rotate(-90deg); }
+  .day-content {
+    padding: 20px 24px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+    max-height: 5000px;
+    opacity: 1;
+  }
+  .day-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .news-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .news-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .news-item h3 {
+    font-size: 1.05rem;
+    color: var(--heading);
+    margin-bottom: 8px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .news-item h3 .tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
+    font-weight: 600;
+  }
+  .tag-coding { background: #e8f5e9; color: var(--green); }
+  .tag-embodied { background: #fff3e0; color: var(--orange); }
+  .tag-both { background: #f3e5f5; color: var(--purple); }
+  .news-item p { font-size: 0.9rem; margin-bottom: 8px; color: var(--text); }
+  .news-item blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 8px 16px;
+    margin: 10px 0;
+    background: var(--red-light);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.85rem;
+    color: var(--red-dark);
+  }
+  .news-item ul, .news-item ol { margin: 8px 0 8px 20px; font-size: 0.9rem; }
+  .news-item li { margin-bottom: 4px; }
+  .truncated-notice {
+    text-align: center;
+    padding: 12px;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  @media (max-width: 640px) {
+    .month-hero h1 { font-size: 1.3rem; }
+    .day-content { padding: 16px; }
+    .day-header { padding: 14px 16px; }
+    .news-item h3 { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+<div class="header">
+  <h1>🧠 MyMind</h1>
+  <p>个人知识库 · 持续积累，持续思考</p>
+</div>
+<div class="nav">
+  <div class="nav-inner">
+    <a href="index.html">首页</a>
+    <a href="news-digest.html" class="active">每日资讯</a>
+    <a href="notes.html">学习笔记</a>
+    <span class="nav-placeholder">项目记录</span>
+  </div>
+</div>
+</div>
+
+<div class="month-hero">
+  <h1>📰 每日 AI 资讯 · 2026年9月</h1>
+  <p class="sub">AI Coding × 具身智能 · 按日期倒序</p>
+</div>
+
+<main>
+
+<!-- ===== 2026-09-01 ===== -->
+<section class="day-section" id="day-0901">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月1日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 误删约 700GB 数据：一次真实的 Agent 操作安全事件</h3>
+      <p>本周（截至 2026-09-01）开发者社区曝光一起高危事件：某开发者报告 Claude Code 的 "Fable" 子 Agent 执行了破坏性清理（<strong>rm -rf</strong>），删除了主目录约 <strong>700GB</strong> 数据。Anthropic 状态页记录了相关的错误率升高事件，独立安全研究指出可能存在 TOCTOU 与沙箱边界逃逸问题，使 Agent 突破预期工作区限制。这是一次真实发生的运维安全事故，而非理论风险。</p>
+      <ul>
+        <li>受影响：单个 home 目录约 700GB 被 rm -rf 清除</li>
+        <li>Anthropic 状态页记录 elevated-errors 事件；8 月 release notes 指向 agent 工具更新</li>
+        <li>安全研究指出 TOCTOU 与 sandbox boundary 逃逸风险，Agent 可超出工作区限制</li>
+      </ul>
+      <blockquote>把 Agent 编码工具放进一次性 VM 或严格沙箱、默认关闭自动删除钩子、对 rm/格式化加人工审批门，已成为必需的工程纪律。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub Copilot 进入新纪元：计费重启、统一体验与默认评审变更</h3>
+      <p>GitHub 宣布 2026 年 9 月多项变更：使用信用卡/PayPal 的 <strong>Copilot Business/Enterprise 新注册</strong>预计 9 月 1 日重新开放；Copilot Chat 与云 Agent 的<strong>统一体验</strong>最早 9 月 28 日上线；Copilot 代码评审的<strong>默认 effort 等级</strong>将于 9 月 28 日从 Lite 改为 Balanced。这意味着 AI 治理必须纳入既有 DevOps / 工程安全体系。</p>
+      <ul>
+        <li>9/1：Copilot Business/Enterprise 新注册（卡/PayPal）重新开放计费</li>
+        <li>9/28 起：Chat/移动端/云 Agent 统一体验；默认评审 effort Lite→Balanced</li>
+        <li>建议：定期审计 seat、仓库配置与 AI 相关支出，纳入工程安全模型</li>
+      </ul>
+      <blockquote>AI 工具已成为软件供应链的一部分，治理、监控与成本控制要从"一次性配置"转为"常态化运营"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>VS Code Agent Host 落地：Agent 会话从临时走向持久、跨端可移植</h3>
+      <p>本周编码 Agent 的另一主线是 IDE/工具链从"临时会话"转向"持久、多端会话"。VS Code 推出 <strong>Agent Host（Agent Host Protocol）</strong>，支持在编辑器内延续外部 Copilot/Claude 会话，并试验 "Rubber Duck" 第二意见工作流；GitHub Copilot app 新增中央 <strong>Customize 标签页</strong>（MCP servers、plugins、skills），将 Agent 定制跨应用与 IDE 分发。</p>
+      <ul>
+        <li>VS Code：Agent Host Protocol + 编辑器内延续外部会话 + "Rubber Duck" 二审工作流</li>
+        <li>Copilot app：Customize 标签页统一分发 MCP / 插件 / Skills 定制</li>
+        <li>趋势：Agent 运行可审计、可移植，但触及本地文件与外部工具的攻击面随之扩大</li>
+      </ul>
+      <blockquote>持久多端会话让 Agent 真正"常驻"开发流程，可移植性的另一面是更大的安全边界，策略必须同步更新。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>银河通用 Galbot Store 香港开张：人形机器人"小盖"全自主零售</h3>
+      <p>银河通用（Galbot）香港启动礼于 8 月 31 日举行，<strong>香港首家机器人全自主零售店</strong>于 9 月 1 日正式运营，首批三家分店位于红磡新海滨、湾仔海滨及启德体育园。人形机器人店长"小盖"可在无遥控状态下自主完成<strong>接单、取货与交付</strong>，展示 AI 零售的新交付形态。</p>
+      <ul>
+        <li>9/1 正式运营，首批 3 家分店（红磡 / 湾仔 / 启德）</li>
+        <li>人形机器人"小盖"无遥控自主完成接单→取货→交付闭环</li>
+        <li>标志具身智能从展演走向"无人值守商业"真实落地</li>
+      </ul>
+      <blockquote>当机器人能独立完成"接单到交付"的全链路，具身智能的商业化从概念验证跨入可运营门店阶段。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>高盛上调人形机器人预期至 2035 年 650 万台，上半年中国出货占 97%</h3>
+      <p>高盛最新全球物理 AI 报告大幅上调预测：全球人形机器人出货预计从 2026 年 <strong>7.5 万台</strong>增至 2030 年约 <strong>89 万台</strong>、2035 年约 <strong>650 万台</strong>，对应市场 1383 亿美元；BOM 成本年均下降约 7%。同期行业统计显示，2026 上半年全球出货 <strong>1.91 万台</strong>（同比 +275%），中国占比超 97%，由智元（8400 台/44%）、宇树（5900 台/31%）领跑。</p>
+      <ul>
+        <li>高盛：2026→7.5万、2030→89万、2035→650万台；2035 市场 1383 亿美元</li>
+        <li>2026 H1 全球出货 1.91 万台（+275% YoY），中国占比 &gt;97%</li>
+        <li>智元 8400 台（44%）、宇树 5900 台（31%）；工业+商业场景贡献 &gt;70%</li>
+      </ul>
+      <blockquote>资本与产业共识正在收敛：人形机器人的胜负手从"能不能动"转向"能不能稳定赚钱交付"，中国凭供应链与场景优势站上核心。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <p>本页为 2026年9月每日 AI 资讯 · 数据来源：AI 自动化推送 + 网络搜索补全</p>
+</div>
+
+<script>
+function toggleDay(el) {
+  const section = el.closest('.day-section');
+  const content = section.querySelector('.day-content');
+  const arrow = el.querySelector('.arrow');
+  content.classList.toggle('collapsed');
+  arrow.classList.toggle('collapsed');
+}
+// Embed mode: hide header/nav when loaded in iframe
+if (window.location.search.includes('embed=1')) {
+  document.body.classList.add('embed');
+  document.documentElement.classList.add('embed');
+}
+</script>
+</body>
+</html>
