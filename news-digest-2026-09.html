@@ -157,6 +157,7 @@
   .tag-coding { background: #e8f5e9; color: var(--green); }
   .tag-embodied { background: #fff3e0; color: var(--orange); }
   .tag-both { background: #f3e5f5; color: var(--purple); }
+  .tag-other { background: #eceff1; color: #455a64; }
   .news-item p { font-size: 0.9rem; margin-bottom: 8px; color: var(--text); }
   .news-item blockquote {
     border-left: 3px solid var(--accent);
@@ -216,6 +217,204 @@
 </div>
 
 <main>
+
+<!-- ===== 2026-09-06 ===== -->
+<section class="day-section" id="day-0906">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月6日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI GPT-6 Astra 全量开放：Computer Use 接管完整工作流，宣称进入 AGI 时代</h3>
+      <p>OpenAI 于 9 月 3 日发布、9 月 5 日全量开放新一代旗舰模型 <strong>GPT-6 Astra</strong>，面向 ChatGPT Work、Codex 及 API 上线。官方称其为"目前全球最智能且对齐程度最高的模型"，核心变化是把边界从"生成内容"延伸到"执行完整工作流"——接收高层目标后可自主规划、调用浏览器、读写本地文件、编写并运行代码、操作软件界面，遇错自动回溯调试。其训练动用超 <strong>10 万块 GPU</strong>，定价约为上一代的 2.5 倍。</p>
+      <ul>
+        <li>ARC-AGI-3 测试得分 <strong>99.9%</strong>（统一环境降至 62.7%）；上下文达 <strong>105 万 Token</strong></li>
+        <li>安全：Astra 达 OpenAI Preparedness 的 "Critical" 级，可自主发现未知漏洞，最强网络能力经 Daybreak 计划限制于受测者</li>
+        <li>灰度分批发售：优先可信访问机构，普通订阅/API 用户需等待数日</li>
+      </ul>
+      <blockquote>当模型不再需要你把任务拆成几十条指令，而是直接接管电脑，AI 竞争的战场就从"生成得准不准"转到了"在真实世界里干得成不成"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>字节「豆包工作」推出企业级 Agent：多 Agent 并行 + Mac 本地 GUI 操作</h3>
+      <p>字节跳动旗下豆包推出面向生产力场景的企业级 Agent 产品与品牌 <strong>「豆包工作」</strong>，新增<strong>「多 Agent 并行」</strong>与<strong>「Mac 系统本地 GUI 操作」</strong>两项能力。据《科创板日报》实测，该产品正从「写材料」走向「管流程」，企业级多智能体协作成为新的落地焦点。</p>
+      <ul>
+        <li>能力升级：多 Agent 并行执行 + 本地 GUI 直接操作 Mac 桌面应用</li>
+        <li>定位：从个人写作助手升级为可编排企业流程的体系化 Agent 平台</li>
+        <li>信号：办公 Agent 竞争进入"体系化/多智能体"阶段，而非单点功能比拼</li>
+      </ul>
+      <blockquote>办公 Agent 的胜负不再取决于"写一个文档快不快"，而是"能不能把一整条业务流程托管给多个协作的智能体"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-other">其他</span>小米开源通用表格数据大模型 Xiaomi-TabLDM：一次预训练直接分类与回归</h3>
+      <p>小米 9 月 5 日正式发布并开源通用表格数据基础大模型 <strong>Xiaomi-TabLDM</strong>，权重、代码与技术报告全部公开。该模型主打一次预训练即可直接完成分类与回归预测，打破"一表一模型"现状，在 OpenML-CTR23、TALENT 等四大基准跻身第一梯队。</p>
+      <ul>
+        <li>训练时间较头部方案减少 <strong>82%</strong>；四大基准进入第一梯队</li>
+        <li>全开源：权重 + 代码 + 技术报告同步放出</li>
+        <li>价值：把表格建模从"定制训练"变成"通用推理"，降低企业数据科学门槛</li>
+      </ul>
+      <blockquote>当表格这种最传统的企业数据也能用上"基础模型"，AI 的渗透就从文本/图像一路下沉到了 ERP 和财务报表里。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Figure 与 Nscale 达成百亿美元算力合作：10 万 GPU 训练 Helix</h3>
+      <p>Figure AI 与云基础设施商 <strong>Nscale</strong> 宣布战略合作，初始规模 <strong>35 亿美元</strong>（可扩展至 60 亿美元），将在 Vera Rubin 平台上部署最多 <strong>10 万块 NVIDIA GPU</strong>，2027 年底于德州 Barstow 启动，用于训练 Figure 的 Helix 通用人形机器人 AI 模型。</p>
+      <ul>
+        <li>初始 $3.5B，上限 $6B；最多 100,000 块 NVIDIA GPU；平台 Vera Rubin</li>
+        <li>部署启动：2027 年底，地点 Barstow, Texas</li>
+        <li>指向：物理 AI 的核心瓶颈是"数据与算力"，Figure 用重金把训练底座锁死</li>
+      </ul>
+      <blockquote>人形机器人公司越来越像"算力公司"——谁能把 Helix 喂得够饱，谁才可能在具身智能的下一阶段不掉队。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Unitree 人形机器人被证实 30 米外可远程破解，欧盟未禁售</h3>
+      <p>安全研究人员演示 <strong>Unitree</strong> 人形机器人可在 <strong>30 米外</strong>被远程入侵，引发对物理 AI 系统网络安全的担忧；尽管如此，欧盟监管方在 IFA 等展会上仍未对涉事机器人施加进口限制。</p>
+      <ul>
+        <li>攻击距离：30 米外可远程控制 Unitree 人形机器人</li>
+        <li>监管反应：欧盟未在 IFA 等展会限制其进口销售</li>
+        <li>暴露问题：具身智能的网络安全边界远落后于本体能力，物理世界风险被低估</li>
+      </ul>
+      <blockquote>当一台能搬东西、能接近人的机器人可以被 30 米外的陌生人接管，"安全"就不再是软件课题，而是物理世界的人身安全问题。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-09-05 ===== -->
+<section class="day-section" id="day-0905">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月5日（周六）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>腾讯混元 Hy4 preview 开源：770B 参数、1M 上下文、强化软件工程</h3>
+      <p>腾讯混元发布开源旗舰模型 <strong>Hy4 preview</strong>，总参数 <strong>770B</strong>、激活 49B、上下文 <strong>1M</strong>，覆盖软件工程、办公分析与科研场景；163 名内部专家盲测均分优于 GLM-3 与 Kimi K3。模型已登陆 HuggingFace 与腾讯云 TokenHub，并配套 CodeBuddy 限免活动至 9 月 10 日。</p>
+      <ul>
+        <li>规模：770B 总参 / 49B 激活 / 1M 上下文；163 名内部专家盲测优于 GLM-3、Kimi K3</li>
+        <li>已上线 HuggingFace 与腾讯云 TokenHub；CodeBuddy 限免至 9-10</li>
+        <li>场景：软件工程、办公分析、科研三向覆盖</li>
+      </ul>
+      <blockquote>国产开源阵营又添一个"全尺寸选手"——770B + 1M 上下文直接对标国际前沿，软件工程成了开源模型的必争之地。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>外滩大会发起全民 AI 编程赛：九大国内平台首次集结</h3>
+      <p>由外滩大会组委会发起、联合小红书与观猹主办的<strong>「外滩黑客松·AI Coding 大赛」</strong>正式开赛，蚂蚁灵光、百度秒哒、阿里 Qoder、腾讯吐司、字节扣子等<strong>九大国内头部 AI Coding 平台</strong>首次同台承办。赛事面向所有人开放，参赛者可在任一平台完成作品经统一接口提交，是迄今国内最大规模的 AI 编程平台集结。</p>
+      <ul>
+        <li>九大平台同台：灵光、QMUSE、WeaveFox、秒哒、Qoder、百炼、吐司、扣子、小浣熊等</li>
+        <li>形态覆盖：自然语言端到端生成、专业开发者辅助、多智能体协作三类路线</li>
+        <li>意义：2026 年"Coding 门槛骤降"使普通人可用自然语言在数分钟生成可运行应用</li>
+      </ul>
+      <blockquote>九家同台不是比谁工具更花哨，而是国内 AI Coding 不同技术路线的一次集中检验——全民编程正从口号变成赛事。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 改写 API 规则切断模型蒸馏后路，大模型蒸馏时代落幕</h3>
+      <p>9 月 2 日 Anthropic 通过调整 API 规则，<strong>切断第三方通过调用接口套取头部模型推理过程、再训练自有小模型的蒸馏路径</strong>。这一改动配合 Claude Fable 5.1 的发布，直接影响依赖 API 蒸馏的套壳与轻量化路线，迫使开发者转向合规的后训练与授权合作。</p>
+      <ul>
+        <li>手段：调整 API 规则，封堵通过接口提取推理过程做蒸馏的路径</li>
+        <li>影响：依赖 API 蒸馏的套壳/轻量化产品被迫转向合规后训练与授权</li>
+        <li>背景：与 Claude Fable 5.1 发布同期，强化"能力—护栏"边界</li>
+      </ul>
+      <blockquote>当最聪明的模型不再允许你"抄作业"，轻量化路线就只剩下自研与授权两条正路——蒸馏红利正在关闭。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>中博会具身智能展开幕：广东机器人"十骏"首秀，近 200 个场景亮相</h3>
+      <p>第二十一届中博会具身智能专业展在广州开幕，<strong>近 100 家产业链企业、200 余个典型应用场景</strong>集中亮相。广东机器人"十骏"——逐际动力、自变量、智平方、乐聚、众擎、美的、小鹏、荣耀、优必选、越疆——首次组团出场，标志产业关注点从"机器人能做什么动作"转向"能在哪些产线、园区真正干活"。</p>
+      <ul>
+        <li>规模：近 100 家企业、200+ 应用场景；核心软硬件/产业应用/生态服务三展区</li>
+        <li>广东"十骏"首秀：10 家整机企业组团，覆盖差异化技术路线</li>
+        <li>风向：产业界关切从"动作演示"转向"真实产线/园区落地"</li>
+      </ul>
+      <blockquote>把十家整机厂摆在一起同台，比任何发布会都更能看清具身智能的产业地图——广东正把它当作下一张产业名片。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>普渡机器人全矩阵亮相 IFA，类人形作业伙伴 PUDU D7 欧洲首发</h3>
+      <p>IFA 2026 期间，普渡机器人携全矩阵产品首次亮相，新一代类人形智能作业伙伴 <strong>PUDU D7</strong> 完成欧洲首发。D7 可感知环境、与人交互、抓取物品，现场与观众打招呼、比心、鞠躬，并可按指令取物、合影；四足导航机器人 PUDU D5 则演示爬阶梯、越障、穿越碎石沙地等复杂地形自主行进。</p>
+      <ul>
+        <li>PUDU D7 欧洲首发：类人形作业伙伴，支持交互/抓取/指令执行</li>
+        <li>PUDU D5：爬阶梯、越障、穿碎石沙地，瞄准能源/工业/隧道/矿山巡检</li>
+        <li>全局：累计出货超 13 万台，覆盖 85+ 国家、1000+ 城市，"一脑多形"全形态布局</li>
+      </ul>
+      <blockquote>从专用配送到类人形作业伙伴，普渡用"一脑多形"把机器人从单一功能推向通用物理任务——IFA 是它走向欧洲市场的跳板。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-09-04 ===== -->
+<section class="day-section" id="day-0904">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月4日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Meta 发布 Muse Spark 1.3：编程智能体工具调用减 20%、Token 省 25%</h3>
+      <p>Meta 正式发布 <strong>Muse Spark 1.3</strong> 编程智能体版本，针对代码生成与工具调用场景做深度优化，在 Meta Model API 与 Muse Code 中已可用，被 Meta 称为其在编程与 agentic 工作上"迄今最大的一次跃升"。内部对比显示，完成同等编程任务时工具调用次数减少 <strong>20%</strong>、输出 Token 消耗降低 <strong>25%</strong>；Artificial Analysis 评测其 xhigh 版本在 Coding Agent Index 上得分 <strong>64</strong>、$1.72/任务，是 60 分以上档位中成本最低的编程智能体，max 预览版得分 68、仅次于 Claude Opus 5。</p>
+      <ul>
+        <li>Artificial Analysis：xhigh 64 分、$1.72/任务（60+ 档最低成本）；max 预览 68 分，仅次于 Claude Opus 5</li>
+        <li>基准：DeepSWE <strong>75.4</strong>（v1.2 为 55.0）、Terminal-bench 2.1 <strong>88.8</strong>，追平 GPT-5.6 Sol</li>
+        <li>约 14M tokens/任务，比同分 Claude Opus 5（xhigh，约 22M）少约三分之一；max reasoning 与开源权重将后续推出</li>
+      </ul>
+      <blockquote>把"frontier 性能"和"便宜到几乎不计成本"同时做到，正在改写美国开放权重模型的竞争力等式——性价比第一次成了编程智能体的核心卖点。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 推出 Fable 5.1：缓存读取价砍 75%，长时域 Agent 成本骤降</h3>
+      <p>Anthropic 发布 <strong>Fable 5.1</strong> 通用 Agent 模型（9 月 1 日 GA），输入输出价不变，但<strong>缓存读取价从每百万 token 1 美元降至 0.25 美元（降幅 75%）</strong>，并配 1M token 上下文窗口；Anthropic 估算典型任务整体成本降约 25%、高度 Agent 化任务最高降 45%。同模型拆出 <strong>Mythos 5.1</strong>，仅向可信网络安全/生命科学伙伴开放，实现"能力—护栏"解耦；被标记为高危网安/生物的 Fable 查询可路由至 Opus 并免收 Fable 费率。</p>
+      <ul>
+        <li>缓存读取价 <strong>$0.25/MTok</strong>（-75%）；典型任务成本 -25%、高度 Agent 任务最高 -45%</li>
+        <li>1M token 上下文；Fable 5.1 与受限 Mythos 5.1 同底模、不同护栏</li>
+        <li>默认 30 天数据留存用于安全监测；Enterprise Frontier Safeguards 将于今秋分阶段上线</li>
+      </ul>
+      <blockquote>持久化 Agent 的经济账第一次被认真算清——只要把上下文设计成可复用、缓存命中够高，长期运行的 Agent 才真的"跑得起"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Google 发布 Gemini 3.8 Flash GA 与 3.8 Flash Cyber</h3>
+      <p>Google 于 9 月 2 日将 <strong>Gemini 3.8 Flash</strong> 作为生产级稳定模型正式 GA，强化软件工程、Agent 与复杂多步推理；保持 1,048,576 token 输入上限、最高 65,536 输出 token。同期发布网络安全专用变体 <strong>Gemini 3.8 Flash Cyber</strong>，面向漏洞发现与自动补丁。需注意促销价仅持续到 2026-12-31，2027-1-1 起翻倍，长期 Agent 跑下来未必比旧 Flash 更省。</p>
+      <ul>
+        <li>促销价 输入/输出 <strong>$0.75 / $3.75</strong> 每百万 token（至 2026-12-31；2027-1-1 调至 $1.50/$7.50）</li>
+        <li>Flash Cyber：内部漏洞发现成功率 <strong>&gt;70%</strong>、CWE-Bench Pass@1 <strong>47.2%</strong>，经 Fairwind Program 向可信安全人员开放</li>
+        <li>支持函数调用/结构化输出/缓存/代码执行/搜索接地；Computer use 仍处预览；Managed Agents 默认改用 3.8 Flash</li>
+      </ul>
+      <blockquote>稳定端点才是"生产可用"的真正信号，但价格日历才是决策点——得把思考 token 一起计量，促销期未必更省。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>第二届世界人形机器人运动会闭幕：天工 Ultra 百米 8.64 秒破人类纪录</h3>
+      <p>第二届世界人形机器人运动会圆满落幕，人形机器人多项成绩一年间大幅跃升：<strong>天工 Ultra 百米 8.64 秒</strong>（去年 21.50 秒）、跳高 3.40 米（去年 0.956 米）、400 米 38.15 秒、1500 米 2 分 21 秒，多个人类纪录被改写。赛事从"遥控提线木偶"转向全程自主决策，灵巧手专项赛全自主分值权重设为遥控的 <strong>2 倍</strong>。闭幕式发布《国家人形机器人产业标准体系建设指南（2026 版）（征求意见稿）》及总时长超 <strong>2500 小时</strong> 全量数据集。</p>
+      <ul>
+        <li>天工 Ultra：百米 <strong>8.64s</strong>（去年 21.50s）、跳高 3.40m、400m 38.15s、1500m 2'21"</li>
+        <li>全自主分值权重 = 遥控执行器 ×2；赛事项目较首届近乎翻倍（举重/拔河/拳击/5v5 全自主足球等）</li>
+        <li>闭幕式发布产业标准体系指南（2026 版）+ 超 2500 小时全量数据集；今年 4 月我国已在 ISO 立项全球首项《人形机器人数据集》国际标准</li>
+      </ul>
+      <blockquote>把遥操作打 2 折、把数据集和标准的权重抬到前所未有的高度——这届"机器人奥运会"真正校正的是产业的技术坐标系，而不只是几块金牌。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>车企竞逐"造人"：小鹏 IRON 首轮超 9 亿美元融资，估值 63 亿</h3>
+      <p>人形机器人赛道持续升温，车企跨界"造人"已从个别探索演变为行业战略浪潮。小鹏集团宣布旗下人形机器人业务完成<strong>首轮超 9 亿美元融资</strong>，投后估值超 <strong>63 亿美元</strong>，由 IDG 资本领投、腾讯与阿里巴巴作为战略投资者加入；何小鹏自 6 月起亲自兼任机器人业务 CEO。广汽孵化的慧仑科技、奇瑞墨甲、蔚来投资的物理 AI 公司同步加码，意在借共用供应链与真实工厂训练场，寻找"第二增长曲线"。</p>
+      <ul>
+        <li>小鹏 IRON：首轮 &gt;$900M、投后估值 &gt;$6.3B（IDG 领投，腾讯/阿里战略投资）；何小鹏亲任机器人 CEO，年底规模量产、2027 上市</li>
+        <li>奇瑞墨甲：天使轮投后估值 25 亿元，定位集团"第三增长曲线"；广汽慧仑 GoMate Mini 已部署近 50 台、订单近千万元</li>
+        <li>蔚来：智驾负责人任少卿创立物理 AI/具身智能独立公司，蔚来战略投资并围绕具身智能合作</li>
+      </ul>
+      <blockquote>车企下场"造人"的逻辑很硬：现成的供应链、可实战的工厂训练场、以及一条清晰的第二增长曲线——机器人不再是科技公司的专利，而是车企过剩制造能力的再出口。</blockquote>
+    </div>
+
+  </div>
+</section>
 
 <!-- ===== 2026-09-03 ===== -->
 <section class="day-section" id="day-0903">
