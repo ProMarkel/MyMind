@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-09-10 ===== -->
+<section class="day-section" id="day-0910">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月10日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenHands 1.0 发布：开源自主编程智能体迈入"生产可用"</h3>
+      <p>开源自主编程智能体 OpenHands 正式发布 <strong>1.0 版本</strong>，带来生产级 Docker 沙箱隔离、内置安全策略与资源限制、插件系统；基准显示其可自主完成约 <strong>68% 的 SWE-bench Verified</strong> 任务。同周 GitHub Copilot Workspace 也支持多个专职 agent（实现/测试/文档）通过共享上下文窗口并行协作。</p>
+      <ul>
+        <li>里程碑：开源 coding agent 首次把"安全地让 agent 执行代码"做成开箱即用</li>
+        <li>能力：SWE-bench Verified 自主完成率约 68%，生产级沙箱隔离 + 资源上限</li>
+        <li>价值：可自托管、可审计，给不愿把代码库交给闭源云服务的团队一个选项</li>
+      </ul>
+      <blockquote>开源 coding agent 第一次把"安全地让 agent 跑代码"做成开箱即用——企业内训和课堂终于能本地搭可控、可复现的实验环境。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>微软 FastContext：多专用小模型协作，主模型 Token 最多省 60%</h3>
+      <p>微软提出 <strong>FastContext</strong>，把"找代码 / 读上下文"从主模型推理中拆出，交给 <strong>4B–30B 专用小模型</strong> 作为只读"代码侦察兵"并行检索并压缩上下文；接入 Mini-SWE-Agent 评测，端到端解决率最高 <strong>+5.5%</strong>，主模型 Token 消耗最多 <strong>−60%</strong>。</p>
+      <ul>
+        <li>路线：主模型 + 一队专用小模型混合编排，而非一味堆更大模型</li>
+        <li>实测：Mini-SWE-Agent 端到端解决率 +5.5%，主模型 Token 最多省 60%</li>
+        <li>同日基准：框架层成本已现差异（Claude Code 缓存命中 1.5% vs Codex ~70%）</li>
+      </ul>
+      <blockquote>coding agent 下一阶段竞争焦点是"主模型 + 专用小模型"的单位任务成本，选型该按"每成功任务成本"而非裸 Token 比较。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Unity 发布官方 Claude Code 插件：29 个原生 Skill 把游戏引擎接进 AI 编程</h3>
+      <p>Unity 推出官方 <strong>Claude Code 插件</strong>并上架 Claude 插件目录，一条命令即可启用 <strong>29 个原生 Unity Skill</strong>，支持 CLI 工作流并直接控制 Editor，把游戏引擎接入日常 AI 编程链路。同日 Claude Marketplace 新增 Cursor、Factory、Vercel 等 Claude 驱动产品进入官方采购通道。</p>
+      <ul>
+        <li>一条命令启用 29 个原生 Unity Skill，CLI 工作流直接控制 Editor</li>
+        <li>游戏引擎正式接入 AI 编程链路，美术/逻辑/构建可对话式驱动</li>
+        <li>同日 Claude Marketplace 纳入 Cursor/Factory/Vercel，企业可直采</li>
+      </ul>
+      <blockquote>游戏引擎原生接入 Claude Code，意味着"用自然语言让 Unity 自己改场景、调参数"从演示走向日常工作流——对独立开发者是实打实的杠杆。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>无界动力 K15 出海法国 + 中国人形机器人出口同比 +210%</h3>
+      <p>无界动力全尺寸 K15 人形机器人抵达法国，即将在 <strong>远景动力法国电池超级工厂</strong> 部署，实现精准上下料、料箱搬运等长程自主作业；为拿下"欧洲工业签证"工业级全域 CE 认证，团队耗时 <strong>8 个月、花费上百万元</strong>。2026 上半年中国人形机器人出口同比 <strong>+210%</strong>，全球出货量占比超 <strong>97%</strong>（宇树、智元分走约 75%）。</p>
+      <ul>
+        <li>K15 落地远景动力法国工厂，长程自主上下料 / 搬运</li>
+        <li>CE 认证耗时 8 个月、花费超百万，"出海合规"成新课题</li>
+        <li>上半年出口同比 +210%，全球出货占比 97%+（宇树 + 智元约 75%）</li>
+      </ul>
+      <blockquote>具身智能正从"展会演示"走向"海外真实工厂部署"，但能否跨过认证与法规门槛，是判断能否真正规模化的硬指标。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>外滩大会具身厂商"真干活" + 产业化加速：新职业落地、优必选交付 600 台破 10 亿</h3>
+      <p>2026 外滩大会（9/9–12 上海）超 300 家企业参展，<strong>40 余家具身厂商</strong> 集中亮相，强调机器人进药房、物流、工业"真干活"；蚂蚁灵波发布 <strong>LingBot-VLA 2.0</strong> 多模态动作模型，已适配 17 家厂商 20 余种构型，驱动"一脑多机"。同日人社部新增"具身智能机器人应用技术员"新职业，优必选披露上半年营收超 <strong>10 亿元（同比 +100%+）</strong>、交付约 <strong>600 台 Walker S2</strong>，上半年行业融资达 <strong>935 亿元（同比增 5 倍）</strong>。</p>
+      <ul>
+        <li>外滩大会 40+ 具身厂商进药房/物流/工业，蚂蚁灵波一脑多机（17 厂 20 构型）</li>
+        <li>人社部新职业"具身智能机器人应用技术员"落地，相关企业存量 3855 家</li>
+        <li>优必选上半年营收超 10 亿、交付 600 台；行业上半年融资 935 亿（同比 5 倍）</li>
+      </ul>
+      <blockquote>人才侧（新职业）与商业侧（复购、EBITDA 转正预期）双重信号，表明具身智能正从"融资续命"转向"真实部署 + 人才体系成型"——接近产业化临界点。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-09-09 ===== -->
 <section class="day-section" id="day-0909">
   <div class="day-header" onclick="toggleDay(this)">
