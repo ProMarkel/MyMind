@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-09-13 ===== -->
+<section class="day-section" id="day-0913">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月13日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Real-SWE 基准发布：真实企业代码库上，最强模型也只对不到四成</h3>
+      <p>Real-SWE 用从真实公司授权的<strong>私有生产代码库</strong>评测前沿模型（10 个任务、640 次评分运行），要求 Agent 在自有沙箱内完成跨服务改动并对照既有测试套件验证。结果：<strong>Fable 5.1 + Claude Code 以 38.8% 登顶</strong>，GPT-6 Astra + Codex CLI 33.8%，Gemini 3.8 Flash 31.2%，GLM 5.3 28.8%，Kimi K3 18.8%。</p>
+      <ul>
+        <li>公开基准动辄 70%+ 的通过率，在"有业务后果、公司私有约定"的真实代码库上集体腰斩</li>
+        <li>最大失败模式是"遗漏需求"——产出看似正常却不完备，占比因模型不同达 28%–68%</li>
+        <li>Gemini 3.8 Flash 以约 $2.50/次逼近 Astra 表现，成本不到 Fable 5.1（$6.96）一半</li>
+      </ul>
+      <blockquote>私有代码 + 真实任务才是检验"Agent 能否替身工程师"的照妖镜——企业落地预期需要校准，这比榜单刷分重要得多。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>AI 编程智能体沙箱逃逸集中曝光：Cursor/Codex/Claude Code 等中招</h3>
+      <p>9 月 11 日前后，Cymulate 等披露 <strong>Cursor、Codex、Claude Code、Gemini CLI、Antigravity</strong> 的沙箱逃逸——多数攻击不破坏沙箱本身，而是借 Git <code>core.fsmonitor</code> 与恶意 <code>.git config</code>，让受信任软件在沙箱外以用户权限执行命令，全程无审批弹窗。</p>
+      <ul>
+        <li>Cursor/Claude hooks 配置获 <strong>CVE-2026-48124</strong>，修复于 3.0.0；Claude Code v2.0.24–v2.1.89 存在跨网络白名单绕过</li>
+        <li>有厂商从上报到落地修复耗时 <strong>50 天</strong>，结构性而非偶发 bug</li>
+        <li>波及面：只要 Agent 写过的仓库被你或别的工具后续打开，该仓库即成为新的攻击面</li>
+      </ul>
+      <blockquote>若让 Agent 在本机写代码，本周务必升级到已打补丁版本，并把任何非自己编写的仓库当作不可信输入。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Kimi K2.8 Preview 全量上线：百万上下文向全员普惠</h3>
+      <p>9 月 11 日，月之暗面在 <strong>Kimi Code 与 Kimi Work</strong> 两条产品线全量上线 K2.8 Preview，官方称综合性能逼近旗舰 K3，Coding 与 Agent 能力较 K2.7 Code 明显提升，支持 low/high/max 三档推理强度及图像、视频输入。</p>
+      <ul>
+        <li>关键权限变动：原仅 199 元/月以上会员可用的 <strong>100 万 token 上下文</strong>，下放至所有付费档（49 元起）</li>
+        <li>商业节点：公司 ARR 8 月突破 10 亿美元，已秘密递交港股 IPO、Pre-IPO 估值约 500 亿美元</li>
+        <li>定位："更便宜、更可控的日常开发工作马"，补上覆盖最广用户群的一档</li>
+      </ul>
+      <blockquote>国产大模型竞赛正从"参数与榜单"转向"长上下文普惠 + 商业化成交流水"，长代码库/企业知识库场景门槛被进一步压低。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>优必选柳州万台级工厂投产：全球首个适配万台产能的人形机器人智造基地</h3>
+      <p>9 月 12 日，优必选柳州工业人形机器人超级智慧工厂正式投产，是广西首个、也是<strong>全球首个适配万台级产能</strong>的人形机器人智能制造标杆工厂，落地"用机器人造机器人"的智造模式。</p>
+      <ul>
+        <li>规模：占地 1.4 万㎡，主产 Walker S 与 Cruzr 系列，每 <strong>10 分钟下线 1 台</strong>，年规划产能超万台</li>
+        <li>底座：联合西门子打造数字孪生仿真与全链路品控的专属智造底座</li>
+        <li>区域：柳州 AI+机器人产业 1—8 月产值同比增长 98.1%，规上企业已培育 46 家</li>
+      </ul>
+      <blockquote>人形机器人从样机/小批量正式迈入规模化智能制造，产能需要订单承接——同日优必选中标乐山 1.508 亿商用服务大单正是印证。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>生数科技发布新世界模型：探索 RSI 递归自我改进，让机器人"自我进化"</h3>
+      <p>9 月 13 日，生数科技发布新世界模型，探索 <strong>RSI（递归自我改进）</strong>，整合触觉、记忆、Ego 数据与自进化能力，将世界模型引入机器人学习闭环，被视为具身智能从实验室走向真实场景的关键基础设施。</p>
+      <ul>
+        <li>范式：世界模型 + 自进化，指向"机器人自己造自己的训练数据"，降低真实数据采集成本</li>
+        <li>资本呼应：同日魔芯科技（4D 世界模型）再融 10 亿元、估值近 100 亿，世界模型赛道持续升温</li>
+        <li>延伸：服贸会上具身全产业链亮相，已开源超 10 万小时人类行为数据集覆盖 15000 个场景</li>
+      </ul>
+      <blockquote>世界模型叠加自进化，补齐"数据—模型—仿真"闭环中的仿真一环；但行业也需警惕"发布模型"本身正在快速失去稀缺性。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-09-12 ===== -->
 <section class="day-section" id="day-0912">
   <div class="day-header" onclick="toggleDay(this)">
