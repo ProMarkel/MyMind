@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-09-15 ===== -->
+<section class="day-section" id="day-0915">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月15日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 2.1.271/272：域级 Bash 沙箱 + Copilot 成本/质量分层</h3>
+      <p>Anthropic 于 9/14 推出 <strong>2.1.271</strong>、9/15 补 2.1.272。2.1.271 引入按命令作用域的 <strong>allowed_domains</strong> Bash/PowerShell/Monitor 沙箱——单条命令只能访问其所需主机，其余主机一律拒绝，比"全开或全禁"的网络白名单更细。GitHub Copilot 同日为自动模型选择加入 efficiency / balance / intelligence 三档。</p>
+      <ul>
+        <li>2.1.271 新增 per-command allowed_domains 沙箱（自动模式），单命令主机白名单收紧</li>
+        <li>修复 Bash 权限校验多处缺口、MCP OAuth 客户端注册错误、Code Review 重复发同一条 finding</li>
+        <li>GitHub Copilot auto 模型选择新增效率 / 均衡 / 智能三档（VS Code、CLI、App 同步灰度）</li>
+      </ul>
+      <blockquote>沙箱从"网络层黑白名单"下沉到"单命令作用域"，AI 编程智能体的最小权限默认正被重新定义。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>shadcn/lint：把设计约束做成机器可验证的 linter</h3>
+      <p>shadcn 发布面向 AI agent 的 Tailwind linter <strong>shadcn/lint</strong>。开发者声明允许的样式改动，agent 违规时错误信息会指出错在哪、并指导用现有组件/变体/主题修复——约束不再只写在 AGENTS.md 里。</p>
+      <ul>
+        <li>agent 违规时返回"错在哪 + 如何修复"的机器可读错误，而非仅文档约定</li>
+        <li>评测：几乎全部任务违规数降为 0，修正从最多 3 轮降到 1 轮</li>
+        <li>修复成本较纯 AGENTS.md 规则低 10%–48%</li>
+      </ul>
+      <blockquote>"约束写在文档里靠人盯，约束做成 linter 靠机器拦"——AI 编码规范正从软约定走向硬校验。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>本地优先编码栈成形：Perplexity 便携计算机 + Cline Desktop + Codex 登陆 Linux</h3>
+      <p>AGI Hunt 9/15 综述，本地/桌面端编码智能体集中落地：<strong>Perplexity 便携计算机</strong>（RTX GPU 起步，harness/agent/模型整体跑在本机）、<strong>Cline Desktop</strong>（100% 开源、面向开源权重模型）、<strong>Codex</strong> 随 ChatGPT 桌面应用进 Linux 预览。</p>
+      <ul>
+        <li>Perplexity Portable Computer：本机跑 harness+agent+模型，敏感文件不出设备，后续支持本地 MCP 与定时任务</li>
+        <li>Cline Desktop：100% 开源工作区，可并行跑 agent、定时调度，内置 DeepSeek-V4.1-Flash 等免费模型并支持 BYOK</li>
+        <li>Codex 进入 Linux 桌面预览，官方支持 Arch（pacman 安装更新）</li>
+      </ul>
+      <blockquote>当"零云"成为卖点，编码智能体的主战场正从云端 API 转向本机算力——隐私与长时无人值守是核心驱动力。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>宇树发布 G1+：标准版 9.5 万元，六项升级压在稳定作业</h3>
+      <p>宇树 9/14 发布人形机器人 G1 升级款 <strong>G1+</strong>，围绕运动性能、感知交互、智能体验完成 6 项升级：新增 2 自由度颈部结构、强化关节电机输出与热管理、升级视觉与触觉感知、改善供电续航与远场语音交互。</p>
+      <ul>
+        <li>新增 2 自由度颈部结构，强化关节电机输出与热管理</li>
+        <li>升级视觉 + 触觉感知，改善供电续航与远场语音交互</li>
+        <li>标准版含税售价 9.5 万元，守住高性价比本体入口</li>
+      </ul>
+      <blockquote>升级方向全部压在"稳定作业能力"上，宇树继续把附加值竞争留给下游场景，而非抬高本体价格。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>触觉率先变现：机器人电子皮肤 2030 国内需求约 274 亿元</h3>
+      <p>据央视报道，机器人电子皮肤加速走出实验室：有企业今年 6 月单月斩获 <strong>1.3 万件</strong>仿生外皮订单，另有企业累计交付突破 4 万套。行业预测 2030 年国内人形机器人电子皮肤需求将达 152.5 万平方米。</p>
+      <ul>
+        <li>有企业 6 月单月斩获 1.3 万件仿生外皮订单，累计交付突破 4 万套</li>
+        <li>预测 2030 年国内需求约 152.5 万㎡，对应市场规模约 274 亿元</li>
+        <li>整机尚未大规模上量，触觉零部件成具身供应链最早变现环节之一</li>
+      </ul>
+      <blockquote>整机还在"万台冲刺"，触觉皮肤已先收到真金白银订单——供应链的变现节奏往往比整机更早兑现。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-09-14 ===== -->
 <section class="day-section" id="day-0914">
   <div class="day-header" onclick="toggleDay(this)">
