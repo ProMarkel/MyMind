@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-09-20 ===== -->
+<section class="day-section" id="day-0920">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月20日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>微软开源 Orchard：agentic modeling 框架把 SWE-bench Verified 推到 67.5%</h3>
+      <p>微软研究院开源 <strong>Orchard</strong>——一个harness 无关的 agentic modeling 框架，核心是一层 Kubernetes 原生的 <strong>Orchard Env</strong> 沙箱服务，可跨任务域、跨 harness 复用轨迹蒸馏、on-policy RL 与评测协议。其 <strong>Orchard-SWE</strong> 从 MiniMax-M2.5 与 Qwen3.5-397B 蒸馏 <strong>107K 轨迹</strong>，经 credit-assignment SFT + 稀疏奖励 RL，在 Qwen3-30B-A3B-Thinking 上把 SWE-bench Verified 推到 <strong>67.5%</strong>，刷新同规模开源模型 SOTA。</p>
+      <ul>
+        <li>Orchard-GUI：仅 0.4K 蒸馏轨迹训出 4B 视觉语言计算机操作 agent，WebVoyager/Online-Mind2Web/DeepShop 平均 68.4%</li>
+        <li>Orchard-Claw：0.2K 合成任务训个人助理 agent，Claw-Eval pass@3 达 59.6%、配强 harness 升至 73.9%</li>
+        <li>意义：开源社区第一次有了可复用的"训练+评测"基座，不再被闭源 harness 锁死</li>
+      </ul>
+      <blockquote>SWE agent 的瓶颈正从"模型"转向"数据飞轮与训练配方"——Orchard 把这套基础设施开源，等于给开源 SWE 赛道打了地基。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code Mods 曝光：用 hooks 把"代理外壳"开放给开发者自定义</h3>
+      <p>9 月 Claude Code 更新合集揭示一个更大转向：编码代理正从"终端里单个 agent"演变为团队可治理的<strong>可扩展操作层</strong>。其中 <strong>mods</strong> 最值得关注——按 Anthropic 仓库定义，mod 是"通过 hooks 实现的插件，可观察或改写引擎事件"，内置示例已覆盖 diff 体验、telemetry 与组织级安全默认值；同期还有 AGENTS.md、函数钩子 mods 早期访问、live diff 面板与重设计的 Projects。</p>
+      <ul>
+        <li>团队可开始追问：哪些指令按任务加载、哪些工具结果需过滤/脱敏后再进上下文、agent 完工前须产出什么证据</li>
+        <li>AGENTS.md 解决跨代理互操作：把 CLAUDE.md（Claude 专属）与 AGENTS.md（可移植规则）分离，前者放工具特定约定、后者放事实与耐久规则</li>
+        <li>信号：AI 编程工具的竞争维度从"哪个模型写得更干净"上移到"谁能把工作流设计得像应用架构一样可控"</li>
+      </ul>
+      <blockquote>mods 把代理的"外壳"向开发者敞开，意味着编码工具开始比模型升级更重要——可度量、可治理的工作流系统才是团队级护城河。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI GPT-6 Sol 与 Anthropic Opus 5.2 同步灰度测试，编码体验成主战场</h3>
+      <p>据社区与技术媒体，OpenAI 与 Anthropic 本周低调开启下一代旗舰灰度：OpenAI 测试 <strong>GPT-6 Sol</strong>（重投 RL、速度极快、主打更便宜的低价款，或复活传闻中的 <strong>$200 高端订阅</strong>）；Anthropic 跳过 5.1 直推 <strong>Opus 5.2</strong>，目前仅出现在 Claude Code 环境（网页仍是 5.0），动画真实感、前端与 3D 渲染跃升明显，被认为在为 IPO 造势。</p>
+      <ul>
+        <li>OpenAI 已宣布 <strong>GPT-5.5 系列 10 月 14 日退役</strong>，DevDay 开发者大会报名开启</li>
+        <li>Opus 5.2 的"仅在 Claude Code 可用"策略，把最强编码能力绑定到自家 harness，强化工具黏性</li>
+        <li>背景：两家 CEO 公开呼吁放缓后，产品竞赛反而提速——模型军备赛未停</li>
+      </ul>
+      <blockquote>旗舰模型把"编码/前端/3D"当第一展示场，说明 agentic coding 已是前沿模型的胜负手；Opus 5.2 锁 Claude Code 更是把模型优势收进自有工作流。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>全省智能机器人产业发展暨对接合作大会今日在长沙启幕，消费服务机器人成主角</h3>
+      <p>据百度百科等公开信息，<strong>2026 年 9 月 20 日</strong>，全省智能机器人产业发展暨对接合作大会在长沙启幕，<strong>消费服务机器人</strong>是一大看点：优龙机器人、超能机器人等企业将带来多款面向大众生活的创新产品。其中超能机器人的"湘江 1 号"定位健康陪护人形机器人，可提供体征检测与问诊、按摩理疗及康复训练、辅助起身翻身等功能。</p>
+      <ul>
+        <li>看点一：消费级服务机器人从展台走向"可对接合作"的产业落地环节</li>
+        <li>看点二：健康陪护、公共服务等贴近民生的场景被重点展示，呼应"机器人进家庭"主线</li>
+        <li>背景：广交会已进入倒计时 30 天（9 月 15 日口径），机器人出口与对接需求升温</li>
+      </ul>
+      <blockquote>产业大会选在周日开幕、主打消费服务机器人，说明具身智能的叙事正从"工业产线"向"贴近人的日常"扩散——落地场景在变宽。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>宇树以"数据飞轮 + ROI"重构人形机器人生产力标准，2025 营收 16.99 亿、毛利率 60%</h3>
+      <p>宇树科技提出以<strong>投资回报（ROI）</strong>重构人形机器人生产力评价：用真机物理数据飞轮（模型迭代→部署→高质量场景数据回流）补齐物理认知短板，按场景测算成本回收周期（巡检/高危作业约 <strong>12–24 个月</strong>）。财务数据显示，公司 2023–2025 营收约 <strong>1.59→3.93→16.99 亿元</strong>，2025 扣非归母净利约 5.9 亿、主营业务毛利率 <strong>60.13%</strong>。</p>
+      <ul>
+        <li>2025 年人形机器人营收约 8.68 亿元、占比 <strong>51.78%</strong>，首次超越四足机器人成为核心增长支柱</li>
+        <li>9 月 14 日晚雷军现身宇树杭州总部考察，现场以冲击力测试检验抗干扰与动态平衡等真实工况能力</li>
+        <li>创始人王兴兴：行业核心瓶颈不是算法本身，而是物理场景泛化能力——必须靠真实世界持续打磨</li>
+      </ul>
+      <blockquote>当人形机器人营收占比过半、毛利率站上 60%，"参数内卷"叙事就该退场了——能算清 ROI 的厂商才撑得过产业周期。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-09-19 ===== -->
 <section class="day-section" id="day-0919">
   <div class="day-header" onclick="toggleDay(this)">
