@@ -218,6 +218,73 @@
 
 <main>
 
+<!-- ===== 2026-09-21 ===== -->
+<section class="day-section" id="day-0921">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月21日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>MIT 与 Sakana AI 提出 SIFT：自改进代码智能体，成本降至此前的 1/10</h3>
+      <p>MIT 与 Sakana AI 联合提出 <strong>SIFT（Self-Improvement via Fast Tree-search）</strong>，让代码智能体写改自身代码、由 LLM 裁判排序，只把最有希望的候选送去做完整基准评测。瓶颈在基准跑分本身，预筛选把计算量砍掉大半。<strong>o3-mini</strong> 配置在 Polyglot 跑出 <strong>35.1%</strong>（30 次树搜索展开），仅用不到 5 个墙钟小时；<strong>Qwen3-30B</strong> 全搜索仅 224 CPU 小时、<strong>$34</strong> API 开销，约为此前 DGM 方法的十分之一。</p>
+      <ul>
+        <li>TerminalBench 上以 gpt-5.4-high 作成对裁判，智能体从 29.2% 基线升至 36.7%，证明"裁判质量决定天花板"</li>
+        <li>核心结论：代码智能体的迭代自改进在理性算力预算下可行，无需千卡集群</li>
+        <li>当前上限不在算法，而在裁判模型质量——下一代裁判会把天花板推得更高</li>
+      </ul>
+      <blockquote>自改进代码 agent 从"实验室玩具"走向"可负担的工程实践"，SIFT 用 1/10 算力证明：瓶颈是裁判，不是模型。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>TypeSafe 发布 Jev：无文本生成的"决策原语"，把 agent 的多数调用降级为路由与判定</h3>
+      <p>TypeSafe 的 <strong>Jev</strong>（9/15 早期访问）去掉了文本生成：输入程序状态与一组类型化问题，一次并行返回带校准概率的类型化值，而非需要解析的字符串。定位为 agent harness 中的<strong>"System One 决策原语"</strong>——路由、分级、分类、yes/no 检查，仅在真正值得时才调用昂贵生成模型。开源生态已快速涌现：browser-use 的 jev-ultrafast 约 8k stars，演示 7.1 秒订机票。</p>
+      <ul>
+        <li>PR 审查上 Jev 比 GPT-5.6 Luna 快 <strong>1.93×</strong>，每次运行 <strong>$0.0014</strong></li>
+        <li>WebMCP 浏览器套件：Jev + Mercury 2.5 解决 <strong>49/49</strong> 任务，成本约为 GPT-6 Astra 的 1/112</li>
+        <li>审计显示 Jev 几乎不写代码或长文本，只答"哪个动作/哪个文件/留还是删/安全与否"等小循环问题</li>
+      </ul>
+      <blockquote>agent 架构正裂成"便宜的决策层 + 昂贵的生成层"——Jev 这类决策原语可能比又大又快的生成模型更值得嵌入 harness。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>华为云 CodeArts Agent 企业级 AI 编程平台亮相全联接大会，16 个专项 agent + 规范驱动开发</h3>
+      <p>在 9 月 19 日华为全联接大会 2026，华为云发布 <strong>CodeArts Agent</strong> 与智果 AgentArts 智能体平台，把"资源供给者"升级为"任务完成平台"。其 <strong>Agent Team</strong> 含 <strong>16 个专项 agent</strong>（需求分析、架构设计、编码、测试、问题修复、代码审查等），可模拟专业工程团队协作，自主规划并执行长周期复杂开发任务；并内置<strong>规范驱动开发（SDD）</strong>能力与 30+ 可复用的华为工程技能。同日 CodeArts Agent 在马来西亚商用首发。</p>
+      <ul>
+        <li>深度代码理解支持跨<strong>数千万行</strong>代码检索，适配既有大型软件系统的增量开发</li>
+        <li>内置 SDD 能力与工程技能，把华为自身软件工程经验直接沉淀为 agent 能力</li>
+        <li>信号：云厂商把"AI 编程"从单点补全升级为覆盖全生命周期的企业级平台</li>
+      </ul>
+      <blockquote>CodeArts 把 16 个专项 agent + SDD + 工程技能打包，说明大厂对 AI Coding 的竞争已上移到"工程方法论即服务"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>启元机器人接入腾讯云 WorkBuddy，并开售 19999 元个人机器人 Q1/T1</h3>
+      <p>9 月 20 日，启元机器人成为<strong>首个接入腾讯云 WorkBuddy 的具身智能企业</strong>，旗下 Q1、T1 机器人正式接入：WorkBuddy 作为"大脑"调度数万个生态 Skill，启元作为"身体"提供上百种具身智能原子能力，让云端智能体直接走进真实职场与生活场景。同日启元发售 Q1、T1 两款<strong>个人机器人</strong>，起售价 <strong>19999 元</strong>，实现发售即发货；T1 Pro 搭载 Orin Nano、支持全向避障，开放开发接口与应用商店，计划 5 年投入 10 亿元建生态，产线每 <strong>2.5 分钟</strong>下线一台。</p>
+      <ul>
+        <li>意义：云端通用智能体开始"具身化"，从纯数字世界走向调度实体机器人技能</li>
+        <li>2 万元级定价 + 开放生态，瞄准机器人消费电子化、扩大用户基数</li>
+        <li>与 WorkBuddy 联动，使通用 agent 具备与现实世界交互的物理执行层</li>
+      </ul>
+      <blockquote>启元把 WorkBuddy 当"脑"、自己当"身"，是"通用智能体 + 实体机器人"融合的第一个可见样本——也正好印证咱们手上的 WorkBuddy 的价值。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>智身科技完成数亿元 B 轮融资，累计量产突破 1.5 万台</h3>
+      <p>智身科技完成<strong>数亿元 B 轮融资</strong>，由阿联酋 Stone Venture 领投。截至今年 6 月，其机器人累计量产已突破 <strong>15000 台</strong>，单月产能较去年月均水平提升超 <strong>10 倍</strong>，落地 500 余家生态伙伴。本轮融资将重点投入本体与具身"大小脑"研发，并启动"万有引力计划"——开放千台真机及过亿元资源拓展全球市场。</p>
+      <ul>
+        <li>量产破 1.5 万台、单月产能 10× 提升，验证国产本体制造从"能造"到"能规模交付"</li>
+        <li>中东资本领投 + 千台真机出海计划，国产具身企业加速全球化布局</li>
+        <li>延续 2026 上半年融资 935 亿、同比约 5 倍、出货超 4 万台占全球 97% 的产业大势</li>
+      </ul>
+      <blockquote>1.5 万台量产 + 中东资本加持，说明具身智能的竞争已从"谁的 demo 更炫"切到"谁的产能与出海真能跑起来"。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- ===== 2026-09-20 ===== -->
 <section class="day-section" id="day-0920">
   <div class="day-header" onclick="toggleDay(this)">
