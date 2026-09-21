@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-09-22 ===== -->
+<section class="day-section" id="day-0922">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月22日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>月之暗面 Kimi Code Desktop 上线：编程 Agent 搬上桌面</h3>
+      <p>月之暗面正式推出 <strong>Kimi Code Desktop</strong>（macOS / Windows），将 Kimi Code 的 Agent 能力带入图形界面：可对话式读写代码、运行命令，并集中管理项目与配置。支持 <strong>Plan / Goal / Swarm / 实验性 Tower</strong> 多种 Agent 模式，覆盖"先审后做""围绕目标长程推进""多子 Agent 并行分工"等不同任务形态。</p>
+      <ul>
+        <li>内置终端、浏览器、截图标注与 Git / PR 状态查看，可按文件审阅代码差异</li>
+        <li>本地 CLI 任务会直接同步到桌面端，形成跨端统一工作流</li>
+        <li>与 9 月 21 日已覆盖的 Kimi 具身智能人才招募形成"软件 + 物理世界"双线扩张</li>
+      </ul>
+      <blockquote>当 Kimi 把编程 Agent 做成桌面原生应用而非终端插件，coding agent 的竞争正从"模型能力"转向"工程入口与多 Agent 编排体验"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub、Anthropic 用编码 Agent 完成大型 Rust 重写</h3>
+      <p>GitHub 宣布其 <strong>Copilot agent runtime 已 100% 改为生产级 Rust</strong>，超过 <strong>80 万行</strong> Rust 代码、横跨 128 个 PR，主要由 Copilot 编码 agent 编写；Anthropic 收购 Bun 后，用预发布 Claude 将 <strong>50 多万行 Zig 在 11 天内改写为 Rust</strong>，以根治内存管理类 bug。这是"agent 接管大型遗留代码迁移"从设想走向量产的标志性案例。</p>
+      <ul>
+        <li>GitHub 采用 128 个 PR 的增量式迁移，开发并行不中断；Bun 采取多 Claude Code 并行"一次性 port"</li>
+        <li>OpenAI 用 AI 辅助 Rust 重写 Habitat，CPU 降 6 倍、内存降 15 倍</li>
+        <li>Stephen Toub 估算：无 agent 时同等工作量需 1–2 年，单人 + agent 数月完成</li>
+      </ul>
+      <blockquote>"agent 重写曾被认为太贵"的叙事被推翻——真正稀缺的不是写代码的能力，而是把庞大代码库安全地交给 agent 的治理流程。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Terminal-Bench 4.0 榜单：GPT-6 Astra 与 Claude Fable 5.1 并列登顶</h3>
+      <p>MightyBot 9 月榜单刷新显示，<strong>OpenAI GPT-6 Astra（Codex）得分 58.2%</strong>、<strong>Anthropic Claude Fable 5.1（Claude Code）57.9%</strong>，差距落在误差范围内并列第一；<strong>Cursor 升至第 3</strong>（SpaceX 收购后、Grok 4.6 成为默认模型），<strong>Devin 升至第 4</strong>（Cognition SWE-2，吸收 Windsurf 成 Devin Desktop）。</p>
+      <ul>
+        <li>结构性转变延续：头部团队"按任务分配模型"——贵模型规划、便宜模型并行执行</li>
+        <li>新晋模型：Pareto（Unbiased 复合模型，#7）、DeepSeek V4.1 Flash（最便宜编码模型，#9）、GLM-5.3 Flash（#11）</li>
+        <li>Grok Build Memory 9/16 GA，agent 跨会话携带约定与项目事实（/memory、/dream）</li>
+      </ul>
+      <blockquote>榜单头名之争已进入"误差范围内"，胜负手转向成本结构与多模型编排——单一模型碾压的时代正让位给"模型组合拳"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Humanoids Summit Seoul 2026 今日首尔开幕，韩国举国推进 Physical AI</h3>
+      <p><strong>9 月 22–23 日</strong>，全球人形机器人峰会 Humanoids Summit 首次落地韩国，在首尔 COEX 举行，韩国科学技术信息通信部（MSIT）参会并发表"Physical AI 国家政策"主旨演讲。NVIDIA、Qualcomm、LG、Unitree、ROBOTIS、FieldAI 等产业链领袖齐聚，聚焦灵巧操作、商业化与安全部署。</p>
+      <ul>
+        <li>韩国 KAPEX 人形机器人计划年内亮相，目标医院/福利场景 90% 任务完成率、连续运行 8 小时</li>
+        <li>韩国以高镍 NMC/NCA 电池化学与汽车执行器积淀，试图把"身体"短板转成可部署平台</li>
+        <li>这是该峰会全球第 5 站（继 5 月东京 2000+ 人后），标志韩国从零部件供应升级为战略部署地</li>
+      </ul>
+      <blockquote>当国家部委亲自为 Physical AI 站台，人形机器人的竞争已从"谁的 demo 更炫"进入"谁先建起部署—数据飞轮"的产业国策层面。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>IFR 首度单列人形机器人品类；真实机器人 RL 把长程任务成功率拉至 95%</h3>
+      <p>国际机器人联合会（IFR）首次将<strong>人形机器人单独列为统计品类</strong>：2025 年全球售出约 <strong>7000 台</strong>，多数流向科研机构与数据采集；同日 FutureX Physical AI Daily 汇总多项真实机器人学习突破，显示"从研究走向真实部署"的底座正在补齐。同年，智元 Qiyuan 推出 19999 元起个人机器人、10 月 1 日发货。</p>
+      <ul>
+        <li><strong>PARTS</strong> 真实机器人 RL 仅对瓶颈子任务做残差修正：Franka 长程任务成功率从 <strong>50% 升至 95%</strong>（YAM 双臂从 32% 到 61%）</li>
+        <li>VLA-Feedback 让扩散 VLA 边执行边看最新帧：动态任务成功率从 27.5% 升到 85.0%、真实机器人 51%→73%</li>
+        <li>MT-WAM 世界动作模型不生成视频即达 LIBERO 98.2%、LIBERO-Plus 73.7%，较 Fast-WAM 高 23.8 个百分点</li>
+      </ul>
+      <blockquote>IFR 单列品类是产业成熟的信号，而 PARTS 这类"只修瓶颈子任务"的方法，正在把真实机器人长程操作的成功率从 demo 水平拉到可部署区间。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-09-21 ===== -->
 <section class="day-section" id="day-0921">
   <div class="day-header" onclick="toggleDay(this)">
