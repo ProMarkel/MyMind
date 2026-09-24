@@ -218,6 +218,138 @@
 
 <main>
 
+<!-- ===== 2026-09-24 ===== -->
+<section class="day-section" id="day-0924">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月24日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>SoL-Pi：研究 AI 旁观 coding agent，自动调优 harness 省下近半 token</h3>
+      <p>NVIDIA、NTU 与 MIT 联合发布 <strong>SoL-Pi</strong>（arXiv:2609.20519），让一个研究型 AI 实时"旁观"编码 agent 的工作，自动提出对文件/命令/记忆层的修改，仅保留既不伤质量又省 token 的改动。整套运行覆盖约 150 个研究方向、500 个环境、3,000+ 次试验与 6 万+ 次 agent-环境交互。</p>
+      <ul>
+        <li>token 消耗下降 <strong>44.7%–49%</strong>，且未牺牲任务质量</li>
+        <li>把"agent 调参"本身交给另一个 agent，形成自我优化的闭环</li>
+        <li>印证趋势：coding agent 的竞争正从模型能力转向"harness 工程"</li>
+      </ul>
+      <blockquote>当省 token 不再靠压缩上下文、而是靠一个 AI 实时改写 agent 的工作方式，harness 调优正成为 coding agent 的新护城河。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek 公开 agent 训练系统：38 万沙箱并行 + 行为失控管控</h3>
+      <p>DeepSeek 披露一套 agent 训练系统，描述为可支持<strong>最高 38 万个沙箱并行</strong>运行，并内置对 agent 越轨行为的管控机制。该设计面向大规模自我改进式训练，在放大 agent 能力的同时试图压制其失控风险。</p>
+      <ul>
+        <li>38 万级沙箱并行规模，逼近工业级 agent 训练基础设施</li>
+        <li>首次明确把"agent 行为失控管控"作为训练系统的一等公民</li>
+        <li>与同日 SoL-Pi 的"旁观式调优"形成互补：一个控规模、一个控效率</li>
+      </ul>
+      <blockquote>当训练系统开始原生内置"防越轨"，说明行业已把 agent 安全从部署期前移到训练期——这是 capability 与 safety 同步 scaling 的信号。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Vercel Sandbox Drives 公测：agent 持久工作区扩容至 16 TiB</h3>
+      <p>Vercel 将其 Sandbox 的<strong>持久块存储（Drives）</strong>推至全套餐公测，把单沙箱容量上限从 64GB 提升到 <strong>16 TiB</strong>，并支持每个沙箱挂载最多 4 块盘，分别承载工作区、数据、模型与依赖。</p>
+      <ul>
+        <li>持久化让 agent 跨会话保留代码、依赖与中间产物，告别"每次重启从零来"</li>
+        <li>与 DigitalOcean Managed Agents（9/23 公测）的"空闲暂停计费"思路一致：把 agent 当常驻服务运营</li>
+        <li>直接利好需要长程上下文与本地依赖的 coding/构建类 agent</li>
+      </ul>
+      <blockquote>沙箱从"一次性执行容器"演进为"可持久化的 agent 工作台"，是 coding agent 走向生产化的底层设施升级。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>宇树发布 Dex5-S 灵巧手：22 自由度，39,900 元起</h3>
+      <p>宇树（Unitree）发布 <strong>Dex5-S</strong> 灵巧手，具备 <strong>22 个自由度</strong>，起售价 39,900 元（约 5,600 美元）。该定价把高自由度抓取硬件的门槛进一步下探，直接加剧灵巧操作市场的成本竞争。</p>
+      <ul>
+        <li>22 DOF 已能覆盖多数精细抓握与日常操作任务</li>
+        <li>不足 4 万元人民币的售价，对标此前动辄十余万的同类方案</li>
+        <li>与宇树既有 G1+/人形整机形成"手-身"配套，加速开发者生态</li>
+      </ul>
+      <blockquote>当灵巧手降到 4 万级，具身智能的瓶颈正从"能不能抓"转向"数据够不够训"——硬件平民化会反过来倒逼训练数据供给。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>小鹏 IRON 人形机器人自主走下产线，端侧 2250 TOPS 推理</h3>
+      <p>小鹏（XPeng）人形机器人 <strong>IRON</strong> 已完成<strong>自主走下生产线</strong>，展示出自主导航与移动能力；其搭载 3 颗自研图灵芯片，有效算力 <strong>2,250 TOPS</strong> 实现端侧多模态推理，交互技术复用自车端座舱。</p>
+      <ul>
+        <li>从演示视频到"走下产线"，标志 IRON 进入可制造、可自移动阶段</li>
+        <li>车端算力和交互能力向人形机器人加速复用，是车企造机器人的独特优势</li>
+        <li>与特斯拉 Optimus、宇树等共同把 2026 推向"人形量产基础设施建设年"</li>
+      </ul>
+      <blockquote>车企造人形机器人的逻辑开始兑现：不是从零造身体，而是把成熟的车端算力、供应链与制造体系直接迁移。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-09-23 ===== -->
+<section class="day-section" id="day-0923">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月23日（周三）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>JetBrains 推出 Air：人与 agent 协同写软件的产品体系</h3>
+      <p>JetBrains 发布 <strong>Air</strong>，定位为"人与 agent 一起写软件"的一整套产品体系，而非单个 IDE 功能。它把 agent 作为协作方嵌入开发流程，强调人类与 AI 在同一工作流中分工推进。</p>
+      <ul>
+        <li>从单一 AI 补全/聊天走向"人-agent 协作层"，与 Claude Code、Codex 的终端范式形成差异</li>
+        <li>延续 JetBrains 的 IDE 资产，把 agent 能力沉淀进熟悉的工程界面</li>
+        <li>同日 DigitalOcean Managed Agents 公测、Cloudflare Worker Previews 等，均把 agent 当"常驻云工作流"运营</li>
+      </ul>
+      <blockquote>当 IDE 厂商不再只卖编辑器、而是卖"人-agent 协作操作系统"，coding 工具的竞争维度又被抬了一层。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Google 开源 ax：Go 语言 agentic 编排运行时单日涨 2,324 stars</h3>
+      <p>Google 开源 <strong>ax</strong>，一个用 Go 编写的 agentic 编排运行时，上线后迅速冲到约 <strong>6,779 stars</strong>，单日新增 2,324。它提供 agent 工作流的调度与编排能力，定位偏底层基础设施。</p>
+      <ul>
+        <li>继微软 Orchard（9/20 开源）后，又一大厂把 agent 编排框架开源</li>
+        <li>Go 语言意味着更轻量、更易嵌入服务端 agent 工作负载</li>
+        <li>与 superdesigndev/treg（agent 工具市场）、dream-num/univer（Office Harness）共同构成 agent 基础设施周</li>
+      </ul>
+      <blockquote>大厂把"agent 编排"当作新的开源战场，说明行业共识正在形成：agent 的瓶颈不是推理，而是可复用的工程底座。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>browser-use/video-use 冲上 25.7k stars：Claude Code 直接剪视频</h3>
+      <p><strong>browser-use/video-use</strong> 仓库涨至 <strong>25,702 stars</strong>，让 Claude Code 直接编辑视频：先借 ElevenLabs Scribe 转写拿到逐词时间戳与说话人分离，再由 agent 定位切点、做调色与字幕烧录。LLM 全程不"看"画面，只在需要时拉一张缩略图复核。</p>
+      <ul>
+        <li>"先转写后剪辑"比直接喂帧更省 token、也更精准</li>
+        <li>印证趋势：agent 的天花板不是推理，而是能借到什么基础设施</li>
+        <li>配套 claude-code-templates 破 3 万 stars、treg 把 3,000+ 工具端点变"按次计费市场"</li>
+      </ul>
+      <blockquote>"转写即上下文"的思路，把视频这种非结构化任务塞进了 coding agent 的工作流——agent 能力的边界正在被工具链悄悄推远。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>高通收购 PickNik：开源 MoveIt 框架保持开源</h3>
+      <p>高通（Qualcomm）9 月 23 日宣布与机器人软件公司 <strong>PickNik</strong> 达成收购协议（尚需交割条件）。PickNik 维护的开源机器人操作框架 <strong>MoveIt</strong> 广泛应用于工业自动化、服务机器人与实体 AI，收购后将继续保持开源，并加强与高通 Dragonwing 机器人平台整合。</p>
+      <ul>
+        <li>高通借 MoveIt 补齐机器人软件栈，与自研 Dragonwing 芯片平台形成"软硬一体"</li>
+        <li>承诺保持开源，利于下游开发者降低机器人开发门槛</li>
+        <li>是芯片巨头加码 Physical AI 的又一落子（此前已有 NVIDIA Isaac ROS 5.0）</li>
+      </ul>
+      <blockquote>当芯片公司把开源机器人框架收入囊中，"平台 + 生态"正取代单点硬件，成为具身智能的主导竞争形态。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>地瓜机器人完成 4 亿美元 C 轮，近一年第三次融资</h3>
+      <p>地瓜机器人宣布完成 <strong>4 亿美元 C 轮融资</strong>，为其近一年内的第三次融资。公司定位为机器人<strong>软硬件通用底座</strong>提供商，专注为具身智能、消费级机器人提供底层技术与平台支持。</p>
+      <ul>
+        <li>一年内三轮融资，资本持续加注"机器人底座"而非单点整机</li>
+        <li>与智身科技（9/21 B 轮、累计量产破 1.5 万台）共同验证"底座 + 量产"双线受捧</li>
+        <li>行业融资重心延续从硬件向模型/平台迁移（9/23 行业动态：2026 国内具身融资超 140 家、总额超 1000 亿元，达去年同期三倍）</li>
+      </ul>
+      <blockquote>资本把票投给"卖铲子的人"——当整机厂商还在拼 demo，底座层已先一步跑出规模与确定性。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-09-22 ===== -->
 <section class="day-section" id="day-0922">
   <div class="day-header" onclick="toggleDay(this)">
