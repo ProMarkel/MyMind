@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-09-26 ===== -->
+<section class="day-section" id="day-0926">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月26日（周六）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>普林斯顿：通用 coding agent 碾压手工机器人规划器</h3>
+      <p>普林斯顿 PRPL 实验室 9/24 论文提出 AgenticGenTAMP：不再手工编写 TAMP（任务与运动联合规划）求解器，而是给通用 coding agent（Claude Code / Codex）一个任务描述加仿真器访问权，让其在预算内自主探索物理模型、迭代编程，产出 <strong>零推理延迟</strong> 的可部署策略程序。</p>
+      <ul>
+        <li>覆盖 <strong>28 个仿真环境</strong>、980 个生成程序、98,000 次评估回合</li>
+        <li>Codex（GPT-6 Astra）成功率高达 <strong>95%</strong>，Claude Code（Opus 5）平均 <strong>82%</strong>，是手工规划器 47% 的 1.74 倍</li>
+        <li>算力消耗低一个数量级，LLM 角色从"实时规划器"转为"代码编译器"</li>
+      </ul>
+      <blockquote>重新定义 LLM 在机器人规划中的定位——只在探索阶段写代码，运行时纯代码执行，绕过几何物理推理短板。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>微软 CASD：把 coding agent 的失败模式自动变成 prompt 规则</h3>
+      <p>微软提出 CASD（Coding Agent Self-Debug），将 coding agent 的 <strong>完整轨迹日志</strong> 喂回，自动把反复出现的失败模式提炼为可复用的 prompt 规则，形成"失败→规则"的自我改进闭环。</p>
+      <ul>
+        <li>在 prompt 优化基准上 <strong>比 GEPA 高 5.7 分</strong></li>
+        <li>无需改动模型权重，仅靠轨迹级提示工程即可持续纠偏</li>
+        <li>与 SoL-Pi 等"旁观调优 harness"思路呼应，标志 agent 自优化走向系统化</li>
+      </ul>
+      <blockquote>agent 的鲁棒性不再只靠更大模型，而靠把踩过的坑结构化沉淀为规则。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>340M 小模型跑在 CPU 上，戳破 Agent 管道的"大模型幻觉"</h3>
+      <p>Fastino Labs 9 月开源 GLiNER2.5-Decide（340M 参数编码器决策模型），专为 Agent 管道设计，单次前向同时完成意图识别、路由决策、护栏检查；以 <strong>Apache 2.0</strong> 许可开放商用。</p>
+      <ul>
+        <li>Fast Decisions 基准 <strong>60.1%</strong> 精确匹配，领先 4B 级解码器模型（57.5% / 56.4%）</li>
+        <li>纯 CPU 推理延迟仅 <strong>167.3 ms</strong>（64 token），GPU 降至 38–47 ms</li>
+        <li>体现 Agent 基础设施从"大模型包揽一切"走向"专业化小模型分工协作"</li>
+      </ul>
+      <blockquote>高频路由/护栏这类判断，小模型比大语言模型更便宜也更可控。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>造车之外的新战场：车企集体竞速具身智能</h3>
+      <p>中国经营报 9/26 报道，车企将机器人视作第二增长曲线：东风与华科联合开发的"小东"机器人将于 10 月进厂"试工"，承担分拣、搬运、上下料、质检；<strong>奇瑞墨甲</strong> 全球累计交付突破 <strong>2000 台</strong>，覆盖 60 多国。</p>
+      <ul>
+        <li>特斯拉、东风、小鹏、奇瑞、比亚迪、零跑等整车企业纷纷入局</li>
+        <li>零跑称机器人电机 / 控制器 / 电池 / 感知 / 计算平台全栈自研</li>
+        <li>车百会研究院：汽车工厂总装、质检、电池拆解等场景可推动具身产品商用</li>
+      </ul>
+      <blockquote>"汽车去掉轮子就是机器人"——底层技术相通，车企正把智驾与制造能力延伸到具身智能。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Physical AI 融资升温：开发者人形与减速器 IPO 齐发</h3>
+      <p>FutureX Physical AI Daily（09/26）汇总多笔融资与上市进展：Feather Robotics 获 <strong>$7.6M</strong>（Gradient Ventures 领投）推模块化开发者人形，单价 $29,990；Newstart Precision 创业板 IPO 进入问询，精密行星减速器年出货超 70 万、全球第二，智元为其最大客户。</p>
+      <ul>
+        <li>Feather 模块化人形已下场"做饭 / 清实验室"，营收破 $1M</li>
+        <li>Newstart 募资建年产 <strong>150 万</strong> 精密行星减速器基地，估算占人形减速器市场 ≥ 23%</li>
+        <li>Simate 成立数月连获数亿元多轮，宣称 RoboDojo 登顶超越 GPT-6 Astra / DeepMind</li>
+      </ul>
+      <blockquote>资本正从"模型故事"转向"硬件交付与供应链"——减速器、本体、数据中心的订单开始兑现。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-09-25 ===== -->
 <section class="day-section" id="day-0925">
   <div class="day-header" onclick="toggleDay(this)">
