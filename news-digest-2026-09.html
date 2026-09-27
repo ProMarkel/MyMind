@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-09-28 ===== -->
+<section class="day-section" id="day-0928">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年9月28日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 2.1.283：企业可"锁死"可调用的模型版本，并补强沙箱权限审计</h3>
+      <p>9 月 25–27 日 Anthropic 连续发布 2.1.281→2.1.283 三版，重心转向企业治理。新增 <strong>availableModelsMatch</strong>（exact 白名单）与 <strong>deniedModels</strong>（黑名单）两项托管设置，管理员可精确锁定 Claude Code 能调用的模型版本，防止工具更新后悄悄切到未经合规确认的新模型；<code>/doctor prompt-audit</code>（亦 <code>/checkup prompt-audit</code>）审计 CLAUDE.md、skills、agents、commands 里为旧模型写的提示模式；并修复托管 sandbox 嵌套值失效、屏幕阅读器权限对话框误读等问题，新增 Bedrock IAM 角色假设与网关请求分组头。</p>
+      <ul>
+        <li>availableModelsMatch=exact 白名单 + deniedModels 黑名单，模型边界攥在公司手里</li>
+        <li>/doctor prompt-audit 审计旧模型提示，提醒团队及时更新技能与命令</li>
+        <li>修复托管 sandbox 嵌套值失效、Bedrock IAM 角色假设等治理缺口</li>
+      </ul>
+      <blockquote>编码 Agent 进企业内网的"最后一公里"不是更强模型，而是把模型选择、沙箱、审计都变成管理员可管的旋钮。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Google Antigravity 2.0 加 /plan 模式：先研究、出计划待审、批准后执行</h3>
+      <p>9 月 27 日 AGI Hunt 日报显示，Google 的编码 Agent <strong>Antigravity</strong> 在 2.0 中引入 <code>/plan</code> 模式——agent 先做研究、产出一份实施计划供人审阅，只有在用户批准后才进入执行阶段，把"计划—审批—执行"显式拆分，呼应近期对 agent 会话劫持、供应链投毒等自主执行风险的关注。</p>
+      <ul>
+        <li>/plan 模式：研究 → 计划 → 审批 → 执行 四步显式化</li>
+        <li>目标：降低未授权自动执行带来的操作与安全风险</li>
+        <li>与近期 agent 会话劫持、PyPI 投毒议题形成呼应</li>
+      </ul>
+      <blockquote>"先想清楚再动手"被写进工具本身，是对 agent 自主执行风险最直接的工程回应。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>智谱 AI 开源 ZCode 编码工作台：桌面端 + 浏览器 + 终端 Agent 一体</h3>
+      <p>智谱 Z.ai 在 GitHub 开源 <strong>ZCode</strong>——一套含桌面应用、浏览器界面与终端 Agent 的编码工作台，仓库含 client、backend service、共享 UI 与 Agent CLI/运行时源码，当前 v3.14.3；基于 TypeScript + pnpm monorepo，需 Node.js 24.14.0，Electron 桌面端、Web 端、SSH/WSL 远程开发均支持。</p>
+      <ul>
+        <li>形态：Electron 桌面端 + Web 端 + TUI/Web 模式 CLI，支持 SSH/WSL 远程</li>
+        <li>技术栈：TypeScript monorepo、pnpm workspaces、Node.js 24.14.0</li>
+        <li>定位：可自托管、可定制的开源编码 Agent 替代方案</li>
+      </ul>
+      <blockquote>国产大模型厂商从"卷 API"转向"卷开发者工具链"，开源编码工作台是争夺开发者心智的关键落子。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>宇树市值较首日高点回落约 56%，梅卡曼德跌破发行价：具身 IPO 降温</h3>
+      <p>FutureX《Physical AI Daily》09/28 援引 The Paper/36Kr：宇树 8 月登陆科创板，首日冲高至 1100 元、市值一度超 4400 亿元，至 9 月 24 日收于 488 元、市值约 1974 亿元，较高点回落约 55.6%；机器人视觉公司梅卡曼德 9 月 25 日收 83.3 港元，较 101.7 港元发行价跌约 18.1%。排队企业招股书亦暴露真实经营压力（如某四足厂商 2025 全年仅售 1 台人形）。</p>
+      <ul>
+        <li>宇树 9/24 收 488 元，市值约 1974 亿，较首日 4400 亿峰值回落约 55.6%</li>
+        <li>梅卡曼德收 83.3 港元，跌破 101.7 港元发行价约 18.1%</li>
+        <li>招股书暴露量产/盈利压力：有企业 2025 全年仅售 1 台人形机器人</li>
+      </ul>
+      <blockquote>资本从"概念溢价"转向"订单与量产兑现"，具身赛道的估值逻辑正被真实财报重写。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>智元 Qiyuan 个人机器人预收 2.1 亿、上半年净亏 1.67 亿，港股 IPO 锚定 400–500 亿港元</h3>
+      <p>据 36Kr，由智元（AgiBot）控股的上纬新材 2026 上半年净亏 1.67 亿元（其中机器人研发开支 1.64 亿），其 <strong>Qiyuan 个人机器人</strong> 尚未形成量产收入但已收 2.1 亿元预付款；股权激励要求新业务 2026 年营收占比不低于 25%。智元港股 IPO 基石投资者目标估值 400–500 亿港元，按 2025 年 10.5 亿元营收测算 PS 约 32–41 倍，高于宇树 IPO 的约 24 倍。</p>
+      <ul>
+        <li>Qiyuan 个人机器人已收预付款 2.1 亿元，尚未量产收入</li>
+        <li>上半年净亏 1.67 亿（机器人研发占 1.64 亿）</li>
+        <li>港股 IPO 目标估值 400–500 亿港元，PS 约 32–41 倍（宇树 IPO 约 24 倍）</li>
+      </ul>
+      <blockquote>高 PS 背后是"先占场景、后兑收入"的赌注，个人机器人能否规模化交付将决定估值成色。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-09-27 ===== -->
 <section class="day-section" id="day-0927">
   <div class="day-header" onclick="toggleDay(this)">
