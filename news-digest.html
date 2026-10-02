@@ -366,7 +366,7 @@
           <span data-page-node-id="ZB7FlIrXyJABlx2KpMDDjD">📅 2026年9月</span>
           <span class="arrow" data-page-node-id="wfBEOWGksFEE2zuU2lfNP8">▶</span>
         </div>
-        <div class="month-dates open" data-page-node-id="w8gNGM7eVtzSAR6nnCmVUc">
+        <div class="month-dates" data-page-node-id="w8gNGM7eVtzSAR6nnCmVUc">
           <a class="date-item" href="news-digest-2026-09.html#day-0930" onclick="return loadDate('2026-09', this)">9月30日（周三）</a>
           <a class="date-item" href="news-digest-2026-09.html#day-0929" onclick="return loadDate('2026-09', this)">9月29日（周二）</a>
           <a class="date-item" href="news-digest-2026-09.html#day-0928" onclick="return loadDate('2026-09', this)">9月28日（周一）</a>
@@ -417,14 +417,14 @@
 
   <!-- Content: iframe (loads selected month) -->
   <div class="content" data-page-node-id="cTGCdcAJl9Snl9JVFa87NM">
-    <iframe id="newsFrame" src="news-digest-2026-08.html?embed=1#day-0827" title="每日资讯内容" data-page-node-id="9lEgVLdR46ca3Bt2DWYKvd"></iframe>
+    <iframe id="newsFrame" src="news-digest-2026-10.html?embed=1#day-1002" title="每日资讯内容" data-page-node-id="9lEgVLdR46ca3Bt2DWYKvd"></iframe>
   </div>
 
 </div>
 
 <script>
 // Track current month loaded in iframe
-var currentMonth = '2026-08';
+var currentMonth = '2026-10';
 
 // Toggle month expand/collapse — 按真实内容高度动画，不再有固定上限
 function toggleMonth(el) {
@@ -473,12 +473,39 @@ function loadDate(monthId, clickedEl) {
   return false; // prevent default navigation
 }
 
-// 初始化：任何已标记为 open 的月份（如当前月）完整显示全部日期，箭头向下
+// 初始化：仅展开"当前月份"分组（按系统日期自动判定），其余全部折叠。
+// 自修复：无论 HTML 里哪些分组被标了 open，加载时都只认当前月，避免非当前月被误展开。
 (function() {
-  document.querySelectorAll('.month-dates.open').forEach(function(d) {
-    d.style.maxHeight = 'none';
-    var arrow = d.previousElementSibling.querySelector('.arrow');
-    if (arrow) arrow.classList.add('collapsed');
+  var now = new Date();
+  var ym = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+  var groups = document.querySelectorAll('.sidebar-list .month-group');
+  var frameSet = false;
+  groups.forEach(function(g) {
+    var dates = g.querySelector('.month-dates');
+    var arrow = g.querySelector('.month-label .arrow');
+    var firstLink = g.querySelector('a.date-item');
+    var isCurrent = firstLink &&
+      firstLink.getAttribute('href').indexOf('news-digest-' + ym + '.html') !== -1;
+    if (isCurrent) {
+      dates.classList.add('open');
+      dates.style.maxHeight = 'none';
+      if (arrow) arrow.classList.add('collapsed');
+      // 落地 iframe 默认加载当前月最新一天
+      if (!frameSet && firstLink) {
+        var href = firstLink.getAttribute('href');
+        var hashIdx = href.indexOf('#');
+        var hash = hashIdx !== -1 ? href.substring(hashIdx) : '';
+        var frame = document.getElementById('newsFrame');
+        frame.src = 'news-digest-' + ym + '.html?embed=1' + hash;
+        currentMonth = ym;
+        firstLink.classList.add('active');
+        frameSet = true;
+      }
+    } else {
+      dates.classList.remove('open');
+      dates.style.maxHeight = '';
+      if (arrow) arrow.classList.remove('collapsed');
+    }
   });
 })();
 </script>
