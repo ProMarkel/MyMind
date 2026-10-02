@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-10-02 ===== -->
+<section class="day-section" id="day-1002">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月2日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 2.1.287 正式开放 Mods，并可挂"护栏"副 agent</h3>
+      <p>Anthropic 正式开放 <strong>Claude Code Mods</strong>——可用小型 TypeScript 模块改写 agent 行为、绘制自定义 UI 或替换内置功能，并已用 Mods 交付 /diff 支持与 AGENTS.md 集成。同一 v2.1.287 版本还新增可选护栏副 agent "You should know"，主动标记用户或 Claude 可能忽略的风险点，并支持新版 MCP 协议的 URL prompts。</p>
+      <ul>
+        <li>Mods 即小型 TS 模块，可改写行为 / 自定义 UI / 替换内置功能；已用于 /diff 与 AGENTS.md 集成</li>
+        <li>新增可选护栏副 agent "You should know"，主动标记被忽略的风险</li>
+        <li>同步支持新版 MCP 协议的 URL prompts，扩展协议兼容性</li>
+      </ul>
+      <blockquote>Mods 把"代理外壳"从单一 agent 升级为可插拔的行为层——当编码智能体接管更多操作流程，可控的扩展机制比堆功能更重要。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub Copilot 推出 Dynamic Workflows 公开预览，把编排写成可复用代码</h3>
+      <p>GitHub 在 10/1 Changelog 中为 Copilot CLI、Copilot app 与 SDK 推出 <strong>Dynamic Workflows</strong> 公开预览：用代码定义可复用的编排（顺序 / 并行步骤、暂停检查点、子 agent 交叉核对）。与每次运行都由 Copilot 临时生成计划的 Autopilot 或 /fleet 不同，工作流可版本化复用；CLI 需 <code>--experimental</code> 或 <code>/experimental on</code>，全 Copilot 套餐可用。</p>
+      <ul>
+        <li>发布日 10/1；Copilot CLI / app / SDK 三端公开预览</li>
+        <li>代码定义步骤 / 条件 / 交接，支持顺序与并行、暂停检查点、子 agent 交叉核对</li>
+        <li>与 Autopilot、/fleet 区别：工作流可版本化复用，而非每轮临时现编计划</li>
+      </ul>
+      <blockquote>当 agent 开始跑"多步骤编排"，把流程写成可版本化、可审查的代码，正成为团队级可控性的一条主线。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI dots 常驻智能体实测不均，Codex 体验争议升温</h3>
+      <p>DevDay 发布的常驻智能体 <strong>dots</strong> 进入实测温域：第三方用 5 万条生产工作流搭基准测 5 类日常任务，自研 rtrvr agent 拿 24/24、dots 22/24，且在发票核对任务上 dots 明知两项要求未满足仍停手。Codex 侧则出现体验回潮——有开发者称 GPT-6 Sol 比 5.6 更慢更笨；reddit 用户报告 $20 档订阅当天突遭"ChatGPT 账户不支持 Codex"的未公告限制；VS Code 插件更新后消息卡在 pending 或提交后消失。</p>
+      <ul>
+        <li>基准：rtrvr 24/24 vs dots 22/24；发票任务 dots 未满足两要求仍停手</li>
+        <li>Codex 反馈：GPT-6 Sol 被指比 5.6 更慢更笨；$20 档遭未公告限制</li>
+        <li>VS Code 扩展 26.928.31416 更新后消息卡 pending / 提交后消失</li>
+      </ul>
+      <blockquote>"常驻智能体"的叙事很热，但真实工作流里的可靠性鸿沟与静默降级，才是它能不能离开演示台的关键。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Astribot T1 登陆北美，IROS 2026 以 $18,000 起售</h3>
+      <p>Astribot 在 <strong>IROS 2026（匹兹堡）</strong> 将其 T1 人形机器人引入北美市场，起售价 <strong>$18,000</strong>。T1 采用绳驱架构与自研 Lumo AI 模型，约 1.55 米、66 公斤，模块化硬件支持多种末端执行器与传感器，面向研究者与开发者把 AI 能力转成实际物理任务；复杂任务仍需额外训练。</p>
+      <ul>
+        <li>起售价 $18,000；IROS 2026 匹兹堡首发北美</li>
+        <li>绳驱架构 + 自研 Lumo AI 模型；约 1.55m / 66kg，模块化硬件</li>
+        <li>定位研究者 / 开发者平台；自主取物已演示，复杂任务需额外训练</li>
+      </ul>
+      <blockquote>把开发者友好的"模块化 + 可训练"做成 1.8 万美元级准入，正把人形机器人从展品推向实验室与产线的真实工具。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>波士顿动力为 Atlas 推出新四指手，可靠性优先于拟人</h3>
+      <p>波士顿动力为 Atlas 人形机器人推出新款<strong>四指手（无小指）</strong>，具备 13 自由度，主打可靠性与可量产而非复杂拟人。该手强调高保真仿真与 sim-to-real 强化学习，使其能在工厂等真实环境稳定作业。</p>
+      <ul>
+        <li>新四指手（无小指），13 自由度</li>
+        <li>设计优先级：可靠性 + 可量产 &gt; 复杂拟人</li>
+        <li>支撑高保真仿真与 sim-to-real 强化学习，面向工厂真实作业</li>
+      </ul>
+      <blockquote>当行业从"能动"卷到"能干活"，减掉小指、把可靠性与可制造性放到第一位，反而更贴近真实部署的工程现实。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-10-01 ===== -->
 <section class="day-section" id="day-1001">
   <div class="day-header" onclick="toggleDay(this)">
