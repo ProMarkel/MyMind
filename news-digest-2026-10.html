@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-10-03 ===== -->
+<section class="day-section" id="day-1003">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月3日（周六）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek 开源 Harness agent 框架，桌面构建 5 分 24 秒跑通"插件自举"</h3>
+      <p>DeepSeek 于全球预览发布并同步开源 <strong>DeepSeek Harness</strong>——基于 Cordis "everything is a plugin" 架构的 agent 框架，提供 macOS / Windows 桌面打包构建（Linux 经 deepseek-ai/dsh npm 包）。官方 demo 中模型 5 分 24 秒完成插件的创建、安装与验证，并具备文档 / 表格处理、仓库级代码改动带测试运行等通用 agent 能力。</p>
+      <ul>
+        <li>发布形式：全球预览 + 同步开源；桌面构建覆盖 macOS / Windows，Linux 走 dsh npm 包</li>
+        <li>架构基础：Cordis "everything is a plugin"，插件即能力单元</li>
+        <li>官方 demo：模型 5 分 24 秒完成插件创建 → 安装 → 验证闭环</li>
+      </ul>
+      <blockquote>Harness 把"agent 运行时"做成可安装、可组合的框架，意味着编码智能体的竞争正从模型能力外溢到运行环境本身。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>同一模型同权重，harness 不同得分 62% vs 33%：HF 发布年度最实用多 harness RL 指南</h3>
+      <p>Hugging Face 发现<strong>同一模型、同一权重</strong>在不同 agent harness 下得分可从 62% 跌到 33%，并发布其称为"年度最实用"的多 harness RL 指南（完全开源）。核心技巧是不动 harness，而是让模型指向一个兼容 coding agent 四种 API 格式（OpenAI Chat / Responses、Anthropic Messages、Gemini）的代理层。</p>
+      <ul>
+        <li>实测：同模型同权重，harness A 62% vs harness B 33%</li>
+        <li>方法：保持 harness 不动，模型指向兼容四种 API 格式的代理层</li>
+        <li>产出：完全开源的多 harness RL 指南，被称为年度最实用</li>
+      </ul>
+      <blockquote>当同一模型在不同运行时落差近一倍，harness 与护栏就成了被严重低估的"隐藏能力杠杆"——调模型不如先调环境。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>llama.cpp 新增 systemone 决策端点，OpenAI / Perplexity 加入"Jev 竞争者"混战</h3>
+      <p>llama.cpp server 新增 <strong>/v1/systemone</strong> 决策模型端点：接收状态（文本 / JSON / 截图）+ 类型化问题，单次前向传播即返回各选项概率，跳过逐 token 生成与解析，适合请求路由、内容审核、agent 步骤校验。同期博主指出各家正匆忙推出"Jev"竞争者——OpenAI 已发 Decisions API、Perplexity 也有自有决策模型，均被指缺少 Jev 更长周期的开发与测试。</p>
+      <ul>
+        <li>llama.cpp 新端点 /v1/systemone：状态 + 问题 → 单次前向返回选项概率，免 token 解析</li>
+        <li>适用：请求路由、内容审核、agent 步骤成功与否校验</li>
+        <li>决策模型竞赛：OpenAI Decisions API + Perplexity 决策模型，被指赶工缺测试</li>
+      </ul>
+      <blockquote>"决策模型"把判断从生成里拆出来单独优化，正成为 agent 流水线里比 LLM 更轻、更可控的一环——RPA 与 agent 校验的接缝处最先受益。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>辽宁具身智能"跑起来"：新松发羿枢系统、豪森 SF10 轮式人形、产业联盟实体化</h3>
+      <p>辽宁省 10/3 披露具身智能加速：新松发布<strong>羿枢系统</strong>（从底层算法到多智能体协同全面积累），豪森智能联合子公司壕翎在大连发布 SF10 轮式人形机器人 + 柔性可重构产线，把具身智能从实验室推向真实产线；辽宁具身智能产业技术创新联盟与沈阳联盟正式实体化运行，发起单位超百家，覆盖高校、龙头企业、投资机构全链条。</p>
+      <ul>
+        <li>新松发布羿枢系统；豪森 SF10 轮式人形 + 柔性智能可重构产线（大连）</li>
+        <li>辽宁具身智能产业联盟实体化，发起单位超百家（高校 / 龙头 / 投资机构）</li>
+        <li>配套：东北亚具身智能创新中心建高质量数据基础设施；亿达科创边缘 AI 方案端到端延迟 &lt;10ms、降约 90%</li>
+      </ul>
+      <blockquote>区域集群把"场景 + 数据 + 产业链"打包实体化，正把具身智能从单点 demo 推向可复制的工业落地——辽宁路径是制造业大省转型的一个样本。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Galbot ET1 双足人形 7.9 万元起售，主打"看一遍就学会"的模仿学习</h3>
+      <p>中国机器人公司 Galbot 将 <strong>ET1 双足人形机器人</strong> 定价 7.9 万元起（约 1.1 万美元），高阶型号具备"看一遍就学会"的模仿学习能力，定位制造、物流、服务场景。同期宇树科创板 IPO 募资约 9.05 亿美元、创始人套现，资本持续涌入 physical AI。</p>
+      <ul>
+        <li>起售价 7.9 万元（约 $11,000）；高阶型号支持模仿学习</li>
+        <li>定位制造 / 物流 / 服务；延续行业价格下探趋势</li>
+        <li>背景：宇树 IPO 募资约 $905M，physical AI 资本热度延续</li>
+      </ul>
+      <blockquote>7.9 万元的双足整机把准入门槛压到消费级边缘，模仿学习又砍掉了训练成本——当"便宜 + 好教"同时成立，规模化部署的临界点正在靠近。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-10-02 ===== -->
 <section class="day-section" id="day-1002">
   <div class="day-header" onclick="toggleDay(this)">
