@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-10-08 ===== -->
+<section class="day-section" id="day-1008">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月8日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Reflection AI 开源编程模型 Beam 即将发布</h3>
+      <p>Reflection AI 公布 <strong>Beam</strong>——一款纯文本、开放权重的编程/推理/智能体模型，采用 Apache 2.0 许可，预计本月底放出权重与技术报告。模型为稀疏 MoE 架构，总参数 <strong>5010 亿</strong>、每 token 激活 230 亿，支持最长 <strong>100 万 token</strong> 上下文。</p>
+      <ul>
+        <li>SWE-bench Verified 80.9、Terminal-Bench v2.1 80.1，公司称推理算力仅为 GLM-5.2 的 1/3–1/4</li>
+        <li>训练不到 4 周（6144×GB300 NVL72），RL 阶段 1.05 万卡跑 4 周、生成超 1 亿次 rollout</li>
+        <li>已获英伟达、红杉、光速等约 47 亿美元融资，并与 Shinsegae 试点"AI 工厂"本地定制</li>
+      </ul>
+      <blockquote>开放权重的"主力编程模型"开始对标闭源旗舰，企业自有部署与主权 AI 叙事再添筹码。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>蝴蝶效应发布 Manus 2.0 海外版与多 Agent 群聊应用 Cue</h3>
+      <p>蝴蝶效应在 10 月 8 日资讯汇总中披露 <strong>Manus 2.0</strong> 海外版及多 Agent 群聊产品 <strong>Cue</strong>；自研框架 <strong>Cascade</strong> 较前代 token 消耗降 <strong>23.2%</strong>、完成时间缩短 28.2%、运行成本降 32%。</p>
+      <ul>
+        <li>新增云电脑、Automations 事件触发与 Computer Use 远程操控能力</li>
+        <li>Studio 升级文档、视频与游戏环境；视频编辑器支持 Alchemy 与时间线精修</li>
+        <li>从单 agent 走向多 agent 协同群聊，强调"事件驱动"自动化编排</li>
+      </ul>
+      <blockquote>Agent 平台竞争正从"更聪明"转向"更省、更可编排"，成本效率成为新战场。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Spotify 开源 Portal 插件，把开发者门户接进 Coding Agent</h3>
+      <p>Spotify 发布 <strong>portal-ai-plugins</strong>（约 2.4k stars，Apache-2.0，TypeScript），将内部开发者门户 Spotify Portal 接入 <strong>Claude Code、Codex、Cursor</strong>，封装 6 个聚焦工作流：setup、doctor、search、service、actions、feedback。</p>
+      <ul>
+        <li>search 用自然语言查软件目录与技术文档；service 生成所有权/健康/事故简报</li>
+        <li>actions 调用带 dry-run 与确认护栏；配套 shunt 把 I/O 密集任务路由到更便宜的 worker 以省 token</li>
+        <li>安装方式因工具而异，均通过 npx @spotify/portal-cli 底层驱动</li>
+      </ul>
+      <blockquote>大厂开始把"内部开发者门户"做成 coding agent 原生能力，agent 正从写代码走向调度企业系统。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>智元远征 A3 成全球首个原生集成音乐平台的全尺寸人形机器人</h3>
+      <p>智元 AGIBOT 与网易云音乐达成深度合作，<strong>远征 A3</strong> 成为全球首个原生集成音乐平台的全尺寸人形机器人，<strong>10 月 15 日</strong>起可语音点播正版曲库，打通语音识别、曲库调用、播放控制与账号鉴权统一链路。</p>
+      <ul>
+        <li>已适配嘈杂环境唤醒、弱网重试与多用户并发</li>
+        <li>横琴长隆常态化部署超 <strong>300 台</strong> 并试点音乐交互</li>
+        <li>标志人形机器人从"能走能说"迈向"有内容服务生态"的消费级落地</li>
+      </ul>
+      <blockquote>机器人厂商与内容平台联手，正把"娱乐/服务刚需"前置到硬件体验里，加速 C 端破圈。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>南京"机器人学校"实景实训基地即将投用</h3>
+      <p>南京市空地数智街区实景实训基地进入建设收尾，将于近期投用；训练场约 <strong>5000 平方米</strong>，复刻工厂、城市运维、应急作业等真实环境，以作业数据为"教材"训练机器人。</p>
+      <ul>
+        <li>落实工信部、国资委 2026 年度人形机器人与具身智能实景实训专项行动</li>
+        <li>面向全市机器人企业、高校院所共享开放，打通数据获取与算法验证链条</li>
+        <li>搭配南京首家机器人 6S 店，形成"研发—实景测试—市场首秀"一条龙</li>
+      </ul>
+      <blockquote>从"表演模式"转向"作业模式"的关键基础设施就位，真实场景数据飞轮开始转动。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-10-07 ===== -->
 <section class="day-section" id="day-1007">
   <div class="day-header" onclick="toggleDay(this)">
