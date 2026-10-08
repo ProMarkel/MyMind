@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-10-09 ===== -->
+<section class="day-section" id="day-1009">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月9日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>微软 × 英伟达：Windows 成为原生 AI Agent 计算机</h3>
+      <p>微软在 Windows AI and Surface 发布会上联合英伟达，推出 <strong>RTX Spark</strong> 本地 AI 硬件平台与操作系统内核级 Agent 容器基础设施 <strong>Microsoft Execution Containers（MXC）</strong>。RTX Spark 最高 128GB 统一内存、1 PetaFLOP FP4 算力，可离线运行 Qwen 3.8 Flash Next 等百亿/千亿级模型；MXC 将每个 Agent 关进轻量级安全容器，提供 Secured/Observed/Governed 三基元，支持 24/7 后台驻留。Surface Laptop Ultra 已基于 RTX Spark 亮相，轻薄本 10/16 发货、紧凑台式 11 月开售。</p>
+      <ul>
+        <li>RTX Spark：最高 128GB 统一内存、600GB/s 片上互连、1 PetaFLOP FP4 AI 算力</li>
+        <li>MXC 提供操作系统级隔离执行 + 24/7 后台持续驻留 + 安全治理三件套</li>
+        <li>Surface Laptop Ultra 已亮相；轻薄本 10/16 发货，紧凑台式 11 月开售</li>
+      </ul>
+      <blockquote>本地端侧 Agent 化从云端叙事转向操作系统内核级落地，coding agent 的"运行底座"正被重写在每个人的电脑里。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 推出 Claude Haiku 5.5：低价小模型点燃分层竞争</h3>
+      <p>Anthropic 于 10/7 推出 <strong>Claude Haiku 5.5</strong>，宣称是速度最快、能力最强、价格最低的小模型，最低输入价格每百万 Token 仅 <strong>0.1 美元</strong>、较上一代降 90%，主要面向高频调用、成本敏感且任务边界清晰的应用。模型支持 effort 参数调节计算投入，在部分 Agent 与知识工作基准上超过 GPT-6 Luna。</p>
+      <ul>
+        <li>最低输入价 $0.1/M token，较上代降 90%</li>
+        <li>OSWorld 2.1 离线任务 72.4%（Haiku 4.5 仅 15.7%、GPT-6 Luna 48.9%）；Terminal-Bench 4.0 最高推理强度 39.2%</li>
+        <li>GDPval-AA v2.1 得分 1620（GPT-6 Luna 为 1437）；默认中等强度成绩约 20%</li>
+      </ul>
+      <blockquote>模型竞争焦点从"谁最强"转向"哪些任务没必要调用最贵模型"，小模型分层正成为 coding agent 成本治理的关键抓手。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub Copilot 月底支持本地模型推理，MAI Code 1.1 Flash 同步发布</h3>
+      <p>微软 10/8 宣布 <strong>GitHub Copilot</strong> 将于本月底起支持本地 AI 模型推理，开发者可在云端模型与设备端模型间自动切换或手动指定，兼顾数据隐私与离线可用。同步发布的轻量级代码大模型 <strong>MAI Code 1.1 Flash</strong> 采用混合专家架构，总参 1370 亿、每轮激活约 68 亿，在 Surface Laptop Ultra 上实测解码吞吐 40–63 token/s。</p>
+      <ul>
+        <li>Copilot 月底起支持本地推理，提供自动编排与强制设备端两种模式</li>
+        <li>MAI Code 1.1 Flash：1370 亿总参、68 亿激活 MoE，融合量化压缩与推测解码</li>
+        <li>设备端解码吞吐 40–63 token/s（提示长度 2000–256000 Token 区间）</li>
+      </ul>
+      <blockquote>编码助手的"云边协同"把隐私与离线能力下沉到设备端，企业研发数据不出本地的门槛被进一步拉低。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>清华系物理AI公司「厘清智能」完成数亿元融资，蚂蚁连续两轮领投</h3>
+      <p>Physical AI Infra 平台公司「<strong>厘清智能</strong>」近日完成天使轮及天使+轮数亿元融资，蚂蚁集团连续两轮加码并领投天使+轮，CMC 资本、国汽投资、中金资本等跟投。公司成立于 2026 年 4 月，创始人李一鸣为清华 AI 学院助理教授（1997 年生、2024 英伟达奖学金全球十位之一），团队五十余人、平均年龄 22 岁，定位建设连接模型智能与物理世界的基础设施。</p>
+      <ul>
+        <li>融资规模数亿元，蚂蚁连续两轮领投（天使+轮）</li>
+        <li>全栈自研：T1 数采手套、Ego 数采设备、PWM 可微分物理引擎 + 后训练强化学习</li>
+        <li>创始人清华系、团队平均年龄 22 岁；覆盖数据采集—仿真—评测—跨本体适配—部署全链路</li>
+      </ul>
+      <blockquote>物理AI基础设施（数据管线 + 可微分仿真）正成为继整机之后资本重仓的新赛道，清华系年轻团队快速吸金。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>2026 全球开发者先锋大会 10 月登陆张江，浦东打造 2000㎡ 永久具身智能实景实训空间</h3>
+      <p>2026 全球开发者先锋大会（GDPS）将于 10 月登陆上海浦东张江，张江科学会堂智慧湾展馆将改造 <strong>2000 平方米</strong> 场地，打造成永久性具身智能场景实训空间。该空间引入真实生产、商业、公共服务场景，以作业技能包形式科学评估整机方案的真实作业成功率、效率提升率、安全可靠性与经济可行性，形成"场景提需求—机器人实训—数据沉淀—产品迭代—方案可复制"的闭环。</p>
+      <ul>
+        <li>2000㎡ 永久性具身智能场景实训空间，落地张江科学会堂智慧湾展馆</li>
+        <li>以"作业技能包"评估真实作业成功率、效率提升率、安全可靠性、经济可行性四大指标</li>
+        <li>构建"场景→实训→数据→迭代→可复制"闭环，对接上海实景实训模式</li>
+      </ul>
+      <blockquote>从演示走向规模化落地，关键在真实场景闭环与可量化 ROI，张江正把"实训验证"做成产业基础设施。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-10-08 ===== -->
 <section class="day-section" id="day-1008">
   <div class="day-header" onclick="toggleDay(this)">
