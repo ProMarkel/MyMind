@@ -218,6 +218,138 @@
 
 <main>
 
+<!-- ===== 2026-10-11 ===== -->
+<section class="day-section" id="day-1011">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月11日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub Copilot 本地沙箱 + 多账号支持全端 GA，强化 Agent 隔离与安全治理</h3>
+      <p>GitHub 近期为 Copilot 推出三项更新：CLI、桌面 App 与 VS Code 全线默认开启 <strong>本地沙箱（Local Sandboxing）</strong>，限制 Agent 读取文件、打开网络连接与获取凭据的能力；Copilot App 支持将 <strong>订阅授权账号</strong> 与 <strong>仓库访问账号</strong> 分离；CLI 新增 <strong>/model</strong> 命令可同时列出本地 Ollama 模型与云端模型。沙箱免费内置，无需额外许可即可启用。</p>
+      <ul>
+        <li>本地沙箱默认在 CLI / 桌面 / VS Code 的 Agent Host 会话中开启，限制文件读取、网络与凭据访问</li>
+        <li>Copilot App 分离订阅账号与仓库账号，企业可按合规策略分配许可而不必开放仓库权限</li>
+        <li>VS Code 1.141 新增 Agents 窗口并排多会话 + worktree 清理，缓解开发者机磁盘膨胀</li>
+      </ul>
+      <blockquote>Agent 的"运行隔离"正从可选加固变成默认基线，企业研发数据在本地被锁进沙箱，coding agent 的安全边界被重新定义。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>JetBrains 发布 Mellum 2.1 开源编码模型：12B MoE、SWE-bench 47%</h3>
+      <p>JetBrains 于 10 月发布 <strong>Mellum 2.1</strong> 及其 Thinking 变体，这是专为 coding agent 设计的第二代模型。采用混合专家（MoE）架构，总参 12B、每轮激活仅 <strong>2.5B</strong>，以 Apache 2.0 协议在 Hugging Face 开源，主打可在企业自有服务器自托管、代码不出云。</p>
+      <ul>
+        <li>SWE-bench Verified 47%（一代仅 2%），LiveCodeBench v6 82%，Thinking 变体 HumanEval+ 91.5%</li>
+        <li>12B 总参 / 2.5B 激活，多 token 预测（MTP）提速 1.6x，重负载下吞吐近 2x Qwen3.5-9B</li>
+        <li>训练以 RL 为主阶段（数百万级沙箱仿真），更像"会跑命令、修自己错误的 agent"而非补全器</li>
+      </ul>
+      <blockquote>开源小模型不再只拼榜单，而是把"自托管 + agent 化训练"作为差异化卖点，企业本地化 coding agent 的底座选择更丰富了。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>微软研究院开源 SkillLens：给 Agent 技能装上"显微镜"</h3>
+      <p>微软研究院开源 <strong>SkillLens</strong>，一套聚焦 AI Agent <strong>技能可观测性（Observability）</strong> 的框架。它不替代现有 Agent 核心（LangChain / AutoGen / 自研 LLM 调用），而是像探针附着在每个技能之上，让开发者清晰看到每个技能的"心跳、血压与诊断报告"。</p>
+      <ul>
+        <li>三层透视：技能规范层（机器可读强类型契约）、执行层、评估层分离</li>
+        <li>解决技能黑盒痛点：可定位"哪个技能被错调、内部逻辑哪步出错、技能间依赖与冲突"</li>
+        <li>面向"玩具演示 → 生产级应用"拐点，强调技能生命周期的声明 / 执行 / 评估闭环</li>
+      </ul>
+      <blockquote>随着 agent-skills 注册表与供应链风险升温（参考此前 CVE 沙箱逃逸），技能级可观测性正从锦上添花变成生产刚需。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>小鹏 IRON 自主走下产线，具身智能产业底座加速成型</h3>
+      <p>小鹏通用人形机器人 <strong>IRON</strong> 在广州工厂完成总装并 <strong>自主走下产线</strong>，标志其面向先进人形机器人的自动化产线正式启用。该产线核心工序自动化率超 80%，为全球首条同类自动化产线，依托车规级制造体系与自研图灵芯片，计划年底启动量产、目标月产 1000 台，首批落地门店服务场景。同期全国具身智能产业底座持续完善。</p>
+      <ul>
+        <li>IRON 产线核心工序自动化率 80%+，年底量产目标月产 1000 台，首批门店服务场景</li>
+        <li>全国已投用 70+ 具身智能训练场，形成长三角 / 京津冀 / 珠三角三大集群</li>
+        <li>数据平台已交付 150 万小时人类视频数据，构建"实景实训—数据沉淀—迭代—部署"闭环</li>
+      </ul>
+      <blockquote>车企把"车规级制造"迁移到人形机器人产线，是量产从千台迈向万台的关键一跃，数据飞轮则补齐了 Physical AI 的燃料短板。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>2026 武汉 AI 与机器人博览会开幕，200+ 企业、20+ 国采购商</h3>
+      <p>10 月 10 日，<strong>2026 武汉人工智能与机器人博览会</strong> 开幕，200 余家企业携产品与技术参展，吸引美国、德国、意大利、印度等 <strong>20 余国</strong> 采购团。形态各异的机器人亮出"绝活"：仿生交互机器人可辅助孤独症儿童问诊康复，移位代步机器人帮助行动不便者多场景平稳转移，人形机器人覆盖科教、导览与工业物流。</p>
+      <ul>
+        <li>200+ 企业参展，20+ 国采购团到场；电鹰飞行机器人首发，一上午达成 200+ 海外合作意向</li>
+        <li>武汉集聚 AI 企业逾 1500 家、产业规模突破 1200 亿元，已构建核心零部件—本体—系统集成—应用完整链条</li>
+        <li>展品从工业、农业延伸至养老康复、低空文旅（电鹰飞车适航取证中）</li>
+      </ul>
+      <blockquote>机器人博览会正从"炫技秀"转向"成交场"，海外采购团与首发订单的出现，说明中国机器人的性价比与迭代速度开始转化为真实出口订单。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-10-10 ===== -->
+<section class="day-section" id="day-1010">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月10日（周六）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>阿里 Qoder 上线 Fast 模式：首响 3 秒、credit 0.8x</h3>
+      <p>阿里 AI 编程 Agent <strong>Qoder</strong> 于 10 月 10 日上线 <strong>Fast 模式</strong>，率先在桌面端 v0.4.4+ 面向个人与企业用户（国内与国际版同步）。该档位首响约 3 秒、输出质量高、credit 消耗 0.8x，面向轻量日常任务。国际版以 Fast 替换原 Performance 档，首响从 8 秒降至 3 秒、credit 从 1.1x 降至 0.8x（约省 27%）。</p>
+      <ul>
+        <li>Fast 首响约 3 秒，credit 0.8x；国际版相比 Performance 提速至约 1/3、相比 Ultimate 约 1/4</li>
+        <li>官方自测：完成 10 类常见开发任务耗时约为国内同类 1/3、海外同类 1/4（未独立验证）</li>
+        <li>轻量任务（行程草稿、日志转计划）秒级完成；Ultimate 等重档位仍保留给复杂任务</li>
+      </ul>
+      <blockquote>编码 Agent 的"档位分层"趋于成熟——把高频轻任务从最贵模型上卸下来，是成本治理从口号走向产品设计的信号。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>字节 TRAE 双端合一：TraeWork 与 TraeCode 合并为全链路开发平台</h3>
+      <p>字节旗下 <strong>TRAE</strong> 于 10 月 9 日宣布将 <strong>TraeWork</strong> 与 <strong>TraeCode</strong> 正式合并为全新 TRAE，升级为全链路开发平台。新版本以统一入口承接办公、任务、内容生成与专业编码等连续场景，支持 <strong>Agent 模式</strong> 与 <strong>IDE 模式</strong> 无缝切换，覆盖桌面端、Web 端与移动端。</p>
+      <ul>
+        <li>Agent 模式（需求拆解到交付、跨项目调度多 Agent 并行）与 IDE 模式（逐行精调）共用同一工程上下文，切换不丢项目</li>
+        <li>自动化任务、模板库、我的助理与产物统一进工作流；代码 / HTML / PPT / Word / 图片 / 视频统一"我的产物"管理</li>
+        <li>目前灰度推送中，TraeWork / TraeCode 用户升级自动触发、数据与积分完整迁移</li>
+      </ul>
+      <blockquote>AI 编程工具从"单点补全"走向"需求—编码—调试—管理"全链路整合，统一入口的核心价值在于上下文不中断。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>MirroS 开源 AgentGarten：给 AI Agent 一个可行动、可观察的"世界"</h3>
+      <p>AI 研究团队 <strong>MirroS</strong> 于 10 月 9 日发布 <strong>AgentGarten</strong>，一个为 AI Agent 提供"可行动、可观察、可学习"环境的框架。代码、技术报告与项目页同步公开，让 Agent 能在结构化世界中进行交互、获得反馈并持续进化。</p>
+      <ul>
+        <li>定位：为 Agent 提供世界模型 / 沙箱环境，支持行动—观察—学习闭环</li>
+        <li>代码、技术报告、项目页均已公开（QbitAI 10/9 报道）</li>
+        <li>与 RLinf 等强化学习框架生态呼应，补足 Agent"在环境中试错"的基础设施工具</li>
+      </ul>
+      <blockquote>Agent 的能力边界越来越取决于"它能在什么样的世界里行动"，世界 / 环境框架的开源，是 agent 从对话走向具身操作的关键基建。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>国庆假期机器人告别"表演经济"，开启商业化闯关</h3>
+      <p>今年国庆，景区里多了一批机器人"员工"——不再只是跳舞的表演嘉宾，而是排班上岗、卖货收款、巡检安防。据不完全统计，近 <strong>30 家具身智能及机器人企业</strong> 进入文旅、零售与消费服务场景，国庆在岗规模达 <strong>数千台</strong>。与此同时，机器人租赁"抢租潮"消失，日租金从 2025 年初的万元级跌至不足千元。</p>
+      <ul>
+        <li>日租金从万元级"雪崩"至不足千元（闲鱼上宇树租赁起步价已低至 289 元/天），同质化致新鲜感失效</li>
+        <li>银河通用 Galbot G1 进流动售货车任售货员；智元灵犀任 BURTON / 香氛品牌"一日店长"</li>
+        <li>银河太空舱智慧零售已落地约 50 城 200 点位（颐和园、圆明园、八达岭、敦煌等）</li>
+      </ul>
+      <blockquote>文旅成了具身智能最现实的试炼场——"能上岗"已成，但可持续盈利仍要翻越多重结构性关卡，纯商业化付费订单占比有待提升。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>比亚迪公开首款自研人形机器人"小迪"，拟进 4S 店</h3>
+      <p>10 月 9 日，国家知识产权局公开比亚迪一项"具身 AI 机器人"设计专利，显示其 <strong>首款自研人形机器人</strong>，外形与此前预热过的"小迪（Xiao Di）"高度吻合。该机器人定位服务、教育、工业与人际交互场景，公司称将先在 <strong>4S 店</strong> 等受控环境测试具身 AI，再向工厂、物流与公共服务延伸。</p>
+      <ul>
+        <li>设计专利 10/9 公开：黑白人形、圆弧头、无面部屏幕、多关节躯干四肢</li>
+        <li>披露规格：身高 1.61m、体重 58.5kg、自由度 31、手部精度 ±1mm</li>
+        <li>拟用于 4S 店迎宾、讲解车辆功能、演示车机，借制造规模定制机器人硬件</li>
+      </ul>
+      <blockquote>又一家车企把人形机器人写进战略——从"造车的"变成"造机器人的"，4S 店成了具身 AI 低成本规模化试水的天然试验场。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-10-09 ===== -->
 <section class="day-section" id="day-1009">
   <div class="day-header" onclick="toggleDay(this)">
