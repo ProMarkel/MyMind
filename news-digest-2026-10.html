@@ -218,6 +218,138 @@
 
 <main>
 
+<!-- ===== 2026-10-14 ===== -->
+<section class="day-section" id="day-1014">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月14日（周三）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Bolt.new 推出 Forge：用 50× 算力换开发者训练数据，共训万亿参数开放权重模型</h3>
+      <p>StackBlitz 旗下浏览器端 AI 开发平台 <strong>Bolt.new</strong> 于 10 月 14 日上线研究预览 <strong>Forge</strong>：Pro 订阅用户可换取最高 <strong>50 倍</strong> 开放权重编码模型用量，条件是显式同意共享匿名化的会话数据（提示、源码、修复轨迹与对话）用于训练。项目与 <strong>Arcee AI</strong> 合作，首轮训练 10 月启动，目标产出万亿参数级开放权重模型并最终公开权重。</p>
+      <ul>
+        <li>开放模型在 Bolt 内部 Build Index 得分 92.2，约为其顶级付费模型的 91%</li>
+        <li>当前 agent 用 GLM 5.3 Flash / 5.3，Kimi K3、DeepSeek v4 Pro 为实验选项；WebContainers 在浏览器内隔离运行降成本</li>
+        <li>50× 用量激增 10/14 截止，之后 Forge 作为开放模型试验场保留；仅个人 Pro 参与，Teams / Enterprise 不可加入</li>
+      </ul>
+      <blockquote>"用真实开发会话喂模型"正成为开放权重路线对抗闭源 API 的新筹码——开发者用算力换权益，厂商用数据反哺，coding agent 竞争开始向上游训练数据延伸。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Simon Willison × Jesse Vincent 办旧金山闭门沙龙，拒绝商业路演、重拾工程纪律</h3>
+      <p>开源布道者 <strong>Simon Willison</strong> 与 Jesse Vincent 于 10 月 14 日晚在旧金山合办一场 <strong>Agentic Engineering</strong> 线下闭门沙龙，采取审核准入、不公开地址，并立规"现场严禁任何商业产品路演"，只讨论古怪、未公开或尚未完成的原型探索。</p>
+      <ul>
+        <li>背景：当 Claude Code 等工具把写代码边际成本压近零，"认知负债"正取代代码产出，成为团队新瓶颈</li>
+        <li>争议焦点：人脑审阅速度严重滞后于 agent 生成速度，审查带宽成为协同效率脱节的关键</li>
+        <li>先锋圈用"防御性避风港"对抗炒作，转向环境物理隔离、强制 TDD 等严苛工程流</li>
+      </ul>
+      <blockquote>当"生成"几乎零成本，瓶颈从"写得快不快"转向"看得懂不懂、审不审得过来"——一线工程师正在重新筑起工程规范防线。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>工具生态周：Codex CLI 静默常驻 daemon 引隐私争议，Cursor 插件规范与 diagram-design 登顶</h3>
+      <p>本周 coding-agent 工具生态密集更新：OpenAI <strong>Codex CLI</strong> 被发现默认静默安装一个自更新后台 <strong>daemon</strong>，缺乏清晰用户告知，引发隐私担忧；同期 <strong>Cursor</strong> 发布首个官方插件规范与 marketplace 仓库（11.1K stars，含 532 commits）；<strong>diagram-design</strong> 凭 44 类编辑型图表技能登 53K stars；<strong>context-mode</strong> MCP 把 agent 工具输出压缩 98%（样本 315KB→5.4KB）。</p>
+      <ul>
+        <li>Codex CLI 后台 daemon：默认安装、自更新、未充分披露，HN 热议隐私边界</li>
+        <li>Cursor cursor/plugins：每插件独立目录 + plugin.json 清单，补齐官方扩展通道</li>
+        <li>context-mode：沙箱内运行工具只回传打印结果，SQLite + FTS5 存会话记忆，跨 Claude Code / Codex / Gemini CLI / VS Code 安装</li>
+      </ul>
+      <blockquote>编码智能体的"外壳"正快速标准化——插件市场、图表技能、上下文压缩三箭齐发，但后台 daemon 的静默安装提醒：工具越自动化，透明度与同意越不能缺席。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Faraday Future 10/14 发布 FF Nova 具身智能人形机器人，主攻开发者与教育</h3>
+      <p>Faraday Future（FFAI）于 10 月 14 日（美西）联合 FFR 举办新品发布，围绕具身智能机器人、Physical AI 教育与开发者，推出四项产品：面向开发者与教育机构限量发布的<strong>具身智能人形机器人 FF Nova</strong>、启蒙教育机器人 <strong>FF Nova Mini</strong>、EAI 教育生态大脑及课程 Skills 2.0，以及 FF Nova 开发者强化学习平台并启动开发者社群招募。</p>
+      <ul>
+        <li>FF EAI 机器人 9 月本体销售及出货 265 台、再创单月新高；Q3 累计 575 台、累计达 817 台</li>
+        <li>同日 FFAI 与 AIAA 在总部合办研讨会，50+ 顶尖高校与 AI 领域学者参会</li>
+        <li>贾跃亭投资者周报调整至 10/14 发布；完整视频 10/16 早 8:00（北京时间）上线</li>
+      </ul>
+      <blockquote>贾跃亭押注具身智能"开发者+教育"切口，把机器人当生态平台而非单纯硬件卖——能否复制其造车叙事的成败，取决于真实交付与开发者黏性。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>2026 人工智能产业大会 10/14–16 济南开幕，具身智能专区对接山东制造</h3>
+      <p>以"加快推进人工智能赋能新型工业化"为主题的 <strong>2026 人工智能产业大会</strong> 于 10 月 14 日至 16 日在济南黄河国际会展中心举办，15 日举行开幕式及主论坛。工信部、国资委 6 月启动的年度人形机器人与具身智能实景实训专项行动提出年底带动万台级落地，具身智能专区汇聚 <strong>宇树、优必选、七腾机器人、西门子、和利时、优宝特</strong> 等企业，对接山东制造业智能化改造与港口、能源等特殊场景需求。</p>
+      <ul>
+        <li>上半年全国工业机器人、服务机器人产量保持两位数增长；中国上半年人形出货占全球约 97%</li>
+        <li>企业侧：优必选柳州万台级工厂 9 月投产、智元上半年出货超 8600 台（十倍级增长）</li>
+        <li>大会将集中发布一批"人工智能+"高价值场景实践成果，推动试点走向规模化</li>
+      </ul>
+      <blockquote>量产元年从预期走向落地：当具身智能专区直接对接区域制造业的改造订单，机器人公司比拼的已是从产线到特种场景的真实交付能力。</blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 2026-10-13 ===== -->
+<section class="day-section" id="day-1013">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月13日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>CodeScene 案例：AI 智能体三周重构 30 万行 C 代码，Code Health 5.6→10.0</h3>
+      <p>CodeScene 发布案例：编码智能体在 <strong>三周</strong> 内重构了一个含 <strong>30 万行 C 代码</strong> 的开源反编译项目（《街头霸王 III：三度冲击》），产生 2903 次提交、修改 252,055 行，token 成本约 <strong>4000 美元</strong>，并将 Code Health 评分从 5.6 提升至 10.0。支撑的两项机制是 CodeHealth MCP Server 的确定性质量评分，以及逐帧比较回滚状态哈希的回放轨迹测试框架。</p>
+      <ul>
+        <li>726 个文件、2903 次提交、改动 252,055 行；成本约 $4000</li>
+        <li>agent 自发积累出 22 个重构方案 + 82 条辅助说明（如 Shared Index Range、Uniform Step Table）</li>
+        <li>CodeScene 创始人 Adam Tornhill：从业 30 年，首次见到"大规模超人类 AI 表现"</li>
+      </ul>
+      <blockquote>真正的拐点不在"写了多少"，而在 agent 能否在确定性质量评分与回放测试护航下闭环重构——把"敢让 agent 自动改"建立在可执行 oracle 之上。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>开源社区治理转向：QGIS 暂停接受 AI 生成代码，Ars Technica 质疑"更多代码≠更多软件"</h3>
+      <p>开源地理信息项目 <strong>QGIS</strong> 通过提案，暂时冻结 AI 生成代码的提交，评论区就维护者负担、署名与审查成本激烈争论；同期 Ars Technica 分析指出 AI 编码智能体产出更多代码却未相应增加已交付软件，直指"代码行数"作为指标的失效。</p>
+      <ul>
+        <li>QGIS：以"止损式"暂时禁令先把门完全关上，之后再逐案把自动补全、翻译开回来</li>
+        <li>Ars Technica：代码量增长未转化为交付价值，审查带宽被生成速度拖垮</li>
+        <li>对照：CodeScene 有确定性 oracle 敢让 agent 闭环，QGIS 无廉价 oracle 只能靠禁令降流量</li>
+      </ul>
+      <blockquote>当生成近乎免费，治理的重心从"能不能生成"转向"谁来审、怎么审、担责归谁"——开源社区正用规则为认知负债设闸。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>AWS Bedrock 亚太五区上线 OpenAI GPT 跨区域推理，开发者可就近调用前沿模型</h3>
+      <p>AWS 宣布在新加坡、雅加达、泰国、马来西亚与台北等<strong>亚太区域</strong>上线 Amazon Bedrock 的全球跨区域推理功能，支持开发者调用 <strong>OpenAI GPT-6 Sol、Luna 及 Astra</strong> 模型。该功能兼容 OpenAI 接口规范，并提供细粒度权限控制与配额监控。</p>
+      <ul>
+        <li>覆盖区域：新加坡、雅加达、泰国、马来西亚、台北</li>
+        <li>支持模型：GPT-6 Sol / Luna / Astra，兼容 OpenAI 接口规范</li>
+        <li>配套：细粒度权限控制 + 配额监控，便于企业合规调用</li>
+      </ul>
+      <blockquote>前沿模型通过云厂商的区域推理合规落地，正成为开发者"就近、可控"调用闭源旗舰的新常态——接口标准化让模型切换成本持续走低。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>星尘智能再获 10 亿元融资、估值 150 亿，绳驱 AI 机器人量产领跑</h3>
+      <p>深圳具身智能公司 <strong>星尘智能</strong> 于 10 月 13 日宣布完成约 <strong>10 亿元</strong> 新一轮融资，投后估值达 <strong>150 亿元</strong>，由深投控旗下投控东海领投，洪泰基金、善恒资本等国资及财务投资人参与，老股东先沐追投。这是其近半年内第四轮融资，三个月内估值从 100 亿增至 150 亿。</p>
+      <ul>
+        <li>路线：绳驱本体 + Lumo 具身基座模型 + Astribot OS，自称全球首个实现绳驱 AI 机器人量产</li>
+        <li>产品：T1 人形已发货，S/T 系列具备万台级产能，把高精细操作带入 9 万元价格区间</li>
+        <li>场景：零售、文旅、工业、科研、教育，已与金马游乐、仙工智能、中科创达等合作</li>
+      </ul>
+      <blockquote>资本向头部集中、估值三月抬升 50 亿，但考察重点已从技术演示转向订单、交付与产能——能同时拿出量产产品与真实客户的公司议价权更强。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>擎朗智能携 XMAN 全矩阵亮相 AIIC2026，以 10 万+ 全球真实数据交"落地答卷"</h3>
+      <p>全球室内无人配送开创者之一 <strong>擎朗智能</strong> 在 10 月 14 日开幕的 2026 人工智能产业大会（AIIC2026）上，携"人形+配送+清洁+医疗"完整产品矩阵亮相，其中 XMAN 系列具身服务机器人家族分轮式 XMAN-R1 与双足 XMAN-F1 两款，均搭载自研"大脑"（环境适应与决策）与"小脑"（运动执行与安全保护）。</p>
+      <ul>
+        <li>数据底座：十余年全栈自研，全球跑出 10 万+ 台真实运营数据，形成"研发—智造—落地"闭环</li>
+        <li>技术：大场景 NeRF 三维重建、多目 VSLAM 融合导航、多模态传感人机物共融</li>
+        <li>定位：用"可复制、可量化、可交付"的具身智能落地答卷，而非演示</li>
+      </ul>
+      <blockquote>当同行还在秀 demo，擎朗用 10 万台真实在岗数据证明：服务机器人早已是"已入职的职场新人"，落地的标尺是 KPI 而非炫技。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-10-12 ===== -->
 <section class="day-section" id="day-1012">
   <div class="day-header" onclick="toggleDay(this)">
