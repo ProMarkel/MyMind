@@ -218,6 +218,66 @@
 
 <main>
 
+<!-- ===== 2026-10-16 ===== -->
+<section class="day-section" id="day-1016">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月16日（周五）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>NVIDIA RTX Spark 10/16 正式上市：本地 AI Agent 超级芯片落地</h3>
+      <p>NVIDIA 与微软此前宣布的 <strong>RTX Spark</strong> 笔电于 10 月 16 日正式开售，单芯片集成最高 <strong>128GB 统一内存 + 1 PFLOP FP4 算力</strong>，定位"游戏 PC + 创意工作站 + 个人 AI 超算"三合一。GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi 与 WorkBuddy 等头部编码/通用 Agent 已针对该平台做端到端优化，并借 <strong>OpenShell + MXC</strong> 提供 OS 级沙箱与凭据保护，支持本地/云端混合路由。</p>
+      <ul>
+        <li>起售价 2,600 美元（18 核），128GB 顶配约 5,900 美元</li>
+        <li>专为 Agentic AI 打造的 Nemotron 3.5 Bolt 74B 已于 10/15 发布；本地 LLM 下载量已达去年同期 5 倍</li>
+        <li>经 Prism 模拟器运行 x86 Windows 应用与含内核级反作弊的游戏，但 CPU 密集型游戏受模拟开销拖累</li>
+      </ul>
+      <blockquote>本地 Agent 算力从"玩具"跨过可用阈值，编码 Agent 的部署重心开始从云端向"桌面超算"迁移。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Theo Browne 公开"skills 驱动"工作流：32 个 PR 中 27 个零人工审查合并</h3>
+      <p>T3 Code 联合创始人 Theo Browne 在直播中披露其激进实践：用三个 Markdown "skills" 文件（soul loop / full send / full stop）将重复决策编码进 Agent，<strong>32 个 PR 中 27 个由 Agent 自主合并、零人工开箱</strong>，正确率约 84%。其核心理念是"瓶颈不在模型智能，而在人工审查与旧工具的摩擦"，主张以快速回滚安全网替代审查关卡。T3 Code 用户逼近 <strong>55 万</strong>，并推出可跨模型派生并行子 Agent 的 orchestrator。</p>
+      <ul>
+        <li>skills 文件触发于其 30%+ 的 Agent 会话，从"现代化的 PR"逐步演进出完整的自治层级</li>
+        <li>full stop 为最常用技能：Agent 包办除最终合并外的全部工作，仅卡住时回问人类</li>
+        <li>计划将文件开源为 "T-Stack"，并反对禁用 Agent 自主调用 skills</li>
+      </ul>
+      <blockquote>把信任写成可复用指令、而非加审查关卡——这是"Agent-native 工程"的极端样本，争议大但信号强。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>EmbodiedEvo 自进化 Coding Agent 登顶 RoboDojo：写代码控机器人</h3>
+      <p>Einsia AI（Navers Lab）提出 <strong>EmbodiedEvo</strong>：让 Coding Agent 用 Python 经四个环境原语（get_instruction / 等）控制机器人，边看相机画面与执行反馈边改代码；每个任务仅用一个 Playground 场景积累"代码 Skills + 文字 Lessons"，冻结后交给新 Agent 在未见场景中复用，<strong>无需更新模型权重</strong>。在被称为"具身界珠峰"的 RoboDojo 评测中斩获平均分 45.08、成功率 38.95%，超过所有 VLA/WAM、Agent 与 Agent+VLA 方法。</p>
+      <ul>
+        <li>论文《EmbodiedEvo: Self-Evolving Coding Agent for Physical Intelligence》已登 arXiv（2610.18867），代码开源于 GitHub</li>
+        <li>前沿 Coding Agent 的 Zero-shot 成功率已可与同场景训练的 VLA/WAM 相当，"会调用接口"只是起点</li>
+        <li>核心创新：把单任务探索经验固化为可传递的 harness，解决"经验不留存给下一个 Agent"的痛点</li>
+      </ul>
+      <blockquote>AI Coding 与具身智能的边界正被 Coding Agent 直接抹平——写代码即写控制策略。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>2026 上海工博会 10/16 收官：具身智能成主角，表演退场、产线进场</h3>
+      <p>第二十六届中国国际工业博览会于 10 月 12–16 日在上海举办，<strong>3200 余家</strong>展商、31 万㎡展区，机器人展以"具身工业，智领未来"为主题。现场最直观变化：翻跟头、跳舞等表演几近绝迹，取而代之的是<strong>拆码垛、拧螺丝、光模块插拔</strong>等真实工序；多家企业把整条产线 1:1 搬进展馆，乐聚"夸父"自主巡场、智元精灵 G2 连续装配作业、优必选 CruzrY1 常态化搬运。</p>
+      <ul>
+        <li>光模块产线成今年"标配"：艾利特 5 台人形双臂在"元启 Primo"底座调度下协作完成高精度柔顺插拔</li>
+        <li>华沿重复定位精度达 ±0.03mm、末端接触力感知约 0.5N，并与基恩士演示"穿针引线"</li>
+        <li>黑湖科技展出 9 个决策型 Agent 覆盖报价/工程/质检，填补工业老师傅人才缺口</li>
+      </ul>
+      <blockquote>"更像人"让位于"更能干活"——具身智能的考场已从展台移到真实产线。</blockquote>
+    </div>
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>隆崎机器人首发轮式人形 HR-05W，CubeBraid 智能装卸系统已实际部署</h3>
+      <p>广东隆崎机器人以"工业底座 + 具身智能"亮相工博会，<strong>首发轮式人形机器人 HR-05W</strong>，融合轮式移动底盘、人形双臂、3D 视觉、激光雷达与"一脑三态"具身架构，面向工业制造与物流装卸等移动操作场景。同期展示的 CubeBraid 智能装卸具身系统面向箱货装柜/装卸，可自主完成货物识别、装载规划与装柜作业，<strong>已在家电、家居、酒业、快消品等行业客户现场投入实际应用</strong>。</p>
+      <ul>
+        <li>HR-05W 依托隆崎本体的运动控制与规模化交付能力，向轮式人形/双臂/具身机器人延伸</li>
+        <li>CubeBraid 推动传统装卸作业向智能化、自主化升级，是"具身智能交付元年"的落地样本</li>
+        <li>行业共识：规模化瓶颈不在本体形态，而在智能的泛化与迁移能力</li>
+      </ul>
+      <blockquote>从展示概念到客户现场真实运行，具身智能的产业化路径正被一家家中小本体厂走通。</blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2026-10-15 ===== -->
 <section class="day-section" id="day-1015">
   <div class="day-header" onclick="toggleDay(this)">
