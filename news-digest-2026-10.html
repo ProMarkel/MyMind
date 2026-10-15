@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-10-15 ===== -->
+<section class="day-section" id="day-1015">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月15日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>新基准 LSCB 揭穿 coding agent 安全短板：6 款前沿工具仅 25.1% 写出"既功能又安全"的代码</h3>
+      <p>10 月 14 日，Hugging Face 上发布 <strong>Last Secure Code Benchmark（LSCB，"你 vibe 出来的代码安全吗？"）</strong>。研究者取 <strong>150 个真实漏洞</strong> 扩展为 450 个任务、覆盖 7 种语言与 24 类 CWE，让 6 款前沿 coding agent 在"只要求功能、不提安全"的真实简报下写代码——结果触目：功能测试通过率高达 73.6%–91.3%，但"功能且安全"的最高仅 <strong>25.1%</strong>（Claude Fable 5），其余 16.4%–24.7%；仓库级正确且安全的结果约 11.8%。作者强调这是默认行为，给定安全要求和自动 review 会显著改善。</p>
+      <ul>
+        <li>最强 agent 功能且安全仅 25.1%，其余 16.4%–24.7%；功能通过率却达 73.6%–91.3%</li>
+        <li>覆盖 150 真实漏洞 / 450 任务 / 7 语言 / 24 CWE（含 21 项 2025 CWE Top 25）</li>
+        <li>Veracode 同期数据：150+ 模型安全通过率两年卡在 ~55%，XSS ~15%、日志注入 ~13%</li>
+      </ul>
+      <blockquote>当"能跑"与"安全"的落差被量化成 25% 这道坎，coding agent 的竞争重心必须从"会不会写"转向"写的是不是该上的线"——过程约束（安全 prompt + review 闸 + 依赖审查）比换模型更管用。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Zellige AI 发布 Tessera-27B-B-CJK：让 coding agent 用"压缩中文"思考，token 砍到约 1/5</h3>
+      <p>Zellige AI 推出 Tessera 系列首个模型 <strong>Tessera-27B-B-CJK</strong>——以 <strong>Qwen3.8-27B</strong> 为底，教它在思维链里用压缩 CJK 速记推理，而答案与工具调用仍保持干净英文与代码。实测在留出编码任务上，单步思维 token 从基模的 <strong>137 降到 27</strong>（约 0.5–0.64x），典型回合开销砍半，以 Apache-2.0 开放权重。</p>
+      <ul>
+        <li>留出任务每 agent 回合仅用基模 0.50–0.64x 思维 token</li>
+        <li>真实样例：一步 27 token（压缩 CJK 速记）vs 基模 137 token</li>
+        <li>基于 Qwen3.8-27B，Apache-2.0 开放权重，聚焦 token 效率前沿研究</li>
+      </ul>
+      <blockquote>当 agent 循环每天跑成千上万次推理，"省 token"不再只是省钱，而是决定多 agent 并行与长任务能否跑得起的关键变量——用领域压缩语言挤掉冗余思考，是比堆参数更聪明的降本路径。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>groundcover 把生产可观测性经 MCP 接入 coding agent：让 Claude/Cursor/Codex 直接查线上遥测</h3>
+      <p>observability 厂商 <strong>groundcover</strong> 推出面向 AI coding agent 的多面集成，经 <strong>Model Context Protocol（MCP）</strong> 把外部 agent（Claude、Cursor、Kiro、Codex）直接连到生产遥测——实时日志、指标与 trace，补上 agent 在"理解代码逻辑"之外缺失的"线上真实行为"证据。平台还引入异步 <strong>Agent Tasks</strong>：外部 agent 发现但无力诊断时，可把根因分析、看板生成等任务委派给 groundcover Agent 后台执行。全部能力走既有 BYOC 架构 + 单 eBPF 探针，遥测不出客户云。</p>
+      <ul>
+        <li>经 MCP 打通 Claude / Cursor / Kiro / Codex 与生产日志、指标、trace</li>
+        <li>异步 Agent Tasks：外部 agent 可把根因分析 / 看板生成委派给 groundcover Agent 后台跑</li>
+        <li>通过 BYOC + 单 eBPF 探针落地，遥测留在客户自有云，节点式计费避免高量 ingestion 成本</li>
+      </ul>
+      <blockquote>当 coding agent 从"写代码"延伸到"看线上"，上下文真空成了限制其自治的隐形天花板——把生产遥测做成 agent 可查询的协议层，是 agentic 软件开发生命周期真正闭环的一块基石。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>业界首个可复制实景实训示范落地：乐聚 15 台人形机器人进兆丰机电产线常态化作业</h3>
+      <p>10 月 15 日，乐聚机器人与兆丰机电在浙江联合发布"具身智能+汽车零部件上料解决方案"，<strong>15 台人形机器人</strong> 在兆丰汽车零部件产线投入常态化运行——这是业界首个可复制的具身智能实景实训示范项目，标志人形机器人从"试点验证"迈向"常态化作业"。呼应 6 月工信部、国资委启动的实景实训专项行动与《关于发展新质生产力的意见》。</p>
+      <ul>
+        <li>15 台人形在狭窄环境完成 10+ 动作序列，单次循环 &lt;40 秒，适配 15 工位、10+ 种零件，成功率稳定 <strong>98%</strong></li>
+        <li>累计运行约 <strong>1000 小时</strong>，协助生产 <strong>6 万+</strong> 零部件；单月可采 4 万+ 条数据持续回流</li>
+        <li>真机作业数据集已捐赠至开放原子开源基金会 OpenLET 社区，降低全行业研发门槛</li>
+      </ul>
+      <blockquote>当"作业成功率 98%、循环 40 秒、累计千小时"成为常态而非 demo，人形机器人就真正跨过了"能干活"的门槛——数据回流反哺模型的闭环，才是规模化部署最硬的底气。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>爱仕达智能谷具身智能创新中心揭牌，炊具巨头 ASD-S2 人形亮相、主攻规模化部署</h3>
+      <p>10 月 13 日，以"具身生态&部署未来"为主题的 2026 爱仕达生态伙伴大会在上海智能谷举行，<strong>爱仕达智能谷具身智能创新中心</strong> 正式揭牌，并发布全栈式赋能平台加速人形机器人规模化部署。会上爱仕达自研 <strong>ASD-S2 人形机器人</strong> 登场：31 个自由度、单臂负载 5kg、最高速度 4.5m/s，面向科研开发与算法验证；公司借 48 年炊具制造积淀 + 钱江机器人十五年工业机器人底盘，正式形成"工业机器人 + 人形机器人"双线布局。</p>
+      <ul>
+        <li>ASD-S2 人形：31 自由度、单臂负载 5kg、最高速度 4.5m/s，面向科研与算法验证</li>
+        <li>生态：与智元创新、魔法原子、钛虎等头部企业战略合作，构建全栈式赋能平台</li>
+        <li>背景：国家政策明确 2026 年底落地百个高价值场景，国内具身市场规模迈向万亿级</li>
+      </ul>
+      <blockquote>传统制造巨头把"量产与渠道"基因带进具身智能，"常态部署元年"的胜负手不在实验室参数，而在真实场景的稳定作业与规模复制——生态共进比单点突破更能扛住落地考验。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-10-14 ===== -->
 <section class="day-section" id="day-1014">
   <div class="day-header" onclick="toggleDay(this)">
