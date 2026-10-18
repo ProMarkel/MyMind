@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-10-18 ===== -->
+<section class="day-section" id="day-1018">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月18日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenCode 披露安全漏洞，约 1.4% 用户 API Key 或泄露</h3>
+      <p>开源终端编码 Agent OpenCode（SST 团队，GitHub 星标已超 15 万）10 月 18 日披露，一处正在退役的遗留系统遭未授权访问，<strong>约 1.4% Console 用户</strong>保存在工作区内的 OpenAI / Anthropic / Google 第三方 API Key 可能已被暴露。官方称其为"大规模蒸馏攻击"，正与三家厂商协作补救，受影响用户需撤销并更换密钥。</p>
+      <ul>
+        <li>波及范围：约 1.4% 的 OpenCode Console 用户，均已单独邮件通知</li>
+        <li>工具规模：连接 75+ 模型供应商，GitHub 星标逾 15 万</li>
+        <li>历史风险：2026 年早些曾曝 CVE-2026-22812 未授权 RCE 漏洞</li>
+      </ul>
+      <blockquote>编码 Agent 平台集中保管源码、提示词与密钥，"单点失陷即全盘暴露"，凭据隔离与短期凭证已成刚需。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepSeek V4.1-Flash-1017 开源权重进入 serving 生态</h3>
+      <p>官方 <strong>deepseek-ai/DeepSeek-V4.1-Flash-1017</strong> 仓库现身 Hugging Face，采用 MIT 许可并打上 FP8 / 8-bit 标签，支持 Transformers 与图文-to-text 管线，同步登陆 OpenRouter 并引发 Hacker News 热议。重点不在"又发一个模型"，而在开放权重迅速进入 serving 引擎与路由网关。</p>
+      <ul>
+        <li>许可与格式：MIT 许可，FP8 与 8-bit 权重，Transformers 直接加载</li>
+        <li>分发路径：Hugging Face + OpenRouter 双通道，社区热度走高</li>
+        <li>选型意义：FP8 + 宽松许可拓宽成本 / 延迟 / 数据自主的路由选择</li>
+      </ul>
+      <blockquote>开放权重的价值在于"秒进 serving"，团队应按工具可靠性与真实工作流成功率评估，而非只看基准分。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>主流网站集体屏蔽 AI Agent，通用浏览器自动化遇冷</h3>
+      <p>据 The Verge 报道，Meta Muse、xAI Grok、OpenAI Dots、Instinct 等通用 Agent 在主流网站接连受阻：<strong>Yelp</strong> 仅允许其数据许可计划内的 agent，<strong>Delta</strong> 禁止 agent 订票，<strong>摩根大通、嘉信理财</strong>因安全顾虑直接屏蔽 agent 访问；Meta 则推进与 Walmart、Gap、Sephora、Best Buy 等的授权零售合作。</p>
+      <ul>
+        <li>被屏蔽方：Meta Muse / Grok / OpenAI Dots / Instinct 等</li>
+        <li>放行条件：数据许可、官方 API、可审计速率限制与审批</li>
+        <li>趋势：通用浏览器自动化转向"认证 API + 服务策略 + 审批 + 回滚"网络</li>
+      </ul>
+      <blockquote>Web 不会自动把 agent 视为用户的授权代表，MCP 的长期价值在于携带策略与委托元数据，而非仅暴露动作。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>中国企业包揽全球人形机器人市场收入前五</h3>
+      <p>央视财经 / 中国经济网 10 月 18 日报道，今年上半年全球人形机器人销量达 <strong>3.6 万台</strong>（已超过 2025 全年 3.5 万台），市场收入 5.4 亿美元；按收入计全球前五名全部由中国企业包揽，深圳企业占两席。深圳南山"机器人谷"集聚超 200 家产业链企业，外商考察团持续增多。</p>
+      <ul>
+        <li>上半年全球销量 3.6 万台、收入 5.4 亿美元，均超 2025 全年水平</li>
+        <li>收入前五全为中国企业，深圳占两席</li>
+        <li>深圳前 8 个月机器人出口 111.3 亿元，同比 +12.2 倍，销往 120+ 国家地区</li>
+      </ul>
+      <blockquote>中国具身智能正从"表演经济"转向真实产业交付，供应链完整性已成为全球竞争格局的核心变量。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>银河通用具身智能训练营落地沈阳，创新中心开园</h3>
+      <p>10 月 17 日，东北首个"银河通用具身智能机器人开拓者训练营"在沈阳皇姑区开营，同期沈阳具身智能机器人创新中心开园、AIGC 就业服务平台首发，实现"创新平台 + 人才实训"双落地。银河通用自研"银河星脑"系统打通"大脑—小脑—神经控制"端到端闭环。</p>
+      <ul>
+        <li>训练营：为期两天，围绕人才培养、实习实训、产教融合</li>
+        <li>创新中心：布局 13 类 24 个数据采集场景，部署 33 台套专业数采机器人</li>
+        <li>产业落地：相关产品已在宁德时代等头部制造体系规模化应用</li>
+      </ul>
+      <blockquote>东北以"载体 + 人才 + 数据"组合切入具身赛道，虚实融合训练范式正加速从实验室走向产线。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-10-17 ===== -->
 <section class="day-section" id="day-1017">
   <div class="day-header" onclick="toggleDay(this)">
