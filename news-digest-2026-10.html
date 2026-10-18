@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-10-19 ===== -->
+<section class="day-section" id="day-1019">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年10月19日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>DeepMind Evo²：不改模型、只改"工作流"，Bug 修复率翻倍</h3>
+      <p>Google DeepMind 与伊利诺伊大学香槟分校合作论文 Evo² 证明，底层模型不变、仅<strong>自动改进 Agent 的 harness（提示词组织、工具调用、执行顺序）</strong>，在 60 道 SWE-bench Verified 任务上修复率达 48.3%，对比方法 SICA 仅 24.4%。研究进一步把"改流程—看效果"的经历拿去训练负责改进 Agent 的模型。</p>
+      <ul>
+        <li>48.3% vs 24.4%（同模型不同改进方法，差距近一倍）</li>
+        <li>测试范围 60 道 SWE-bench Verified 任务，三次独立搜索取平均</li>
+        <li>改进目标 = Agent 外层的 harness 工作流，可交给 AI 自动改写</li>
+      </ul>
+      <blockquote>"模型没换也没重训，拉开差距的是外面那层程序"——再次印证 harness 才是 coding agent 的真正战场。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Agentic Brain 开源：给所有 AI 编程工具装一个共享记忆</h3>
+      <p>开源（Apache-2.0）自托管项目 Agentic Brain 把 Claude Code、Cursor、Codex、Antigravity、Kilo Code 的会话收进本地 SQLite，每晚"梦境"蒸馏成 wiki 与可审批的 lessons，写入前生成 ≤2000 token 的简报注入 <strong>CLAUDE.md / AGENTS.md / GEMINI.md</strong>。周一在 Claude Code 定的事，周二 Cursor 就已知道。</p>
+      <ul>
+        <li>LongMemEval-S 端到端 QA 94.2%（Claude 判读），LoCoMo 86.6 仅用约 18% token</li>
+        <li>注入准备 p50 84ms；经 MCP 召回 1 万+ 记忆 p50 28ms</li>
+        <li>本地存储、可加密同步至私有 GitHub Release；仅 macOS/Linux，暂无 Windows</li>
+      </ul>
+      <blockquote>"告诉一个工具，所有工具都知道"——跨厂商 agent 记忆孤岛终于有了一个轻量解法。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 团队自曝：人只留 5 个决定，AI 写 90% 代码</h3>
+      <p>Anthropic 公开 Claude Code 内部工作流：约 <strong>90% 代码由 Claude 写</strong>，人退到最后只保留五件事——定方向、管风险代码、定会被抄的架构、读证据、为发出去的东西负责（you land it, you own it）。配套七道检查，6–9 月合并改动翻一倍多、需回滚比例反降 4 成以上。</p>
+      <ul>
+        <li>30,000 changes merged/day，90% 代码由 AI 写、AI 审 AI</li>
+        <li>6–9 月合并改动翻倍+，回滚比例降 4 成+</li>
+        <li>团队不再有人维护完整代码库心智模型，"读不懂就让 Claude 写解释"</li>
+      </ul>
+      <blockquote>"谁打的字不重要，发布的东西有人负责"——把人从逐行 review 解放到为结果兜底。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>广交会服务机器人专区高热：云深处"一人一猫一狗"出海</h3>
+      <p>第 140 届广交会一期（10/15–19）专门设服务机器人展区，云深处科技携覆盖人形/轮足/四足的<strong>"一人一猫一狗"全矩阵</strong>亮相；全球首款全天候行业级人形 DR02 搭载 275TOPS 算力、IP66 防护，-20℃~55℃ 宽温域作业，国庆已在杭州西湖路口、泸州音乐节实战执勤。中国机器人正从"会跳舞"转向"会干活"。</p>
+      <ul>
+        <li>2026 H1 中国机器人出口额 248.5 亿元，同比 +359.0%</li>
+        <li>广交会一期 52 万㎡、1.2 万+ 参展企业，聚焦先进制造/具身智能</li>
+        <li>DR02 配 275TOPS 算力单元 + 多传感器感知平台，整机 IP66</li>
+      </ul>
+      <blockquote>境外客商在服务机器人专区门口排长队——"中国第一展"成了观察具身智能落地进程的最佳窗口。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>具身融资多点开花：四川具身"爱湫"超亿元 Pre-A</h3>
+      <p>投融资周报显示具身智能热度不减、产业方深度介入：四川具身人形机器人科技（EIR）完成<strong>超亿元 Pre-A</strong>，投资方为成都产投/德阳投控等三级国资，资金投向情感交互机器人"爱湫"迭代与德阳凯州新城万台级基地；同期巨蟹智能超亿元 A+、墨现科技数千万元产业轮，自变量机器人同时布局上下游。</p>
+      <ul>
+        <li>四川具身 EIR Pre-A 超亿元，省/市/县三级国资协同</li>
+        <li>巨蟹智能超亿元 A+（华泰紫金领投）、墨现科技数千万元产业轮</li>
+        <li>多家本体公司反向投向上游零部件/传感器，构建供应链生态</li>
+      </ul>
+      <blockquote>资本从"投大模型"溢回"投卖铲人"，具身智能正从财务投资转向产业链纵深布局。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-10-18 ===== -->
 <section class="day-section" id="day-1018">
   <div class="day-header" onclick="toggleDay(this)">
