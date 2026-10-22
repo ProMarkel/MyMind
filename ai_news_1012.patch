@@ -1,0 +1,98 @@
+diff --git a/news-digest-2026-10.html b/news-digest-2026-10.html
+index 8dc3d7d..00dc947 100644
+--- a/news-digest-2026-10.html
++++ b/news-digest-2026-10.html
+@@ -218,6 +218,72 @@
+ 
+ <main>
+ 
++<!-- ===== 2026-10-12 ===== -->
++<section class="day-section" id="day-1012">
++  <div class="day-header" onclick="toggleDay(this)">
++    <h2>📰 每日 AI 动态精选 · 2026年10月12日（周一）</h2>
++    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
++  </div>
++  <div class="day-content">
++
++    <div class="news-item">
++      <h3><span class="tag tag-other">其他</span>Salesforce Agentforce Winter '27 今日 GA，企业级自主 Agent 进入生产落地</h3>
++      <p>Salesforce 于 <strong>10 月 12 日（周一）</strong>正式发布 Winter '27，首次让"自主 Agent"在真实生产数据而非预测中可见——550+ PowerSchool 用户已运行旗舰 Adaptive Experiences，保险理赔经语音 Agent 跨六条业务线处理、无需人工客服介入。</p>
++      <ul>
++        <li>全球调研（2,025 名决策者）：生产部署平均<strong>降本 29%、提速 31%</strong></li>
++        <li>Agentic Commerce Search 带来<strong>13% 转化率、17% 加购率</strong>提升</li>
++        <li>覆盖服务/销售/营销/商务/<strong>开发者工具与代码审查</strong>六大领域</li>
++      </ul>
++      <blockquote>自主 Agent 从"建议下一步"走向"端到端拥有任务"，企业人力结构正被重写——降本的代价是岗位被 Agent 接管。</blockquote>
++    </div>
++
++    <div class="news-item">
++      <h3><span class="tag tag-coding">AI Coding</span>编程 Agent 安全十月盘点：GitSpawn 横扫 7 款工具，沙箱逃逸与截图泄露齐发</h3>
++      <p>Adversa 发布"AI coding agent vulnerabilities, October 2026"综述，归纳 26 项资源并给出结构性结论——<strong>10 起针对 Claude Code 的攻击全部打在配置文件、hooks、审批框、MCP 输出、插件 pin 与 skill 包等"外壳"上，而非模型本身</strong>。GitSpawn 借 .git/config 的 core.fsmonitor 在 agent 后台 git 调用时执行恶意程序，影响 7 款工具。</p>
++      <ul>
++        <li><strong>CVE-2026-82533</strong>：DeepSeek Harness 经未鉴权 loopback API 沙箱逃逸至"danger-full-access"，CVSS <strong>9.4</strong></li>
++        <li><strong>PixelLeak</strong>：无法附截图的 Agent 将 <strong>13,000+ 张图</strong>推到 300+ 组织的公开仓库</li>
++        <li>此前 Plugin4Shell（Air Security 9/18 披露）中 GitHub Copilot 截至 9/21 仍未修补</li>
++      </ul>
++      <blockquote>模型拒绝只是偏好，harness 限制才是控制——把"外壳"当攻击边界，正是本月漏洞集体扎堆的根因。</blockquote>
++    </div>
++
++    <div class="news-item">
++      <h3><span class="tag tag-coding">AI Coding</span>OpenAI Codex CLI "大改版"：全屏 TUI + 并行 Agent + worktree，终端成编排中枢</h3>
++      <p>OpenAI 将 Codex CLI 0.156.0–0.160.0（9/22–10/1）打包为"major refresh"，引入<strong>全屏终端界面、Agent 指挥中心（/agents）、worktree 会话与 /fork 分叉</strong>，把单轮对话升级为多 Agent 监督层。</p>
++      <ul>
++        <li>新版速率达<strong>最高 300 token/s，CLI 端最高快 8×、API 端最高 6×</strong></li>
++        <li>0.160.0 新增 projectless 会话、Guardian 评审可拉取历史指令与 Agent 交接上下文</li>
++        <li>实测提醒：<strong>/fork 只克隆对话、不隔离文件系统</strong>，并行写同一目录无隔离</li>
++      </ul>
++      <blockquote>终端正从"聊天循环"变为"编排平面"——但"这个 Agent 在写哪个目录"成了必须主动确认的问题。</blockquote>
++    </div>
++
++    <div class="news-item">
++      <h3><span class="tag tag-embodied">具身智能</span>Boston Dynamics 任命前亚马逊 AI 高管 Rohit Prasad 任 CEO，全力押注人形机器人</h3>
++      <p>Hyundai 旗下的 Boston Dynamics 任命前 Amazon Alexa 负责人 <strong>Rohit Prasad</strong> 为新 CEO，明确将<strong>人形机器人</strong>作为核心战略方向。</p>
++      <ul>
++        <li>Hyundai 计划到 <strong>2028 年建成年产 30,000 台</strong>机器人的工厂</li>
++        <li>此前 Atlas 已换装 <strong>13-DOF 四指灵巧手</strong>（带触觉，可靠性优先）</li>
++        <li>9 月已传出车企集体涌入信号（特斯拉 Optimus 宁波审厂、2026 约 5 万台）</li>
++      </ul>
++      <blockquote>当老牌机器人公司把"人形"写进 CEO 任命，行业从演示竞赛转向规模化量产的拐点愈发清晰。</blockquote>
++    </div>
++
++    <div class="news-item">
++      <h3><span class="tag tag-embodied">具身智能</span>Miko 母公司 Inner Sky Labs 发布 Physical AI 基础模型家族，获 3090 万美元融资</h3>
++      <p>印度 Miko 儿童机器人背后的 Inner Sky Labs 于 10 月 8 日揭晓面向机器人的<strong>全栈自研基础模型</strong>，覆盖视觉/音频/触觉/动作/安全，并关闭约 <strong>3,090 万美元（₹300 Cr）</strong>融资轮，总融资约 1 亿美元。</p>
++      <ul>
++        <li>模型含 Sanskrit 命名：Drishti（视觉）/Shruti（音频）/Sparsh（触觉）+ Kriya/Karma/Prana（动作与世界模型）</li>
++        <li>独立安全层 <strong>Kavach</strong> 提供 20+ 护栏（人是否在场、关节速度、是否越界）</li>
++        <li>硬件无关，可云端/本地/air-gapped 部署，已落地 4–5 个企业及政府项目</li>
++      </ul>
++      <blockquote>用十年消费级机器人数据喂出的"主权 AI"路线，给物理世界基础模型提供了一条不同于美国实验室的叙事。</blockquote>
++    </div>
++
++  </div>
++</section>
++
+ <!-- ===== 2026-10-11 ===== -->
+ <section class="day-section" id="day-1011">
+   <div class="day-header" onclick="toggleDay(this)">
+diff --git a/news-digest.html b/news-digest.html
+index 0f28d91..3a70973 100644
+--- a/news-digest.html
++++ b/news-digest.html
+@@ -407,6 +407,7 @@
+           <span class="arrow collapsed">▶</span>
+         </div>
+         <div class="month-dates open">
++          <a class="date-item" href="news-digest-2026-10.html#day-1012" onclick="return loadDate('2026-10', this)">10月12日（周一）</a>
+           <a class="date-item" href="news-digest-2026-10.html#day-1011" onclick="return loadDate('2026-10', this)">10月11日（周日）</a>
+           <a class="date-item" href="news-digest-2026-10.html#day-1010" onclick="return loadDate('2026-10', this)">10月10日（周六）</a>
+           <a class="date-item" href="news-digest-2026-10.html#day-1009" onclick="return loadDate('2026-10', this)">10月9日（周五）</a>
+@@ -426,7 +427,7 @@
+ 
+   <!-- Content: iframe (loads selected month) -->
+   <div class="content" data-page-node-id="cTGCdcAJl9Snl9JVFa87NM">
+-    <iframe id="newsFrame" src="news-digest-2026-10.html?embed=1#day-1011" title="每日资讯内容" data-page-node-id="9lEgVLdR46ca3Bt2DWYKvd"></iframe>
++    <iframe id="newsFrame" src="news-digest-2026-10.html?embed=1#day-1012" title="每日资讯内容" data-page-node-id="9lEgVLdR46ca3Bt2DWYKvd"></iframe>
+   </div>
+ 
+ </div>
