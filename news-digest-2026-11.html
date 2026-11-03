@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-11-03 ===== -->
+<section class="day-section" id="day-1103">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月3日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Google 开放安卓开发工具给 Claude、Codex 等第三方智能体，"自带智能体"支持 40+</h3>
+      <p>在 2026-11-03 的 <strong>Android Dev Summit</strong> 上，谷歌宣布将 Android Studio 与基于终端的 Android 命令行工具同时向 <strong>Claude Code、Codex</strong> 等第三方编码智能体开放，覆盖设备、性能分析器与生产环境崩溃报告，让智能体能自行排查漏洞、测试变更并验证修复效果。新"自带智能体"功能已支持 40+ 款基于开放协议（Agent Client Protocol）的编码智能体，开发者可在 IDE 内无缝切换；配套的 <strong>android preview</strong> 命令让智能体无需启动 IDE 即可在终端渲染 Jetpack Compose 预览。</p>
+      <ul>
+        <li>开放对象：<strong>Android Studio + 终端 CLI</strong>，面向 Claude Code、Codex、Antigravity 等第三方 agent</li>
+        <li>"自带智能体"已在 Android Studio <strong>Rabbit 2</strong> 稳定运行，覆盖 <strong>40+ 款</strong>编码智能体</li>
+        <li>新增 <strong>android preview</strong> 命令：终端直接渲染 Compose 预览，无需 IDE/模拟器</li>
+      </ul>
+      <blockquote>平台方主动把工具暴露给竞品模型，说明"谁圈住开发者工作流"比"谁模型强"更早成为胜负手。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Vercel Labs 开源 agent-desktop：不靠截图猜像素，读无障碍树操控真实桌面</h3>
+      <p>Vercel Labs 开源 Rust 项目 <strong>agent-desktop</strong>，让任意 agent 直接操作真实桌面应用。与依赖截图、逐像素猜测的路线不同，它读取操作系统的<strong>无障碍树（accessibility tree）</strong>获取元素引用，定位更稳、失败后可安全重试，并支持 MCP 协议。项目发布后 GitHub 星标达 <strong>7870</strong>、单日新增 2243。已有用户将其与 Codex、browser-use 串联进月度记账：下载收据并对齐发票，原本 3 小时以上的活不到 1 小时跑完。</p>
+      <ul>
+        <li>技术路线：读 <strong>OS 无障碍树</strong>而非截图，元素引用更稳、可安全重试</li>
+        <li>支持 <strong>MCP</strong> 协议；当前面向 macOS</li>
+        <li>GitHub 星标 <strong>7870</strong>，单日新增 <strong>2243</strong></li>
+      </ul>
+      <blockquote>"看得见像素"不等于"懂界面"——结构化读取比视觉猜测更接近可靠自动化。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 将 Messages API message threads 推入公测：对话缓存在服务端，客户端只传增量</h3>
+      <p>据 AGI HUNT 日报，Anthropic 把 Messages API 的 <strong>message threads</strong> 功能推进到公开测试：对话历史缓存在服务端，客户端每轮只需发送<strong>新增消息与上一条消息 ID</strong>，Claude 可更早开始响应。这降低了长会话往返成本，也契合"编码智能体常驻、跨会话并行"的趋势——上下文管理正从客户端责任转回服务端。</p>
+      <ul>
+        <li>服务端缓存整段对话，客户端每轮仅传 <strong>新增消息 + 上一条 message ID</strong></li>
+        <li>Claude 可<strong>更早开始响应</strong>，降低长会话往返开销</li>
+        <li>背景：编码 agent 从单会话走向常驻系统，上下文调度成为新瓶颈</li>
+      </ul>
+      <blockquote>当 agent 要 7×24 常驻，上下文"放哪、谁管"比"模型多聪明"更早决定体验上限。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>小米机器人双线落地：汽车工厂 8 小时连续作业，青年公寓跑通 50+ 任务长程链</h3>
+      <p>11 月 3 日乌镇世界互联网大会期间，小米披露机器人业务最新进展：<strong>工业端</strong>人形机器人首次在汽车工厂中控台侧盖板排序工站完成 <strong>8 小时连续作业</strong>，可自主处置异常并与产线系统级协同；<strong>家庭端</strong>具身基座模型在青年公寓启动试运营，可完成跨 3 个房间、包含 50 余项任务的长程作业链验证。</p>
+      <ul>
+        <li>工业端：汽车工厂 <strong>8 小时连续作业</strong>，自主处置异常 + 产线系统级协同</li>
+        <li>家庭端：跨 <strong>3 房间、50+ 项任务</strong>的长程作业链验证</li>
+        <li>披露节点：<strong>11 月 3 日</strong>乌镇世界互联网大会</li>
+      </ul>
+      <blockquote>同一家公司同时啃下"工厂"与"客厅"，说明具身落地正从单点演示走向双场景并行验证。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>特斯拉 Optimus 加速量产爬坡：新增大批岗位，目标年底前周产千台</h3>
+      <p>11 月 3 日招聘信息显示，特斯拉近期新增大量 <strong>Optimus</strong> 人形机器人相关岗位，覆盖运动控制、产线自动化、零部件可靠性测试等方向。团队正全力推进量产爬坡，攻坚<strong>手部装配自动化</strong>瓶颈，目标年底前实现<strong>周产千台</strong>的产能目标。与此同时，A 股人形机器人产业链 36 家重点上市公司前三季度净利润同比增长超 20%，产业正从舞台演示加速转向工厂真实落地。</p>
+      <ul>
+        <li>新增岗位覆盖运动控制、产线自动化、零部件可靠性测试等</li>
+        <li>量产目标：年底前 <strong>周产千台</strong>（攻克手部装配自动化瓶颈）</li>
+        <li>A 股人形机器人产业链 <strong>36 家重点公司</strong>前三季度净利同比 <strong>+20%+</strong></li>
+      </ul>
+      <blockquote>量产爬坡的瓶颈已从"能不能动"变成"手部装配能不能自动化"——硬件制造纪律决定上限。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-02 ===== -->
 <section class="day-section" id="day-1102">
   <div class="day-header" onclick="toggleDay(this)">
