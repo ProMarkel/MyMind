@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-11-09 ===== -->
+<section class="day-section" id="day-1109">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月9日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Mistral 开源 Mistral Large 4 "Le Chonk" 万亿参数权重</h3>
+      <p>Mistral 在 Hugging Face 放出 <strong>Mistral Large 4</strong> 全量权重，约 1 万亿总参数、每 token 激活约 500 亿，原生多模态 MoE，1M 上下文。采用修改后的 MIT 许可（Mistral Ecosystem Open-Weight），允许免费使用、修改与商用，仅 MaaS 服务需单独商业协议。</p>
+      <ul>
+        <li>编码能力：Terminal-Bench 4.0 得分 <strong>41%</strong>，较预览版涨 13 点且输出 token 少 30%</li>
+        <li>Artificial Analysis Coding Agent Index <strong>48%</strong>，与 GLM-5.3 持平但每任务少 47% token</li>
+        <li>开源模型最高安全拒绝率 <strong>96.6%</strong>（恶意请求）、B3 攻击抵抗 97.1%；API 定价 $0.70/M 输入</li>
+      </ul>
+      <blockquote>欧洲实验室终于给出可信的开源前沿答案——企业想自托管代码与漏洞处理 agent，多了一个默认候选。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Thinking Machines 将放出 Inkling 2 Small 全量权重（Apache 2.0）</h3>
+      <p>Mira Murati 团队的二代 MoE <strong>Inkling 2 Small</strong> 已先在 Tinker 闭权重上线，官方宣布外部红队完成后将于<strong>下周放出全量权重</strong>，采用 Apache 2.0 许可。这是本周唯一确定开源的前沿级模型。</p>
+      <ul>
+        <li>规模：<strong>594B 总参 / 17B 激活</strong>，支持图像输入与可变推理力度</li>
+        <li>编码指标：DeepSWE v1.1 <strong>72.1%</strong>、SWEBench Pro v2 Hard <strong>86.3%</strong>、Vibe Code Bench 81.6%</li>
+        <li>长程 coding 用数十万条跨多 agent harness、多上下文压缩策略任务训练</li>
+      </ul>
+      <blockquote>开源前沿模型的"确定性"信号——Apache 2.0 全量权重下周放出，比单次榜单冲高更有长期价值。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>英伟达 VFlash：并行解码视觉基元，机器人动作解码提速 12 倍</h3>
+      <p>英伟达发布 <strong>VFlash</strong>，用 5 层非因果 Transformer 草稿模型一次并行预测点、框、轨迹等视觉基元，替代逐 token 自回归解码。Jim Fan 称其为机器人"反应速度"天花板被打高的关键一步。</p>
+      <ul>
+        <li>机器人动作解码最高提速 <strong>12 倍</strong>，整体推理提速 <strong>5.1 倍</strong></li>
+        <li>3D 轨迹误差最多降 <strong>61%</strong>，3D 点运动预测生成快约 25 倍</li>
+        <li>MolmoSpaces 四组任务成功率 <strong>70.2%</strong>（基线 62.6%）</li>
+      </ul>
+      <blockquote>自回归逐 token 解码的替代方案落地，具身智能的"感知—决策—动作"闭环有望显著提速。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>李飞飞 World Labs 推 Frameboy：单图实时世界模型 15fps</h3>
+      <p>World Labs 发布研究预览 <strong>Frameboy</strong>，经推理优化的世界模型 <strong>Atlas</strong> 以最高 15fps 云端实时串流，浏览器内可自由操控镜头。Atlas 仅凭单张图或一段文字即可补全周边场景并保留多视角新视图合成。</p>
+      <ul>
+        <li>实时能力已接入 Viewfinder 封测，去年 RTFM 仅能在已有视角间插值</li>
+        <li>AMD 9 月以 <strong>82 亿美元</strong>全股票收购 World Labs，李飞飞将任 AMD 执行副总裁兼首席科学家</li>
+        <li>世界模型从"插值已有视角"走向"实时可交互生成"</li>
+      </ul>
+      <blockquote>世界模型是具身智能的空间理解底座——可交互实时生成，意味着机器人能对陌生环境即时建模。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>人形机器人商业化提速：全年产量预计破 10 万台</h3>
+      <p>行业热度从技术展示转向营收、出货与产线进度。多家企业接连释放经营与制造端信息，显示竞争开始更多落在商业化能力上。</p>
+      <ul>
+        <li>智元机器人：上半年营收近 <strong>20 亿元</strong>，通用 AI 机器人累计下线 <strong>2 万台</strong></li>
+        <li>宇树科技：前三季度营收 <strong>18.17 亿元</strong>，推进千万级乃至亿级市场需求的量产能力</li>
+        <li>10 月人形机器人领域融资 <strong>33 起</strong>，全年产量预计破 <strong>10 万台</strong></li>
+      </ul>
+      <blockquote>"卖得出、用不久"仍是痛点，但量产数据与营收披露，标志着赛道从 Demo 正式进入交付对账阶段。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-08 ===== -->
 <section class="day-section" id="day-1108">
   <div class="day-header" onclick="toggleDay(this)">
