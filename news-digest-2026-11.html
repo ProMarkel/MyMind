@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-11-10 ===== -->
+<section class="day-section" id="day-1110">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月10日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenAI 收购 Python 工具链公司 Astral，AI 编程大战转向"争夺生产资料"</h3>
+      <p>OpenAI 宣布收购 uv、Ruff、ty 等明星开源工具背后的团队 <strong>Astral</strong>，AI 编程竞争从"比拼生成代码"升级为争夺底层开发工具控制权。同一时间曝出 OpenAI 正秘密开发整合 ChatGPT、Codex 与 Atlas 浏览器的"超级应用"，被业内解读为应对 Claude Code 在开发者市场领先优势的"代码红色警戒"动作。</p>
+      <ul>
+        <li>被收购方 Astral 是 uv / Ruff / ty 等 Python 明星开源工具的团队，均采用 MIT 协议</li>
+        <li>"超级应用"计划把 ChatGPT + Codex 编程助手 + Atlas 浏览器整合进一个桌面平台</li>
+        <li>开发者社区担忧：MIT 开源工具被巨头收编后，独立性与开源承诺能否兑现</li>
+      </ul>
+      <blockquote>当模型公司开始买下"生产资料"，开发者该认真考虑技术栈多样化——不要把所有鸡蛋放在一个篮子里。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>美团开源 LongCat-2.5：1.6 万亿参数，专为国产算力优化</h3>
+      <p>美团将 11 月 2 日发布的 <strong>LongCat-2.5</strong> 正式开源，采用 MIT 协议，允许商用推理部署与二次训练且无需额外授权。模型定位为面向长程智能体任务的原生多模态模型，总参数 1.6 万亿、每 token 激活约 480 亿、支持 100 万上下文，复杂代码库开发与完整项目构建的端到端交付能力明显提升。</p>
+      <ul>
+        <li>总参数 1.6 万亿、激活 480 亿、支持 100 万 token 上下文，推理采用 W4A4 量化</li>
+        <li>训练侧刻意"防作弊"：任务环境断网、清除 git 历史与文件缓存，由 LLM judge 监督轨迹</li>
+        <li>针对国产算力优化：单卡显存不足 80GB 时用分片分散到超节点多卡，长序列 SFT 单卡吞吐较 DDP 基线提升 86%</li>
+      </ul>
+      <blockquote>长程 agent 的瓶颈已从"模型会不会想"变成"环境允不允许它作弊"——后者只能靠训练侧工程解决，光靠提示词约束不住。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 发布 Fable 5.2 / Mythos 5.2：编程得分大涨、价格再降 20%</h3>
+      <p>Anthropic 发布新一代旗舰 <strong>Claude Fable 5.2</strong> 与 <strong>Mythos 5.2</strong>（同底层模型，Mythos 仅限通过审核的网络安全与生命科学机构）。FrontierCode 2.0 复杂编程得分由 32.4% 升至 49.1%，高于 Opus 5.5、GPT-6 Astra 与 Gemini 4 Carbon；输出速度最高提升 30%，API 价格较上代均降 20%。</p>
+      <ul>
+        <li>FrontierCode 2.0 编程得分 <strong>49.1%</strong>（上代 32.4%），图表理解 <strong>73.4%</strong>（上代 44.8%）</li>
+        <li>定价：每百万输入 token <strong>8 美元</strong>、输出 <strong>40 美元</strong>，fast 模式最高快 2.5 倍、价格翻倍</li>
+        <li>首次在训练阶段限制"递归自我改进"能力（加速器内核优化、LLM 架构改进），仅保留在 Opus 5.5 水平</li>
+      </ul>
+      <blockquote>这是第一次有模型公司在训练阶段给"自我改进"装上阀门——被按住的恰好不是编码 agent 要用的那部分，但治理边界由厂商单方面划定。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>NVIDIA 开源 GR00T 2 世界动作模型：40 万小时人类视频打底</h3>
+      <p>在 11 月 9 日开幕的 <strong>CoRL 2026</strong>（奥斯汀，会期 9–12 日）上，NVIDIA 发布机器人基础模型 <strong>GR00T 2</strong>（20 亿参数，构建于 Cosmos-Predict2.5-2B），属"世界动作模型"路线：输入近期相机视角、机器人状态与文字指令，输出对未来画面的预期与下一段动作序列，代码将于 12 月放出。</p>
+      <ul>
+        <li>预训练混合 <strong>402,730</strong> 小时第一视角人类视频 + <strong>101,184</strong> 小时手持夹爪演示 + 23,500 小时遥操作数据</li>
+        <li>其中 <strong>10 万小时</strong>人类数据以 CC BY 4.0 商用许可开放（Human-1M-100K），成最大公开人类操作数据集之一</li>
+        <li>适配成本低：每个任务一条演示即达 <strong>71%</strong> 成功率，五条达 <strong>95%</strong>，单张 RTX 5090 约 30 分钟适配器微调</li>
+      </ul>
+      <blockquote>入场券从"买卡攒数据"变成"接管道"——对小团队，不必先攒两年数据才能开始训模型，机器人"部署"第一次像软件发布。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>42 家机构组建"通用具身大脑"联合体，眸深发布一步动作生成模型"深悟"</h3>
+      <p>11 月 9 日进博会配套活动上，<strong>"通用具身大脑产业创新联合体"</strong>启动，汇聚眸深智能、复旦大学、宇树科技、优必选等 42 家高校与机器人企业，覆盖科研算力、本体制造、灵巧操作与场景应用全链条。眸深同时发布新一代具身原生模型"深悟"，放弃传统多步推理、改为一步动作生成，官方称推理最高提速 24.84 倍。</p>
+      <ul>
+        <li>联合体成员 42 家，含眸深、复旦、宇树、优必选等，覆盖"科研算力—本体—灵巧操作—场景"全链条</li>
+        <li>"深悟"一步动作生成、视觉与动作层叠并行，新增仅 <strong>13.4M</strong> 轻量参数即可完成优化</li>
+        <li>配套"深枢"具身 Infra 与"深匣"端侧模组（安全防护、灰度升级、熔断回滚）、家用世界模型 FWM</li>
+      </ul>
+      <blockquote>具身大脑开始分层——动作生成模型、Infra 与端侧模组、长时记忆模型各占一层，行业从"堆参数"转向"分工即产品结构"。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-09 ===== -->
 <section class="day-section" id="day-1109">
   <div class="day-header" onclick="toggleDay(this)">
