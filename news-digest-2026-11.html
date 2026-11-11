@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-11-11 ===== -->
+<section class="day-section" id="day-1111">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月11日（周三）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub Copilot Fusion：多模型实时路由，TerminalBench 2.1 上估算成本较 Claude Opus 5 低 67%</h3>
+      <p>在 11 月 11 日举行的 GitHub Universe 2026 复盘活动中，<strong>GitHub Copilot Fusion</strong> 成为焦点：它在运行时为每项任务实时编排多个 AI 模型，自动选择最合适的模型与工作流。据披露，相较 Claude Opus 5，其在 TerminalBench 2.1 上的估算成本低约 <strong>67%</strong> 且任务质量更高，标志 coding agent 竞争从"单模型强弱"转向"多模型路由与编排效率"。</p>
+      <ul>
+        <li>核心能力：为<strong>每项任务实时选模型</strong>，按工作流路由，而非固定单一后端</li>
+        <li>TerminalBench 2.1 上估算成本较 Claude Opus 5 低约 <strong>67%</strong>，任务质量同时提升</li>
+        <li>背景：GitHub Universe 2026 复盘（11/11）强调"agent 变快了，工程系统也得跟着进化"</li>
+      </ul>
+      <blockquote>当路由一层开始替开发者挑模型，"哪家模型强"不再是唯一胜负手——编排与成本结构才是 coding agent 落地的现实变量。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>OpenCode 发布 Browse：MCP + Chromium 扩展让 coding agent 直接驾驶真实浏览器</h3>
+      <p>开源编码智能体 <strong>OpenCode</strong> 于 11 月 7 日推出 <strong>Browse</strong>：一个 MCP 服务器加 Chromium 扩展，让 coding agent 直接驱动用户真实的浏览器。它用 Playwright 管理后台标签、登录态与扩展，仅在 2FA、支付或登录环节把控制权交还用户，并可将截图、录屏与网络流量（HAR）一并回传，补齐了 agent 在"需要真实网页环境"场景下的最后一公里。</p>
+      <ul>
+        <li>技术形态：<strong>MCP 服务器 + Chromium 扩展</strong>，基于 Playwright 管理后台标签与登录态</li>
+        <li>安全边界：2FA、支付、登录等敏感环节<strong>交还用户</strong>操作</li>
+        <li>可捕获<strong>截图、屏幕录制、HAR 网络流量</strong>，支持 Chrome / Edge 等 Chromium 浏览器</li>
+      </ul>
+      <blockquote>让 agent 在真实浏览器里"自己点"，比在沙箱里猜 DOM 更接近生产场景——前提是敏感操作的交还机制要稳。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Cursor 从编辑器直接部署实时 AI 应用：云 agent 包办脚手架、数据库与认证</h3>
+      <p>Cursor 在 11 月 6 日上线"直接从编辑器构建并部署实时 Web 应用"的能力：云侧 coding agent 负责脚手架搭建、Postgres 数据库开通与认证（基于 Cursor SSO），发布前自动跑安全检查，应用通过专属链接分享。这意味着 coding agent 的产出从"本地代码片段"延伸到"可上线运行的服务"，对所有付费且开启云 agent 的方案可用。</p>
+      <ul>
+        <li>云 agent 自动完成 <strong>scaffolding、Postgres 开通、Cursor SSO 认证</strong></li>
+        <li>发布前<strong>自动安全检查</strong>，成品通过专属链接分享</li>
+        <li>适用范围：所有开启 cloud agents 的<strong>付费方案</strong></li>
+      </ul>
+      <blockquote>"写代码"和"上线服务"被一条 agent 流水线打通——coding 工具的竞争维度，从补全一路卷到了交付。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>特斯拉 Optimus 启动早期量产，规划年产能 100 万台、2027 年底以"租"代售交付</h3>
+      <p>马斯克确认人形机器人 <strong>Optimus</strong> 已在弗里蒙特工厂启动早期量产，年产能规划 <strong>100 万台</strong>，预计 2027 年底向外部客户交付，且采用"以租代售"而非直接销售。每台初始成本约 3 万美元，后续有望降至 2 万美元；业内预计 12 月初可能开放预订，更多细节或在 12 月 3 日特斯拉股东大会公布。该体量与租赁模式远超当前国内头部厂商出货规模，构成直接竞争锚点。</p>
+      <ul>
+        <li>年产能规划 <strong>100 万台</strong>（国内宇树年出货约 5500 台、智元约 5100 台量级）</li>
+        <li>商业模式：<strong>"以租代售"</strong>，初始成本约 3 万美元、目标降至 2 万美元</li>
+        <li>时间表：12 月初或开放预订，12 月 3 日股东大会或披露更多</li>
+      </ul>
+      <blockquote>万亿产能 + 租赁模式，本质是把"持续客户关系与数据闭环"抓在手里——具身智能的商业模式第一次有了全球标杆模板。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>傅利叶 FDH-6 灵巧手开售 4999 元，首届世界机器人登泰山大赛检验真实户外能力</h3>
+      <p>11 月 11 日，傅利叶宣布 <strong>FDH-6 灵巧手</strong> 正式开售，售价 <strong>4999 元</strong>：整机仅 515g、11 个关节 6 自由度仿生设计，指尖重复定位精度低至 0.5mm，兼顾轻量化与高频作业。同日，首届<strong>世界机器人登泰山大赛</strong>在山东泰安举行，人形与足式机器人在约 600–3000 余级台阶的真实山地中比拼速度、负重转运与环境感知，把具身智能从实验室标准步态逼向复杂非结构化户外场景。</p>
+      <ul>
+        <li>FDH-6：<strong>515g / 11 关节 6 自由度</strong>，指尖重复定位精度 <strong>0.5mm</strong>，售价 4999 元</li>
+        <li>登泰山赛：人形竞速约 1.6 公里 600 余级台阶，足式负重赛约 3.3 公里 2100 余级台阶</li>
+        <li>核心难点：真实环境的<strong>感知、动态控制、系统可靠性</strong>三关</li>
+      </ul>
+      <blockquote>灵巧手价格下探到千元级、机器人开始爬真山——具身智能的两头（核心部件成本、真实场景验证）都在被快速压低成本与抬高门槛。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-10 ===== -->
 <section class="day-section" id="day-1110">
   <div class="day-header" onclick="toggleDay(this)">
