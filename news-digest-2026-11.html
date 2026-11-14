@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-11-14 ===== -->
+<section class="day-section" id="day-1114">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月14日（周六）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 推出实验性 Code Mode：用 JavaScript 自己调用工具</h3>
+      <p>Claude Code v2.1.323 加入实验性的 <strong>Code Mode</strong>：Claude 不再逐次调用工具，而是写一段 JavaScript 来调用自己的工具，多步任务从十次往返压缩成一次。同期发布的 v2.1.325 进一步收紧安全边界——沙箱内的 Bash 命令默认需要用户授权确认后才执行。</p>
+      <ul>
+        <li>Code Mode 在 <strong>v2.1.323</strong> 引入，实验性、默认关闭</li>
+        <li>v2.1.325：沙箱 Bash 命令默认不再静默执行，需显式授权</li>
+        <li>收益：多步任务往返次数从 <strong>10 次降为 1 次</strong></li>
+      </ul>
+      <blockquote>把"调用工具"从逐次对话升级为写程序，agent 自主度再上一个台阶；代价是程序化调用更难在上手前审查，所以官方谨慎地默认关闭——能力越大，越要先过确认这一关。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>llama.cpp v1.0.0 发布：本地推理引擎首个稳定版</h3>
+      <p>支撑了开源模型本地运行生态的推理引擎 <strong>llama.cpp</strong> 发布 <strong>v1.0.0</strong>，这是其首个稳定版本，并引入语义化版本号规则。作为 ggml 生态的核心，它长期是开发者在笔记本、手机和边缘设备跑开源模型的事实标准。</p>
+      <ul>
+        <li>版本 <strong>v1.0.0</strong>，首个稳定发行，承诺清晰的版本规则</li>
+        <li>定位：大量开源模型本地/边缘推理的底层引擎</li>
+        <li>意义：从社区实验项目走向可依赖的基础设施</li>
+      </ul>
+      <blockquote>本地推理能从"玩具"变成"底座"，靠的就是这类默默无闻却无处不在的基础设施；稳定版落地，意味着端侧 AI 的可靠性往前迈了一大步。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>OpenAI 解散独立机器人团队，押注通用模型直驱"物理 AI"</h3>
+      <p>11 月 13 日《财富》报道，OpenAI 已解散独立运营的机器人团队，研究与应用双线并入主线研究团队与 Applied 组织。直接导火索是 <strong>GPT-6 Astra</strong> 等通用前沿模型意外展现可直接用于机器人控制的能力，无需为机器人单独开发专用模型。</p>
+      <ul>
+        <li>英伟达测试中，Astra 驱动智能体在模拟操作基准达 <strong>74.8%</strong> 成功率，优于该榜最佳专用模型 <strong>51.0%</strong></li>
+        <li>团队去向：研究线并入首席研究官 Mark Chen 团队，应用/硬件线并入总裁 Greg Brockman 的 Applied 组织</li>
+        <li>Altman 目标 <strong>2027 年</strong> 完成自研人形机器人首次公开演示</li>
+      </ul>
+      <blockquote>通用模型把"机器人"降维成智能的一项下游应用，从根本上动摇了"机器人需要自有大脑"的融资叙事；但真机部署数据仍是专用厂商的护城河，模型越强，场景数据反而越值钱。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>华硕公布首款人形机器人 Gallop，在自家工厂"真干活"</h3>
+      <p>11 月 13 日华硕介绍其首款人形机器人 <strong>Gallop</strong>，隶属 Physical AI Solutions 事业群下的 Humanoid Robotics BU。它已在华硕电子制造工厂的主板配件包装工位学习作业，完整闭环为"人演示 → 机器人学习 → 产线测试"。</p>
+      <ul>
+        <li>工位有 <strong>15 种</strong> 小零件，目标 <strong>20 秒内 99.5%</strong> 成功率，与对人的标准相同</li>
+        <li>当前为固定基座双臂，机内算力用 <strong>NVIDIA Jetson AGX Thor</strong>，下一步上轮式底盘</li>
+        <li>客户试点计划 <strong>2027 年</strong>，面向市场供应目标 <strong>2028 下半年</strong></li>
+      </ul>
+      <blockquote>PC 巨头把"自研本体 + 自有工厂场景"当作物理 AI 训练场——闭环产线数据比发布会 Demo 值钱得多，也解释了为什么越来越多制造企业亲自下场造机器人。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>星尘智能发布多机协同框架 CoMind，隔墙协作成功率 0% → 100%</h3>
+      <p>11 月 13 日星尘智能发布多机协同框架 <strong>CoMind（Be My Eye）</strong>。其核心思路是不再无脑传输原始观测或通用视觉特征，而是按任务目标和执行进度，把观测编码成紧凑的任务相关上下文，再融入预训练的视觉-语言-动作（VLA）策略，让多机共享互补信息。</p>
+      <ul>
+        <li>隔墙马克笔跟随测试成功率由 <strong>0% 升至 100%</strong>，盲盒置物由 <strong>38.9% 升至 88.9%</strong></li>
+        <li>信息传输量 <strong>减少 80%</strong></li>
+        <li>技术报告《Be My Eye》已于 11 月 9 日提交 arXiv（编号 2611.12295）</li>
+      </ul>
+      <blockquote>多机协作从"传原始画面"升级到"传任务相关上下文"，是机器人从单兵作战走向班组协同的关键一步，也为大规模真机集群部署扫清了带宽与隐私障碍。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-13 ===== -->
 <section class="day-section" id="day-1113">
   <div class="day-header" onclick="toggleDay(this)">
