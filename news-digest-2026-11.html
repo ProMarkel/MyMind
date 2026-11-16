@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-11-16 ===== -->
+<section class="day-section" id="day-1116">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月16日（周一）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 把"多 Agent 并行"收编为 Claude Code 官方 Projects</h3>
+      <p>Anthropic 重构了 Claude Code 的 Projects：一个项目里有一个<strong>协调者（coordinator）和若干并行干活的线程（threads）</strong>，每条线程在云端开独立分支、独立工作副本，冲突按普通 PR 的合并冲突处理。团队成员 Boris 在 Hacker News 上承认，multi-Claude 玩法早已普遍，但在多个会话间来回切换是"一场注意力灾难"；官方同时强调单线程深钻、反复讨论的场景依然保留。</p>
+      <ul>
+        <li>两层结构：线程干活、协调者指挥，云端独立分支 + 独立副本</li>
+        <li>范围界定、委派、并行协调、结果审查、成品组装全链路系统接管</li>
+        <li>对照 Copilot projects / Kiro bots / Amp Spaces，编排层已成大厂标配</li>
+      </ul>
+      <blockquote>编码 Agent 从"单会话工具"变成"多工人的工程组织"，用户从操作员变成给团队定目标的负责人；但 Token 消耗随线程数线性放大，先用一个小项目算清"省的时间 vs 多花的配额"再推广。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>微软复盘 MDASH：AI 挖洞两周，修完却用了四个多人月</h3>
+      <p>微软 FORGE Lab 公布 <strong>MDASH 智能体系统</strong>复盘：一名全职研究员加一名实习生、两台服务器、两周扫描 Linux 内核网络/文件系统/安全模块，产出 26,502 条原始发现；经置信度筛选、QEMU 逐条复现、专家审查，最终只有 59 份成为公开上游报告，产出 33 个 CVE（24 个高危以上），38 份修复已合入主线。</p>
+      <ul>
+        <li>漏斗：26,502 原始 → 11,769 候选 → 621 条 PoC → 59 份报告（约 9.5%）</li>
+        <li>漏洞平均潜伏 8.1 年，最老的 cls_u32 移位越界至少存在 21 年</li>
+        <li>扫描阶段 Sonnet 4.6 承担 71.1% 代码阅读，复现阶段 GPT-5.5 承担 77.3%</li>
+      </ul>
+      <blockquote>99.8% 的"疑似缺陷"是噪声或重复，瓶颈已从"找"挪到"验"和"修"——投更多 token 大概能翻出更多缺陷，但不会自动让系统更安全。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>华为云今日发布首款昇腾原生具身世界模型 CloudRobo WM1.2</h3>
+      <p>华为云于 <strong>11 月 16 日 14:00—15:30</strong> 举办线上发布会，正式推出首款昇腾原生具身世界模型 CloudRobo WM1.2。世界模型相当于装在机器人脑子里的"虚拟沙盘"，让机器人在行动前先推演动作引发的物理变化，降低真实世界试错成本；华为云延续"不碰实体硬件"的边界，本体交给拓斯达、亿嘉和、软通动力等伙伴。</p>
+      <ul>
+        <li>发布：2026-11-16 14:00，具身产品线总裁吴小东发布、首席模型专家刘流解读架构</li>
+        <li>仿真抓取成功率冲上 98.35%</li>
+        <li>生态：拓斯达轮式人形进工厂搬运码垛、亿嘉和 Z200Pro 配网带电作业机器人</li>
+      </ul>
+      <blockquote>国产 AI 基础设施从"文本/图像"延伸到"理解物理规律"，昇腾原生路线给受出口管制影响的企业提供了一条不依赖英伟达的路径——竞争正从本体硬件转向"模型能力 + 场景工具链"。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>Figure 完成 10 亿美元 C 轮融资，估值冲上 390 亿美元</h3>
+      <p>Figure 完成 <strong>10 亿美元 C 轮融资</strong>，投后估值达 390 亿美元，由 Parkway Venture Capital 领投，NVIDIA、Intel Capital、Salesforce、T-Mobile Ventures、Qualcomm Ventures 等参投。下一代 Figure 03 采用注塑成型、压铸、金属注射成型等模具化工艺，以往需一周 CNC 加工的零件现可在 20 秒内完成制造，机器人已在自有工厂参与建造其他机器人，形成数据飞轮。</p>
+      <ul>
+        <li>融资 10 亿美元、估值 390 亿美元（2024 年 B 轮为 6.75 亿美元）</li>
+        <li>模具化工艺：一周 CNC 加工 → 20 秒制造，突破从小批量到规模化的瓶颈</li>
+        <li>软硬件垂直整合：自研本体 + 自研模型 + 自有算力 + 自有制造</li>
+      </ul>
+      <blockquote>头部资本已开始按"物理世界的 AI 操作系统"给人形机器人定价；全栈整合的飞轮一旦转起来，国内专注单点（灵巧手 / VLA / 本体）的厂商在行业成熟后可能被挤压。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>乐聚"兆聚X号"人形机器人在汽车零部件产线连续无故障运行超 2 个月</h3>
+      <p>据《证券日报》11 月 16 日报道，乐聚智能与某上市公司共建的汽车零部件产线上，<strong>15 台人形机器人</strong>正稳定取料上料。被命名为"兆聚X号"的全尺寸人形机器人（夸父5-W / KUAVO5-W）在狭窄复杂动态环境中稳定抓取内径 80—120 毫米的小型轴承零件，完成"预备—取料—转运—上料"闭环，基于 100 多种工业场景打磨而成。</p>
+      <ul>
+        <li>15 台并行作业，连续无故障运行超 2 个月、累计约 1000 小时</li>
+        <li>上料成功率稳定在 98%，单次循环 40 秒以内，适配 15 个工位、10 余种零件</li>
+        <li>协助生产超 6 万个零部件，单月采集真机实景数据超 4 万条</li>
+      </ul>
+      <blockquote>人形机器人正从"能演示"走向"能挣钱"——产线验证可稳定替代人工、回收周期可测算，才是扩大量产、摊薄硬件成本的前提；真机数据反哺模型，形成另一条飞轮。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-15 ===== -->
 <section class="day-section" id="day-1115">
   <div class="day-header" onclick="toggleDay(this)">
