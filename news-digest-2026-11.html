@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-11-17 ===== -->
+<section class="day-section" id="day-1117">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月17日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code v2.1.326 发布：Code Mode 接入 Agent Teams，插件可绘制桌面/移动界面</h3>
+      <p>Anthropic 于 <strong>11 月 17 日</strong>发布 Claude Code v2.1.326。实验性的 Code Mode（让 Agent 写 JavaScript 调用自身工具）现在可随 agent teams 自动启用；同时大幅扩展插件 UI 协议——ui_attach/ui_render/ui_press/ui_input/ui_select/ui_scroll 等一整套请求，让插件能在桌面端、移动端和 VS Code 里画出可交互界面。</p>
+      <ul>
+        <li>v2.1.326 于 2026-11-17 发布；Claude Code 平均每 1.9 天一个版本，近一月已发 19 版</li>
+        <li>Code Mode 现随 agent teams 自动启动；新增 CLAUDE_CODE_OFF_PERSONS_MACHINE 环境变量供 host 管理 teammate 会话</li>
+        <li>插件 UI 全套协议仅在 stream-json 输出下生效，覆盖 desktop / mobile / vscode 三种 surface</li>
+      </ul>
+      <blockquote>Code Mode 把"写 JS 调工具"和"多 Agent 团队"两条线合流，插件又从终端文本走向桌面/移动图形界面——Claude Code 正从命令行工具长成可编排、可扩展的应用平台。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>UC Berkeley 与微软联合开源 TokenEconomizer：编码 Agent 成本直降 18%—31%</h3>
+      <p>11 月 17 日，UC Berkeley、Microsoft Research 与 Microsoft Security 联合开源插件 <strong>TokenEconomizer</strong>：它从编码 Agent 在同一仓库的历史会话中学习，让后续任务消耗更少 token，无需改动 Agent 或底层模型。团队先剖析 Claude Code 在 60 个 SWE-Bench 任务上的花费，发现浪费集中在重复发现、闲置工具、失败循环三处。</p>
+      <ul>
+        <li>277 个真实 SWE-Bench 任务、6 个仓库、5 种 Agent-模型组合：成本平均降 18.4%—30.9%，30 组组合全部省钱</li>
+        <li>仓库跑过 5 个任务后，30% 的工具调用在重复此前动作；每轮收到的 23 个工具描述中 16 个从未被调用</li>
+        <li>从第 6 个任务起累计成本低于默认；插件无需自己的 API key，学到的东西留在开发者本机</li>
+      </ul>
+      <blockquote>省 token 的关键不是换更便宜的模型，而是别让 Agent 反复"重新认识"同一个仓库——对每天在同一代码库跑 Agent 的团队是实打实的降本，一次性任务收益有限。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>阿里 Qwen3.6-27B：270 亿密集模型在 Agent 编码基准上反超自家 397B MoE</h3>
+      <p>阿里 Qwen 团队本周发布并开源 <strong>Qwen3.6-27B</strong>（Apache 2.0，Hugging Face 可下载），一个 270 亿参数的密集模型，在多项软件工程基准上跑赢自家 3970 亿参数的 MoE 模型 Qwen3.5-397B-A17B，引发开源社区热议：一个约为十五分之一总参数量的模型，为何能在最考验编码 Agent 的任务上胜出。</p>
+      <ul>
+        <li>SWE-bench Verified 77.2%（397B MoE 为 76.2%）；SWE-bench Pro 53.5% vs 50.9%</li>
+        <li>Terminal-Bench 2.0 59.3% vs 52.5%；SkillsBench Avg5 48.2% vs 30.0%</li>
+        <li>27B 密集模型每 token 激活 270 亿参数，397B MoE 仅激活约 170 亿——"总参数量"标签会误导推理成本比较</li>
+      </ul>
+      <blockquote>这场"以小胜大"提醒我们：衡量本地/自主编码 Agent 要看每 token 的活跃算力，而非总参数量——小模型跑得起、跑得快，正逼近闭源前沿模型的编码能力。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>瑞士 Embodied AI 发布 AIR：腱驱动双臂人形机器人进工厂"边干边学"</h3>
+      <p>在慕尼黑 Humanoid Europe 2026 大会上，洛桑机器人公司 Embodied AI 发布 <strong>AIR</strong>——一款为与人类在同一车间协作设计的腱驱动双臂轮式人形机器人。电机、减速箱集中在躯干，手臂轻巧且接触时可自然让位，安全性来自结构设计而非软件限制，符合 ISO/TS 15066:2016 标准，计划 2027 年取得 CE 认证。</p>
+      <ul>
+        <li>工业线缆处理试验可靠性达 98%，超过 90% 的目标</li>
+        <li>由人类操作员示范起步，通常约 1 个月即可独立完成任务，一台机器人学到的经验可被其他机器人复用</li>
+        <li>从研究到工业级机器人仅用 9 个月，已与全球多家主要 OEM 签约，正在量产筹备</li>
+      </ul>
+      <blockquote>轮式底盘 + 腱驱动 + 示教学习，AIR 走的是"不追求像人、只追求上岗"的务实路线——当多数同类还停在演示阶段，能从第一个班次就产出、安全性靠本体兜底的产品更容易真正进厂。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>融资升温：具身智能领域 7 天 15 笔、约 53 亿元，单笔最高 33 亿元</h3>
+      <p>据机器人大讲堂不完全统计，11 月 7 日至 13 日的短短 7 天内，机器人及具身智能领域公开融资至少 <strong>15 笔、累计约 53 亿元，单笔最高达 33 亿元</strong>。资本持续聚焦核心零部件、人形机器人与具身智能，成长期项目成为布局重点，产业资本深度参与，行业商业化落地进程显著提速。</p>
+      <ul>
+        <li>7 天内至少 15 笔融资、累计约 53 亿元，单笔最高 33 亿元</li>
+        <li>优理奇 UniX AI 完成 5 亿元 Pre-A 轮融资；资金重点流向核心零部件、人形本体与具身智能</li>
+        <li>行业呈现"先修路、再造车"特征：零部件与成长期项目成资本主线</li>
+      </ul>
+      <blockquote>机器人赛道正在"先修路、再造车"——零部件和成长期项目拿到大头，说明产业已从拼演示转向拼交付确定性；但融资热度不等于商业化落地，能稳定上岗、回收周期可测算的公司才会笑到最后。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-16 ===== -->
 <section class="day-section" id="day-1116">
   <div class="day-header" onclick="toggleDay(this)">
