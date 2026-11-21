@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-11-21 ===== -->
+<section class="day-section" id="day-1121">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月21日（周六）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 每日更新：新增完整登录链接环境变量，修复 MCP 分类与本地时区统计</h3>
+      <p>Claude Code 发布 11 月 21 日更新，新增 <strong>CLAUDE_CODE_FULL_SIGN_IN_LINK=1</strong> 环境变量（短链接失效或脚本需直接读取值时可打印完整登录链接）；修复 /mcp 把插件安装的 MCP 误判为内置服务器的问题，现拆分为「Plugin MCPs」与「Other MCPs」两组；/stats 由 UTC 日期改为按<strong>本地时区</strong>聚合，并补充插件安装 JSON 输出字段与多项 VS Code 设置。</p>
+      <ul>
+        <li>新增 <strong>CLAUDE_CODE_FULL_SIGN_IN_LINK=1</strong>，短登录链接报错或脚本取值时可输出完整链接</li>
+        <li><strong>/mcp</strong> 区分 Plugin MCPs 与其他 MCPs，<strong>/stats</strong> 按本地时区统计（原按 UTC）</li>
+        <li>新增 VS Code 设置 claudeCode.pinPrompt、claudeCode.escapeStopsClaude，并修复 /ultrareview 跨仓库评审失效问题</li>
+      </ul>
+      <blockquote>这些都是"用起来才烦"的细节修复——登录链接、MCP 归类、统计时区，正是日常高频操作，修一处省心一片。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>GitHub Copilot CLI 11 月连发 9 版，新增 /index 与 GLM 之外的多模型选择</h3>
+      <p>GitHub Copilot CLI 在 11 月已连续发布 9 个版本（1.0.106 → 1.0.114），新增 GPT-6.1 Terra 与 Claude Fable 5.2 可选模型，引入 <strong>/code</strong>（在 VS Code 打开当前会话）与 <strong>/index</strong> 命令，并为符合条件的仓库默认开启托管共享 tgrep 索引；同时带来会话管理、@提及、终端内联图片与统一 /settings 面板等改进。</p>
+      <ul>
+        <li>11 月 <strong>9 个稳定版本</strong>（1.0.106→1.0.114），新增 GPT-6.1 Terra、Claude Fable 5.2 模型</li>
+        <li>新增 <strong>/code</strong>、<strong>/index</strong> 命令与默认开启的托管共享 tgrep 索引</li>
+        <li>终端内联图片、/settings 统一面板、屏幕阅读器识别会话状态等可用性改进</li>
+      </ul>
+      <blockquote>CLI 正在从"终端里的补全"长成一个完整的 Agent 工作台——模型可切换、代码库可索引、会话可管理，生态位越来越稳。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>多工具并用催生"上下文同步税"，AGENTS.md 成跨工具共享配置事实标准</h3>
+      <p>开发者日常平均使用 <strong>2.3 个 AI 编码工具</strong>：Cursor 做行内建议、ChatGPT 做头脑风暴、Claude Code 做多文件重构，但彼此不共享上下文，每次切换都要重新解释项目决策，形成「隐形税」。工具无关的 Markdown 文件 <strong>AGENTS.md</strong> 正成为解法——据社区统计已进入 6 万多个仓库，被 Copilot、Cursor、Codex 原生读取，Claude Code 则通过 CLAUDE.md 引用。</p>
+      <ul>
+        <li>开发者日均使用 <strong>2.3 个</strong> AI 编码工具，上下文不共享导致重复解释</li>
+        <li><strong>AGENTS.md</strong> 已进入 6 万+ 仓库，Copilot / Cursor / Codex 原生读取</li>
+        <li>skills-sync、agentfile 等 CLI 工具把单一配置自动翻译为各工具的专有格式，减少手工漂移</li>
+      </ul>
+      <blockquote>工具越多，"项目共识写在哪"越关键。把架构与约定沉淀成一份各工具都能读的文件，比记住每个工具的私有配置更划算——这也是 SDD/规范驱动的价值所在。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>智元与蓝思科技战略合作，精灵 G2 进手机测试产线规模化上岗</h3>
+      <p>11 月 20 日，人形机器人企业智元创新（AGIBOT）与智能终端精密制造龙头蓝思科技达成战略合作，在手机测试产线部署<strong>数十台智元精灵 G2</strong> 机器人，承担 MMI、ANT、CAM 等测试工位的自动上下料与设备交互工作，双方合作从研发交付走向规模化工业落地。</p>
+      <ul>
+        <li>在手机测试产线部署<strong>数十台</strong>智元精灵 G2 机器人</li>
+        <li>覆盖 <strong>MMI、ANT、CAM</strong> 等测试工位的自动上下料与设备交互</li>
+        <li>合作从研发交付走向<strong>规模化工业落地</strong></li>
+      </ul>
+      <blockquote>进手机产线比进展厅难得多——节拍、良率、稳定性都要达标。数十台同时上岗，是具身智能从"单点试用"迈向"批量交付"的实打实一步。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>从 APEC 会场到海外订单：中国具身智能加速走向全球市场</h3>
+      <p>APEC 期间中国具身智能密集亮相：广州黄埔，慧仑科技的人形机器人一句"折叠"即从直立变为智能轮椅，33 名外媒记者现场体验；深圳，11 月 17 日众擎 T800 领舞的机器人队伍以 <strong>151 台</strong>完成"一小时内最多人形机器人跳舞"吉尼斯世界纪录，远超 110 台目标；逐际动力前海全球总部体验中心被列为 APEC 工商界代表参访点，面向 21 个经济体展示园区巡检、环境监测与工地作业。</p>
+      <ul>
+        <li>众擎 T800 等 <strong>151 台</strong>机器人共创吉尼斯纪录，展示毫秒级动作同步的群控能力</li>
+        <li>慧仑科技机器人可在直立人形与<strong>智能轮椅</strong>间变形，面向 29 国 33 名外媒记者展示</li>
+        <li>逐际动力体验中心面向 <strong>21 个经济体</strong>工商界代表展示巡检、监测、工地作业等场景</li>
+      </ul>
+      <blockquote>从"会场表演"到"海外订单"，关键词是场景交付——真实操作数据反哺模型，再带动电机、传感器、控制器全链条升级，这才是出海的底气。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-20 ===== -->
 <section class="day-section" id="day-1120">
   <div class="day-header" onclick="toggleDay(this)">
