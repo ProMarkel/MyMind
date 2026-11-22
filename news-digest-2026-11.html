@@ -218,6 +218,72 @@
 
 <main>
 
+<!-- ===== 2026-11-22 ===== -->
+<section class="day-section" id="day-1122">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月22日（周日）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>研究给"氛围编程"降温：代码量涨 25.5 倍，发布量只多三成</h3>
+      <p>MIT 一项研究追踪三大应用商店的新应用表现：开发者使用自主智能体后 <strong>代码量涨 25.5 倍、提交增 240%</strong>，但发布量仅增 30%；采用 Claude Code 后写代码量翻 7 倍、删除量达 12.2 倍，<strong>30 天仓库弃用率从 60% 升至 69%</strong>。新应用数自 2025 年初翻倍，用户参与度却几乎没动。</p>
+      <ul>
+        <li>代码量 +25.5 倍、提交 +240%，但发布量仅 +30%</li>
+        <li>30 天仓库弃用率 60% → 69%</li>
+        <li>新应用数约翻倍，用户参与度持平</li>
+      </ul>
+      <blockquote>写代码从来不是真正的瓶颈——产出暴涨而发布与留存停滞，值得每个"堆 agent"的团队冷静一下。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Claude Code 2.1.330 发布：企业统一登录、内置图表与自托管 Runner 强化</h3>
+      <p>Anthropic 发布 Claude Code <strong>2.1.330</strong>，新增企业管理员控制台统一管理下的组织登录（登录后自动套用组织设置与云网关），并在 Pro/Max 及以上档位加入内置图表 mod「easel」；同时为自托管 Runner 增加 <strong>--start-dir</strong> 等目录控制与多项 /metrics 指标。此次还集中修复了长对话压缩后卡死、WebFetch 冻结、多进程设置丢失、/rewind 回退过度等一批可靠性问题。</p>
+      <ul>
+        <li>新增企业组织登录，自动套用组织设置与云 provider/网关</li>
+        <li>内置 easel 图表 mod；自托管 Runner 新增 --start-dir 与排队/首会话耗时指标</li>
+        <li>修复长对话压缩卡死、WebFetch 冻结、并发设置丢失等可靠性缺陷</li>
+      </ul>
+      <blockquote>这一版把重心放在企业治理与稳定性上——编程 agent 正从"个人玩具"走向可规模化部署的工程基础设施。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>安全警报：AI 编码 agent 误提交私有凭证，Together AI 通报提示词泄露</h3>
+      <p>Together AI 披露，2026 年 6–7 月提交给 MiniMax M3、GLM-5.2、Kimi K2.6 等 serverless 推理服务的<strong>存储提示词样本被未授权下载</strong>。起因是 AI 编码 agent 在公开 GitHub 仓库误提交了私有 Hugging Face 凭证，攻击者还在样本中搜索其他服务的凭据。官方已给出影响范围与整改措施。</p>
+      <ul>
+        <li>影响区间：2026 年 6–7 月的 serverless 推理提示词样本</li>
+        <li>根因：编码 agent 在公开仓库误提交私有 Hugging Face 凭证</li>
+        <li>官方建议自查并评估是否开启 ZDR（零数据保留）</li>
+      </ul>
+      <blockquote>当 agent 拥有了提交代码的权限，密钥管理就成了新的攻击面——凭证隔离与扫描该进 CI 的强制关卡了。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>CoRL 2026 伯克利 SuperMimic：单 GPU 训 3 小时胜过 128 卡跑一周</h3>
+      <p>伯克利团队在 2026 年机器人学习大会（CoRL）展示 <strong>SuperMimic</strong>：引入可微世界模型后，单张 GPU 训练约 3 小时即在人形机器人动作跟踪基准上<strong>超越 128 张 GPU 跑 7 天的对照模型</strong>，GPU 小时数不足千分之一；推演速度达 MuJoCo Warp 的 10–62 倍，并已在宇树 G1 上完成部分动作真机迁移。</p>
+      <ul>
+        <li>单 GPU 约 3 小时 &gt; 128 GPU × 7 天，GPU 小时数不足千分之一</li>
+        <li>推演速度达 MuJoCo Warp 的 10–62 倍</li>
+        <li>已在宇树 G1 人形机器人上完成部分动作真机迁移</li>
+      </ul>
+      <blockquote>把具身训练从"堆算力"转向可复用的世界模型，给中小团队一条能算清账的降本路径。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>真机双臂基准冷热不均：夹面包做到 90%，展开 T 恤只有 3%</h3>
+      <p>XDOF 公布 <strong>Ember-0</strong> 榜单：GPT-6.2 Astra 在 16 项真机双臂任务上等权成功率 <strong>41.2%</strong>，约为两个月前上一代的两倍。夹面包从 10% 升至 90%、挪薯片 93%，但<strong>展开 T 恤仅 3%</strong>，收拾餐具与端麦片仍为 0。同日报道还提到，百万小时采购数据实际可用仅一至两成。</p>
+      <ul>
+        <li>16 项真机双臂任务等权成功率 41.2%，约为上一代两倍</li>
+        <li>夹面包 10% → 90%、挪薯片 93%；展开 T 恤仅 3%</li>
+        <li>收拾餐具、端麦片仍为 0%；百万小时数据实际可用仅一至两成</li>
+      </ul>
+      <blockquote>平均分翻倍会掩盖长尾家务仍做不了——看具身评测必须拆到单项任务，别只看一个总数。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-21 ===== -->
 <section class="day-section" id="day-1121">
   <div class="day-header" onclick="toggleDay(this)">
