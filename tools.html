@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工具导航 · MyMind</title>
+  <style>
+    :root {
+      --red: #c41e3a;
+      --red-dark: #b71c1c;
+      --red-light: #fce4ec;
+      --bg: #f5f5f5;
+      --card-bg: #ffffff;
+      --text: #212121;
+      --text-secondary: #666666;
+      --border: #e0e0e0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      color: #fff;
+      padding: 20px 24px 16px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .header p {
+      margin-top: 4px;
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    /* Top bar (sticky) */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* Nav */
+    .nav {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      gap: 32px;
+    }
+    .nav a, .nav-placeholder {
+      padding: 14px 0;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav a:hover, .nav a.active {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
+    .nav-placeholder {
+      opacity: 0.55;
+      cursor: default;
+    }
+
+    /* Main */
+    .main {
+      max-width: 1080px;
+      margin: 32px auto;
+      padding: 0 24px 64px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--red-dark);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--red-light);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .card h2 .en {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+    .card h2 .count {
+      margin-left: auto;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    /* Intro */
+    .intro {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.9;
+    }
+    .intro a { color: var(--red); text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
+    .summary {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .summary .stat {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 18px;
+      text-align: center;
+    }
+    .summary .stat .num {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1.2;
+    }
+    .summary .stat .label {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    /* Tool grid */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .tool {
+      display: block;
+      padding: 18px;
+      background: var(--bg);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .tool:hover {
+      border-color: var(--red);
+      box-shadow: 0 2px 12px rgba(196,30,58,0.12);
+      transform: translateY(-2px);
+    }
+    .tool-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tool .icon { font-size: 1.35rem; flex-shrink: 0; }
+    .tool .title { font-weight: 600; font-size: 0.98rem; color: var(--text); }
+    .tool:hover .title { color: var(--red); }
+    .tool .open { margin-left: auto; font-size: 0.78rem; color: var(--red); flex-shrink: 0; }
+    .tool .desc { font-size: 0.84rem; color: var(--text-secondary); margin-top: 10px; min-height: 2.7em; }
+    .tool .meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .tool .tag {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      background: var(--red-light);
+      color: var(--red-dark);
+    }
+    .tool .url {
+      font-size: 0.72rem;
+      color: #999;
+      word-break: break-all;
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.6rem; }
+      .nav { overflow-x: auto; }
+      .nav-inner { gap: 20px; }
+      .tool-grid { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top bar (sticky) -->
+<div class="top-bar">
+
+<!-- Header -->
+<div class="header">
+  <h1>🧠 MyMind</h1>
+  <p>个人知识库 · 持续积累，持续思考</p>
+</div>
+
+<!-- Nav -->
+<div class="nav">
+  <div class="nav-inner">
+    <a href="index.html">首页</a>
+    <a href="news-digest.html">每日资讯</a>
+    <a href="notes.html">学习笔记</a>
+    <a href="tools.html" class="active">工具导航</a>
+    <span class="nav-placeholder">项目记录</span>
+  </div>
+</div>
+
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- 说明 -->
+  <div class="card">
+    <h2>🧭 实用工具书签导览 <span class="en">/ Bookmarks Guide</span></h2>
+    <p class="intro">
+      按场景整理的工具书签，点击卡片即可打开对应网站。原始来源：<a href="https://www.workbuddy.cn/space/d/1fEfpYRB65yj5YmAL1Gq9Q?source=3" target="_blank" rel="noopener">实用工具书签导览_可点击</a>。
+    </p>
+    <div class="summary">
+      <div class="stat"><div class="num">8</div><div class="label">个分类</div></div>
+      <div class="stat"><div class="num">30</div><div class="label">个工具</div></div>
+      <div class="stat"><div class="num">10</div><div class="label">个免费</div></div>
+    </div>
+  </div>
+
+  <!-- AI 学习社区 -->
+  <div class="card">
+    <h2>🤖 AI 学习社区 <span class="en">AI Learning Hub</span><span class="count">3 个工具 · 1 个免费</span></h2>
+    <div class="tool-grid">
+      <a class="tool" href="https://waytoagi.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🌈</span><span class="title">通往AGI之路 WaytoAGI</span><span class="open">打开 ↗</span></div>
+        <div class="desc">中文 AI 开源知识库与共学社区，AI 学习路径、工具导航、教程与最新资讯一应俱全，被称为 AI 学习者的宝藏入口。</div>
+        <div class="meta"><span class="tag">免费AI知识库</span><span class="url">https://waytoagi.com/</span></div>
+      </a>
+      <a class="tool" href="https://open.maic.chat/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🎓</span><span class="title">OpenMAIC 多智能体课堂</span><span class="open">打开 ↗</span></div>
+        <div class="desc">清华大学团队开源的开放式多智能体互动课堂，把任意主题或文档一键转成含幻灯片、测验、交互模拟的沉浸式 AI 课堂。</div>
+        <div class="meta"><span class="tag">开源AI教育</span><span class="url">https://open.maic.chat/</span></div>
+      </a>
+      <a class="tool" href="https://openclaw.ai/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🦀</span><span class="title">OpenClaw 官方站</span><span class="open">打开 ↗</span></div>
+        <div class="desc">开源个人 AI 助手，让 AI 通过聊天软件自动处理日常任务（收发邮件、管理日历、浏览网页等），支持 7 天上手学习路径。</div>
+        <div class="meta"><span class="tag">开源AI自动化</span><span class="url">https://openclaw.ai/</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 学习与实验 -->
+  <div class="card">
+    <h2>🎓 学习与实验 <span class="en">Learn &amp; Labs</span><span class="count">3 个工具 · 2 个免费</span></h2>
+    <div class="tool-grid">
+      <a class="tool" href="https://phet.colorado.edu/zh_CN/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🔬</span><span class="title">PhET 互动仿真</span><span class="open">打开 ↗</span></div>
+        <div class="desc">科罗拉多大学出品，免费物理 / 化学 / 生物互动仿真实验，可视化理解抽象概念，教学神器。</div>
+        <div class="meta"><span class="tag">免费教育仿真</span><span class="url">https://phet.colorado.edu/zh_CN/</span></div>
+      </a>
+      <a class="tool" href="https://www.lingohut.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🗣️</span><span class="title">LingoHut 多语言学习</span><span class="open">打开 ↗</span></div>
+        <div class="desc">零基础学 50+ 种语言的词汇与发音，按主题分类，跟读+测试，完全免费无门槛。</div>
+        <div class="meta"><span class="tag">免费语言发音</span><span class="url">https://www.lingohut.com/</span></div>
+      </a>
+      <a class="tool" href="https://www.aippyy.com" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">📝</span><span class="title">AIPPYY</span><span class="open">打开 ↗</span></div>
+        <div class="desc">AI 学术写作，一键生成论文初稿、文献综述，含降重与排版，主打中文论文场景。</div>
+        <div class="meta"><span class="tag">AI论文写作</span><span class="url">https://www.aippyy.com</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 设计与素材 -->
+  <div class="card">
+    <h2>🎨 设计与素材 <span class="en">Design &amp; Assets</span><span class="count">4 个工具 · 0 个免费</span></h2>
+    <div class="tool-grid">
+      <a class="tool" href="https://www.tsieina.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🖌️</span><span class="title">那墨先森</span><span class="open">打开 ↗</span></div>
+        <div class="desc">国风免费商用素材平台，传统造像、神兽、纹样、白族甲马等原创资源，可放心商用。</div>
+        <div class="meta"><span class="tag">素材国风可商用</span><span class="url">https://www.tsieina.com/</span></div>
+      </a>
+      <a class="tool" href="https://www.zitiku.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🔤</span><span class="title">自由字体</span><span class="open">打开 ↗</span></div>
+        <div class="desc">海量免费可商用中英文字体下载，分类清晰，附授权说明，做海报 PPT 必备。</div>
+        <div class="meta"><span class="tag">字体可商用下载</span><span class="url">https://www.zitiku.com/</span></div>
+      </a>
+      <a class="tool" href="https://www.ddchart.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">📊</span><span class="title">镝数图表 DDChart</span><span class="open">打开 ↗</span></div>
+        <div class="desc">在线快速生成专业数据图表，拖入数据即出图，模板丰富，适合报告与自媒体配图。</div>
+        <div class="meta"><span class="tag">图表数据可视化</span><span class="url">https://www.ddchart.com/</span></div>
+      </a>
+      <a class="tool" href="https://www.remove.photos/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🪄</span><span class="title">remove.photos</span><span class="open">打开 ↗</span></div>
+        <div class="desc">AI 一键抠图、去水印、图片修复，免费额度充足，处理速度快。</div>
+        <div class="meta"><span class="tag">AI抠图修图</span><span class="url">https://www.remove.photos/</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 维修与硬件 -->
+  <div class="card">
+    <h2>🔧 维修与硬件 <span class="en">Repair &amp; Hardware</span><span class="count">2 个工具 · 1 个免费</span></h2>
+    <div class="tool-grid">
+      <a class="tool" href="https://www.ifixit.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🛠️</span><span class="title">iFixit 维修指南</span><span class="open">打开 ↗</span></div>
+        <div class="desc">全球最大的免费分步图文拆解维修教程库，覆盖手机、电脑、家电，附工具清单。</div>
+        <div class="meta"><span class="tag">免费拆解教程</span><span class="url">https://www.ifixit.com/</span></div>
+      </a>
+      <a class="tool" href="https://buildcores.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🧩</span><span class="title">BuildCores 模拟装机</span><span class="open">打开 ↗</span></div>
+        <div class="desc">3D 预览装机方案，自动校验硬件兼容性与电源功率，DIY 攒机避坑利器。</div>
+        <div class="meta"><span class="tag">装机兼容性3D</span><span class="url">https://buildcores.com/</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- AI 创作与视频 -->
+  <div class="card">
+    <h2>✨ AI 创作与视频 <span class="en">AI Creation</span><span class="count">7 个工具 · 0 个免费</span></h2>
+    <div class="tool-grid">
+      <a class="tool" href="https://www.pika.art/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🎬</span><span class="title">Pika</span><span class="open">打开 ↗</span></div>
+        <div class="desc">AI 视频生成，支持文生视频、图生视频，还有融化/蛋糕化等创意特效，社区活跃。</div>
+        <div class="meta"><span class="tag">AI视频特效</span><span class="url">https://www.pika.art/</span></div>
+      </a>
+      <a class="tool" href="https://www.liblib.tv/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">📺</span><span class="title">LibTV</span><span class="open">打开 ↗</span></div>
+        <div class="desc">哩布哩布旗下一站式 AI 视频创作平台，集成多种视频生成与编辑能力。</div>
+        <div class="meta"><span class="tag">AI视频创作</span><span class="url">https://www.liblib.tv/</span></div>
+      </a>
+      <a class="tool" href="https://www.meshy.ai/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🧊</span><span class="title">Meshy</span><span class="open">打开 ↗</span></div>
+        <div class="desc">AI 生成 3D 模型，支持文生 3D、图生 3D，输出带纹理模型，适合游戏与 3D 打印。</div>
+        <div class="meta"><span class="tag">AI3D建模</span><span class="url">https://www.meshy.ai/</span></div>
+      </a>
+      <a class="tool" href="https://www.napkin.ai/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🧠</span><span class="title">Napkin</span><span class="open">打开 ↗</span></div>
+        <div class="desc">文字转视觉图表，粘贴段落即自动生成流程图、信息图、思维导图，适合 PPT 与文档。</div>
+        <div class="meta"><span class="tag">AI图表文生图</span><span class="url">https://www.napkin.ai/</span></div>
+      </a>
+      <a class="tool" href="https://huggingface.co/spaces/multimodalart/qwen-image-multiple-angles-3d-camera" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">📷</span><span class="title">Qwen 3D Camera</span><span class="open">打开 ↗</span></div>
+        <div class="desc">通义千问单图转多视角，拖拽相机轨道生成物体多角度视图，适合电商多视角展示。</div>
+        <div class="meta"><span class="tag">AI多视角3D</span><span class="url">huggingface.co/spaces/multimodalart/qwen-image-multiple-angles-3d-camera</span></div>
+      </a>
+      <a class="tool" href="https://www.creatok.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🛒</span><span class="title">CreatOK 爆款猎人</span><span class="open">打开 ↗</span></div>
+        <div class="desc">AI 批量生成带货视频、复刻爆款，电商短视频提效工具。</div>
+        <div class="meta"><span class="tag">AI电商短视频</span><span class="url">https://www.creatok.com/</span></div>
+      </a>
+      <a class="tool" href="https://gamma.app/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🎞️</span><span class="title">Gamma</span><span class="open">打开 ↗</span></div>
+        <div class="desc">AI 一键生成演示文稿，输入主题即出排版精美的 PPT，支持中文。</div>
+        <div class="meta"><span class="tag">AIPPT文档</span><span class="url">https://gamma.app/</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 办公与效率 -->
+  <div class="card">
+    <h2>📂 办公与效率 <span class="en">Office &amp; Productivity</span><span class="count">6 个工具 · 4 个免费</span></h2>
+    <div class="tool-grid">
+      <a class="tool" href="https://tools.pdf24.org/zh-cn/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">📄</span><span class="title">PDF24 Tools</span><span class="open">打开 ↗</span></div>
+        <div class="desc">免费无广告的 PDF 全家桶：合并、拆分、压缩、转换、加密解密、加水印，网页版即用即走，另有离线桌面版。</div>
+        <div class="meta"><span class="tag">免费PDF无广告</span><span class="url">https://tools.pdf24.org/zh-cn/</span></div>
+      </a>
+      <a class="tool" href="https://www.chatexcel.com" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">📊</span><span class="title">ChatExcel</span><span class="open">打开 ↗</span></div>
+        <div class="desc">上传 Excel 后用对话指令自动处理表格，免记公式，适合非技术用户。</div>
+        <div class="meta"><span class="tag">AI表格免费</span><span class="url">https://www.chatexcel.com</span></div>
+      </a>
+      <a class="tool" href="https://tinywow.com" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🧰</span><span class="title">TinyWow</span><span class="open">打开 ↗</span></div>
+        <div class="desc">全能在线工具箱，PDF / 图片 / 视频转换与处理，免注册免下载。</div>
+        <div class="meta"><span class="tag">免费工具箱转换</span><span class="url">https://tinywow.com</span></div>
+      </a>
+      <a class="tool" href="https://kezign.cn" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">📈</span><span class="title">可赞AI</span><span class="open">打开 ↗</span></div>
+        <div class="desc">文字一秒生成图表，支持思维导图、知识卡片、图例、PPT 与公众号图文，AI 办公可视化。</div>
+        <div class="meta"><span class="tag">AI图表PPT</span><span class="url">https://kezign.cn</span></div>
+      </a>
+      <a class="tool" href="https://www.ypppt.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">📑</span><span class="title">优品PPT</span><span class="open">打开 ↗</span></div>
+        <div class="desc">良心国产免费 PPT 模板下载站，模板 / 图表 / 背景 / 字体一应俱全，附 AI 生成框架。</div>
+        <div class="meta"><span class="tag">免费PPT模板</span><span class="url">https://www.ypppt.com/</span></div>
+      </a>
+      <a class="tool" href="https://www.doubao.com" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">💬</span><span class="title">豆包 AI</span><span class="open">打开 ↗</span></div>
+        <div class="desc">字节跳动 AI 助手，聊天、写作、翻译、问答全能，网页与 App 均可使用。</div>
+        <div class="meta"><span class="tag">AI聊天写作</span><span class="url">https://www.doubao.com</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 生活工具 -->
+  <div class="card">
+    <h2>🍳 生活工具 <span class="en">Daily Life</span><span class="count">2 个工具 · 1 个免费</span></h2>
+    <div class="tool-grid">
+      <a class="tool" href="https://www.shiyongshouce.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🥘</span><span class="title">食用手册</span><span class="open">打开 ↗</span></div>
+        <div class="desc">按现有食材和厨具智能推荐菜谱，解决「今天吃什么」的灵魂难题。</div>
+        <div class="meta"><span class="tag">免费菜谱生活</span><span class="url">https://www.shiyongshouce.com/</span></div>
+      </a>
+      <a class="tool" href="https://www.dongpian.ai" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🎞️</span><span class="title">懂片帝</span><span class="open">打开 ↗</span></div>
+        <div class="desc">输入文字让 AI 推荐想看的影视，聚合多线路播放，免注册直接使用。</div>
+        <div class="meta"><span class="tag">AI影视推荐</span><span class="url">https://www.dongpian.ai</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- AI 工具导航 -->
+  <div class="card">
+    <h2>🧭 AI 工具导航 <span class="en">AI Directory</span><span class="count">3 个工具 · 1 个免费</span></h2>
+    <div class="tool-grid">
+      <a class="tool" href="https://www.toolify.ai/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🧭</span><span class="title">Toolify</span><span class="open">打开 ↗</span></div>
+        <div class="desc">AI 工具发现平台，收录数万 AI 工具与数百分类，每天更新，可按场景检索新工具。</div>
+        <div class="meta"><span class="tag">AI导航发现</span><span class="url">https://www.toolify.ai/</span></div>
+      </a>
+      <a class="tool" href="https://fmhy.net/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">📚</span><span class="title">FMHY</span><span class="open">打开 ↗</span></div>
+        <div class="desc">知名开源免费资源导航 Wiki，收录海量影视、音乐、图书、软件、AI 工具索引，免费资源第一站。</div>
+        <div class="meta"><span class="tag">免费导航资源</span><span class="url">https://fmhy.net/</span></div>
+      </a>
+      <a class="tool" href="https://github.com/" target="_blank" rel="noopener">
+        <div class="tool-head"><span class="icon">🌱</span><span class="title">食用手册 · 开源仓库</span><span class="open">打开 ↗</span></div>
+        <div class="desc">「食用手册」的 GitHub 源码仓库，可自部署、可贡献菜谱数据。</div>
+        <div class="meta"><span class="tag">开源GitHub自部署</span><span class="url">https://github.com/</span></div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  MyMind · Powered by GitHub Pages · Last updated: 2026-11-22
+</div>
+
+</body>
+</html>
