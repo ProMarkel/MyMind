@@ -219,6 +219,72 @@
 
 <main>
 
+<!-- ===== 2026-11-24 ===== -->
+<section class="day-section" id="day-1124">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月24日（周二）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 推出 Claude Ship：AI 接手代码审查、修复与审批</h3>
+      <p>Anthropic 11 月 24 日推出 <strong>Claude Ship（Beta）</strong>，把 Claude 从"写代码"延伸到 PR 提交后的审查—修复—审批全链路。三件套中 Code Review 已 GA，PR Steward 负责处理 CI 失败、合并冲突与 review 反馈并逐次说明改了什么、如何撤销；Claude Approvals 则读取仓库内的 <strong>.claude/approvals.yml</strong>，按团队自然语言策略决定 PR 是否还需人工签字。开发者可在 Claude Code 中用 /ship 一键推送、开 PR 并跟进反馈。</p>
+      <ul>
+        <li>Code Review 已 GA；PR Steward、Claude Approvals 处 Beta，面向 Team / Enterprise（Zero Data Retention、HIPAA、自管密钥配置不可用）</li>
+        <li>策略写入 .claude/approvals.yml；官方建议先 observe-only 运行、单仓库试点并设月度支出上限</li>
+        <li>Anthropic 称 6—9 月合并 PR 数量翻倍以上、回滚占比下降超 40%；早期客户含 TELUS Digital、Carvana</li>
+      </ul>
+      <blockquote>审批权最终仍由 GitHub 分支保护规则决定，但"人签发"这一环第一次被正式拆给了 AI——规则设计和审计能力会变成新的工程基本功。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Codex CLI rust-v0.172.0：终端里可直接打开会话线程</h3>
+      <p>11 月 24 日发布的 <strong>Codex CLI rust-v0.172.0</strong> 是 2026 年第 120 个版本，距上一版仅 4 天。搜索结果与对话记录里的 thread 链接现在可在终端直接打开保存的会话和嵌套 agent；斜杠命令参数支持 Tab 补全；stdio MCP 服务默认在首次工具调用时才启动，冷启动负担更小。</p>
+      <ul>
+        <li>2026 年已发 120 版、近一个月 10 版，平均约 2.6 天一版</li>
+        <li>Shift+Up/Down 在 agent 任务组间跳转；可为单个连接应用工具设置审批审阅人；setup 时可选 Amazon Bedrock Runtime</li>
+        <li>内置 openai-docs skill 覆盖 GPT-6.2 Astra / Sol 迁移；Code Mode 全部连接改用 gRPC</li>
+      </ul>
+      <blockquote>迭代节奏本身就是信号——CLI 正在变成需要天天跟进的基础设施，而不是偶尔打开的编辑器插件。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Google × MongoDB 打通 ADK 的会话、记忆与检索数据层</h3>
+      <p>11 月 24 日，Google 与 MongoDB 发布面向 <strong>ADK 2.0</strong> 的原生集成，把 agent 的会话状态、长期记忆与混合检索收敛到同一个 MongoDB 数据层。三个组件分别是带乐观并发控制的 MongoDbSessionService、幂等摄入的 MongoDbMemoryService，以及让应用保留数据库连接与索引控制权的 MongoDbToolset。</p>
+      <ul>
+        <li>支持 Python / TypeScript / Go / Java / Kotlin，pip 安装 google-adk[mongodb]</li>
+        <li>覆盖 MongoDB Atlas 与自管 8.0+，支持向量与混合检索（语义 + 关键词）</li>
+        <li>集成 Gemini 4 Argon 做多步推理、Gemini 3.8 Flash 做低延迟执行</li>
+      </ul>
+      <blockquote>Agent 从 demo 走向生产，卡点往往不是模型而是"记住谁是谁"——把状态层标准化，比再换一个模型更解决实际问题。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>IDC：69% 人形机器人出货流向非工业场景，"卖艺潮"暴露泛化短板</h3>
+      <p>浙江在线 11 月 24 日报道，APEC 深圳会议期间具身智能再度成为焦点，但业内共识是<strong>模型泛化能力不足、换场景就要重训</strong>，导致最先规模化落地的场景集中在展厅、课堂与舞台。IDC 最新报告印证：今年上半年科研教育、表演展示、政府采购三类非工业场景合计占全球人形机器人出货量的 <strong>69%</strong>。</p>
+      <ul>
+        <li>IDC：上半年三类非工业场景占全球人形机器人出货 69%</li>
+        <li>租赁平台"擎天租"数据：商业营销 25% + 娱乐表演 27%，合计约 52%</li>
+        <li>行情最火时爆款机型单场出场费达两三万元，溢价数千元仍"一机难求"</li>
+      </ul>
+      <blockquote>"卖艺"不是泡沫的全部证据，它是泛化能力不够时的自然落点；真正的拐点要看车间和家庭的连续运行数据。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>商业化预期升温：四部门推养老场景机器人，出货预测上调</h3>
+      <p>11 月 23 日，国家发改委、民政部、国家卫健委、教育部印发《"一老一小"服务体系建设实施方案》，明确鼓励发展<strong>适合养老场景的人工智能体、服务机器人、外骨骼</strong>等新产品，并支持在养老机构、社区设置体验区。同日人形机器人板块普涨、逾五成概念股获主力加仓，高盛与摩根士丹利此前也已上调 2026 年出货预测。</p>
+      <ul>
+        <li>高盛：2026 年全球人形机器人出货预测上调至 7.5 万台，2030 年约 89 万台、2035 年约 650 万台</li>
+        <li>摩根士丹利：2026 年中国出货预测由 2.8 万台上调至 5 万台，2030 年达 44.6 万台</li>
+        <li>马斯克称 Optimus 有望 12—18 个月内完成倒垃圾、洗碗等家务，先重工业后家庭</li>
+      </ul>
+      <blockquote>政策把需求侧场景摆出来，机构把出货曲线抬上去，接下来的考验是这些数字能否被真实验收数据兑现。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-23 ===== -->
 <section class="day-section" id="day-1123">
   <div class="day-header" onclick="toggleDay(this)">
