@@ -219,6 +219,72 @@
 
 <main>
 
+<!-- ===== 2026-11-25 ===== -->
+<section class="day-section" id="day-1125">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月25日（周三）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>四大编程 CLI 两天内密集发版，Code Mode 走向多云与跨厂商</h3>
+      <p>Anthropic 发布 <strong>Claude Code v2.1.331</strong>，Code Mode 首次可在 Amazon Bedrock、Google Cloud Agent Platform、Microsoft Foundry 与 AWS 上的 Claude Platform 终端会话中运行，<code>claude doctor</code> 加入 API 连通性检查。同期 GitHub Copilot CLI v1.0.115 加入 GPT-6.2 Astra 与 Gemini 4 Hydrogen，OpenAI Codex CLI 0.172.0 让 Tab 补全斜杠命令参数、stdio MCP 改为首次调用时懒启动，Mistral Vibe v3.1.5 取消每会话 128 个子智能体上限。</p>
+      <ul>
+        <li>Claude Code Code Mode 覆盖 4 家云/模型平台，Copilot CLI 新增 3 款模型</li>
+        <li>Vibe v3.1.5 移除 128 子智能体/会话限制，新增 /cd 保留会话上下文</li>
+        <li>Codex CLI 0.172.0：<code>codex exec resume</code> 恢复沙箱权限</li>
+      </ul>
+      <blockquote>编程智能体的竞争已经从"模型谁更强"转到"谁能跨云、跨模型稳定跑长任务"——工程底座正在变成真正的产品壁垒。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>开源工具三连发：MCP 事件唤醒智能体、沙箱常驻运行、Xcode 构建提速 17 倍</h3>
+      <p>Apache-2.0 的 <strong>Wakeshift</strong> 让 MCP 服务器在构建完成、回复到达等事件发生时主动唤醒订阅的 Claude Code、Codex、Cursor、Copilot CLI 等智能体，GitHub/Stripe/CI 的 webhook 无需写处理器即可转成事件。MIT 许可的 <strong>fxs</strong> 在 Vercel Sandbox 中运行常驻编程智能体，笔记本休眠也不中断，会话默认 6 小时上限、闲置 30 分钟停机省算力。同为 MIT 的 <strong>xcslot</strong> 保持固定 Xcode 构建槽，把并行工作树首次构建从 85 秒压到 4.8 秒。</p>
+      <ul>
+        <li>xcslot：IceCubesApp 项目首次构建 85 秒 → 4.8 秒</li>
+        <li>fxs：会话 6 小时上限、沙箱闲置 30 分钟自动停止计费</li>
+        <li>Wakeshift 基于 MCP Events（SEP-3415），支持 webhook / 轮询 / 推送</li>
+      </ul>
+      <blockquote>智能体正在从"人敲回车才动"变成"事件驱动常驻"，配套的唤醒、沙箱和缓存工具会是下一波基础设施热点。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>智谱 GLM-5.4 引入 Loop Transformer，用循环层换推理深度</h3>
+      <p>智谱发布首个基于 <strong>Loop Transformer</strong> 架构的旗舰模型 GLM-5.4：在预训练好的 GLM-5 基座上继续训练，把 750B 规模模型中的 28 层循环执行两轮，而非从零预训练或简单加深加宽。30B 同参数对照实验中整体训练算力仅增加约 10%，数学、长上下文与代码能力提升最明显，GPQA 等任务平均输出长度反而下降 10%–14%。官方将其定义为"广义编码"的起点，模型已向 GLM Coding Plan 全量用户开放，权重计划开源。</p>
+      <ul>
+        <li>750B 基座 28 层做两轮循环，训练算力增加约 10%</li>
+        <li>输出长度下降 10%–14%，实现"想得更深、答得更短"</li>
+        <li>官方自评可比肩 2–3 万亿参数模型，完整跑分表尚未发布</li>
+      </ul>
+      <blockquote>"层循环复用"给同等算力榨出更多推理深度提供了一条可复制路径；但厂商自评与完整跑分之间的差距，还得等开源权重落地后再验。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>小鹏发布 WorldGPT 物理世界模型，IRON 展示无遥控居家操作</h3>
+      <p>小鹏在 AI Day 发布 <strong>WorldGPT</strong>，定位为可跨汽车、机器人、无人机等本体学习与迁移的物理世界模型：输入历史摄像头画面与一条指令，即可输出未来视频、动作与视觉任务，以像素为共同语言做跨本体蒸馏，覆盖汽车、船艇、无人机、单臂/双臂机器人与人形机器人六类本体。同期放出的 IRON 预热视频中，机器人取书、向酒杯倒酒并自主插电充电，全程由大模型驱动、无人工遥控。</p>
+      <ul>
+        <li>覆盖 6 类本体，截至 11 月 12 日在四领域公开评测获 12 个第一</li>
+        <li>50 种单臂操作任务平均成功率 95.2%</li>
+        <li>IRON 视频未披露重复次数、失败样本与平均用时</li>
+      </ul>
+      <blockquote>"一机一栈"是具身规模化的结构性障碍，跨本体蒸馏若真的成立，新本体的开发边际成本会显著下降——但演示视频距离可量化可靠性仍有距离。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>具身基础模型走向开放 API：自变量出海试点，地平线开源跨本体操作模型</h3>
+      <p>自变量机器人 11 月 24 日与马来西亚邮政在吉隆坡签署合作备忘录，其机器人已在对方主要分拣中心处理真实包裹并完成小规模验证；此前公司发布 <strong>WALL-OSS-1.0</strong> 与 WALL-API-1.0，由大模型 Agent 负责拆解任务、具身模型负责动作执行，API 面向研究者与企业开放调用。同日地平线机器人实验室发布并开源 <strong>HoloBrain-0.5</strong>，配套模型、代码与机器人描述标准化工具，预训练使用逾 1 万小时操作数据、覆盖 15 种构型，在双臂平台展示手机装盒、折衣与扎扎带。</p>
+      <ul>
+        <li>自变量×马来西亚邮政：真实包裹分拣已完成小规模验证，未披露件数与部署台数</li>
+        <li>HoloBrain-0.5：逾 1 万小时数据、15 种机器人构型，模型与工具全开放</li>
+        <li>行业参照：Dream-1 API 按操作时长计费，基础版每小时 3 美元</li>
+      </ul>
+      <blockquote>把机器人操作能力做成可复用 API，是具身企业摆脱"一项目一定制"的关键尝试；真正的分水岭是调用量、任务成功率和真机闭环，而不是发布会上的演示。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-24 ===== -->
 <section class="day-section" id="day-1124">
   <div class="day-header" onclick="toggleDay(this)">
