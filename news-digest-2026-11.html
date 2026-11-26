@@ -219,6 +219,72 @@
 
 <main>
 
+<!-- ===== 2026-11-26 ===== -->
+<section class="day-section" id="day-1126">
+  <div class="day-header" onclick="toggleDay(this)">
+    <h2>📰 每日 AI 动态精选 · 2026年11月26日（周四）</h2>
+    <span class="badge">AI Coding + 具身智能<span class="arrow">▼</span></span>
+  </div>
+  <div class="day-content">
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 把 Messages API 从 Python 迁至 Rust，首 token 延迟降约 20%</h3>
+      <p>Anthropic 于 11 月 26 日披露，已将 <strong>Messages API 的核心实现从 Python 迁移到 Rust</strong>：官方称每请求 CPU 消耗约下降 70%、中位首 token 时间约下降 20%，迁移全程未中断服务。团队用 Claude 智能体对照生产流量完成行为校验，这也是当天技术社区讨论度最高的 AI 工程话题之一。</p>
+      <ul>
+        <li>每请求 CPU 约降 70%，中位首 token 时间约降 20%</li>
+        <li>迁移全程零中断，用 Claude 智能体对照生产流量校验一致性</li>
+        <li>为后续更大规模的 agent 长任务降低推理侧成本</li>
+      </ul>
+      <blockquote>模型能力之外，API 层的"工程税"同样决定 agent 的体感和账单——把热路径从 Python 换成 Rust，是大流量推理服务迟早要算的一笔账。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>Anthropic 开放 Skills over MCP 公测，MCP 从工具协议升级为"技能分发层"</h3>
+      <p>Anthropic 宣布 Claude 与 Claude Code 开启 <strong>Skills over MCP</strong> 公测：MCP 服务器可随着连接下发技能包，内含专业知识、最佳实践与多步骤工作流程，Claude 按需加载、随服务器自动更新，无需逐条塞进上下文。同期 Tasks（后台长任务、延迟取结果）与 Elicitation（付款或删库等关键节点请求用户批准）正式转正。Shopify、HubSpot、Atlassian、GitHub 均在探索相关能力。</p>
+      <ul>
+        <li>MCP SDK 月下载量突破 7 亿次，连接器超过 1 万个</li>
+        <li>Tasks / Elicitation 对 Pro、Max、Ultra 正式开放，Team 与 Enterprise 陆续推送</li>
+        <li>规范写明技能文件变更须撤销授权，但公告未说明 Claude 是否强制执行</li>
+      </ul>
+      <blockquote>MCP 正在从"工具目录"变成"能力分发层"——企业接入一个服务器就同时拿到工具和操作流程，安全审批的关口也随之从提示词前移到服务器准入。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-coding">AI Coding</span>谷歌收紧智能体数据入口：Workspace MCP 设限收费，语义治理把意图劫持压到 0.9%</h3>
+      <p>谷歌宣布 <strong>Workspace MCP 服务器与官方 CLI 正式可用</strong>，覆盖 Gmail、Drive、Docs、Calendar 等应用，同时设定 2027 年 2 月 1 日起智能体访问 Workspace 数据必须走 MCP、不得直连 REST API；据 Business Insider 报道，谷歌还将对这类访问设置限制并收费。另一边，谷歌云 Agent Gateway 引入语义治理预览，在工具调用前用 LLM 裁判核对"用户是否真的要求这个动作"，把 AgentDojo 意图劫持成功率从 48.7% 降到 0.9%。</p>
+      <ul>
+        <li>2027-02-01 起智能体访问 Workspace 必须走 MCP，传统 REST 应用不受影响</li>
+        <li>AgentDojo 意图劫持成功率 48.7% → 0.9%，良性任务效用损失约 2.6 个百分点</li>
+        <li>管理员可控制智能体访问权限，用户级 DLP 与审计日志自动适用</li>
+      </ul>
+      <blockquote>数据入口正在成为智能体平台的护城河："登录有效"不再等于"用户同意模型刚规划的每一步"，意图级校验会从可选项变成写操作 agent 的标配。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>小鹏发布图灵具身架构，IRON 进入量产倒计时、明年一季度先进门店实习</h3>
+      <p>11 月 25 日广州科技日，小鹏发布由 System 2（任务理解规划）、System 1（第二代 VLA 行动策略）、System 0（底层实时控制）组成的<strong>图灵具身智能架构</strong>。新一代 IRON 无遥控登台完成中英双语演讲与随机问答：全身 76 个自由度、超 1500 个触觉点、三颗自研图灵 AI 芯片提供 2250 TOPS 端侧算力；第二代 VLA 已实现 Agent 自主闭环训练，训练速度提升 10—12 倍。公司披露 IRON 将于 2027 年 1 月进入硬件量产，一季度先到自家门店做导购实习，二季度对外发布。</p>
+      <ul>
+        <li>76 自由度、1500+ 触觉点、2250 TOPS 端侧算力，核心区域触觉覆盖率超 80%</li>
+        <li>第二代 VLA 训练速度提升 10—12 倍；机器人业务 8 月完成超 9 亿美元融资，投后估值超 63 亿美元</li>
+        <li>首批岗位锁定门店导购/导览，2027 Q1 实习、Q2 正式发布</li>
+      </ul>
+      <blockquote>小鹏给出的不是又一个演示，而是"门店导购"这种任务边界清晰、可验收的商业化路径；从台上演讲到独立站店，中间还隔着多人抢话与临时改道。</blockquote>
+    </div>
+
+    <div class="news-item">
+      <h3><span class="tag tag-embodied">具身智能</span>机器人"大脑"成资本新焦点：Embo 亮相即获 1.1 亿美元种子轮</h3>
+      <p>机器人基础模型公司 <strong>Embo</strong> 正式亮相，宣布获得 1.1 亿美元种子轮融资，由 Andreessen Horowitz 领投，Khosla Ventures、DST Global、NVIDIA 等参投。Embo 不直接造机器人本体，而是用互联网规模视频数据预训练，再结合真机运行数据与强化学习，开发能理解物理世界、掌握精细运动技能的机器人基础模型，目标是对训练覆盖范围之外的新物体、新环境和新任务具备适应能力。创始团队具有 Google DeepMind、Meta、NVIDIA 研究背景。</p>
+      <ul>
+        <li>1.1 亿美元种子轮，a16z 领投，Khosla、DST、NVIDIA 等跟投</li>
+        <li>路线：互联网视频预训练 + 真机数据 + 强化学习，做跨本体机器人基础模型</li>
+        <li>同日国内浙江人形发布 SPIRE 2.0，已积累 22 万+ 条真机灵巧作业数据</li>
+      </ul>
+      <blockquote>资本开始为"机器人大脑"这一层单独定价，产业分工正复制大模型的"本体—模型—数据平台"结构；但融资规模不等于技术成熟度，Embo 仍处于研发与产品建设阶段。</blockquote>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== 2026-11-25 ===== -->
 <section class="day-section" id="day-1125">
   <div class="day-header" onclick="toggleDay(this)">
